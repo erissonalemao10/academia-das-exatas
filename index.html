@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia das Exatas — Física, Matemática, Olimpíadas e Vestibulares</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F1E3C;
+    --bg-deep: #071429;
+    --board-line: rgba(226,232,244,0.10);
+    --paper: #F3F5FA;
+    --paper-dim: #E4E8F2;
+    --ink: #16213A;
+    --ink-soft: #4E5B78;
+    --yellow: #E8384F;
+    --blue: #3E6FA8;
+    --red: #A81F30;
+    --wood: #24314F;
+    --wood-dark: #0A1830;
+    --radius: 14px;
+    --shadow: 0 12px 30px rgba(3,9,22,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--yellow); color:var(--bg-deep);}
+
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+
+  :focus-visible{outline:3px solid var(--blue); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- Nav (chalkboard rail) ---------- */
+  header.rail{
+    position:sticky; top:0; z-index:40;
+    background:var(--bg);
+    border-bottom:6px solid var(--wood);
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .rail-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; gap:16px; flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    font-size:1.5rem;
+    color:var(--paper);
+    letter-spacing:-0.5px;
+    text-transform:uppercase;
+    display:flex; align-items:baseline; gap:8px;
+    text-decoration:none;
+  }
+  .brand::before{
+    content:"";
+    display:inline-block;
+    width:10px; height:10px;
+    background:var(--yellow);
+    margin-right:2px;
+  }
+  .brand small{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.6rem;
+    color:var(--paper);
+    opacity:0.55;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  nav.tabs{
+    display:flex; gap:4px; flex-wrap:wrap;
+  }
+  nav.tabs button{
+    font-family:'Archivo', sans-serif;
+    font-size:0.86rem;
+    font-weight:600;
+    background:transparent;
+    border:1px solid transparent;
+    color:var(--paper);
+    opacity:0.72;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:opacity .15s ease, background .15s ease, border-color .15s ease;
+  }
+  nav.tabs button:hover{opacity:1; background:rgba(244,241,232,0.06);}
+  nav.tabs button[aria-current="page"]{
+    opacity:1;
+    background:rgba(244,241,232,0.10);
+    border-color:rgba(232,193,76,0.5);
+    color:var(--yellow);
+  }
+
+  /* ---------- Page sections ---------- */
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(244,241,232,0.05), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(244,241,232,0.04), transparent 45%),
+      var(--bg);
+    overflow:hidden;
+    padding:88px 24px 110px;
+    border-bottom:6px solid var(--wood-dark);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--board-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--board-line) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(ellipse at center, black 55%, transparent 90%);
+    opacity:0.5;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:840px; margin:0 auto; text-align:center;
+  }
+  .hero-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    letter-spacing:-1px;
+    font-size:clamp(2.3rem, 5.2vw, 4.1rem);
+    line-height:1.04;
+    color:var(--paper);
+    margin:0 0 20px;
+    text-transform:uppercase;
+  }
+  .hero h1 em{
+    font-style:normal;
+    font-family:'Archivo', sans-serif;
+    color:var(--yellow);
+    font-weight:900;
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:var(--paper);
+    opacity:0.82;
+    max-width:600px;
+    margin:0 auto 34px;
+    line-height:1.6;
+  }
+  .hero-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    font-family:'Archivo', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:13px 26px;
+    border-radius:999px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--yellow); color:var(--bg-deep);}
+  .btn-primary:hover{box-shadow:0 8px 20px rgba(232,193,76,0.35);}
+  .btn-ghost{background:transparent; border-color:rgba(244,241,232,0.35); color:var(--paper);}
+  .btn-ghost:hover{background:rgba(244,241,232,0.08);}
+
+  .doodles{position:absolute; inset:0; z-index:1; pointer-events:none;}
+  .doodles svg{position:absolute; opacity:0.5;}
+  @media (prefers-reduced-motion: no-preference){
+    .doodle-float{animation:doodleFloat 7s ease-in-out infinite;}
+  }
+  @keyframes doodleFloat{
+    0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
+    50%{transform:translateY(-10px) rotate(var(--r,0deg));}
+  }
+
+  /* ---------- Subject grid (home) ---------- */
+  .section{max-width:1180px; margin:0 auto; padding:70px 24px;}
+  .section-head{max-width:640px; margin-bottom:36px;}
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  .section-head h2{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+    margin:0 0 12px;
+    color:var(--bg-deep);
+  }
+  .section-head p{color:var(--ink-soft); line-height:1.6; font-size:1rem; margin:0;}
+
+  .card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px;}
+  .subject-card{
+    background:var(--bg);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    color:var(--paper);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(244,241,232,0.08);
+    display:flex; flex-direction:column; gap:14px;
+    cursor:pointer;
+    text-align:left;
+    transition:transform .18s ease;
+  }
+  .subject-card:hover{transform:translateY(-4px);}
+  .subject-card .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .subject-card.physics .tag{background:rgba(232,193,76,0.16); color:var(--yellow);}
+  .subject-card.math .tag{background:rgba(111,168,201,0.18); color:var(--blue);}
+  .subject-card.olymp .tag{background:rgba(193,80,46,0.2); color:#f2a382;}
+  .subject-card.vest .tag{background:rgba(111,168,201,0.18); color:var(--blue);}
+  .subject-card h3{font-family:'Archivo', sans-serif; font-weight:800; margin:0; font-size:1.25rem;}
+  .subject-card p{margin:0; font-size:0.92rem; opacity:0.78; line-height:1.55;}
+  .subject-card .go{
+    margin-top:auto; font-family:'Archivo', sans-serif; font-weight:600;
+    font-size:0.85rem; display:flex; align-items:center; gap:6px;
+  }
+  .subject-card.physics .go{color:var(--yellow);}
+  .subject-card.math .go{color:var(--blue);}
+  .subject-card.olymp .go{color:#f2a382;}
+  .subject-card.vest .go{color:var(--blue);}
+
+  /* ---------- Topic list ---------- */
+  .topic-list{list-style:none; padding:0; margin:0 0 40px; display:grid; gap:10px;}
+  .topic-list li{
+    background:var(--paper-dim);
+    border-left:4px solid var(--yellow);
+    padding:14px 18px;
+    border-radius:8px;
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+  .page[data-page="matematica"] .topic-list li{border-left-color:var(--blue);}
+  .page[data-page="olimpiadas"] .topic-list li{border-left-color:var(--red);}
+  .page[data-page="vestibulares"] .topic-list li{border-left-color:var(--red);}
+
+  /* ---------- Resource cards (downloads) ---------- */
+  .resource-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;}
+  .resource-card{
+    background:#fff;
+    border:1px solid rgba(38,48,43,0.08);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:0 4px 14px rgba(38,48,43,0.06);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .resource-card .file-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    color:var(--ink-soft);
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+  .resource-card h4{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    margin:0; font-size:1.08rem; color:var(--bg-deep);
+  }
+  .resource-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.5;}
+  .resource-card .meta{font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--ink-soft); opacity:0.75;}
+  .download-btn{
+    margin-top:auto;
+    font-family:'Archivo', sans-serif;
+    font-weight:600; font-size:0.88rem;
+    background:var(--bg-deep); color:var(--paper);
+    border:none; border-radius:999px;
+    padding:11px 18px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .download-btn:hover{background:var(--bg); transform:translateY(-2px);}
+
+  /* ---------- Info blocks (olimpiadas / vestibulares) ---------- */
+  .info-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:18px; margin-bottom:44px;}
+  .info-card{
+    background:var(--paper-dim); border-radius:12px; padding:20px;
+  }
+  .info-card h4{font-family:'Archivo', sans-serif; font-weight:700; margin:0 0 8px; font-size:1rem; color:var(--bg-deep);}
+  .info-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.55;}
+
+  /* ---------- Footer ---------- */
+  footer.rail{
+    background:var(--bg-deep);
+    border-top:6px solid var(--wood-dark);
+    color:var(--paper);
+    padding:36px 24px;
+    text-align:center;
+    font-size:0.85rem;
+  }
+  footer.rail p{margin:0 0 6px; opacity:0.75;}
+  footer.rail .signature{font-family:'Archivo', sans-serif; color:var(--yellow); font-size:1.1rem;}
+
+  /* ---------- Modal (ad-gate) ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(15,25,21,0.82);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--bg-deep);
+    border:1px solid rgba(244,241,232,0.12);
+    border-radius:16px;
+    max-width:560px; width:100%;
+    padding:26px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .modal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;}
+  .modal-head h3{
+    font-family:'Archivo', sans-serif; font-weight:700; color:var(--paper); margin:0; font-size:1.05rem;
+  }
+  .modal-close{
+    background:transparent; border:none; color:var(--paper); opacity:0.6;
+    font-size:1.3rem; cursor:pointer; line-height:1; padding:4px 8px;
+  }
+  .modal-close:hover{opacity:1;}
+  .modal-sub{
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--yellow);
+    letter-spacing:0.5px; margin-bottom:14px; display:block;
+  }
+  .video-wrap{
+    position:relative; border-radius:10px; overflow:hidden; background:#000;
+    aspect-ratio:16/9; margin-bottom:16px;
+  }
+  .video-wrap video{width:100%; height:100%; object-fit:cover; display:block;}
+  .video-badge{
+    position:absolute; top:10px; left:10px;
+    background:rgba(0,0,0,0.55); color:var(--paper);
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem;
+    padding:4px 9px; border-radius:6px; letter-spacing:0.5px;
+  }
+  .unlock-row{display:flex; align-items:center; gap:12px; min-height:46px;}
+  .unlock-msg{
+    font-family:'Inter', sans-serif; font-size:0.88rem; color:var(--paper); opacity:0.8;
+  }
+  .unlock-icon{
+    width:20px; height:20px; flex-shrink:0;
+  }
+  .final-download{
+    display:none;
+    text-decoration:none;
+    font-family:'Archivo', sans-serif; font-weight:600; font-size:0.92rem;
+    background:var(--yellow); color:var(--bg-deep);
+    padding:12px 22px; border-radius:999px;
+    align-items:center; gap:8px;
+    width:100%; justify-content:center;
+    transition:transform .15s ease;
+  }
+  .final-download:hover{transform:translateY(-2px);}
+  .final-download.ready{display:inline-flex;}
+
+  @media (max-width:640px){
+    nav.tabs{width:100%; justify-content:flex-start; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .rail-inner{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="#" class="brand" data-nav="inicio">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <button type="button" data-nav="inicio" aria-current="page">Início</button>
+      <button type="button" data-nav="fisica">Física</button>
+      <button type="button" data-nav="matematica">Matemática</button>
+      <button type="button" data-nav="olimpiadas">Olimpíadas</button>
+      <button type="button" data-nav="vestibulares">Vestibulares</button>
+      <button type="button" data-nav="atividades">Atividades</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= INÍCIO ================= -->
+<section class="page active" data-page="inicio">
+  <div class="hero">
+    <div class="doodles" aria-hidden="true">
+      <svg class="doodle-float" style="--r:-6deg; top:14%; left:6%;" width="120" height="90" viewBox="0 0 120 90">
+        <path d="M5 80 Q60 -10 115 80" fill="none" stroke="#E8384F" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 7"/>
+      </svg>
+      <svg class="doodle-float" style="--r:8deg; top:60%; left:4%; animation-delay:.6s;" width="100" height="100" viewBox="0 0 100 100">
+        <path d="M10 90 L10 20 L80 90 Z" fill="none" stroke="#6FA8C9" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="14" y="60" font-family="JetBrains Mono" font-size="11" fill="#6FA8C9">a</text>
+        <text x="45" y="86" font-family="JetBrains Mono" font-size="11" fill="#6FA8C9">b</text>
+        <text x="42" y="50" font-family="JetBrains Mono" font-size="11" fill="#6FA8C9">c</text>
+      </svg>
+      <svg class="doodle-float" style="--r:4deg; top:10%; right:6%; animation-delay:1.2s;" width="140" height="70" viewBox="0 0 140 70">
+        <path d="M2 35 Q22 5 42 35 T82 35 T122 35" fill="none" stroke="#F3F5FA" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6" opacity="0.6"/>
+      </svg>
+      <svg class="doodle-float" style="--r:-10deg; bottom:8%; right:10%; animation-delay:.3s;" width="90" height="90" viewBox="0 0 90 90">
+        <text x="6" y="55" font-family="JetBrains Mono" font-size="30" fill="#A81F30" opacity="0.55">∫</text>
+        <text x="42" y="70" font-family="JetBrains Mono" font-size="16" fill="#A81F30" opacity="0.55">dx</text>
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <span class="hero-eyebrow">// materiais gratuitos de física e matemática</span>
+      <h1>Treine <em>exatas</em> como quem estuda para valer.</h1>
+      <p class="lede">Conteúdos, listas de exercícios e cadernos de atividades em PDF — organizados por assunto, com foco em olimpíadas científicas e nos principais vestibulares do país.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" type="button" data-nav="atividades">Ver atividades para baixar</button>
+        <button class="btn btn-ghost" type="button" data-nav="olimpiadas">Preparação para olimpíadas</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Trilhas de estudo</span>
+      <h2>Escolha por onde quer começar</h2>
+      <p>Cada trilha reúne teoria resumida, listas de exercícios comentadas e cadernos de revisão em PDF, prontos para baixar e imprimir.</p>
+    </div>
+    <div class="card-grid">
+      <button class="subject-card physics" type="button" data-nav="fisica">
+        <span class="tag">física</span>
+        <h3>Cinemática, dinâmica &amp; energia</h3>
+        <p>Do MRU à termodinâmica, com listas comentadas e destaques de fórmulas.</p>
+        <span class="go">Explorar Física →</span>
+      </button>
+      <button class="subject-card math" type="button" data-nav="matematica">
+        <span class="tag">matemática</span>
+        <h3>Funções, geometria &amp; probabilidade</h3>
+        <p>Do 1º grau à trigonometria, com problemas contextualizados.</p>
+        <span class="go">Explorar Matemática →</span>
+      </button>
+      <button class="subject-card olymp" type="button" data-nav="olimpiadas">
+        <span class="tag">olimpíadas</span>
+        <h3>OBMEP, OBF &amp; desafios</h3>
+        <p>Cadernos de questões no estilo das principais olimpíadas científicas.</p>
+        <span class="go">Ver desafios →</span>
+      </button>
+      <button class="subject-card vest" type="button" data-nav="vestibulares">
+        <span class="tag">vestibulares</span>
+        <h3>ENEM, FUVEST, ITA &amp; IME</h3>
+        <p>Revisão integrada de física e matemática no estilo das provas.</p>
+        <span class="go">Revisar agora →</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FÍSICA ================= -->
+<section class="page" data-page="fisica">
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Física</span>
+      <h2>Mecânica, energia e um pouco de tudo</h2>
+      <p>Resumos rápidos de teoria e listas de exercícios comentadas, da cinemática à eletricidade básica.</p>
+    </div>
+    <ul class="topic-list">
+      <li><strong>Cinemática:</strong> MU, MUV, queda livre e lançamento vertical.</li>
+      <li><strong>Dinâmica:</strong> Leis de Newton, atrito, plano inclinado e sistemas de blocos.</li>
+      <li><strong>Energia e trabalho:</strong> energia cinética, potencial e conservação de energia mecânica.</li>
+      <li><strong>Eletricidade básica:</strong> circuitos simples, resistores em série e paralelo.</li>
+    </ul>
+    <div class="resource-grid" id="grid-fisica"></div>
+  </div>
+</section>
+
+<!-- ================= MATEMÁTICA ================= -->
+<section class="page" data-page="matematica">
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Matemática</span>
+      <h2>Da álgebra à geometria analítica</h2>
+      <p>Listas organizadas por tema, com problemas contextualizados e passo a passo nas resoluções.</p>
+    </div>
+    <ul class="topic-list">
+      <li><strong>Funções:</strong> 1º e 2º grau, exponencial e logarítmica.</li>
+      <li><strong>Geometria:</strong> plana, espacial e analítica, com foco em áreas e volumes.</li>
+      <li><strong>Sequências:</strong> progressões aritméticas e geométricas.</li>
+      <li><strong>Probabilidade e estatística:</strong> contagem, combinatória e análise de dados.</li>
+    </ul>
+    <div class="resource-grid" id="grid-matematica"></div>
+  </div>
+</section>
+
+<!-- ================= OLIMPÍADAS ================= -->
+<section class="page" data-page="olimpiadas">
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Olimpíadas</span>
+      <h2>Preparação para competições científicas</h2>
+      <p>Questões e estratégias no estilo das principais olimpíadas de física e matemática do Brasil.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>OBMEP</h4>
+        <p>Olimpíada Brasileira de Matemática das Escolas Públicas — foco em raciocínio lógico e problemas não convencionais.</p>
+      </div>
+      <div class="info-card">
+        <h4>OBF</h4>
+        <p>Olimpíada Brasileira de Física — questões conceituais e cálculos aplicados a situações do cotidiano.</p>
+      </div>
+      <div class="info-card">
+        <h4>Canguru de Matemática</h4>
+        <p>Prova de múltipla escolha com questões criativas, ótima para treinar raciocínio rápido.</p>
+      </div>
+      <div class="info-card">
+        <h4>ITA / IME (nível olímpico)</h4>
+        <p>Questões dissertativas de alta complexidade, unindo física e matemática avançada.</p>
+      </div>
+    </div>
+    <div class="resource-grid" id="grid-olimpiadas"></div>
+  </div>
+</section>
+
+<!-- ================= VESTIBULARES ================= -->
+<section class="page" data-page="vestibulares">
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Vestibulares</span>
+      <h2>Revisão integrada para a prova</h2>
+      <p>Física e matemática combinadas, no formato e no nível de exigência dos principais vestibulares.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>ENEM</h4>
+        <p>Questões contextualizadas, com ênfase em interpretação e aplicação de conceitos do dia a dia.</p>
+      </div>
+      <div class="info-card">
+        <h4>FUVEST / UNICAMP</h4>
+        <p>Questões dissertativas que exigem desenvolvimento completo de cálculo e justificativa.</p>
+      </div>
+      <div class="info-card">
+        <h4>ITA / IME</h4>
+        <p>Nível avançado, com questões que combinam múltiplos conceitos em um mesmo problema.</p>
+      </div>
+    </div>
+    <div class="resource-grid" id="grid-vestibulares"></div>
+  </div>
+</section>
+
+<!-- ================= ATIVIDADES (biblioteca completa) ================= -->
+<section class="page" data-page="atividades">
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Atividades</span>
+      <h2>Biblioteca completa de PDFs</h2>
+      <p>Todos os cadernos de exercícios em um só lugar. Assista a um vídeo curto para liberar cada download.</p>
+    </div>
+    <div class="resource-grid" id="grid-atividades"></div>
+  </div>
+</section>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+<!-- ================= MODAL (ad-gate) ================= -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Assista para liberar o download</h3>
+      <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+    </div>
+    <span class="modal-sub" id="modalFileLabel">arquivo.pdf</span>
+    <div class="video-wrap">
+      <span class="video-badge">publicidade</span>
+      <video id="adVideo" playsinline muted autoplay></video>
+    </div>
+    <div class="unlock-row">
+      <svg class="unlock-icon" id="unlockIcon" viewBox="0 0 24 24" fill="none" stroke="#E8384F" stroke-width="2">
+        <rect x="5" y="11" width="14" height="9" rx="2"/>
+        <path id="shackle" d="M8 11V7a4 4 0 0 1 8 0v4"/>
+      </svg>
+      <span class="unlock-msg" id="unlockMsg">Assistindo ao vídeo… o download será liberado ao final.</span>
+    </div>
+    <a class="final-download" id="finalDownload" href="#" download>
+      ⬇ Baixar PDF agora
+    </a>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---------- Navigation ----------
+  var pages = document.querySelectorAll('.page');
+  var navButtons = document.querySelectorAll('[data-nav]');
+
+  function goTo(name){
+    pages.forEach(function(p){ p.classList.toggle('active', p.dataset.page === name); });
+    document.querySelectorAll('nav.tabs button').forEach(function(b){
+      if(b.dataset.nav === name){ b.setAttribute('aria-current','page'); }
+      else{ b.removeAttribute('aria-current'); }
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  navButtons.forEach(function(b){
+    b.addEventListener('click', function(e){
+      e.preventDefault();
+      goTo(b.dataset.nav);
+    });
+  });
+
+  // ---------- Resource library ----------
+  var RESOURCES = [
+    {
+      id:'fisica',
+      subject:'fisica',
+      title:'Lista de Exercícios: Cinemática',
+      desc:'MU, MUV, queda livre e lançamento vertical — 8 questões comentadas.',
+      meta:'PDF · 2 páginas',
+      filename:'academia-das-exatas_fisica_cinematica.pdf',
+      file:'materiais/fisica_cinematica.pdf'
+    },
+    {
+      id:'matematica',
+      subject:'matematica',
+      title:'Lista de Exercícios: Funções do 2º Grau',
+      desc:'Raízes, vértice e problemas de otimização — 8 questões comentadas.',
+      meta:'PDF · 2 páginas',
+      filename:'academia-das-exatas_matematica_funcoes.pdf',
+      file:'materiais/matematica_funcoes.pdf'
+    },
+    {
+      id:'olimpiadas',
+      subject:'olimpiadas',
+      title:'Caderno de Desafios Olímpicos',
+      desc:'Questões no estilo OBMEP e OBF, física e matemática combinadas.',
+      meta:'PDF · 2 páginas',
+      filename:'academia-das-exatas_olimpiadas_desafios.pdf',
+      file:'materiais/olimpiadas_desafios.pdf'
+    },
+    {
+      id:'vestibulares',
+      subject:'vestibulares',
+      title:'Revisão Integrada para Vestibulares',
+      desc:'Questões estilo ENEM/FUVEST de física e matemática.',
+      meta:'PDF · 2 páginas',
+      filename:'academia-das-exatas_vestibulares_revisao.pdf',
+      file:'materiais/vestibulares_revisao.pdf'
+    }
+  ];
+
+  function cardHTML(r){
+    return '' +
+      '<div class="resource-card">' +
+        '<span class="file-tag">' + r.meta + '</span>' +
+        '<h4>' + r.title + '</h4>' +
+        '<p>' + r.desc + '</p>' +
+        '<button class="download-btn" type="button" data-resource="' + r.id + '">⬇ Baixar PDF</button>' +
+      '</div>';
+  }
+
+  function renderGrids(){
+    var grids = {
+      fisica: document.getElementById('grid-fisica'),
+      matematica: document.getElementById('grid-matematica'),
+      olimpiadas: document.getElementById('grid-olimpiadas'),
+      vestibulares: document.getElementById('grid-vestibulares'),
+      atividades: document.getElementById('grid-atividades')
+    };
+    RESOURCES.forEach(function(r){
+      if(grids[r.subject]) grids[r.subject].insertAdjacentHTML('beforeend', cardHTML(r));
+    });
+    RESOURCES.forEach(function(r){
+      grids.atividades.insertAdjacentHTML('beforeend', cardHTML(r));
+    });
+  }
+  renderGrids();
+
+  // ---------- Ad-gate modal ----------
+  var overlay = document.getElementById('modalOverlay');
+  var video = document.getElementById('adVideo');
+  var closeBtn = document.getElementById('modalClose');
+  var fileLabel = document.getElementById('modalFileLabel');
+  var unlockMsg = document.getElementById('unlockMsg');
+  var finalDownload = document.getElementById('finalDownload');
+  var shackle = document.getElementById('shackle');
+  var fallbackTimer = null;
+
+  var AD_SRC = 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4';
+
+  function openModalFor(resourceId){
+    var r = RESOURCES.filter(function(x){ return x.id === resourceId; })[0];
+    if(!r) return;
+
+    fileLabel.textContent = r.filename;
+    unlockMsg.textContent = 'Assistindo ao vídeo… o download será liberado ao final.';
+    finalDownload.classList.remove('ready');
+    finalDownload.removeAttribute('href');
+    finalDownload.setAttribute('aria-disabled', 'true');
+    shackle.setAttribute('d', 'M8 11V7a4 4 0 0 1 8 0v4');
+
+    video.src = AD_SRC;
+    video.currentTime = 0;
+    video.muted = true;
+    video.play().catch(function(){ /* autoplay pode ser bloqueado; segue com fallback */ });
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(fallbackTimer);
+    fallbackTimer = setTimeout(function(){
+      if(!finalDownload.classList.contains('ready')){
+        unlockDownload(r, 'Não foi possível carregar o vídeo agora — liberando o download.');
+      }
+    }, 9000);
+
+    video.onended = function(){ unlockDownload(r); };
+    video.onerror = function(){ unlockDownload(r, 'Não foi possível carregar o vídeo agora — liberando o download.'); };
+  }
+
+  function unlockDownload(r, customMsg){
+    clearTimeout(fallbackTimer);
+    unlockMsg.textContent = customMsg || 'Vídeo concluído! Seu download está liberado.';
+    shackle.setAttribute('d', 'M8 11V7a4 4 0 0 1 8 0v0');
+    finalDownload.href = r.file;
+    finalDownload.setAttribute('download', r.filename);
+    finalDownload.classList.add('ready');
+    finalDownload.removeAttribute('aria-disabled');
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    clearTimeout(fallbackTimer);
+  }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-resource]');
+    if(btn){ openModalFor(btn.dataset.resource); }
+  });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+})();
+</script>
+
+</body>
+</html>
