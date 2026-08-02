@@ -95,6 +95,7 @@
     transition:opacity .15s ease, background .15s ease, border-color .15s ease;
   }
   nav.tabs button:hover{opacity:1; background:rgba(244,241,232,0.06);}
+  .nav-external-link{text-decoration:none;}
   nav.tabs button[aria-current="page"]{
     opacity:1;
     background:rgba(244,241,232,0.10);
@@ -443,6 +444,28 @@
     background:var(--paper-dim); border-radius:12px; padding:20px;
   }
   .info-card h4{font-family:'Archivo', sans-serif; font-weight:700; margin:0 0 8px; font-size:1rem; color:var(--bg-deep);}
+
+  .obmep-subhead{font-family:'Archivo', sans-serif; font-weight:800; font-size:1.15rem; color:var(--bg-deep); margin:8px 0 6px;}
+  .obmep-sublede{color:var(--ink-soft); font-size:0.88rem; line-height:1.5; margin:0 0 20px; max-width:600px;}
+  .resource-card.external{border-color:rgba(168,31,48,0.25);}
+  .resource-card.external .file-tag{color:var(--red);}
+  .resource-card .download-btn.external-link{background:transparent; border:1.5px solid var(--bg-deep); color:var(--bg-deep);}
+  .resource-card .download-btn.external-link:hover{background:var(--bg-deep); color:#fff;}
+
+  .apostila-list{display:flex; flex-direction:column; gap:14px;}
+  .apostila-block{
+    background:#fff; border:1px solid rgba(15,30,60,0.08); border-radius:var(--radius);
+    padding:20px 24px; box-shadow:0 4px 14px rgba(15,30,60,0.05);
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .apostila-block .apostila-info{flex:1; min-width:220px;}
+  .apostila-block .file-tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; color:var(--red);
+    text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:6px;
+  }
+  .apostila-block h4{font-family:'Archivo', sans-serif; font-weight:700; font-size:1.02rem; color:var(--bg-deep); margin:0 0 6px;}
+  .apostila-block p{font-size:0.88rem; color:var(--ink-soft); margin:0; line-height:1.5;}
+  .apostila-block .download-btn{flex-shrink:0;}
   .info-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.55;}
 
   /* ---------- Footer ---------- */
@@ -613,6 +636,7 @@
       <button type="button" data-nav="olimpiadas">Olimpíadas</button>
       <button type="button" data-nav="vestibulares">Vestibulares</button>
       <button type="button" data-nav="atividades">Atividades</button>
+      <a href="duvidas.html" class="nav-external-link"><button type="button">Dúvidas</button></a>
     </nav>
   </div>
 </header>
@@ -734,6 +758,11 @@
         <p>Questões dissertativas de alta complexidade, unindo física e matemática avançada.</p>
       </div>
     </div>
+
+    <h3 class="obmep-subhead">Apostilas oficiais do PIC/OBMEP</h3>
+    <p class="obmep-sublede">Material produzido pelo IMPA/OBMEP para o Programa de Iniciação Científica Jr. Os links abaixo abrem direto na fonte oficial.</p>
+    <div class="apostila-list" id="grid-obmep-apostilas"></div>
+
     <div class="resource-grid" id="grid-olimpiadas"></div>
   </div>
 </section>
@@ -1058,6 +1087,52 @@
 
   AdGate.init(RESOURCES);
   var cardHTML = AdGate.cardHTML;
+
+  // ---------- Apostilas oficiais do PIC/OBMEP (link direto para a fonte, sem hospedar cópia) ----------
+  var OBMEP_APOSTILAS = [
+    {
+      title:'A Geometria do Globo Terrestre',
+      desc:'Apostila 6 do PIC — geometria esférica aplicada ao planeta Terra.',
+      url:'https://www.obmep.org.br/docs/apostila6.pdf'
+    },
+    {
+      title:'Criptografia',
+      desc:'Apostila 7 do PIC — fundamentos de códigos secretos e matemática aplicada.',
+      url:'https://www.obmep.org.br/docs/apostila7.pdf'
+    },
+    {
+      title:'Atividades de Contagem a partir da Criptografia',
+      desc:'Apostila 10 do PIC — combinatória explorada através de criptografia.',
+      url:'https://www.obmep.org.br/docs/apostila10.pdf'
+    },
+    {
+      title:'Encontros de Aritmética',
+      desc:'Material extra do PIC — aprofundamento em teoria dos números.',
+      url:'https://www.obmep.org.br/docs/aritmetica.pdf'
+    },
+    {
+      title:'Encontros de Geometria — Parte 1',
+      desc:'Material extra do PIC — geometria plana para nível olímpico.',
+      url:'https://www.obmep.org.br/docs/Geometria.pdf'
+    }
+  ];
+
+  function obmepCardHTML(a){
+    return '' +
+      '<div class="apostila-block">' +
+        '<div class="apostila-info">' +
+          '<span class="file-tag">PDF · Fonte oficial OBMEP</span>' +
+          '<h4>' + a.title + '</h4>' +
+          '<p>' + a.desc + '</p>' +
+        '</div>' +
+        '<a class="download-btn external-link" href="' + a.url + '" target="_blank" rel="noopener">Abrir apostila ↗</a>' +
+      '</div>';
+  }
+
+  var obmepGrid = document.getElementById('grid-obmep-apostilas');
+  if(obmepGrid){
+    obmepGrid.innerHTML = OBMEP_APOSTILAS.map(obmepCardHTML).join('');
+  }
 
   function renderGrids(){
     var grids = {
