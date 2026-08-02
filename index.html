@@ -296,6 +296,16 @@
     opacity:0.6;
     font-weight:400;
   }
+  .branch-header .org-header-text{display:flex; flex-direction:column; gap:5px; text-align:left;}
+  .branch-header .org-desc{
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    color:var(--paper);
+    opacity:0.7;
+    font-weight:400;
+    line-height:1.4;
+    max-width:560px;
+  }
   .branch-header .chevron{
     flex-shrink:0;
     width:18px; height:18px;
@@ -738,31 +748,13 @@
     <div class="section-head">
       <span class="kicker">Olimpíadas</span>
       <h2>Preparação para competições científicas</h2>
-      <p>Questões e estratégias no estilo das principais olimpíadas de física e matemática do Brasil.</p>
-    </div>
-    <div class="info-grid">
-      <div class="info-card">
-        <h4>OBMEP</h4>
-        <p>Olimpíada Brasileira de Matemática das Escolas Públicas — foco em raciocínio lógico e problemas não convencionais.</p>
-      </div>
-      <div class="info-card">
-        <h4>OBF</h4>
-        <p>Olimpíada Brasileira de Física — questões conceituais e cálculos aplicados a situações do cotidiano.</p>
-      </div>
-      <div class="info-card">
-        <h4>Canguru de Matemática</h4>
-        <p>Prova de múltipla escolha com questões criativas, ótima para treinar raciocínio rápido.</p>
-      </div>
-      <div class="info-card">
-        <h4>ITA / IME (nível olímpico)</h4>
-        <p>Questões dissertativas de alta complexidade, unindo física e matemática avançada.</p>
-      </div>
+      <p>Clique em uma competição para ver detalhes e materiais disponíveis.</p>
     </div>
 
-    <h3 class="obmep-subhead">Apostilas oficiais do PIC/OBMEP</h3>
-    <p class="obmep-sublede">Material produzido pelo IMPA/OBMEP para o Programa de Iniciação Científica Jr. Os links abaixo abrem direto na fonte oficial.</p>
-    <div class="apostila-list" id="grid-obmep-apostilas"></div>
+    <div class="branch-accordion" id="olimpiadas-branches"></div>
 
+    <h3 class="obmep-subhead" style="margin-top:36px;">Outros materiais de olimpíadas</h3>
+    <p class="obmep-sublede">Cadernos de desafios próprios, combinando física e matemática.</p>
     <div class="resource-grid" id="grid-olimpiadas"></div>
   </div>
 </section>
@@ -1088,7 +1080,7 @@
   AdGate.init(RESOURCES);
   var cardHTML = AdGate.cardHTML;
 
-  // ---------- Apostilas oficiais do PIC/OBMEP (link direto para a fonte, sem hospedar cópia) ----------
+  // ---------- Olimpíadas: acordeão de competições ----------
   var OBMEP_APOSTILAS = [
     {
       title:'A Geometria do Globo Terrestre',
@@ -1117,7 +1109,7 @@
     }
   ];
 
-  function obmepCardHTML(a){
+  function obmepApostilaHTML(a){
     return '' +
       '<div class="apostila-block">' +
         '<div class="apostila-info">' +
@@ -1129,10 +1121,62 @@
       '</div>';
   }
 
-  var obmepGrid = document.getElementById('grid-obmep-apostilas');
-  if(obmepGrid){
-    obmepGrid.innerHTML = OBMEP_APOSTILAS.map(obmepCardHTML).join('');
+  var OLIMPIADAS_ORGS = [
+    {
+      id:'obmep',
+      title:'OBMEP',
+      desc:'Olimpíada Brasileira de Matemática das Escolas Públicas — foco em raciocínio lógico e problemas não convencionais.',
+      body:
+        '<p class="obmep-sublede">Apostilas oficiais do Programa de Iniciação Científica Jr. (PIC), produzidas pelo IMPA/OBMEP. Os links abrem direto na fonte oficial.</p>' +
+        '<div class="apostila-list">' + OBMEP_APOSTILAS.map(obmepApostilaHTML).join('') + '</div>'
+    },
+    {
+      id:'obf',
+      title:'OBF',
+      desc:'Olimpíada Brasileira de Física — questões conceituais e cálculos aplicados a situações do cotidiano.',
+      body: '<p class="topic-empty">Em breve, materiais específicos de OBF aqui.</p>'
+    },
+    {
+      id:'canguru',
+      title:'Canguru de Matemática',
+      desc:'Prova de múltipla escolha com questões criativas, ótima para treinar raciocínio rápido.',
+      body: '<p class="topic-empty">Em breve, materiais específicos do Canguru aqui.</p>'
+    },
+    {
+      id:'itaime',
+      title:'ITA / IME (nível olímpico)',
+      desc:'Questões dissertativas de alta complexidade, unindo física e matemática avançada.',
+      body: '<p class="topic-empty">Em breve, materiais específicos de ITA/IME aqui.</p>'
+    }
+  ];
+
+  function orgBranchHTML(org){
+    return '' +
+      '<div class="branch" data-branch="' + org.id + '">' +
+        '<button type="button" class="branch-header" data-branch-toggle="' + org.id + '" aria-expanded="false">' +
+          '<div class="org-header-text">' +
+            '<h3>' + org.title + '</h3>' +
+            '<span class="org-desc">' + org.desc + '</span>' +
+          '</div>' +
+          '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>' +
+        '</button>' +
+        '<div class="branch-body"><div class="branch-body-inner">' + org.body + '</div></div>' +
+      '</div>';
   }
+
+  function renderOlimpiadasBranches(){
+    var container = document.getElementById('olimpiadas-branches');
+    if(!container) return;
+    container.innerHTML = OLIMPIADAS_ORGS.map(orgBranchHTML).join('');
+    container.querySelectorAll('[data-branch-toggle]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var branchEl = btn.closest('.branch');
+        var isOpen = branchEl.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  }
+  renderOlimpiadasBranches();
 
   function renderGrids(){
     var grids = {
