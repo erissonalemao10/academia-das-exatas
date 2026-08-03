@@ -618,6 +618,15 @@
     transition:transform .15s ease;
   }
   .theory-link-card:hover{transform:translateY(-3px);}
+  .theory-link-card .post-thumb{
+    margin:-20px -22px 4px -22px;
+    height:110px;
+    border-radius:var(--radius) var(--radius) 0 0;
+    background:var(--bg-deep);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .theory-link-card .post-thumb svg{width:100%; height:100%;}
   .theory-link-card .tag{
     font-family:'JetBrains Mono', monospace; font-size:0.68rem;
     text-transform:uppercase; letter-spacing:0.5px; color:var(--yellow);
@@ -715,6 +724,13 @@
         <span class="go">Revisar agora →</span>
       </button>
     </div>
+  <div class="section">
+    <div class="section-head">
+      <span class="kicker">Conteúdo</span>
+      <h2>Publicado recentemente</h2>
+      <p>Últimos textos de teoria adicionados ao site.</p>
+    </div>
+    <div class="card-grid" id="recent-posts"></div>
   </div>
 </section>
 
@@ -1262,14 +1278,22 @@
   // Quando um tópico tem uma página de teoria própria, ela é referenciada aqui.
   // Para criar uma nova: 1) duplique uma página existente (ex: fisica-grandezas-unidades.html),
   // 2) troque o texto, 3) adicione uma entrada abaixo com a chave 'ramo::Nome do Tópico'.
+  // O campo "date" (AAAA-MM-DD) é usado só pra ordenar o bloco "Publicado
+  // recentemente" da página inicial — coloque a data em que o texto foi publicado.
   var TOPIC_PAGES = {
     'fundamentos::Grandezas e Unidades de Medida': {
       url:'fisica-grandezas-unidades.html',
-      summary:'O que são grandezas, o Sistema Internacional (SI) e por que unidades importam.'
+      summary:'O que são grandezas, o Sistema Internacional (SI) e por que unidades importam.',
+      subject:'física',
+      date:'2026-06-10',
+      icon:'ruler'
     },
     'fundamentos::Notação Científica': {
       url:'fisica-notacao-cientifica.html',
-      summary:'Como representar e operar com números muito grandes ou muito pequenos usando potências de 10.'
+      summary:'Como representar e operar com números muito grandes ou muito pequenos usando potências de 10.',
+      subject:'física',
+      date:'2026-06-24',
+      icon:'scientific'
     }
   };
 
@@ -1393,6 +1417,72 @@
       first.querySelector('[data-branch-toggle]').setAttribute('aria-expanded', 'true');
     }
   }
+
+  // Miniaturas em SVG (mesmo estilo dos doodles do herói) para os cards de
+  // "Publicado recentemente". Pra usar em um novo post, escolha um ícone já
+  // existente aqui ou desenhe um novo seguindo o mesmo padrão de traço fino.
+  var POST_THUMBS = {
+    ruler:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<rect x="30" y="35" width="160" height="40" rx="6" fill="none" stroke="#E8384F" stroke-width="2.5"/>' +
+        '<path d="M45 35 V50 M65 35 V45 M85 35 V50 M105 35 V45 M125 35 V50 M145 35 V45 M165 35 V50" stroke="#E8384F" stroke-width="2" stroke-linecap="round"/>' +
+        '<text x="30" y="98" font-family="JetBrains Mono" font-size="13" fill="#6FA8C9">m · kg · s</text>' +
+      '</svg>',
+    scientific:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="38" y="72" font-family="JetBrains Mono" font-weight="700" font-size="34" fill="#E8384F">10</text>' +
+        '<text x="88" y="52" font-family="JetBrains Mono" font-weight="700" font-size="20" fill="#6FA8C9">n</text>' +
+        '<circle cx="150" cy="55" r="34" fill="none" stroke="#F3F5FA" stroke-width="1.5" stroke-dasharray="2 6" opacity="0.5"/>' +
+        '<circle cx="150" cy="55" r="4" fill="#F3F5FA" opacity="0.7"/>' +
+      '</svg>',
+    functions:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M20 85 Q70 5 110 55 T200 25" fill="none" stroke="#6FA8C9" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<path d="M20 92 H200 M30 15 V92" stroke="#F3F5FA" stroke-width="1.2" opacity="0.35"/>' +
+      '</svg>',
+    geometry:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M110 15 L190 90 H30 Z" fill="none" stroke="#E8384F" stroke-width="2.5" stroke-linejoin="round"/>' +
+        '<circle cx="110" cy="60" r="34" fill="none" stroke="#6FA8C9" stroke-width="1.5" stroke-dasharray="2 6" opacity="0.6"/>' +
+      '</svg>',
+    default:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="30" y="75" font-family="JetBrains Mono" font-weight="700" font-size="40" fill="#E8384F">∫</text>' +
+        '<text x="90" y="60" font-family="JetBrains Mono" font-weight="700" font-size="26" fill="#6FA8C9">π</text>' +
+        '<text x="140" y="80" font-family="JetBrains Mono" font-weight="700" font-size="22" fill="#F3F5FA" opacity="0.7">Σ</text>' +
+      '</svg>'
+  };
+
+  function postCardHTML(post){
+    var thumb = POST_THUMBS[post.icon] || POST_THUMBS.default;
+    return '' +
+      '<a class="theory-link-card" href="' + post.url + '">' +
+        '<div class="post-thumb">' + thumb + '</div>' +
+        '<span class="tag">' + post.subject + '</span>' +
+        '<h5>' + post.topic + '</h5>' +
+        '<p>' + post.summary + '</p>' +
+        '<span class="go">Ler conteúdo →</span>' +
+      '</a>';
+  }
+
+  function renderRecentPosts(){
+    var container = document.getElementById('recent-posts');
+    if(!container) return;
+    var posts = Object.keys(TOPIC_PAGES).map(function(key){
+      var info = TOPIC_PAGES[key];
+      return {
+        topic: key.split('::')[1],
+        url: info.url,
+        summary: info.summary,
+        subject: info.subject || '',
+        date: info.date || '',
+        icon: info.icon || 'default'
+      };
+    });
+    posts.sort(function(a, b){ return b.date.localeCompare(a.date); });
+    container.innerHTML = posts.slice(0, 3).map(postCardHTML).join('');
+  }
+  renderRecentPosts();
 
   renderBranches('fisica', 'fisica-branches', BRANCHES_FISICA);
   renderBranches('matematica', 'matematica-branches', BRANCHES_MATEMATICA);
