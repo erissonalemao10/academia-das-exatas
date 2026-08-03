@@ -785,15 +785,15 @@
   </div>
 </section>
 
-<!-- ================= ATIVIDADES (biblioteca completa) ================= -->
+<!-- ================= ATIVIDADES (biblioteca completa, por série) ================= -->
 <section class="page" data-page="atividades">
   <div class="section">
     <div class="section-head">
       <span class="kicker">Atividades</span>
       <h2>Biblioteca completa de PDFs</h2>
-      <p>Todos os cadernos de exercícios em um só lugar. Assista a um vídeo curto para liberar cada download.</p>
+      <p>Todos os cadernos de exercícios organizados por série. Assista a um vídeo curto para liberar cada download.</p>
     </div>
-    <div class="resource-grid" id="grid-atividades"></div>
+    <div class="branch-accordion" id="atividades-series"></div>
   </div>
 </section>
 
@@ -955,6 +955,7 @@
       id:'fisica',
       subject:'fisica',
       branch:'mecanica',
+      serie:'1-medio',
       topic:'Cinemática',
       title:'Lista de Exercícios: Cinemática',
       desc:'MU, MUV, queda livre e lançamento vertical — 8 questões comentadas.',
@@ -966,6 +967,7 @@
       id:'fisica-dinamica',
       subject:'fisica',
       branch:'mecanica',
+      serie:'1-medio',
       topic:'Dinâmica',
       title:'Lista de Exercícios: Dinâmica',
       desc:'Leis de Newton, atrito e plano inclinado — 7 questões comentadas.',
@@ -977,6 +979,7 @@
       id:'fisica-energia',
       subject:'fisica',
       branch:'mecanica',
+      serie:'1-medio',
       topic:'Energia e Trabalho',
       title:'Lista de Exercícios: Energia e Trabalho',
       desc:'Energia cinética, potencial e conservação de energia mecânica — 6 questões.',
@@ -988,6 +991,7 @@
       id:'fisica-grandezas',
       subject:'fisica',
       branch:'fundamentos',
+      serie:'1-medio',
       topic:'Grandezas e Unidades de Medida',
       title:'Lista de Exercícios: Grandezas e Unidades de Medida',
       desc:'Conversão de unidades, notação científica e o Sistema Internacional (SI) — 10 questões.',
@@ -999,6 +1003,7 @@
       id:'fisica-notacao-cientifica',
       subject:'fisica',
       branch:'fundamentos',
+      serie:'9-fundamental',
       topic:'Notação Científica',
       title:'Lista de Exercícios: Notação Científica',
       desc:'Conversões, operações e ordem de grandeza — 12 questões comentadas.',
@@ -1010,6 +1015,7 @@
       id:'matematica',
       subject:'matematica',
       branch:'algebra',
+      serie:'9-fundamental',
       topic:'Funções do 2º Grau',
       title:'Lista de Exercícios: Funções do 2º Grau',
       desc:'Raízes, vértice e problemas de otimização — 8 questões comentadas.',
@@ -1021,6 +1027,7 @@
       id:'matematica-geometria',
       subject:'matematica',
       branch:'geometria',
+      serie:'8-fundamental',
       topic:'Geometria Plana',
       title:'Lista de Exercícios: Geometria Plana',
       desc:'Áreas, perímetros e Teorema de Pitágoras — 7 questões comentadas.',
@@ -1032,6 +1039,7 @@
       id:'matematica-progressoes',
       subject:'matematica',
       branch:'sequencias',
+      serie:'1-medio',
       topic:'Progressão Aritmética e Geométrica',
       title:'Lista de Exercícios: Progressões',
       desc:'Progressão Aritmética e Geométrica — 6 questões comentadas.',
@@ -1042,6 +1050,7 @@
     {
       id:'olimpiadas',
       subject:'olimpiadas',
+      serie:'olimpiadas',
       title:'Caderno de Desafios Olímpicos',
       desc:'Questões no estilo OBMEP e OBF, física e matemática combinadas.',
       meta:'PDF · 2 páginas',
@@ -1051,6 +1060,7 @@
     {
       id:'olimpiadas-combinatoria',
       subject:'olimpiadas',
+      serie:'olimpiadas',
       title:'Desafios de Combinatória e Probabilidade',
       desc:'Contagem, arranjos e probabilidade no estilo OBMEP — 5 questões.',
       meta:'PDF · 2 páginas',
@@ -1060,6 +1070,7 @@
     {
       id:'vestibulares',
       subject:'vestibulares',
+      serie:'3-medio',
       title:'Revisão Integrada para Vestibulares',
       desc:'Questões estilo ENEM/FUVEST de física e matemática.',
       meta:'PDF · 2 páginas',
@@ -1069,6 +1080,7 @@
     {
       id:'vestibulares-eletricidade',
       subject:'vestibulares',
+      serie:'3-medio',
       title:'Eletricidade e Termodinâmica',
       desc:'Revisão estilo ENEM de física aplicada ao cotidiano — 4 questões.',
       meta:'PDF · 2 páginas',
@@ -1181,17 +1193,70 @@
   function renderGrids(){
     var grids = {
       olimpiadas: document.getElementById('grid-olimpiadas'),
-      vestibulares: document.getElementById('grid-vestibulares'),
-      atividades: document.getElementById('grid-atividades')
+      vestibulares: document.getElementById('grid-vestibulares')
     };
     RESOURCES.forEach(function(r){
       if(grids[r.subject]) grids[r.subject].insertAdjacentHTML('beforeend', cardHTML(r));
     });
-    RESOURCES.forEach(function(r){
-      grids.atividades.insertAdjacentHTML('beforeend', cardHTML(r));
-    });
   }
   renderGrids();
+
+  // ---------- Atividades: acordeão por série ----------
+  // Para adicionar um novo PDF numa série existente, basta dar a ele o campo
+  // serie:'<id>' correspondente lá em cima, em RESOURCES. Para criar uma nova
+  // série, adicione um objeto {id, title} na lista SERIES abaixo, na posição
+  // certa (a ordem aqui é a ordem de exibição no acordeão).
+  var SERIES = [
+    { id:'6-fundamental', title:'6º ano — Ensino Fundamental' },
+    { id:'7-fundamental', title:'7º ano — Ensino Fundamental' },
+    { id:'8-fundamental', title:'8º ano — Ensino Fundamental' },
+    { id:'9-fundamental', title:'9º ano — Ensino Fundamental' },
+    { id:'1-medio', title:'1º ano — Ensino Médio' },
+    { id:'2-medio', title:'2º ano — Ensino Médio' },
+    { id:'3-medio', title:'3º ano — Ensino Médio' },
+    { id:'olimpiadas', title:'Preparação para Olimpíadas (todas as séries)' }
+  ];
+
+  function serieBranchHTML(serie){
+    var matches = RESOURCES.filter(function(r){ return r.serie === serie.id; });
+    var body = matches.length
+      ? '<div class="resource-grid">' + matches.map(cardHTML).join('') + '</div>'
+      : '<p class="topic-empty">Em breve, materiais para esta série.</p>';
+    return '' +
+      '<div class="branch" data-branch="' + serie.id + '">' +
+        '<button type="button" class="branch-header" data-branch-toggle="' + serie.id + '" aria-expanded="false">' +
+          '<h3>' + serie.title + '</h3>' +
+          '<span class="branch-count">' + matches.length + (matches.length === 1 ? ' material' : ' materiais') + '</span>' +
+          '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>' +
+        '</button>' +
+        '<div class="branch-body"><div class="branch-body-inner">' + body + '</div></div>' +
+      '</div>';
+  }
+
+  function renderAtividadesSeries(){
+    var container = document.getElementById('atividades-series');
+    if(!container) return;
+    container.innerHTML = SERIES.map(serieBranchHTML).join('');
+    container.querySelectorAll('[data-branch-toggle]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var branchEl = btn.closest('.branch');
+        var isOpen = branchEl.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+    // Abre a primeira série que já tem material, pra não cair numa vazia
+    var firstWithContent = SERIES.filter(function(s){
+      return RESOURCES.some(function(r){ return r.serie === s.id; });
+    })[0];
+    if(firstWithContent){
+      var el = container.querySelector('[data-branch="' + firstWithContent.id + '"]');
+      if(el){
+        el.classList.add('open');
+        el.querySelector('[data-branch-toggle]').setAttribute('aria-expanded', 'true');
+      }
+    }
+  }
+  renderAtividadesSeries();
 
   // ---------- Ramos, tópicos e páginas de teoria (Física + Matemática) ----------
   // Quando um tópico tem uma página de teoria própria, ela é referenciada aqui.
