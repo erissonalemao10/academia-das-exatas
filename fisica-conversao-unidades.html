@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversão de Unidades — Academia das Exatas</title>
+<meta name="description" content="Como converter unidades em Física: fatores de conversão, regra de três, prefixos do SI, tabelas práticas e exemplos resolvidos passo a passo. Com lista de exercícios em PDF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F1E3C;
+    --bg-deep: #071429;
+    --board-line: rgba(226,232,244,0.10);
+    --paper: #F3F5FA;
+    --paper-dim: #E4E8F2;
+    --ink: #16213A;
+    --ink-soft: #4E5B78;
+    --yellow: #E8384F;
+    --blue: #3E6FA8;
+    --red: #A81F30;
+    --wood: #24314F;
+    --wood-dark: #0A1830;
+    --radius: 14px;
+    --shadow: 0 12px 30px rgba(3,9,22,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--yellow); color:var(--bg-deep);}
+
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+
+  :focus-visible{outline:3px solid var(--blue); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- Nav (chalkboard rail) ---------- */
+  header.rail{
+    position:sticky; top:0; z-index:40;
+    background:var(--bg);
+    border-bottom:6px solid var(--wood);
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .rail-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; gap:16px; flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    font-size:1.5rem;
+    color:var(--paper);
+    letter-spacing:-0.5px;
+    text-transform:uppercase;
+    display:flex; align-items:baseline; gap:8px;
+    text-decoration:none;
+  }
+  .brand::before{
+    content:"";
+    display:inline-block;
+    width:10px; height:10px;
+    background:var(--yellow);
+    margin-right:2px;
+  }
+  .brand small{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.6rem;
+    color:var(--paper);
+    opacity:0.55;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  nav.tabs{
+    display:flex; gap:4px; flex-wrap:wrap;
+  }
+  nav.tabs button{
+    font-family:'Archivo', sans-serif;
+    font-size:0.86rem;
+    font-weight:600;
+    background:transparent;
+    border:1px solid transparent;
+    color:var(--paper);
+    opacity:0.72;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:opacity .15s ease, background .15s ease, border-color .15s ease;
+  }
+  nav.tabs button:hover{opacity:1; background:rgba(244,241,232,0.06);}
+  nav.tabs button[aria-current="page"]{
+    opacity:1;
+    background:rgba(244,241,232,0.10);
+    border-color:rgba(232,193,76,0.5);
+    color:var(--yellow);
+  }
+
+  /* ---------- Page sections ---------- */
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(244,241,232,0.05), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(244,241,232,0.04), transparent 45%),
+      var(--bg);
+    overflow:hidden;
+    padding:88px 24px 110px;
+    border-bottom:6px solid var(--wood-dark);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--board-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--board-line) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(ellipse at center, black 55%, transparent 90%);
+    opacity:0.5;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:840px; margin:0 auto; text-align:center;
+  }
+  .hero-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    letter-spacing:-1px;
+    font-size:clamp(2.3rem, 5.2vw, 4.1rem);
+    line-height:1.04;
+    color:var(--paper);
+    margin:0 0 20px;
+    text-transform:uppercase;
+  }
+  .hero h1 em{
+    font-style:normal;
+    font-family:'Archivo', sans-serif;
+    color:var(--yellow);
+    font-weight:900;
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:var(--paper);
+    opacity:0.82;
+    max-width:600px;
+    margin:0 auto 34px;
+    line-height:1.6;
+  }
+  .hero-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    font-family:'Archivo', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:13px 26px;
+    border-radius:999px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--yellow); color:var(--bg-deep);}
+  .btn-primary:hover{box-shadow:0 8px 20px rgba(232,193,76,0.35);}
+  .btn-ghost{background:transparent; border-color:rgba(244,241,232,0.35); color:var(--paper);}
+  .btn-ghost:hover{background:rgba(244,241,232,0.08);}
+
+  .doodles{position:absolute; inset:0; z-index:1; pointer-events:none;}
+  .doodles svg{position:absolute; opacity:0.5;}
+  @media (prefers-reduced-motion: no-preference){
+    .doodle-float{animation:doodleFloat 7s ease-in-out infinite;}
+  }
+  @keyframes doodleFloat{
+    0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
+    50%{transform:translateY(-10px) rotate(var(--r,0deg));}
+  }
+
+  /* ---------- Subject grid (home) ---------- */
+  .section{max-width:1180px; margin:0 auto; padding:70px 24px;}
+  .section-head{max-width:640px; margin-bottom:36px;}
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  .section-head h2{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+    margin:0 0 12px;
+    color:var(--bg-deep);
+  }
+  .section-head p{color:var(--ink-soft); line-height:1.6; font-size:1rem; margin:0;}
+
+  .card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px;}
+  .subject-card{
+    background:var(--bg);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    color:var(--paper);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(244,241,232,0.08);
+    display:flex; flex-direction:column; gap:14px;
+    cursor:pointer;
+    text-align:left;
+    transition:transform .18s ease;
+  }
+  .subject-card:hover{transform:translateY(-4px);}
+  .subject-card .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .subject-card.physics .tag{background:rgba(232,193,76,0.16); color:var(--yellow);}
+  .subject-card.math .tag{background:rgba(111,168,201,0.18); color:var(--blue);}
+  .subject-card.olymp .tag{background:rgba(193,80,46,0.2); color:#f2a382;}
+  .subject-card.vest .tag{background:rgba(111,168,201,0.18); color:var(--blue);}
+  .subject-card h3{font-family:'Archivo', sans-serif; font-weight:800; margin:0; font-size:1.25rem;}
+  .subject-card p{margin:0; font-size:0.92rem; opacity:0.78; line-height:1.55;}
+  .subject-card .go{
+    margin-top:auto; font-family:'Archivo', sans-serif; font-weight:600;
+    font-size:0.85rem; display:flex; align-items:center; gap:6px;
+  }
+  .subject-card.physics .go{color:var(--yellow);}
+  .subject-card.math .go{color:var(--blue);}
+  .subject-card.olymp .go{color:#f2a382;}
+  .subject-card.vest .go{color:var(--blue);}
+
+  /* ---------- Topic list ---------- */
+  .topic-list{list-style:none; padding:0; margin:0 0 40px; display:grid; gap:10px;}
+  .topic-list li{
+    background:var(--paper-dim);
+    border-left:4px solid var(--yellow);
+    padding:14px 18px;
+    border-radius:8px;
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+  .page[data-page="matematica"] .topic-list li{border-left-color:var(--blue);}
+  .page[data-page="olimpiadas"] .topic-list li{border-left-color:var(--red);}
+  .page[data-page="vestibulares"] .topic-list li{border-left-color:var(--red);}
+
+  /* ---------- Branch accordion (ramo > tópico > materiais) ---------- */
+  .branch-accordion{display:grid; gap:16px;}
+  .branch{
+    background:#fff;
+    border:1px solid rgba(15,30,60,0.08);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(15,30,60,0.05);
+  }
+  .branch-header{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px;
+    padding:18px 22px;
+    background:var(--bg);
+    color:var(--paper);
+    cursor:pointer;
+    border:none;
+    width:100%;
+    text-align:left;
+    font-family:'Archivo', sans-serif;
+  }
+  .branch-header h3{
+    margin:0; font-size:1.05rem; font-weight:800;
+  }
+  .branch-header .branch-count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    color:var(--paper);
+    opacity:0.6;
+    font-weight:400;
+  }
+  .branch-header .chevron{
+    flex-shrink:0;
+    width:18px; height:18px;
+    transition:transform .2s ease;
+    stroke:var(--yellow);
+  }
+  .branch.open .branch-header .chevron{transform:rotate(180deg);}
+  .branch-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .branch.open .branch-body{max-height:none;}
+  .branch-body-inner{padding:22px;}
+  .topic-block{margin-bottom:26px;}
+  .topic-block:last-child{margin-bottom:0;}
+  .topic-block h4{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--bg-deep);
+    margin:0 0 12px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--paper-dim);
+  }
+  .topic-empty{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    font-style:italic;
+    opacity:0.75;
+  }
+  .topic-block .resource-grid{gap:16px;}
+
+  /* ---------- Theory content (teoria lida na página) ---------- */
+  .theory{
+    background:var(--paper-dim);
+    border-radius:12px;
+    padding:22px 24px;
+    margin-bottom:18px;
+    font-size:0.94rem;
+    line-height:1.68;
+    color:var(--ink);
+  }
+  .theory h5{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:0.98rem;
+    color:var(--bg-deep);
+    margin:20px 0 10px;
+  }
+  .theory h5:first-child{margin-top:0;}
+  .theory p{margin:0 0 12px;}
+  .theory p:last-child{margin-bottom:0;}
+  .theory .formula-box{
+    font-family:'JetBrains Mono', monospace;
+    background:#fff;
+    border-left:4px solid var(--red);
+    padding:10px 16px;
+    border-radius:6px;
+    font-size:0.9rem;
+    margin:0 0 14px;
+  }
+  .theory blockquote{
+    margin:14px 0;
+    padding:14px 18px;
+    background:#fff;
+    border-left:4px solid var(--blue);
+    border-radius:6px;
+    font-size:0.9rem;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  .theory table.theory-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0 0 16px;
+    font-size:0.86rem;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .theory table.theory-table th{
+    background:var(--bg);
+    color:var(--paper);
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    text-align:left;
+    padding:9px 12px;
+  }
+  .theory table.theory-table td{
+    padding:8px 12px;
+    border-bottom:1px solid var(--paper-dim);
+  }
+  .theory table.theory-table tr:last-child td{border-bottom:none;}
+  .theory-toggle{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:0.8rem;
+    background:none;
+    border:none;
+    color:var(--blue);
+    cursor:pointer;
+    padding:4px 0;
+    margin-bottom:6px;
+  }
+
+  /* ---------- Resource cards (downloads) ---------- */
+  .resource-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;}
+  .resource-card{
+    background:#fff;
+    border:1px solid rgba(38,48,43,0.08);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:0 4px 14px rgba(38,48,43,0.06);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .resource-card .file-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    color:var(--ink-soft);
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+  .resource-card h4{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    margin:0; font-size:1.08rem; color:var(--bg-deep);
+  }
+  .resource-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.5;}
+  .resource-card .meta{font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--ink-soft); opacity:0.75;}
+  .download-btn{
+    margin-top:auto;
+    font-family:'Archivo', sans-serif;
+    font-weight:600; font-size:0.88rem;
+    background:var(--bg-deep); color:var(--paper);
+    border:none; border-radius:999px;
+    padding:11px 18px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .download-btn:hover{background:var(--bg); transform:translateY(-2px);}
+
+  /* ---------- Info blocks (olimpiadas / vestibulares) ---------- */
+  .info-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:18px; margin-bottom:44px;}
+  .info-card{
+    background:var(--paper-dim); border-radius:12px; padding:20px;
+  }
+  .info-card h4{font-family:'Archivo', sans-serif; font-weight:700; margin:0 0 8px; font-size:1rem; color:var(--bg-deep);}
+  .info-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.55;}
+
+  /* ---------- Footer ---------- */
+  footer.rail{
+    background:var(--bg-deep);
+    border-top:6px solid var(--wood-dark);
+    color:var(--paper);
+    padding:36px 24px;
+    text-align:center;
+    font-size:0.85rem;
+  }
+  footer.rail p{margin:0 0 6px; opacity:0.75;}
+  footer.rail .signature{font-family:'Archivo', sans-serif; color:var(--yellow); font-size:1.1rem;}
+
+  /* ---------- Modal (ad-gate) ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(15,25,21,0.82);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--bg-deep);
+    border:1px solid rgba(244,241,232,0.12);
+    border-radius:16px;
+    max-width:560px; width:100%;
+    padding:26px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .modal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;}
+  .modal-head h3{
+    font-family:'Archivo', sans-serif; font-weight:700; color:var(--paper); margin:0; font-size:1.05rem;
+  }
+  .modal-close{
+    background:transparent; border:none; color:var(--paper); opacity:0.6;
+    font-size:1.3rem; cursor:pointer; line-height:1; padding:4px 8px;
+  }
+  .modal-close:hover{opacity:1;}
+  .modal-sub{
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--yellow);
+    letter-spacing:0.5px; margin-bottom:14px; display:block;
+  }
+  .video-wrap{
+    position:relative; border-radius:10px; overflow:hidden; background:#000;
+    aspect-ratio:16/9; margin-bottom:16px;
+  }
+  .video-wrap video{width:100%; height:100%; object-fit:cover; display:block;}
+  .video-badge{
+    position:absolute; top:10px; left:10px;
+    background:rgba(0,0,0,0.55); color:var(--paper);
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem;
+    padding:4px 9px; border-radius:6px; letter-spacing:0.5px;
+  }
+  .unlock-row{display:flex; align-items:center; gap:12px; min-height:46px;}
+  .unlock-msg{
+    font-family:'Inter', sans-serif; font-size:0.88rem; color:var(--paper); opacity:0.8;
+  }
+  .unlock-icon{
+    width:20px; height:20px; flex-shrink:0;
+  }
+  .final-download{
+    display:none;
+    text-decoration:none;
+    font-family:'Archivo', sans-serif; font-weight:600; font-size:0.92rem;
+    background:var(--yellow); color:var(--bg-deep);
+    padding:12px 22px; border-radius:999px;
+    align-items:center; gap:8px;
+    width:100%; justify-content:center;
+    transition:transform .15s ease;
+  }
+  .final-download:hover{transform:translateY(-2px);}
+  .final-download.ready{display:inline-flex;}
+
+  @media (max-width:640px){
+    nav.tabs{width:100%; justify-content:flex-start; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .rail-inner{flex-direction:column; align-items:flex-start;}
+  }
+
+  /* ---------- Ad slots (placeholders for AdSense etc.) ---------- */
+  .ad-slot{
+    background:repeating-linear-gradient(45deg, rgba(15,30,60,0.03), rgba(15,30,60,0.03) 10px, rgba(15,30,60,0.06) 10px, rgba(15,30,60,0.06) 20px);
+    border:1.5px dashed rgba(15,30,60,0.2);
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin:30px 0;
+  }
+
+  /* ---------- Article page (conteúdo teórico em página própria) ---------- */
+  .article-wrap{max-width:760px; margin:0 auto; padding:56px 24px 80px;}
+  .article-back{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'Archivo', sans-serif; font-weight:700; font-size:0.85rem;
+    color:var(--blue); text-decoration:none; margin-bottom:22px;
+  }
+  .article-kicker{
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--red); display:block; margin-bottom:10px;
+  }
+  .article-title{
+    font-family:'Archivo', sans-serif; font-weight:900; letter-spacing:-0.5px;
+    font-size:clamp(1.8rem, 4vw, 2.6rem); color:var(--bg-deep); margin:0 0 14px; line-height:1.1;
+  }
+  .article-sub{color:var(--ink-soft); font-size:1rem; line-height:1.6; margin:0 0 30px;}
+  .article-body.theory{background:none; padding:0; font-size:1rem; line-height:1.75;}
+  .article-body.theory h5{font-size:1.15rem; margin:32px 0 12px;}
+  .article-exercise{
+    margin-top:44px;
+    padding-top:34px;
+    border-top:2px solid var(--paper-dim);
+  }
+  .article-exercise h3{
+    font-family:'Archivo', sans-serif; font-weight:800; font-size:1.15rem;
+    color:var(--bg-deep); margin:0 0 16px;
+  }
+
+  /* ---------- Topic row: theory link + exercise side by side ---------- */
+  .topic-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    align-items:stretch;
+  }
+  @media (max-width:720px){
+    .topic-row{grid-template-columns:1fr;}
+  }
+  .theory-link-card{
+    background:var(--bg);
+    color:var(--paper);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    display:flex; flex-direction:column; gap:10px;
+    text-decoration:none;
+    transition:transform .15s ease;
+  }
+  .theory-link-card:hover{transform:translateY(-3px);}
+  .theory-link-card .tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem;
+    text-transform:uppercase; letter-spacing:0.5px; color:var(--yellow);
+  }
+  .theory-link-card h5{
+    font-family:'Archivo', sans-serif; font-weight:800; font-size:1rem; margin:0;
+  }
+  .theory-link-card p{margin:0; font-size:0.85rem; opacity:0.8; line-height:1.5;}
+  .theory-link-card .go{
+    margin-top:auto; font-family:'Archivo', sans-serif; font-weight:700;
+    font-size:0.82rem; color:var(--yellow);
+  }
+
+</style>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="index.html" class="brand">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="index.html" style="text-decoration:none;"><button type="button">Início</button></a>
+      <a href="index.html" style="text-decoration:none;"><button type="button" aria-current="page">Física</button></a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <a class="article-back" href="index.html">← Voltar para Física</a>
+  <span class="article-kicker">Física · Fundamentos e Medidas</span>
+  <h1 class="article-title">Conversão de Unidades</h1>
+  <p class="article-sub">Como transformar uma medida de uma unidade para outra sem errar: fatores de conversão, regra de três, prefixos do SI e exemplos resolvidos passo a passo.</p>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-body theory">
+    <h5>Por que converter unidades é tão importante</h5>
+    <p>Imagine ler numa receita médica que a dose de um remédio é "5" — sem dizer se são 5 miligramas, 5 gramas ou 5 comprimidos. Sozinho, esse número não tem sentido. É exatamente isso que acontece em Física: uma grandeza só é completa quando tem um número <strong>e</strong> uma unidade de medida.</p>
+    <p>Saber converter unidades — trocar uma unidade por outra que representa a mesma grandeza — é essencial porque os problemas costumam misturar unidades diferentes (km/h com m/s, gramas com quilogramas), e as fórmulas físicas só funcionam corretamente quando todas as grandezas estão em unidades compatíveis.</p>
+
+    <h5>Relembrando: o Sistema Internacional e os prefixos</h5>
+    <p>Toda medida é escrita como <strong>grandeza = número × unidade</strong>, e o Sistema Internacional (SI) padroniza as sete unidades de base (m, kg, s, A, K, mol, cd) das quais todas as outras derivam. Para grandezas muito grandes ou pequenas, usamos prefixos que multiplicam ou dividem a unidade por potências de 10:</p>
+    <table class="theory-table">
+      <thead><tr><th>Prefixo</th><th>Símbolo</th><th>Fator</th></tr></thead>
+      <tbody>
+        <tr><td>quilo</td><td>k</td><td>10³</td></tr>
+        <tr><td>hecto</td><td>h</td><td>10²</td></tr>
+        <tr><td>deca</td><td>da</td><td>10¹</td></tr>
+        <tr><td>deci</td><td>d</td><td>10⁻¹</td></tr>
+        <tr><td>centi</td><td>c</td><td>10⁻²</td></tr>
+        <tr><td>mili</td><td>m</td><td>10⁻³</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Regra prática:</strong> para converter entre prefixos da mesma grandeza, basta multiplicar ou dividir pela potência de 10 correspondente à diferença entre os prefixos. Exemplo: 3,5 km = 3,5 × 10³ m = <strong>3500 m</strong>.</p>
+
+    <h5>Método 1 — Fator de conversão (análise dimensional)</h5>
+    <p>Este é o método mais confiável, usado na ciência e na engenharia. A ideia é multiplicar o valor original por uma fração equivalente a 1, montada a partir da equivalência entre as unidades:</p>
+    <ol>
+      <li>Escreva o valor que você tem, com sua unidade.</li>
+      <li>Identifique a equivalência entre a unidade que tem e a que quer.</li>
+      <li>Monte uma fração (fator de conversão) que valha 1, com a unidade desejada no numerador e a unidade original no denominador.</li>
+      <li>Multiplique o valor original pela fração — as unidades repetidas se cancelam, como numa fração matemática.</li>
+    </ol>
+    <p class="formula-box">150 cm × (1 m / 100 cm) = 1,5 m</p>
+    <p>Repare que "cm" aparece em cima e embaixo e se cancela, sobrando apenas "m".</p>
+
+    <h5>Método 2 — Regra de três</h5>
+    <p>Muito usada no ensino básico, funciona bem para conversões simples entre duas unidades. Para converter 2,5 horas em minutos, sabendo que 1 hora = 60 minutos:</p>
+    <table class="theory-table">
+      <thead><tr><th>horas</th><th>minutos</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>60</td></tr>
+        <tr><td>2,5</td><td>x</td></tr>
+      </tbody>
+    </table>
+    <p class="formula-box">x = 2,5 × 60 = 150 minutos</p>
+
+    <h5>Conversões em cadeia: o caso do km/h para m/s</h5>
+    <p>Quando não existe equivalência direta entre duas unidades, converte-se em etapas, passando por uma unidade intermediária. Uma das conversões mais cobradas em Física é km/h para m/s:</p>
+    <p class="formula-box">5 km/h × (1000 m / 1 km) × (1 h / 3600 s) ≈ 1,39 m/s</p>
+    <p><strong>Atalho:</strong> para converter de km/h para m/s, basta <strong>dividir por 3,6</strong>. Para o caminho inverso, <strong>multiplique por 3,6</strong>.</p>
+
+    <h5>Conversão de temperatura (caso especial)</h5>
+    <p>Diferente das outras grandezas, a temperatura não se converte apenas multiplicando por um fator, porque as escalas Celsius, Fahrenheit e Kelvin têm pontos de zero diferentes:</p>
+    <table class="theory-table">
+      <thead><tr><th>Conversão</th><th>Fórmula</th></tr></thead>
+      <tbody>
+        <tr><td>Celsius → Kelvin</td><td>K = °C + 273</td></tr>
+        <tr><td>Kelvin → Celsius</td><td>°C = K − 273</td></tr>
+        <tr><td>Celsius → Fahrenheit</td><td>°F = (°C × 9/5) + 32</td></tr>
+        <tr><td>Fahrenheit → Celsius</td><td>°C = (°F − 32) × 5/9</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Exemplo resolvido: densidade de um objeto</h5>
+    <p>Um objeto tem massa de 2500 g e volume de 0,5 L. Calcule a densidade em kg/m³.</p>
+    <p class="formula-box">2500 g → 2,5 kg &nbsp;|&nbsp; 0,5 L → 0,0005 m³ &nbsp;|&nbsp; d = m/V = 2,5 / 0,0005 = 5000 kg/m³</p>
+
+    <h5>Erros comuns na conversão de unidades</h5>
+    <p>Alguns deslizes aparecem com frequência nas provas:</p>
+    <blockquote>Inverter o fator de conversão; esquecer de elevar o fator ao quadrado ou ao cubo em área e volume (1 m² não equivale a 100 cm², e sim a 10.000 cm²); misturar unidades diferentes dentro da mesma fórmula; tratar a temperatura como se fosse uma conversão linear simples; e arredondar cedo demais durante os cálculos.</blockquote>
+    <p><strong>Dica de ouro:</strong> escreva sempre as unidades ao lado dos números durante o cálculo e "cancele" as unidades como se fossem números em uma fração. Se a unidade final não for a que você queria, algum fator de conversão foi usado errado.</p>
+    <p><em>Dominar a conversão de unidades é a base para resolver corretamente praticamente qualquer problema de Física — da Mecânica à Termologia, passando pela Eletricidade. A lista de exercícios abaixo cobre comprimento, massa, tempo, área, volume, velocidade, temperatura, força, energia e pressão.</em></p>
+  </div>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-exercise">
+    <h3>Agora pratique</h3>
+    <div class="resource-grid" id="grid-exercise"></div>
+  </div>
+</div>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+<script>
+// Academia das Exatas — motor compartilhado de cards + desbloqueio por vídeo
+// Inclua este arquivo em qualquer página e chame AdGate.init() uma vez.
+(function(){
+  var AD_SRC = 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4';
+  var overlay, video, closeBtn, fileLabel, unlockMsg, finalDownload, shackle, fallbackTimer;
+  var ALL_RESOURCES = [];
+
+  var MODAL_HTML = '' +
+    '<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">' +
+      '<div class="modal">' +
+        '<div class="modal-head">' +
+          '<h3 id="modalTitle">Assista para liberar o download</h3>' +
+          '<button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>' +
+        '</div>' +
+        '<span class="modal-sub" id="modalFileLabel">arquivo.pdf</span>' +
+        '<div class="video-wrap">' +
+          '<span class="video-badge">publicidade</span>' +
+          '<video id="adVideo" playsinline muted autoplay></video>' +
+        '</div>' +
+        '<div class="unlock-row">' +
+          '<svg class="unlock-icon" id="unlockIcon" viewBox="0 0 24 24" fill="none" stroke="#E8384F" stroke-width="2">' +
+            '<rect x="5" y="11" width="14" height="9" rx="2"/>' +
+            '<path id="shackle" d="M8 11V7a4 4 0 0 1 8 0v4"/>' +
+          '</svg>' +
+          '<span class="unlock-msg" id="unlockMsg">Assistindo ao vídeo… o download será liberado ao final.</span>' +
+        '</div>' +
+        '<a class="final-download" id="finalDownload" href="#" download>⬇ Baixar PDF agora</a>' +
+      '</div>' +
+    '</div>';
+
+  function cardHTML(r){
+    return '' +
+      '<div class="resource-card">' +
+        '<span class="file-tag">' + r.meta + '</span>' +
+        '<h4>' + r.title + '</h4>' +
+        '<p>' + r.desc + '</p>' +
+        '<button class="download-btn" type="button" data-resource="' + r.id + '">⬇ Baixar PDF</button>' +
+      '</div>';
+  }
+
+  function openModalFor(resourceId){
+    var r = ALL_RESOURCES.filter(function(x){ return x.id === resourceId; })[0];
+    if(!r) return;
+
+    fileLabel.textContent = r.filename;
+    unlockMsg.textContent = 'Assistindo ao vídeo… o download será liberado ao final.';
+    finalDownload.classList.remove('ready');
+    finalDownload.removeAttribute('href');
+    finalDownload.setAttribute('aria-disabled', 'true');
+    shackle.setAttribute('d', 'M8 11V7a4 4 0 0 1 8 0v4');
+
+    video.src = AD_SRC;
+    video.currentTime = 0;
+    video.muted = true;
+    video.play().catch(function(){});
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(fallbackTimer);
+    fallbackTimer = setTimeout(function(){
+      if(!finalDownload.classList.contains('ready')){
+        unlockDownload(r, 'Não foi possível carregar o vídeo agora — liberando o download.');
+      }
+    }, 9000);
+
+    video.onended = function(){ unlockDownload(r); };
+    video.onerror = function(){ unlockDownload(r, 'Não foi possível carregar o vídeo agora — liberando o download.'); };
+  }
+
+  function unlockDownload(r, customMsg){
+    clearTimeout(fallbackTimer);
+    unlockMsg.textContent = customMsg || 'Vídeo concluído! Seu download está liberado.';
+    shackle.setAttribute('d', 'M8 11V7a4 4 0 0 1 8 0v0');
+    finalDownload.href = r.file;
+    finalDownload.setAttribute('download', r.filename);
+    finalDownload.classList.add('ready');
+    finalDownload.removeAttribute('aria-disabled');
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    clearTimeout(fallbackTimer);
+  }
+
+  window.AdGate = {
+    /**
+     * Inicializa o sistema de anúncio + download.
+     * resources: array de objetos {id, title, desc, meta, filename, file}
+     */
+    init: function(resources){
+      ALL_RESOURCES = resources || [];
+      if(!document.getElementById('modalOverlay')){
+        document.body.insertAdjacentHTML('beforeend', MODAL_HTML);
+      }
+      overlay = document.getElementById('modalOverlay');
+      video = document.getElementById('adVideo');
+      closeBtn = document.getElementById('modalClose');
+      fileLabel = document.getElementById('modalFileLabel');
+      unlockMsg = document.getElementById('unlockMsg');
+      finalDownload = document.getElementById('finalDownload');
+      shackle = document.getElementById('shackle');
+
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-resource]');
+        if(btn){ openModalFor(btn.dataset.resource); }
+      });
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+    },
+    cardHTML: cardHTML,
+    // Permite adicionar novos recursos depois do init (ex: cards montados dinamicamente)
+    registerResources: function(resources){
+      ALL_RESOURCES = ALL_RESOURCES.concat(resources);
+    }
+  };
+})();
+
+</script>
+<script>
+(function(){
+  var RESOURCES = [
+    {
+      id:'fisica-conversao-unidades',
+      title:'Lista de Exercícios: Conversão de Unidades',
+      desc:'Comprimento, massa, tempo, área, volume, velocidade, temperatura, força, energia e pressão — 31 questões.',
+      meta:'PDF · 5 páginas',
+      filename:'academia-das-exatas_fisica_conversao_unidades.pdf',
+      file:'materiais/fisica_conversao_unidades.pdf'
+    }
+  ];
+  AdGate.init(RESOURCES);
+  document.getElementById('grid-exercise').innerHTML = RESOURCES.map(AdGate.cardHTML).join('');
+})();
+</script>
+
+</body>
+</html>
