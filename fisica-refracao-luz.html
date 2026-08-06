@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refração da Luz: Teoria Completa — Academia das Exatas</title>
+<meta name="description" content="Refração da luz para todos os níveis: leis de Snell-Descartes, índice de refração, ângulo limite, reflexão total interna, lâmina de faces paralelas, prisma e dispersão, com figuras ilustrativas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="index.html" class="brand">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="index.html" style="text-decoration:none;"><button type="button">Início</button></a>
+      <a href="index.html" style="text-decoration:none;"><button type="button" aria-current="page">Física</button></a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <a class="article-back" href="index.html">← Voltar para Física</a>
+  <span class="article-kicker">Física · Ondulatória e Óptica</span>
+  <h1 class="article-title">Refração da Luz: Teoria Completa</h1>
+  <p class="article-sub">Um guia completo, com figuras ilustrativas, para o Ensino Médio tradicional e para quem estuda para ITA, IME e olimpíadas: leis de Snell-Descartes, índice de refração, ângulo limite, reflexão total interna, lâminas, prismas e dispersão da luz.</p>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-body theory">
+    <p>Ao colocar um lápis dentro de um copo com água, ele parece "quebrado" na superfície. Uma piscina funda parece mais rasa do que realmente é. Um diamante bem lapidado brilha muito mais que um pedaço de vidro comum. Todos esses fenômenos têm a mesma causa física: a <strong>refração da luz</strong> — a mudança de direção que um raio de luz sofre ao passar de um meio transparente para outro. Este texto cobre a refração em profundidade, do nível conceitual do Ensino Médio até os detalhes exigidos em ITA, IME e olimpíadas de Física.</p>
+
+    <h5>1. O que é a refração da luz</h5>
+    <p>Refração é o fenômeno em que um raio de luz muda de direção ao atravessar a superfície de separação (chamada <strong>dioptro</strong>) entre dois meios transparentes diferentes — por exemplo, do ar para a água, ou do ar para o vidro. Essa mudança de direção acontece porque a luz se propaga com velocidades diferentes em meios diferentes.</p>
+    <p>A figura abaixo mostra os elementos fundamentais da refração: o raio incidente, o raio refratado, a <strong>reta normal</strong> (perpendicular à superfície no ponto de incidência) e os ângulos que cada raio forma com essa normal.</p>
+
+    <figure class="theory-figure">
+      <img src="img/refracao/fig1_refracao_basica.png" alt="Raio de luz incidindo sobre a interface entre dois meios e se refratando, aproximando-se da normal ao entrar no meio mais denso">
+      <figcaption>Ao passar do meio 1 para o meio 2 (mais denso, n₂ &gt; n₁), o raio se aproxima da normal — uma pequena parte da luz também é refletida de volta ao meio 1.</figcaption>
+    </figure>
+
+    <p>Repare que, no ponto de incidência, parte da luz é refratada (atravessa para o segundo meio) e uma parte é refletida de volta ao primeiro meio — os dois fenômenos, refração e reflexão, sempre acontecem juntos numa superfície de separação entre meios transparentes.</p>
+
+    <h5>2. Índice de refração</h5>
+    <p>O <strong>índice de refração absoluto</strong> de um meio mede o quanto a luz se propaga mais lentamente nesse meio em comparação com o vácuo:</p>
+    <p class="formula-box">$$n = \dfrac{c}{v}$$</p>
+    <p>onde \(c \approx 3{,}0 \times 10^8\) m/s é a velocidade da luz no vácuo e \(v\) é a velocidade da luz no meio considerado. Como \(v \leq c\) sempre, temos \(n \geq 1\) para qualquer meio material — o vácuo tem, por definição, \(n = 1\).</p>
+    <table class="theory-table">
+      <thead><tr><th>Meio</th><th>Índice de refração (aprox.)</th></tr></thead>
+      <tbody>
+        <tr><td>Vácuo</td><td>\(1\) (exato)</td></tr>
+        <tr><td>Ar (condições normais)</td><td>\(\approx 1{,}0003\)</td></tr>
+        <tr><td>Água</td><td>\(\approx 1{,}33\)</td></tr>
+        <tr><td>Vidro comum (crown)</td><td>\(\approx 1{,}50\)</td></tr>
+        <tr><td>Vidro flint (denso)</td><td>\(\approx 1{,}65\)</td></tr>
+        <tr><td>Diamante</td><td>\(\approx 2{,}42\)</td></tr>
+      </tbody>
+    </table>
+    <p>Diz-se que um meio é <strong>mais refringente</strong> (ou opticamente mais denso) que outro quando seu índice de refração é maior — isso não tem relação direta com a densidade de massa do material, apenas com o quanto ele reduz a velocidade da luz.</p>
+    <p>Também se define o <strong>índice de refração relativo</strong> entre dois meios, \(n_{1,2} = n_1/n_2\), útil para comparar diretamente dois meios sem passar pelo vácuo.</p>
+
+    <h5>3. As leis da refração</h5>
+    <p><strong>1ª Lei (planaridade):</strong> o raio incidente, a reta normal e o raio refratado estão sempre contidos no mesmo plano.</p>
+    <p><strong>2ª Lei (Lei de Snell-Descartes):</strong> para dois meios homogêneos e transparentes, vale a relação:</p>
+    <p class="formula-box">$$n_1 \operatorname{sen} \theta_1 = n_2 \operatorname{sen} \theta_2$$</p>
+    <p>onde \(\theta_1\) é o ângulo de incidência e \(\theta_2\) é o ângulo de refração, ambos medidos em relação à normal. O gráfico abaixo mostra a relação linear entre \(\operatorname{sen}\theta_1\) e \(\operatorname{sen}\theta_2\), cuja inclinação é a razão \(n_1/n_2\):</p>
+
+    <figure class="theory-figure">
+      <img src="img/refracao/fig2_lei_snell_grafico.png" alt="Gráfico mostrando a relação linear entre seno do ângulo de incidência e seno do ângulo de refração, com inclinação igual a n1 sobre n2">
+      <figcaption>A Lei de Snell prevê uma relação linear entre sen θ₁ e sen θ₂ — a inclinação da reta é a razão n₁/n₂ entre os índices de refração.</figcaption>
+    </figure>
+
+    <p>Uma consequência direta da lei de Snell: quando a luz passa para um meio <strong>mais</strong> refringente (\(n_2 > n_1\)), o raio se aproxima da normal (\(\theta_2 < \theta_1\)); quando passa para um meio <strong>menos</strong> refringente, o raio se afasta da normal (\(\theta_2 > \theta_1\)).</p>
+
+    <h5>4. O que muda e o que não muda na refração</h5>
+    <p>Ao mudar de meio, a <strong>frequência</strong> da onda luminosa permanece exatamente a mesma — ela é determinada pela fonte que emite a luz, não pelo meio de propagação. Já a <strong>velocidade</strong> e o <strong>comprimento de onda</strong> mudam, sempre na mesma proporção, de modo que a relação fundamental \(v = \lambda f\) continue válida em cada meio:</p>
+    <p class="formula-box">$$\lambda_{\text{meio}} = \dfrac{\lambda_{\text{vácuo}}}{n}$$</p>
+    <p>Isso explica, por exemplo, por que a cor da luz (associada à frequência, na percepção fisiológica) não muda ao entrar na água, embora seu comprimento de onda dentro da água seja menor.</p>
+
+    <h5>5. Dedução da Lei de Snell pelo Princípio de Fermat</h5>
+    <p>Para o aluno que busca uma compreensão mais profunda: a lei de Snell pode ser deduzida a partir do <strong>Princípio de Fermat</strong>, que afirma que a luz percorre, entre dois pontos, o caminho que minimiza (ou torna estacionário) o tempo de percurso — não necessariamente o caminho mais curto em distância.</p>
+    <p>Considerando um raio que sai de um ponto A no meio 1, atinge a interface em um ponto variável, e chega a um ponto B no meio 2, o tempo total de percurso é \(t = d_1/v_1 + d_2/v_2\), onde \(d_1\) e \(d_2\) dependem da posição do ponto de incidência. Minimizando \(t\) em relação à posição desse ponto (derivada igual a zero) e usando \(v = c/n\), chega-se exatamente a \(n_1 \operatorname{sen}\theta_1 = n_2 \operatorname{sen}\theta_2\) — a lei de Snell surge naturalmente como consequência de um princípio de otimização, e não como uma regra imposta.</p>
+
+    <h5>6. Ângulo limite e reflexão total interna</h5>
+    <p>Quando a luz vai de um meio <strong>mais</strong> refringente para um meio <strong>menos</strong> refringente (\(n_1 > n_2\)), o ângulo refratado é sempre maior que o de incidência. Existe um ângulo de incidência especial, o <strong>ângulo limite</strong> \(\theta_c\), para o qual o ângulo de refração vale exatamente \(90°\) — o raio refratado "raspa" ao longo da própria interface:</p>
+    <p class="formula-box">$$\operatorname{sen}\theta_c = \dfrac{n_2}{n_1} \qquad (n_1 > n_2)$$</p>
+    <p>Para qualquer ângulo de incidência <strong>maior</strong> que \(\theta_c\), não existe mais raio refratado — toda a luz é refletida de volta ao meio 1. Esse fenômeno é a <strong>reflexão total interna</strong>, ilustrada abaixo:</p>
+
+    <figure class="theory-figure">
+      <img src="img/refracao/fig3_angulo_limite.png" alt="Diagrama mostrando o angulo limite, onde o raio refratado sai rasante a interface, e a reflexao total interna para angulos maiores">
+      <figcaption>No ângulo limite θc, o raio refratado sai rasante à interface (θ₂ = 90°). Além desse ângulo, toda a luz é refletida de volta ao meio mais denso — a reflexão total interna.</figcaption>
+    </figure>
+
+    <p><strong>Aplicações da reflexão total interna:</strong></p>
+    <p><strong>Fibras ópticas:</strong> um filamento fino de vidro ou plástico com índice de refração do núcleo maior que o da casca externa. A luz injetada numa das pontas sofre sucessivas reflexões totais internas nas paredes do núcleo, sendo conduzida por longuíssimas distâncias com perda mínima de intensidade — a base de toda a internet de fibra óptica e de instrumentos médicos como o endoscópio.</p>
+
+    <figure class="theory-figure">
+      <img src="img/refracao/fig6_fibra_optica.png" alt="Raio de luz sofrendo sucessivas reflexoes totais internas dentro do nucleo de uma fibra optica, em formato de zigue-zague">
+      <figcaption>Dentro de uma fibra óptica, a luz é guiada por reflexões totais internas sucessivas nas paredes do núcleo.</figcaption>
+    </figure>
+
+    <p><strong>Diamantes:</strong> o altíssimo índice de refração do diamante (\(n \approx 2{,}42\)) resulta em um ângulo limite muito pequeno (\(\theta_c \approx 24{,}4°\)). Os lapidários cortam as facetas do diamante de modo que a luz que entra sofra múltiplas reflexões totais internas antes de sair, o que produz o brilho intenso característico da pedra.</p>
+    <p><strong>Miragens:</strong> em dias muito quentes, o ar próximo ao solo fica mais aquecido (e menos denso opticamente) que o ar mais acima, criando um gradiente contínuo de índice de refração que faz a luz do céu se curvar e atingir o olho do observador como se viesse do chão — produzindo a ilusão de uma poça de água refletindo o céu.</p>
+
+    <h5>7. Lâmina de faces paralelas</h5>
+    <p>Uma lâmina de faces paralelas é um bloco de material transparente (como uma vidraça) com as duas superfícies paralelas entre si. Ao atravessá-la, um raio de luz sofre duas refrações — uma ao entrar, outra ao sair — e, como as superfícies são paralelas, o raio emergente é <strong>paralelo</strong> ao raio incidente original, porém <strong>deslocado lateralmente</strong> por uma distância \(d\):</p>
+
+    <figure class="theory-figure">
+      <img src="img/refracao/fig4_lamina_faces_paralelas.png" alt="Raio de luz atravessando uma lamina de vidro de faces paralelas, saindo paralelo ao raio original porem deslocado lateralmente por uma distancia d">
+      <figcaption>Ao atravessar a lâmina de espessura e, o raio emerge paralelo ao raio incidente, mas deslocado lateralmente por uma distância d.</figcaption>
+    </figure>
+
+    <p>O desvio lateral \(d\) pode ser calculado, em função da espessura \(e\) da lâmina e dos ângulos de incidência (\(\theta_1\)) e refração (\(\theta_2\)) na primeira face, por:</p>
+    <p class="formula-box">$$d = e\, \dfrac{\operatorname{sen}(\theta_1 - \theta_2)}{\cos\theta_2}$$</p>
+    <p>Esse é o efeito responsável pela distorção visual ao observar objetos através de um vidro grosso ou de um aquário: os objetos parecem ligeiramente deslocados de sua posição real.</p>
+
+    <h5>8. Prisma óptico e dispersão da luz</h5>
+    <p>Diferente da lâmina de faces paralelas, um <strong>prisma óptico</strong> tem faces não paralelas (tipicamente um prisma triangular), o que faz com que o raio emergente <strong>não</strong> seja paralelo ao raio incidente — o prisma desvia a luz de um ângulo total chamado desvio angular.</p>
+    <p>Mais importante: o índice de refração de um material transparente depende ligeiramente do comprimento de onda (da cor) da luz — fenômeno chamado <strong>dispersão</strong>. Em geral, luzes de menor comprimento de onda (violeta, azul) sofrem um índice de refração maior que luzes de maior comprimento de onda (vermelho), sendo portanto mais desviadas. Por isso, ao atravessar um prisma, a luz branca (que é uma mistura de todas as cores visíveis) se decompõe no espectro visível:</p>
+
+    <figure class="theory-figure">
+      <img src="img/refracao/fig5_prisma_dispersao.png" alt="Luz branca entrando em um prisma triangular de vidro e saindo decomposta no espectro de cores visivel, do vermelho ao violeta">
+      <figcaption>Ao atravessar o prisma, a luz violeta se desvia mais que a luz vermelha — a dispersão decompõe a luz branca no espectro visível.</figcaption>
+    </figure>
+
+    <p>Esse mesmo princípio explica o arco-íris: gotículas de água em suspensão no ar funcionam como pequenos prismas (combinando refração, reflexão interna e nova refração), decompondo a luz solar nas cores do espectro visível. A relação entre índice de refração e comprimento de onda pode ser aproximada, para a maioria dos materiais transparentes na região visível, pela <strong>equação de Cauchy</strong>:</p>
+    <p class="formula-box">$$n(\lambda) \approx A + \dfrac{B}{\lambda^2}$$</p>
+    <p>onde \(A\) e \(B\) são constantes empíricas do material — uma relação de nível mais avançado, útil para quem for além do Ensino Médio tradicional rumo à ótica instrumental.</p>
+
+    <h5>9. Exemplos resolvidos</h5>
+    <p><strong>Exemplo 1.</strong> Um raio de luz incide do ar (\(n_1 = 1{,}00\)) sobre a água (\(n_2 = 1{,}33\)) com ângulo de incidência de \(50°\). Calcule o ângulo de refração.</p>
+    <p class="formula-box">$$1{,}00 \cdot \operatorname{sen} 50° = 1{,}33 \cdot \operatorname{sen}\theta_2 \;\Rightarrow\; \operatorname{sen}\theta_2 = \dfrac{0{,}766}{1{,}33} \approx 0{,}576 \;\Rightarrow\; \theta_2 \approx 35{,}2°$$</p>
+    <p><strong>Exemplo 2.</strong> Determine o ângulo limite para a interface vidro (\(n_1 = 1{,}50\)) – ar (\(n_2 = 1{,}00\)).</p>
+    <p class="formula-box">$$\operatorname{sen}\theta_c = \dfrac{1{,}00}{1{,}50} \approx 0{,}667 \;\Rightarrow\; \theta_c \approx 41{,}8°$$</p>
+    <p>Esse é, precisamente, o ângulo usado como referência na figura da seção 6 — qualquer raio de luz dentro do vidro que incida na interface vidro-ar com ângulo maior que \(41{,}8°\) sofre reflexão total interna.</p>
+
+    <h5>Conclusão</h5>
+    <p><em>A refração da luz é um dos temas mais ricos da Física do Ensino Médio, exatamente por conectar um fenômeno do dia a dia (o lápis "quebrado" no copo d'água) a uma estrutura matemática precisa (a lei de Snell) e a aplicações tecnológicas de ponta (fibra óptica). Para o aluno da rede tradicional, o essencial é dominar a lei de Snell, o conceito de índice de refração e a reflexão total interna. Para quem mira ITA, IME e olimpíadas, vale ir além: entender a dedução via Princípio de Fermat, a dispersão cromática e o tratamento quantitativo de lâminas e prismas — a base necessária para, mais adiante, estudar lentes esféricas e instrumentos ópticos.</em></p>
+  </div>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-exercise">
+    <h3>Agora pratique</h3>
+    <p class="topic-empty" id="grid-exercise-empty">Em breve, lista de exercícios em PDF sobre este tema.</p>
+    <div class="resource-grid" id="grid-exercise"></div>
+  </div>
+</div>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+<script src="assets/adgate.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });
+  });
+</script>
+<script>
+(function(){
+  var RESOURCES = [];
+  AdGate.init(RESOURCES);
+  if(RESOURCES.length){
+    document.getElementById('grid-exercise-empty').style.display = 'none';
+    document.getElementById('grid-exercise').innerHTML = RESOURCES.map(AdGate.cardHTML).join('');
+  }
+})();
+</script>
+
+</body>
+</html>
