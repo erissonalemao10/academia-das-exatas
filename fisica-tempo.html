@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tempo: da Ampulheta ao Relógio Atômico — Academia das Exatas</title>
+<meta name="description" content="Tempo para ITA, IME e olimpíadas: definição do segundo, instrumentos de medida, incerteza, análise dimensional, ordens de grandeza, dilatação temporal e meia-vida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg: #0F1E3C;
+    --bg-deep: #071429;
+    --board-line: rgba(226,232,244,0.10);
+    --paper: #F3F5FA;
+    --paper-dim: #E4E8F2;
+    --ink: #16213A;
+    --ink-soft: #4E5B78;
+    --yellow: #E8384F;
+    --blue: #3E6FA8;
+    --red: #A81F30;
+    --wood: #24314F;
+    --wood-dark: #0A1830;
+    --radius: 14px;
+    --shadow: 0 12px 30px rgba(3,9,22,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--yellow); color:var(--bg-deep);}
+
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+
+  :focus-visible{outline:3px solid var(--blue); outline-offset:2px; border-radius:4px;}
+
+  /* ---------- Nav (chalkboard rail) ---------- */
+  header.rail{
+    position:sticky; top:0; z-index:40;
+    background:var(--bg);
+    border-bottom:6px solid var(--wood);
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .rail-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; gap:16px; flex-wrap:wrap;
+  }
+  .brand{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    font-size:1.5rem;
+    color:var(--paper);
+    letter-spacing:-0.5px;
+    text-transform:uppercase;
+    display:flex; align-items:baseline; gap:8px;
+    text-decoration:none;
+  }
+  .brand::before{
+    content:"";
+    display:inline-block;
+    width:10px; height:10px;
+    background:var(--yellow);
+    margin-right:2px;
+  }
+  .brand small{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.6rem;
+    color:var(--paper);
+    opacity:0.55;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  nav.tabs{
+    display:flex; gap:4px; flex-wrap:wrap;
+  }
+  nav.tabs button{
+    font-family:'Archivo', sans-serif;
+    font-size:0.86rem;
+    font-weight:600;
+    background:transparent;
+    border:1px solid transparent;
+    color:var(--paper);
+    opacity:0.72;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:opacity .15s ease, background .15s ease, border-color .15s ease;
+  }
+  nav.tabs button:hover{opacity:1; background:rgba(244,241,232,0.06);}
+  .nav-external-link{text-decoration:none;}
+  nav.tabs button[aria-current="page"]{
+    opacity:1;
+    background:rgba(244,241,232,0.10);
+    border-color:rgba(232,193,76,0.5);
+    color:var(--yellow);
+  }
+
+  /* ---------- Page sections ---------- */
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(244,241,232,0.05), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(244,241,232,0.04), transparent 45%),
+      var(--bg);
+    overflow:hidden;
+    padding:88px 24px 110px;
+    border-bottom:6px solid var(--wood-dark);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--board-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--board-line) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(ellipse at center, black 55%, transparent 90%);
+    opacity:0.5;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    max-width:840px; margin:0 auto; text-align:center;
+  }
+  .hero-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    letter-spacing:-1px;
+    font-size:clamp(2.3rem, 5.2vw, 4.1rem);
+    line-height:1.04;
+    color:var(--paper);
+    margin:0 0 20px;
+    text-transform:uppercase;
+  }
+  .hero h1 em{
+    font-style:normal;
+    font-family:'Archivo', sans-serif;
+    color:var(--yellow);
+    font-weight:900;
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:var(--paper);
+    opacity:0.82;
+    max-width:600px;
+    margin:0 auto 34px;
+    line-height:1.6;
+  }
+  .hero-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    font-family:'Archivo', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:13px 26px;
+    border-radius:999px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--yellow); color:var(--bg-deep);}
+  .btn-primary:hover{box-shadow:0 8px 20px rgba(232,193,76,0.35);}
+  .btn-ghost{background:transparent; border-color:rgba(244,241,232,0.35); color:var(--paper);}
+  .btn-ghost:hover{background:rgba(244,241,232,0.08);}
+
+  .doodles{position:absolute; inset:0; z-index:1; pointer-events:none;}
+  .doodles svg{position:absolute; opacity:0.5;}
+  @media (prefers-reduced-motion: no-preference){
+    .doodle-float{animation:doodleFloat 7s ease-in-out infinite;}
+  }
+  @keyframes doodleFloat{
+    0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
+    50%{transform:translateY(-10px) rotate(var(--r,0deg));}
+  }
+
+  /* ---------- Subject grid (home) ---------- */
+  .section{max-width:1180px; margin:0 auto; padding:70px 24px;}
+  .section-head{max-width:640px; margin-bottom:36px;}
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  .section-head h2{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+    margin:0 0 12px;
+    color:var(--bg-deep);
+  }
+  .section-head p{color:var(--ink-soft); line-height:1.6; font-size:1rem; margin:0;}
+
+  .card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px;}
+  .subject-card{
+    background:var(--bg);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    color:var(--paper);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(244,241,232,0.08);
+    display:flex; flex-direction:column; gap:14px;
+    cursor:pointer;
+    text-align:left;
+    transition:transform .18s ease;
+  }
+  .subject-card:hover{transform:translateY(-4px);}
+  .subject-card .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .subject-card.physics .tag{background:rgba(232,193,76,0.16); color:var(--yellow);}
+  .subject-card.math .tag{background:rgba(111,168,201,0.18); color:var(--blue);}
+  .subject-card.olymp .tag{background:rgba(193,80,46,0.2); color:#f2a382;}
+  .subject-card.vest .tag{background:rgba(111,168,201,0.18); color:var(--blue);}
+  .subject-card h3{font-family:'Archivo', sans-serif; font-weight:800; margin:0; font-size:1.25rem;}
+  .subject-card p{margin:0; font-size:0.92rem; opacity:0.78; line-height:1.55;}
+  .subject-card .go{
+    margin-top:auto; font-family:'Archivo', sans-serif; font-weight:600;
+    font-size:0.85rem; display:flex; align-items:center; gap:6px;
+  }
+  .subject-card.physics .go{color:var(--yellow);}
+  .subject-card.math .go{color:var(--blue);}
+  .subject-card.olymp .go{color:#f2a382;}
+  .subject-card.vest .go{color:var(--blue);}
+
+  /* ---------- Topic list ---------- */
+  .topic-list{list-style:none; padding:0; margin:0 0 40px; display:grid; gap:10px;}
+  .topic-list li{
+    background:var(--paper-dim);
+    border-left:4px solid var(--yellow);
+    padding:14px 18px;
+    border-radius:8px;
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+  .page[data-page="matematica"] .topic-list li{border-left-color:var(--blue);}
+  .page[data-page="olimpiadas"] .topic-list li{border-left-color:var(--red);}
+  .page[data-page="vestibulares"] .topic-list li{border-left-color:var(--red);}
+
+  /* ---------- Branch accordion (ramo > tópico > materiais) ---------- */
+  .branch-accordion{display:grid; gap:16px;}
+  .branch{
+    background:#fff;
+    border:1px solid rgba(15,30,60,0.08);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(15,30,60,0.05);
+  }
+  .branch-header{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px;
+    padding:18px 22px;
+    background:var(--bg);
+    color:var(--paper);
+    cursor:pointer;
+    border:none;
+    width:100%;
+    text-align:left;
+    font-family:'Archivo', sans-serif;
+  }
+  .branch-header h3{
+    margin:0; font-size:1.05rem; font-weight:800;
+  }
+  .branch-header .branch-count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    color:var(--paper);
+    opacity:0.6;
+    font-weight:400;
+  }
+  .branch-header .org-header-text{display:flex; flex-direction:column; gap:5px; text-align:left;}
+  .branch-header .org-desc{
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    color:var(--paper);
+    opacity:0.7;
+    font-weight:400;
+    line-height:1.4;
+    max-width:560px;
+  }
+  .branch-header .chevron{
+    flex-shrink:0;
+    width:18px; height:18px;
+    transition:transform .2s ease;
+    stroke:var(--yellow);
+  }
+  .branch.open .branch-header .chevron{transform:rotate(180deg);}
+  .branch-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .branch.open .branch-body{max-height:none;}
+  .branch-body-inner{padding:22px;}
+  .topic-block{margin-bottom:26px;}
+  .topic-block:last-child{margin-bottom:0;}
+  .topic-block h4{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--bg-deep);
+    margin:0 0 12px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--paper-dim);
+  }
+  .topic-empty{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    font-style:italic;
+    opacity:0.75;
+  }
+  .topic-block .resource-grid{gap:16px;}
+
+  /* ---------- Theory content (teoria lida na página) ---------- */
+  .theory{
+    background:var(--paper-dim);
+    border-radius:12px;
+    padding:22px 24px;
+    margin-bottom:18px;
+    font-size:0.94rem;
+    line-height:1.68;
+    color:var(--ink);
+  }
+  .theory h5{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    font-size:0.98rem;
+    color:var(--bg-deep);
+    margin:20px 0 10px;
+  }
+  .theory h5:first-child{margin-top:0;}
+  .theory p{margin:0 0 12px;}
+  .theory p:last-child{margin-bottom:0;}
+  .theory .formula-box{
+    font-family:'JetBrains Mono', monospace;
+    background:#fff;
+    border-left:4px solid var(--red);
+    padding:10px 16px;
+    border-radius:6px;
+    font-size:0.9rem;
+    margin:0 0 14px;
+  }
+  .theory blockquote{
+    margin:14px 0;
+    padding:14px 18px;
+    background:#fff;
+    border-left:4px solid var(--blue);
+    border-radius:6px;
+    font-size:0.9rem;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  .theory table.theory-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0 0 16px;
+    font-size:0.86rem;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .theory table.theory-table th{
+    background:var(--bg);
+    color:var(--paper);
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    text-align:left;
+    padding:9px 12px;
+  }
+  .theory table.theory-table td{
+    padding:8px 12px;
+    border-bottom:1px solid var(--paper-dim);
+  }
+  .theory table.theory-table tr:last-child td{border-bottom:none;}
+  .theory-toggle{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:0.8rem;
+    background:none;
+    border:none;
+    color:var(--blue);
+    cursor:pointer;
+    padding:4px 0;
+    margin-bottom:6px;
+  }
+
+  /* ---------- Resource cards (downloads) ---------- */
+  .resource-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;}
+  .resource-card{
+    background:#fff;
+    border:1px solid rgba(38,48,43,0.08);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:0 4px 14px rgba(38,48,43,0.06);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .resource-card .file-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    color:var(--ink-soft);
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+  .resource-card h4{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    margin:0; font-size:1.08rem; color:var(--bg-deep);
+  }
+  .resource-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.5;}
+  .resource-card .meta{font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--ink-soft); opacity:0.75;}
+  .download-btn{
+    margin-top:auto;
+    font-family:'Archivo', sans-serif;
+    font-weight:600; font-size:0.88rem;
+    background:var(--bg-deep); color:var(--paper);
+    border:none; border-radius:999px;
+    padding:11px 18px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .download-btn:hover{background:var(--bg); transform:translateY(-2px);}
+
+  /* ---------- Info blocks (olimpiadas / vestibulares) ---------- */
+  .info-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:18px; margin-bottom:44px;}
+  .info-card{
+    background:var(--paper-dim); border-radius:12px; padding:20px;
+  }
+  .info-card h4{font-family:'Archivo', sans-serif; font-weight:700; margin:0 0 8px; font-size:1rem; color:var(--bg-deep);}
+
+  .obmep-subhead{font-family:'Archivo', sans-serif; font-weight:800; font-size:1.15rem; color:var(--bg-deep); margin:8px 0 6px;}
+  .obmep-sublede{color:var(--ink-soft); font-size:0.88rem; line-height:1.5; margin:0 0 20px; max-width:600px;}
+  .resource-card.external{border-color:rgba(168,31,48,0.25);}
+  .resource-card.external .file-tag{color:var(--red);}
+  .resource-card .download-btn.external-link{background:transparent; border:1.5px solid var(--bg-deep); color:var(--bg-deep);}
+  .resource-card .download-btn.external-link:hover{background:var(--bg-deep); color:#fff;}
+
+  .apostila-list{display:flex; flex-direction:column; gap:14px;}
+  .apostila-block{
+    background:#fff; border:1px solid rgba(15,30,60,0.08); border-radius:var(--radius);
+    padding:20px 24px; box-shadow:0 4px 14px rgba(15,30,60,0.05);
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .apostila-block .apostila-info{flex:1; min-width:220px;}
+  .apostila-block .file-tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; color:var(--red);
+    text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:6px;
+  }
+  .apostila-block h4{font-family:'Archivo', sans-serif; font-weight:700; font-size:1.02rem; color:var(--bg-deep); margin:0 0 6px;}
+  .apostila-block p{font-size:0.88rem; color:var(--ink-soft); margin:0; line-height:1.5;}
+  .apostila-block .download-btn{flex-shrink:0;}
+  .info-card p{margin:0; font-size:0.88rem; color:var(--ink-soft); line-height:1.55;}
+
+  /* ---------- Footer ---------- */
+  footer.rail{
+    background:var(--bg-deep);
+    border-top:6px solid var(--wood-dark);
+    color:var(--paper);
+    padding:36px 24px;
+    text-align:center;
+    font-size:0.85rem;
+  }
+  footer.rail p{margin:0 0 6px; opacity:0.75;}
+  footer.rail .signature{font-family:'Archivo', sans-serif; color:var(--yellow); font-size:1.1rem;}
+
+  /* ---------- Modal (ad-gate) ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100;
+    background:rgba(15,25,21,0.82);
+    display:none; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--bg-deep);
+    border:1px solid rgba(244,241,232,0.12);
+    border-radius:16px;
+    max-width:560px; width:100%;
+    padding:26px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .modal-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;}
+  .modal-head h3{
+    font-family:'Archivo', sans-serif; font-weight:700; color:var(--paper); margin:0; font-size:1.05rem;
+  }
+  .modal-close{
+    background:transparent; border:none; color:var(--paper); opacity:0.6;
+    font-size:1.3rem; cursor:pointer; line-height:1; padding:4px 8px;
+  }
+  .modal-close:hover{opacity:1;}
+  .modal-sub{
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:var(--yellow);
+    letter-spacing:0.5px; margin-bottom:14px; display:block;
+  }
+  .video-wrap{
+    position:relative; border-radius:10px; overflow:hidden; background:#000;
+    aspect-ratio:16/9; margin-bottom:16px;
+  }
+  .video-wrap video{width:100%; height:100%; object-fit:cover; display:block;}
+  .video-badge{
+    position:absolute; top:10px; left:10px;
+    background:rgba(0,0,0,0.55); color:var(--paper);
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem;
+    padding:4px 9px; border-radius:6px; letter-spacing:0.5px;
+  }
+  .unlock-row{display:flex; align-items:center; gap:12px; min-height:46px;}
+  .unlock-msg{
+    font-family:'Inter', sans-serif; font-size:0.88rem; color:var(--paper); opacity:0.8;
+  }
+  .unlock-icon{
+    width:20px; height:20px; flex-shrink:0;
+  }
+  .final-download{
+    display:none;
+    text-decoration:none;
+    font-family:'Archivo', sans-serif; font-weight:600; font-size:0.92rem;
+    background:var(--yellow); color:var(--bg-deep);
+    padding:12px 22px; border-radius:999px;
+    align-items:center; gap:8px;
+    width:100%; justify-content:center;
+    transition:transform .15s ease;
+  }
+  .final-download:hover{transform:translateY(-2px);}
+  .final-download.ready{display:inline-flex;}
+
+  @media (max-width:640px){
+    nav.tabs{width:100%; justify-content:flex-start; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .rail-inner{flex-direction:column; align-items:flex-start;}
+  }
+
+  /* ---------- Ad slots (placeholders for AdSense etc.) ---------- */
+  .ad-slot{
+    background:repeating-linear-gradient(45deg, rgba(15,30,60,0.03), rgba(15,30,60,0.03) 10px, rgba(15,30,60,0.06) 10px, rgba(15,30,60,0.06) 20px);
+    border:1.5px dashed rgba(15,30,60,0.2);
+    border-radius:12px;
+    padding:18px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin:30px 0;
+  }
+
+  /* ---------- Article page (conteúdo teórico em página própria) ---------- */
+  .article-wrap{max-width:760px; margin:0 auto; padding:56px 24px 80px;}
+  .article-back{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'Archivo', sans-serif; font-weight:700; font-size:0.85rem;
+    color:var(--blue); text-decoration:none; margin-bottom:22px;
+  }
+  .article-kicker{
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--red); display:block; margin-bottom:10px;
+  }
+  .article-title{
+    font-family:'Archivo', sans-serif; font-weight:900; letter-spacing:-0.5px;
+    font-size:clamp(1.8rem, 4vw, 2.6rem); color:var(--bg-deep); margin:0 0 14px; line-height:1.1;
+  }
+  .article-sub{color:var(--ink-soft); font-size:1rem; line-height:1.6; margin:0 0 30px;}
+  .article-body.theory{background:none; padding:0; font-size:1rem; line-height:1.75;}
+  .article-body.theory h5{font-size:1.15rem; margin:32px 0 12px;}
+  .article-exercise{
+    margin-top:44px;
+    padding-top:34px;
+    border-top:2px solid var(--paper-dim);
+  }
+  .article-exercise h3{
+    font-family:'Archivo', sans-serif; font-weight:800; font-size:1.15rem;
+    color:var(--bg-deep); margin:0 0 16px;
+  }
+
+  /* ---------- Topic row: theory link + exercise side by side ---------- */
+  .topic-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    align-items:stretch;
+  }
+  @media (max-width:720px){
+    .topic-row{grid-template-columns:1fr;}
+  }
+  .theory-link-card{
+    background:var(--bg);
+    color:var(--paper);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    display:flex; flex-direction:column; gap:10px;
+    text-decoration:none;
+    transition:transform .15s ease;
+  }
+  .theory-link-card:hover{transform:translateY(-3px);}
+  .theory-link-card .post-thumb{
+    margin:-20px -22px 4px -22px;
+    height:110px;
+    border-radius:var(--radius) var(--radius) 0 0;
+    background:var(--bg-deep);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .theory-link-card .post-thumb svg{width:100%; height:100%;}
+  .theory-link-card .tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem;
+    text-transform:uppercase; letter-spacing:0.5px; color:var(--yellow);
+  }
+  .theory-link-card h5{
+    font-family:'Archivo', sans-serif; font-weight:800; font-size:1rem; margin:0;
+  }
+  .theory-link-card p{margin:0; font-size:0.85rem; opacity:0.8; line-height:1.5;}
+  .theory-link-card .go{
+    margin-top:auto; font-family:'Archivo', sans-serif; font-weight:700;
+    font-size:0.82rem; color:var(--yellow);
+  }
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="index.html" class="brand">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="index.html" style="text-decoration:none;"><button type="button">Início</button></a>
+      <a href="index.html" style="text-decoration:none;"><button type="button" aria-current="page">Física</button></a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <a class="article-back" href="index.html">← Voltar para Física</a>
+  <span class="article-kicker">Física · Fundamentos e Medidas</span>
+  <h1 class="article-title">Tempo: da Ampulheta ao Relógio Atômico</h1>
+  <p class="article-sub">Um guia aprofundado para quem estuda para ITA, IME e olimpíadas de Física: definição do segundo, instrumentos de medida, incerteza, análise dimensional e os papéis do tempo do domínio quântico à escala do universo.</p>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-body theory">
+    <p>Tempo é a grandeza física mais familiar e, ao mesmo tempo, uma das mais difíceis de definir com rigor — Santo Agostinho já dizia, no século IV, que sabia perfeitamente o que era o tempo até que lhe pedissem para explicá-lo. Para quem estuda para ITA, IME e olimpíadas de Física, o tempo aparece disfarçado em quase todo problema: cinemática, ondas, física moderna, decaimento radioativo. Este texto percorre o tempo em profundidade: sua definição atual, sua história, os instrumentos usados para medi-lo, a incerteza que acompanha toda medida, e os papéis que essa grandeza fundamental desempenha do domínio quântico à escala do universo.</p>
+
+    <h5>1. Tempo como grandeza fundamental</h5>
+    <p>Das sete grandezas de base do Sistema Internacional (SI), o tempo é, ao lado do comprimento, a mais utilizada — praticamente toda grandeza cinemática e dinâmica depende dele:</p>
+    <table class="theory-table">
+      <thead><tr><th>Grandeza</th><th>Símbolo dimensional</th><th>Unidade SI</th></tr></thead>
+      <tbody>
+        <tr><td>Tempo</td><td>\([T]\)</td><td>segundo (s)</td></tr>
+        <tr><td>Comprimento</td><td>\([L]\)</td><td>metro (m)</td></tr>
+        <tr><td>Massa</td><td>\([M]\)</td><td>quilograma (kg)</td></tr>
+        <tr><td>Corrente elétrica</td><td>\([I]\)</td><td>ampère (A)</td></tr>
+        <tr><td>Temperatura termodinâmica</td><td>\([\Theta]\)</td><td>kelvin (K)</td></tr>
+        <tr><td>Quantidade de matéria</td><td>\([N]\)</td><td>mol (mol)</td></tr>
+        <tr><td>Intensidade luminosa</td><td>\([J]\)</td><td>candela (cd)</td></tr>
+      </tbody>
+    </table>
+    <p>Velocidade \([LT^{-1}]\), aceleração \([LT^{-2}]\), frequência \([T^{-1}]\), energia \([ML^2T^{-2}]\) — o tempo entra na composição dimensional de quase tudo. E, diferente do comprimento ou da massa, o tempo tem uma peculiaridade: só podemos medir <em>intervalos</em> de tempo (ou, por convenção, contar a partir de uma origem), nunca "quanto tempo existe" em um ponto isolado.</p>
+
+    <h5>2. A evolução histórica da definição do segundo</h5>
+    <p>A história da medida do tempo é, em boa parte, a história da busca por um fenômeno periódico cada vez mais estável e reprodutível para servir de referência.</p>
+    <p><strong>2.1 Relógios astronômicos e mecânicos antigos.</strong> As civilizações antigas mediam o tempo pelo movimento aparente do Sol (relógios de sol), pelo escoamento de água (clepsidras) ou areia (ampulhetas). A divisão do dia em \(24\) horas, cada hora em \(60\) minutos e cada minuto em \(60\) segundos vem da numeração sexagesimal babilônica, adotada pelos astrônomos gregos e preservada até hoje.</p>
+    <p><strong>2.2 O pêndulo e o nascimento da cronometria de precisão.</strong> Em 1583, Galileu Galilei observou o isocronismo do pêndulo: pequenas oscilações de um pêndulo simples têm período aproximadamente independente da amplitude, dependendo apenas do comprimento \(L\) do fio e da aceleração da gravidade \(g\):</p>
+    <p class="formula-box">$$T = 2\pi\sqrt{\dfrac{L}{g}}$$</p>
+    <p>Em 1656, o holandês Christiaan Huygens construiu o primeiro relógio de pêndulo prático, reduzindo o erro de cronometragem de cerca de \(15\) minutos por dia (relógios mecânicos anteriores) para poucos segundos por dia — um salto de precisão que teve impacto direto na navegação marítima e na astronomia.</p>
+    <p><strong>2.3 O segundo astronômico (até 1960).</strong> Durante séculos, o segundo foi definido como uma fração do dia solar médio:</p>
+    <p class="formula-box">$$1 \text{ s} = \dfrac{1}{86\,400} \times \text{(duração do dia solar médio)}$$</p>
+    <p>já que \(86.400 = 24 \times 60 \times 60\). O problema é que a rotação da Terra não é perfeitamente uniforme: sofre pequenas variações devido a marés, redistribuição de massa interna e efeitos atmosféricos.</p>
+    <p><strong>2.4 O segundo das efemérides (1956–1967).</strong> Buscando maior estabilidade, a definição passou a se basear no movimento orbital da Terra ao redor do Sol (o "ano trópico"), em vez da rotação diária — o chamado segundo das efemérides, referente ao ano trópico de 1900. Ainda assim, essa definição dependia de observações astronômicas indiretas, difíceis de reproduzir em laboratório com alta precisão.</p>
+    <p><strong>2.5 1967: o segundo atômico.</strong> A 13ª Conferência Geral de Pesos e Medidas (CGPM) redefiniu o segundo em termos de um fenômeno atômico, reprodutível em qualquer laboratório equipado com um relógio atômico de césio. A definição, ainda em vigor:</p>
+    <blockquote>O segundo é a duração de \(9.192.631.770\) períodos da radiação correspondente à transição entre os dois níveis hiperfinos do estado fundamental do átomo de césio-133, à temperatura de \(0\) K.</blockquote>
+    <p>Em notação compacta, a frequência dessa transição é fixada exatamente como:</p>
+    <p class="formula-box">$$\Delta\nu_{Cs} = 9\,192\,631\,770 \text{ Hz}$$</p>
+    <p><strong>2.6 A revisão do SI em 2019.</strong> Assim como o metro (ancorado à velocidade da luz desde 1983), o segundo tornou-se, na revisão do SI de 20 de maio de 2019, uma das duas grandezas-base cuja definição já se apoiava inteiramente em uma constante fundamental fixada por convenção — nesse caso, a frequência de transição do césio-133. Isso torna o segundo, e por extensão o metro (que depende do segundo), independentes de qualquer artefato físico: bastam um átomo de césio e um contador de oscilações eletromagnéticas.</p>
+    <p><em>Hoje, os relógios atômicos mais avançados — como os relógios ópticos de rede (optical lattice clocks) baseados em estrôncio ou itérbio — atingem incertezas relativas da ordem de \(10^{-18}\), o equivalente a não atrasar nem adiantar mais que \(1\) segundo em bilhões de anos, mais que a idade do universo.</em></p>
+
+    <h5>3. Instrumentos de medida de tempo</h5>
+    <p><strong>3.1 Relógio de pêndulo.</strong> Já discutido acima — usa o isocronismo do pêndulo simples. Sensível a variações de temperatura (dilatação do fio/haste altera \(L\)) e à latitude/altitude (que alteram \(g\) ligeiramente).</p>
+    <p><strong>3.2 Cronômetro mecânico e de quartzo.</strong> Cronômetros manuais medem intervalos, tipicamente com resolução de \(0{,}01\) s a \(0{,}001\) s, mas estão sujeitos ao tempo de reação humano ao acionar o dispositivo (tipicamente \(0{,}1\) a \(0{,}3\) s) — uma fonte de incerteza sistemática relevante em experimentos escolares.</p>
+    <p><strong>3.3 Osciladores de cristal de quartzo.</strong> A maioria dos relógios modernos (de pulso, computadores, celulares) usa o efeito piezoelétrico: um cristal de quartzo, ao ser submetido a uma tensão elétrica, vibra em uma frequência de ressonância extremamente estável (tipicamente \(32.768 = 2^{15}\) Hz para relógios de pulso, escolhida por ser uma potência de \(2\), facilitando a divisão eletrônica até \(1\) Hz). A estabilidade típica é da ordem de \(10^{-6}\) (poucos segundos de desvio por mês).</p>
+    <p><strong>3.4 Relógios atômicos.</strong> Usam a transição hiperfina do césio-133 (ou, em versões mais modernas, transições ópticas de estrôncio ou itérbio) como referência de frequência. As chamadas "fontes de césio" (cesium fountains) atingem incertezas relativas da ordem de \(10^{-16}\); relógios ópticos de rede chegam a \(10^{-18}\) ou melhor.</p>
+    <table class="theory-table">
+      <thead><tr><th>Instrumento</th><th>Estabilidade relativa típica</th></tr></thead>
+      <tbody>
+        <tr><td>Relógio de pêndulo</td><td>\(\sim 10^{-5}\) (poucos segundos/dia)</td></tr>
+        <tr><td>Cristal de quartzo</td><td>\(\sim 10^{-6}\)</td></tr>
+        <tr><td>Relógio atômico de césio</td><td>\(\sim 10^{-16}\)</td></tr>
+        <tr><td>Relógio óptico de rede</td><td>\(\sim 10^{-18}\)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>3.5 GPS e sincronização de tempo.</strong> O Sistema de Posicionamento Global depende de relógios atômicos a bordo dos satélites, sincronizados com extrema precisão — e, curiosamente, precisa corrigir efeitos relativísticos (seção 7) para funcionar com a exatidão de poucos metros.</p>
+
+    <h5>4. Algarismos significativos e incerteza na medida de tempo</h5>
+    <p>As mesmas regras gerais de algarismos significativos se aplicam ao tempo, com uma particularidade importante: o <strong>tempo de reação humano</strong>.</p>
+    <p>Ao medir manualmente, com cronômetro, o intervalo de tempo de um evento (como a queda de um objeto), o experimentador introduz uma incerteza sistemática de aproximadamente \(0{,}2\) s, referente ao tempo entre perceber o evento e acionar o botão. Essa incerteza costuma ser muito maior que a resolução do próprio cronômetro (\(0{,}01\) s), e é justamente por isso que experimentos de precisão usam sensores eletrônicos (fotoportas, sensores de disparo) em vez de acionamento manual.</p>
+    <p>Na propagação de incertezas envolvendo tempo — por exemplo, ao calcular uma velocidade média \(v = \Delta s/\Delta t\) — a incerteza relativa do resultado é a soma das incertezas relativas de \(\Delta s\) e \(\Delta t\):</p>
+    <p class="formula-box">$$\dfrac{\Delta v}{v} \approx \dfrac{\Delta(\Delta s)}{\Delta s} + \dfrac{\Delta(\Delta t)}{\Delta t}$$</p>
+
+    <h5>5. Análise dimensional envolvendo tempo</h5>
+    <p>Um exemplo clássico, diferente do pêndulo: a constante de tempo de um circuito RC (resistor-capacitor), \(\tau = RC\), que aparece no carregamento e descarregamento de capacitores.</p>
+    <p>Sabendo que \([R] = [V]/[I] = [ML^2T^{-3}I^{-2}]\) e \([C] = [Q]/[V] = [M^{-1}L^{-2}T^4I^2]\), a análise dimensional confirma:</p>
+    <p class="formula-box">$$[R][C] = [ML^2T^{-3}I^{-2}] \times [M^{-1}L^{-2}T^4I^2] = [T]$$</p>
+    <p>— o produto \(RC\) tem, de fato, dimensão de tempo, consistente com seu papel de constante de tempo característica do circuito. Esse tipo de checagem dimensional é uma ferramenta poderosa para verificar fórmulas complexas rapidamente, sem precisar resolver a equação diferencial do circuito.</p>
+
+    <h5>6. Ordens de grandeza: do tempo de Planck à idade do universo</h5>
+    <p>Assim como o comprimento, o tempo cobre uma faixa extraordinária de ordens de grandeza — mais de \(60\) potências de \(10\) separam o menor intervalo com sentido físico conhecido do maior:</p>
+    <table class="theory-table">
+      <thead><tr><th>Escala</th><th>Tempo aproximado</th></tr></thead>
+      <tbody>
+        <tr><td>Tempo de Planck</td><td>\(\sim 5{,}4 \times 10^{-44}\) s</td></tr>
+        <tr><td>Luz atravessando um próton</td><td>\(\sim 3 \times 10^{-24}\) s</td></tr>
+        <tr><td>Período de uma oscilação de luz visível</td><td>\(\sim 1{,}5 \times 10^{-15}\) s</td></tr>
+        <tr><td>Meia-vida do múon</td><td>\(\sim 2{,}2 \times 10^{-6}\) s</td></tr>
+        <tr><td>Tempo de reação humano</td><td>\(\sim 0{,}2\) s</td></tr>
+        <tr><td>Batimento cardíaco (intervalo)</td><td>\(\sim 1\) s</td></tr>
+        <tr><td>Um dia</td><td>\(8{,}64 \times 10^{4}\) s</td></tr>
+        <tr><td>Um ano</td><td>\(\sim 3{,}15 \times 10^{7}\) s</td></tr>
+        <tr><td>Vida humana (\(\sim\)80 anos)</td><td>\(\sim 2{,}5 \times 10^{9}\) s</td></tr>
+        <tr><td>Idade da Terra</td><td>\(\sim 1{,}4 \times 10^{17}\) s (\(4{,}5\) bilhões de anos)</td></tr>
+        <tr><td>Idade do universo</td><td>\(\sim 4{,}35 \times 10^{17}\) s (\(13{,}8\) bilhões de anos)</td></tr>
+      </tbody>
+    </table>
+    <p>O tempo de Planck é a escala em que os efeitos da gravidade quântica se tornariam dominantes — abaixo dele, as noções clássicas de "antes" e "depois" deixam, na Física teórica atual, de ter significado bem definido, assim como acontece com o comprimento de Planck no espaço.</p>
+
+    <h5>7. Tempo em contextos físicos avançados</h5>
+    <p><strong>7.1 Dilatação temporal (Relatividade Restrita).</strong> Assim como o comprimento se contrai, o tempo se dilata: um intervalo de tempo próprio \(\Delta t_0\), medido no referencial de repouso de um relógio, é medido por um observador em relação ao qual esse relógio se move com velocidade \(v\) como um intervalo maior:</p>
+    <p class="formula-box">$$\Delta t = \dfrac{\Delta t_0}{\sqrt{1 - \dfrac{v^2}{c^2}}}$$</p>
+    <p>É esse efeito que explica por que múons criados em colisões de raios cósmicos na alta atmosfera — com meia-vida própria de apenas \(2{,}2\ \mu\text{s}\) — conseguem, em grande número, atingir a superfície da Terra: em seu referencial de repouso decairiam bem antes, mas no referencial da Terra seu "relógio interno" corre mais devagar.</p>
+    <p><strong>7.2 Dilatação temporal gravitacional (Relatividade Geral).</strong> Um relógio em um campo gravitacional mais intenso (mais próximo de uma massa) atrasa em relação a um relógio distante:</p>
+    <p class="formula-box">$$\Delta t' = \Delta t\sqrt{1 - \dfrac{2GM}{rc^2}}$$</p>
+    <p>Esse efeito, somado à dilatação temporal por velocidade orbital, precisa ser corrigido diariamente nos satélites GPS (cerca de \(38\ \mu\text{s}\)/dia de correção líquida) — sem essa correção relativística, o sistema acumularia erros de posição de vários quilômetros por dia.</p>
+    <p><strong>7.3 Meia-vida e decaimento radioativo.</strong> O número de núcleos radioativos remanescentes decai exponencialmente com o tempo:</p>
+    <p class="formula-box">$$N(t) = N_0\, e^{-\lambda t}, \qquad t_{1/2} = \dfrac{\ln 2}{\lambda}$$</p>
+    <p>onde \(\lambda\) é a constante de decaimento e \(t_{1/2}\) é a meia-vida — o tempo necessário para que metade dos núcleos de uma amostra decaiam. É a base da datação por carbono-14 e um tema recorrente em Física Moderna nas provas de ITA e IME.</p>
+    <p><strong>7.4 O princípio da incerteza tempo-energia.</strong> Na Mecânica Quântica, tempo e energia formam um par conjugado, análogo à posição e ao momento:</p>
+    <p class="formula-box">$$\Delta E \, \Delta t \geq \dfrac{\hbar}{2}$$</p>
+    <p>Esse princípio implica, por exemplo, que estados de vida muito curta (partículas instáveis de altíssima energia, criadas em aceleradores) têm uma incerteza de energia (largura de linha) correspondentemente maior — quanto menor o \(\Delta t\), maior o \(\Delta E\) mínimo possível.</p>
+    <p><strong>7.5 Uma nota sobre a seta do tempo.</strong> Vale mencionar, ainda que brevemente, que as leis fundamentais da mecânica (clássica e quântica) são, em sua maioria, simétricas em relação à reversão do tempo — mas a Segunda Lei da Termodinâmica, ao estabelecer que a entropia de um sistema isolado nunca diminui, introduz uma direção preferencial: a chamada "seta do tempo" termodinâmica. É um tema que escapa ao escopo de um curso introdutório, mas útil para reconhecer que "por que o tempo só anda para frente" continua sendo uma questão profunda em aberto na Física fundamental.</p>
+
+    <h5>Conclusão</h5>
+    <p><em>Tempo parece, à primeira vista, a mais intuitiva das grandezas físicas — algo que todos "sentimos" passar. Mas dominá-lo de verdade, no nível exigido por ITA, IME e olimpíadas, significa ir além dessa intuição: conhecer a definição precisa do segundo e sua evolução histórica, entender o funcionamento e os limites de cada instrumento de medida, tratar corretamente a incerteza (especialmente o tempo de reação humano), usar a análise dimensional como ferramenta de verificação, navegar por dezenas de ordens de grandeza, e reconhecer que, na Física moderna, o tempo — assim como o comprimento — não é absoluto, mas depende do referencial do observador.</em></p>
+  </div>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-exercise">
+    <h3>Agora pratique</h3>
+    <p class="topic-empty" id="grid-exercise-empty">Em breve, lista de exercícios em PDF sobre este tema.</p>
+    <div class="resource-grid" id="grid-exercise"></div>
+  </div>
+</div>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+<script>
+// Academia das Exatas — motor compartilhado de cards + desbloqueio por vídeo
+// Inclua este arquivo em qualquer página e chame AdGate.init() uma vez.
+(function(){
+  var AD_SRC = 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4';
+  var overlay, video, closeBtn, fileLabel, unlockMsg, finalDownload, shackle, fallbackTimer;
+  var ALL_RESOURCES = [];
+
+  var MODAL_HTML = '' +
+    '<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">' +
+      '<div class="modal">' +
+        '<div class="modal-head">' +
+          '<h3 id="modalTitle">Assista para liberar o download</h3>' +
+          '<button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>' +
+        '</div>' +
+        '<span class="modal-sub" id="modalFileLabel">arquivo.pdf</span>' +
+        '<div class="video-wrap">' +
+          '<span class="video-badge">publicidade</span>' +
+          '<video id="adVideo" playsinline muted autoplay></video>' +
+        '</div>' +
+        '<div class="unlock-row">' +
+          '<svg class="unlock-icon" id="unlockIcon" viewBox="0 0 24 24" fill="none" stroke="#E8384F" stroke-width="2">' +
+            '<rect x="5" y="11" width="14" height="9" rx="2"/>' +
+            '<path id="shackle" d="M8 11V7a4 4 0 0 1 8 0v4"/>' +
+          '</svg>' +
+          '<span class="unlock-msg" id="unlockMsg">Assistindo ao vídeo… o download será liberado ao final.</span>' +
+        '</div>' +
+        '<a class="final-download" id="finalDownload" href="#" download>⬇ Baixar PDF agora</a>' +
+      '</div>' +
+    '</div>';
+
+  function cardHTML(r){
+    return '' +
+      '<div class="resource-card">' +
+        '<span class="file-tag">' + r.meta + '</span>' +
+        '<h4>' + r.title + '</h4>' +
+        '<p>' + r.desc + '</p>' +
+        '<button class="download-btn" type="button" data-resource="' + r.id + '">⬇ Baixar PDF</button>' +
+      '</div>';
+  }
+
+  function openModalFor(resourceId){
+    var r = ALL_RESOURCES.filter(function(x){ return x.id === resourceId; })[0];
+    if(!r) return;
+
+    fileLabel.textContent = r.filename;
+    unlockMsg.textContent = 'Assistindo ao vídeo… o download será liberado ao final.';
+    finalDownload.classList.remove('ready');
+    finalDownload.removeAttribute('href');
+    finalDownload.setAttribute('aria-disabled', 'true');
+    shackle.setAttribute('d', 'M8 11V7a4 4 0 0 1 8 0v4');
+
+    video.src = AD_SRC;
+    video.currentTime = 0;
+    video.muted = true;
+    video.play().catch(function(){});
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(fallbackTimer);
+    fallbackTimer = setTimeout(function(){
+      if(!finalDownload.classList.contains('ready')){
+        unlockDownload(r, 'Não foi possível carregar o vídeo agora — liberando o download.');
+      }
+    }, 9000);
+
+    video.onended = function(){ unlockDownload(r); };
+    video.onerror = function(){ unlockDownload(r, 'Não foi possível carregar o vídeo agora — liberando o download.'); };
+  }
+
+  function unlockDownload(r, customMsg){
+    clearTimeout(fallbackTimer);
+    unlockMsg.textContent = customMsg || 'Vídeo concluído! Seu download está liberado.';
+    shackle.setAttribute('d', 'M8 11V7a4 4 0 0 1 8 0v0');
+    finalDownload.href = r.file;
+    finalDownload.setAttribute('download', r.filename);
+    finalDownload.classList.add('ready');
+    finalDownload.removeAttribute('aria-disabled');
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    clearTimeout(fallbackTimer);
+  }
+
+  window.AdGate = {
+    /**
+     * Inicializa o sistema de anúncio + download.
+     * resources: array de objetos {id, title, desc, meta, filename, file}
+     */
+    init: function(resources){
+      ALL_RESOURCES = resources || [];
+      if(!document.getElementById('modalOverlay')){
+        document.body.insertAdjacentHTML('beforeend', MODAL_HTML);
+      }
+      overlay = document.getElementById('modalOverlay');
+      video = document.getElementById('adVideo');
+      closeBtn = document.getElementById('modalClose');
+      fileLabel = document.getElementById('modalFileLabel');
+      unlockMsg = document.getElementById('unlockMsg');
+      finalDownload = document.getElementById('finalDownload');
+      shackle = document.getElementById('shackle');
+
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest('[data-resource]');
+        if(btn){ openModalFor(btn.dataset.resource); }
+      });
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+    },
+    cardHTML: cardHTML,
+    // Permite adicionar novos recursos depois do init (ex: cards montados dinamicamente)
+    registerResources: function(resources){
+      ALL_RESOURCES = ALL_RESOURCES.concat(resources);
+    }
+  };
+})();
+
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });
+  });
+</script>
+<script>
+(function(){
+  var RESOURCES = [];
+  AdGate.init(RESOURCES);
+  if(RESOURCES.length){
+    document.getElementById('grid-exercise-empty').style.display = 'none';
+    document.getElementById('grid-exercise').innerHTML = RESOURCES.map(AdGate.cardHTML).join('');
+  }
+})();
+</script>
+
+</body>
+</html>
