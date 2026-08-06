@@ -284,6 +284,42 @@
       file:'materiais/fisica_conversao_unidades.pdf'
     },
     {
+      id:'fisica-comprimento-ex',
+      subject:'fisica',
+      branch:'fundamentos',
+      serie:'1-medio',
+      topic:'Comprimento',
+      title:'Lista de Exercícios: Comprimento',
+      desc:'Instrumentos de medida, análise dimensional, contração de Lorentz e ordens de grandeza — 12 questões, nível ITA/IME.',
+      meta:'PDF · 3 páginas',
+      filename:'academia-das-exatas_fisica_comprimento_exercicios.pdf',
+      file:'materiais/fisica_comprimento_exercicios.pdf'
+    },
+    {
+      id:'fisica-tempo-ex',
+      subject:'fisica',
+      branch:'fundamentos',
+      serie:'1-medio',
+      topic:'Tempo',
+      title:'Lista de Exercícios: Tempo',
+      desc:'Definição do segundo, dilatação temporal, meia-vida e análise dimensional — 12 questões, nível ITA/IME.',
+      meta:'PDF · 3 páginas',
+      filename:'academia-das-exatas_fisica_tempo_exercicios.pdf',
+      file:'materiais/fisica_tempo_exercicios.pdf'
+    },
+    {
+      id:'fisica-massa-ex',
+      subject:'fisica',
+      branch:'fundamentos',
+      serie:'1-medio',
+      topic:'Massa',
+      title:'Lista de Exercícios: Massa',
+      desc:'Massa inercial vs. gravitacional, equivalência massa-energia e defeito de massa nuclear — 12 questões, nível ITA/IME.',
+      meta:'PDF · 3 páginas',
+      filename:'academia-das-exatas_fisica_massa_exercicios.pdf',
+      file:'materiais/fisica_massa_exercicios.pdf'
+    },
+    {
       id:'matematica',
       subject:'matematica',
       branch:'algebra',
@@ -564,6 +600,27 @@
       subject:'física',
       date:'2026-08-04',
       icon:'length'
+    },
+    'fundamentos::Tempo': {
+      url:'fisica-tempo.html',
+      summary:'Definição do segundo, relógios atômicos, incerteza, análise dimensional, ordens de grandeza, dilatação temporal e meia-vida — para ITA, IME e olimpíadas.',
+      subject:'física',
+      date:'2026-08-05',
+      icon:'time'
+    },
+    'fundamentos::Massa': {
+      url:'fisica-massa.html',
+      summary:'Definição do quilograma, massa inercial vs. gravitacional, instrumentos de medida, análise dimensional, ordens de grandeza e equivalência massa-energia.',
+      subject:'física',
+      date:'2026-08-05',
+      icon:'mass'
+    },
+    'ondulatoria::Refração da Luz': {
+      url:'fisica-refracao-luz.html',
+      summary:'Leis de Snell-Descartes, índice de refração, ângulo limite, reflexão total interna, lâmina de faces paralelas, prisma e dispersão — com figuras ilustrativas.',
+      subject:'física',
+      date:'2026-08-06',
+      icon:'refracao'
     }
   };
 
@@ -576,7 +633,7 @@
     {
       id:'fundamentos',
       title:'Fundamentos e Medidas',
-      topics:['Grandezas e Unidades de Medida', 'Notação Científica', 'Conversão de Unidades', 'Comprimento']
+      topics:['Grandezas e Unidades de Medida', 'Notação Científica', 'Conversão de Unidades', 'Comprimento', 'Tempo', 'Massa']
     },
     {
       id:'termologia',
@@ -591,7 +648,7 @@
     {
       id:'ondulatoria',
       title:'Ondulatória e Óptica',
-      topics:['Ondas', 'Óptica Geométrica']
+      topics:['Ondas', 'Refração da Luz', 'Óptica Geométrica']
     },
     {
       id:'moderna',
@@ -728,6 +785,28 @@
         '<text x="95" y="42" font-family="JetBrains Mono" font-weight="700" font-size="20" fill="#F3F5FA">L</text>' +
         '<circle cx="30" cy="55" r="5" fill="none" stroke="#6FA8C9" stroke-width="1.5" opacity="0.7"/>' +
         '<circle cx="190" cy="55" r="9" fill="none" stroke="#6FA8C9" stroke-width="1.5" stroke-dasharray="2 5" opacity="0.7"/>' +
+      '</svg>',
+    time:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<circle cx="110" cy="55" r="38" fill="none" stroke="#E8384F" stroke-width="2.5"/>' +
+        '<path d="M110 55 V28 M110 55 L132 68" fill="none" stroke="#F3F5FA" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<circle cx="110" cy="55" r="3" fill="#F3F5FA"/>' +
+        '<path d="M110 10 V17 M110 93 V100 M65 55 H58 M162 55 H155" stroke="#6FA8C9" stroke-width="2" stroke-linecap="round" opacity="0.6"/>' +
+      '</svg>',
+    mass:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M110 22 V85 M70 85 H150" stroke="#F3F5FA" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<path d="M40 30 H90 M40 30 L28 58 H52 Z" fill="none" stroke="#E8384F" stroke-width="2.2" stroke-linejoin="round"/>' +
+        '<path d="M130 30 H180 M130 30 L118 58 H142 Z" fill="none" stroke="#6FA8C9" stroke-width="2.2" stroke-linejoin="round"/>' +
+        '<circle cx="110" cy="22" r="4" fill="#F3F5FA"/>' +
+      '</svg>',
+    refracao:
+      '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
+        '<rect x="10" y="55" width="200" height="45" fill="#6FA8C9" opacity="0.18"/>' +
+        '<line x1="10" y1="55" x2="210" y2="55" stroke="#F3F5FA" stroke-width="1.5"/>' +
+        '<path d="M45 15 L100 55" stroke="#E8384F" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<path d="M100 55 L130 95" stroke="#E8384F" stroke-width="2.5" stroke-linecap="round"/>' +
+        '<path d="M100 20 V90" stroke="#F3F5FA" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>' +
       '</svg>',
     default:
       '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">' +
