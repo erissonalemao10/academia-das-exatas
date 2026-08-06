@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reflexão da Luz: Teoria Completa — Academia das Exatas</title>
+<meta name="description" content="Reflexão da luz para todos os níveis: leis da reflexão, reflexão especular e difusa, espelhos planos (campo visual, translação, rotação, associação), com figuras ilustrativas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="index.html" class="brand">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="index.html" style="text-decoration:none;"><button type="button">Início</button></a>
+      <a href="index.html" style="text-decoration:none;"><button type="button" aria-current="page">Física</button></a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <a class="article-back" href="index.html">← Voltar para Física</a>
+  <span class="article-kicker">Física · Ondulatória e Óptica</span>
+  <h1 class="article-title">Reflexão da Luz: Teoria Completa</h1>
+  <p class="article-sub">Um guia aprofundado, com figuras ilustrativas, sobre as leis da reflexão, reflexão especular (regular), reflexão difusa (irregular) e espelhos planos — do nível tradicional ao aprofundamento exigido em ITA, IME e olimpíadas. (Espelhos esféricos serão tratados em um material à parte.)</p>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-body theory">
+    <p>Sem a reflexão da luz, simplesmente não veríamos a maior parte do mundo ao nosso redor. Objetos que não emitem luz própria — uma mesa, uma folha de papel, o rosto de outra pessoa — só são visíveis porque refletem a luz que os atinge até os nossos olhos. Este texto cobre, em profundidade, os quatro pilares da reflexão da luz: as leis da reflexão, a reflexão especular, a reflexão difusa e o espelho plano — com o rigor necessário para ITA, IME e olimpíadas, mas também acessível a quem está vendo o assunto pela primeira vez no Ensino Médio.</p>
+
+    <h5>1. O que é a reflexão da luz</h5>
+    <p>Reflexão é o fenômeno em que a luz, ao atingir a superfície de separação entre dois meios, retorna ao meio de onde veio, sem atravessar para o outro meio — diferente da refração, em que a luz atravessa e muda de direção (tema de outro material desta série). Toda superfície reflete pelo menos uma parte da luz que incide sobre ela; a fração exata depende do material, do ângulo de incidência e das propriedades da superfície, mas o fenômeno em si é universal.</p>
+
+    <h5>2. As leis da reflexão</h5>
+    <p><strong>1ª Lei (planaridade):</strong> o raio incidente, a reta normal à superfície no ponto de incidência e o raio refletido estão sempre contidos no mesmo plano.</p>
+    <p><strong>2ª Lei:</strong> o ângulo de incidência é sempre igual ao ângulo de reflexão, ambos medidos em relação à normal:</p>
+    <p class="formula-box">$$\theta_i = \theta_r$$</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig1_lei_reflexao.png" alt="Raio de luz incidindo sobre uma superficie e sendo refletido, com o angulo de incidencia igual ao angulo de reflexao, medidos em relacao a normal">
+      <figcaption>O ângulo de incidência θᵢ é sempre igual ao ângulo de reflexão θᵣ, ambos medidos a partir da normal à superfície.</figcaption>
+    </figure>
+
+    <p><strong>Dedução pelo Princípio de Fermat (nível avançado).</strong> Assim como a lei de Snell na refração, a lei da reflexão pode ser deduzida do Princípio de Fermat — a luz percorre, entre dois pontos fixos A e B (com reflexão em uma superfície entre eles), o caminho de tempo mínimo. Como a velocidade da luz é a mesma antes e depois da reflexão (o mesmo meio), tempo mínimo equivale a caminho mais curto. Minimizando a distância total \(AP + PB\) em função da posição do ponto de reflexão \(P\) sobre a superfície — um problema clássico de geometria, equivalente a refletir o ponto B através da superfície e traçar uma reta —, obtém-se exatamente a condição \(\theta_i = \theta_r\). É a mesma lógica de otimização que gera a lei de Snell, aplicada ao caso mais simples de um único meio.</p>
+
+    <p><strong>Reversibilidade do caminho óptico.</strong> Uma consequência direta das leis da reflexão (e também da refração) é o <strong>princípio da reversibilidade</strong>: se um raio de luz percorre um caminho de A até B, refletindo em uma ou mais superfícies pelo caminho, um raio percorrendo o caminho inverso, de B até A, segue exatamente a mesma trajetória. É por isso que, se você consegue ver o rosto de alguém através de um espelho, essa pessoa também consegue ver o seu — cada raio de luz é, individualmente, reversível.</p>
+
+    <h5>3. Reflexão especular (regular)</h5>
+    <p>Quando um feixe de raios paralelos incide sobre uma superfície <strong>lisa</strong> — com irregularidades muito menores que o comprimento de onda da luz —, todos os raios obedecem à lei da reflexão de forma coordenada, e o feixe permanece paralelo após refletir. Esse é o caso dos espelhos, chamado de <strong>reflexão especular</strong> ou <strong>regular</strong>.</p>
+
+    <p><strong>Quando uma superfície se comporta como espelho? O critério de Rayleigh.</strong> Não existe uma superfície perfeitamente lisa — a questão é sempre "lisa o suficiente comparada a quê?". O critério de Rayleigh estabelece, de forma aproximada, que uma superfície se comporta como refletor especular quando a variação de altura de suas irregularidades \(h\) satisfaz:</p>
+    <p class="formula-box">$$h < \dfrac{\lambda}{8\cos\theta_i}$$</p>
+    <p>onde \(\lambda\) é o comprimento de onda da luz incidente e \(\theta_i\) o ângulo de incidência. Como a luz visível tem comprimento de onda da ordem de \(500\) nm, uma superfície com irregularidades bem menores que isso (um espelho de vidro polido, por exemplo) reflete especularmente; a mesma superfície, se rugosa em escala maior que a luz visível, refletiria de forma difusa (seção 4) — e é por isso que ondas de rádio, com comprimentos de onda muito maiores, "enxergam" uma parede de tijolos como se fosse um espelho liso, algo impossível para a luz visível.</p>
+
+    <p><strong>Refletância: quanto da luz é realmente refletida?</strong> Mesmo em reflexão especular perfeita, nem toda a luz incidente é refletida — parte é absorvida ou, no caso de materiais transparentes, refratada para dentro do material (tema do texto sobre refração). A fração da intensidade luminosa refletida é chamada <strong>refletância</strong> e depende do material, do ângulo de incidência e da polarização da luz — seu tratamento completo é dado pelas equações de Fresnel, fora do escopo deste texto introdutório, mas vale saber que espelhos comuns de vidro com revestimento metálico (prata ou alumínio) atingem refletâncias superiores a \(90\%\) para incidência próxima da normal, enquanto a água refletindo luz em incidência quase normal reflete apenas cerca de \(2\%\) (o restante é refratado) — e é por isso que enxergamos claramente o fundo de uma piscina rasa, mas mal enxergamos nosso reflexo nela, a não ser em ângulos rasantes.</p>
+
+    <p><strong>Reflexões múltiplas entre superfícies especulares.</strong> Quando duas superfícies especulares ficam frente a frente e aproximadamente paralelas (como em um elevador com espelhos nas duas paredes, ou entre duas vitrines de loja em esquinas), a luz pode refletir múltiplas vezes entre elas, formando uma sequência visualmente infinita de imagens, cada uma progressivamente menos intensa (por causa da refletância menor que \(100\%\) a cada reflexão) e mais distante. Esse fenômeno reaparece de forma quantitativa na seção 5, ao tratarmos da associação de espelhos planos.</p>
+
+    <h5>4. Reflexão difusa (irregular)</h5>
+    <p>Quando a mesma luz incide sobre uma superfície <strong>rugosa</strong> — como uma parede, um tecido ou uma folha de papel —, cada raio individual ainda obedece rigorosamente à lei da reflexão, mas, como a orientação local da superfície varia ponto a ponto em escala microscópica, os raios refletidos saem espalhados em várias direções. Esse é o caso da <strong>reflexão difusa</strong> ou <strong>irregular</strong>, responsável por permitirmos ver objetos opacos comuns de qualquer ângulo.</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig2_reflexao_regular_difusa.png" alt="Comparacao entre reflexao regular, onde raios paralelos permanecem paralelos ao refletir numa superficie lisa, e reflexao difusa, onde os raios se espalham em varias direcoes ao refletir numa superficie rugosa">
+      <figcaption>Na reflexão regular (superfícies lisas), os raios refletidos permanecem paralelos. Na reflexão difusa (superfícies rugosas), cada raio obedece à lei da reflexão localmente, mas o conjunto se espalha em várias direções.</figcaption>
+    </figure>
+
+    <p><strong>Um detalhe conceitual importante:</strong> a reflexão difusa <em>não</em> é uma "quebra" da lei da reflexão — é exatamente a mesma lei (\(\theta_i = \theta_r\)) aplicada a uma superfície cuja normal muda de direção de ponto a ponto em escala microscópica. Nenhuma nova física é necessária para explicá-la, apenas a mesma lei aplicada a uma geometria irregular.</p>
+
+    <p><strong>A Lei de Lambert.</strong> Para muitas superfícies difusas reais (chamadas de <strong>superfícies lambertianas</strong>, uma idealização amplamente usada), a intensidade de luz refletida em uma direção específica não é uniforme em todas as direções: ela é proporcional ao cosseno do ângulo entre essa direção e a normal à superfície:</p>
+    <p class="formula-box">$$I(\theta) = I_0 \cos\theta$$</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig7_lei_lambert.png" alt="Grafico polar mostrando a distribuicao de intensidade da luz refletida difusamente segundo a lei de Lambert, proporcional ao cosseno do angulo em relacao a normal">
+      <figcaption>Lei de Lambert: a intensidade da luz espalhada difusamente é máxima na direção da normal e cai proporcionalmente a cos θ nas direções mais oblíquas.</figcaption>
+    </figure>
+
+    <p>É essa lei — e não uma distribuição uniforme em todas as direções — que explica por que uma folha de papel iluminada de frente parece mais brilhante quando olhada de frente do que quando olhada de um ângulo bem rasante, mesmo sendo uma superfície "fosca" (difusora). O conceito complementar de <strong>albedo</strong> descreve a fração da luz incidente total que uma superfície reflete difusamente (em vez de absorver) — a neve fresca tem albedo próximo de \(0{,}9\) (reflete cerca de 90% da luz incidente), enquanto o asfalto tem albedo próximo de \(0{,}05\) a \(0{,}10\), o que explica por que asfalto aquece muito mais ao sol.</p>
+
+    <p><strong>Retrorreflexão: um caso especial.</strong> Vale mencionar, por ser frequentemente confundido com reflexão difusa comum, o fenômeno da <strong>retrorreflexão</strong>: certas superfícies e estruturas (como as esferas de vidro microscópicas em tintas de placas de sinalização de trânsito, ou os "olhos de gato" em estradas) são projetadas para devolver a luz preferencialmente na mesma direção de onde ela veio, não espalhada aleatoriamente nem refletida especularmente — é por isso que uma placa de trânsito retrorrefletiva parece brilhar intensamente quando iluminada pelos faróis de um carro à noite, mas parece opaca e comum sob luz ambiente difusa.</p>
+
+    <h5>5. Espelho plano</h5>
+    <p>Um espelho plano é uma superfície plana com reflexão especular. É, ao mesmo tempo, o instrumento óptico mais simples e a base para entender espelhos mais complexos.</p>
+
+    <p><strong>5.1 Características da imagem.</strong> A imagem formada por um espelho plano é: <strong>virtual</strong> (não pode ser projetada em um anteparo, pois os raios refletidos apenas parecem vir de trás do espelho — nenhuma luz de fato passa por trás dele); do <strong>mesmo tamanho</strong> do objeto; e localizada à mesma distância do espelho que o objeto, de modo que \(p = p'\) (distância do objeto ao espelho = distância da imagem ao espelho).</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig3_espelho_plano.png" alt="Formacao de imagem em um espelho plano: objeto na frente do espelho e sua imagem virtual simetrica atras dele, com raios tracados ate o olho do observador">
+      <figcaption>A imagem em um espelho plano é virtual, do mesmo tamanho do objeto, e está à mesma distância do espelho (p = p').</figcaption>
+    </figure>
+
+    <p><strong>5.2 Demonstração de que \(p = p'\).</strong> Considere um raio que sai do topo do objeto e incide perpendicularmente sobre o espelho (ângulo de incidência \(0°\)): ele reflete de volta sobre si mesmo. Considere um segundo raio, saindo do mesmo ponto, que incide obliquamente e é refletido até o olho do observador. Usando a lei da reflexão (\(\theta_i=\theta_r\)) e um pouco de geometria — os dois triângulos retângulos formados pelo objeto, o ponto de incidência sobre o espelho e a posição aparente da imagem são congruentes (compartilham o mesmo ângulo em relação à normal e o mesmo cateto ao longo do espelho) —, conclui-se que a distância perpendicular do objeto ao espelho é exatamente igual à distância perpendicular da imagem ao espelho. Esse tipo de demonstração geométrica, e não apenas a memorização do resultado \(p=p'\), costuma ser cobrado em questões dissertativas de ITA e IME.</p>
+
+    <p><strong>5.3 O que realmente se inverte (e o que não se inverte).</strong> Um dos erros conceituais mais comuns é dizer que o espelho plano "inverte a esquerda com a direita". Isso não é correto no sentido espacial: um espelho plano nunca troca a esquerda pela direita, nem cima por baixo. O que ele inverte, de fato, é o eixo <strong>perpendicular ao próprio espelho</strong> — a direção de "frente para trás". A sensação de que "esquerda e direita trocaram" surge porque, ao olhar sua imagem no espelho, você está vendo algo que parece "virado de frente para você" (como se alguém tivesse dado meia-volta) — e é essa meia-volta aparente, não uma troca espacial de lados, que faz a mão que você reconhece como "direita" na imagem ocupar visualmente o lado que associamos à esquerda de uma pessoa à nossa frente.</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig8_inversao_lateral.png" alt="Duas ilustracoes: uma vista de cima mostrando que o eixo frente-tras se inverte no espelho plano, e outra mostrando a letra R aparecendo espelhada horizontalmente, nao de cabeca para baixo">
+      <figcaption>À esquerda: o único eixo que de fato se inverte é o perpendicular ao espelho (frente–trás). À direita: por isso um texto aparece espelhado horizontalmente (não de cabeça para baixo) — o clássico efeito da "escrita de ambulância".</figcaption>
+    </figure>
+
+    <p>É exatamente esse mecanismo que explica por que a palavra "AMBULÂNCIA" costuma ser escrita espelhada na frente de ambulâncias: como o eixo vertical (para cima) nunca se inverte (é definido pela gravidade, independente de como você está de frente para o espelho), mas o eixo frente-trás sim, o texto escrito espelhado aparece corretamente legível quando visto pelo retrovisor de um carro à frente.</p>
+
+    <p><strong>5.4 Campo visual de um espelho plano.</strong> Nem todo objeto no ambiente é visível através de um espelho — apenas aqueles dentro do chamado <strong>campo visual</strong> do observador para aquele espelho, que depende do tamanho do espelho e da posição do observador em relação a ele. O método gráfico para determinar essa região consiste em encontrar a imagem virtual do próprio observador (aplicando \(p=p'\) à posição do observador) e traçar retas dessa posição virtual passando pelas bordas do espelho, prolongando-as para dentro do ambiente — a região delimitada por essas retas é o campo visual.</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig9_campo_visual.png" alt="Construcao geometrica do campo visual de um espelho plano, tracando retas a partir da posicao virtual do observador atraves das bordas do espelho">
+      <figcaption>O campo visual de um espelho plano é encontrado traçando retas da posição virtual do observador através das bordas do espelho, e prolongando-as para dentro do ambiente.</figcaption>
+    </figure>
+
+    <p>Note que, quanto mais próximo o observador estiver do espelho, maior tende a ser o campo visual (para um espelho de tamanho fixo) — o motivo pelo qual se aproximar de um espelho pequeno permite enxergar uma porção maior do ambiente ao redor.</p>
+
+    <p><strong>5.5 Translação de um espelho plano.</strong> Se um espelho plano se desloca de uma distância \(d\) na direção perpendicular ao seu próprio plano — mantendo o objeto fixo —, a imagem se desloca o <strong>dobro</strong> dessa distância, \(2d\), na mesma direção. Isso decorre diretamente de \(p=p'\): se o espelho se aproxima do objeto em \(d\), a distância objeto-espelho diminui em \(d\), e a distância espelho-imagem também diminui em \(d\) — logo a imagem se aproxima do espelho em \(d\) e, como o espelho também se moveu \(d\) na mesma direção, a imagem se move \(2d\) em relação a um referencial fixo no ambiente.</p>
+
+    <p><strong>5.6 Rotação de um espelho plano.</strong> Se um espelho plano gira de um ângulo \(\alpha\) em torno de um eixo contido em seu próprio plano — com o raio incidente mantido fixo —, o raio refletido gira de \(2\alpha\). Note a diferença importante em relação à translação: aqui é o <em>raio refletido</em> que gira o dobro do ângulo do espelho, não a posição da imagem que se desloca o dobro de uma distância.</p>
+
+    <figure class="theory-figure">
+      <img src="img/reflexao/fig10_translacao_rotacao.png" alt="Duas ilustracoes: a regra da translacao de um espelho plano, onde a imagem se desloca o dobro da distancia que o espelho se move, e a regra da rotacao, onde o raio refletido gira o dobro do angulo que o espelho gira">
+      <figcaption>Translação (esquerda): a imagem se desloca 2d quando o espelho se desloca d. Rotação (direita): o raio refletido gira 2α quando o espelho gira α — resultado obtido diretamente pela lei da reflexão aplicada às duas orientações do espelho.</figcaption>
+    </figure>
+
+    <p>Essa regra do "dobro do ângulo" é a base de instrumentos de medição óptica de alta precisão (como o espelho de Gauss, usado em galvanômetros e certos telescópios de precisão) e do funcionamento de periscópios simples.</p>
+
+    <p><strong>5.7 Associação de espelhos planos.</strong> Quando dois espelhos planos são associados formando um ângulo \(\alpha\) entre si, um objeto colocado entre eles forma múltiplas imagens, por sucessivas reflexões de uma imagem sobre o outro espelho. Se \(360°/\alpha\) resultar em um número inteiro <strong>par</strong>, o número total de imagens formadas é dado por:</p>
+    <p class="formula-box">$$N = \dfrac{360°}{\alpha} - 1$$</p>
+    <p>Se \(360°/\alpha\) resultar em um número inteiro <strong>ímpar</strong>, a fórmula acima só vale exatamente quando o objeto está posicionado sobre a bissetriz do ângulo entre os espelhos; fora dela, uma das imagens "duplica" (duas imagens se sobrepõem), e o número efetivamente observado é \(N = 360°/\alpha - 2\) mais uma imagem dupla. Esse tipo de exceção é um clássico "pega-ratão" de prova de olimpíada, e vale a pena registrar como caso especial. O caso particular \(\alpha = 0°\) (espelhos paralelos, frente a frente) corresponde ao limite de infinitas imagens mencionado na seção 3. Esse princípio é também a base de brinquedos como o caleidoscópio.</p>
+
+    <h5>6. Exemplo resolvido</h5>
+    <p>Dois espelhos planos formam um ângulo de \(\alpha = 45°\) entre si, com um objeto puntiforme colocado entre eles, fora da bissetriz. Determine o número de imagens formadas.</p>
+    <p class="formula-box">$$\dfrac{360°}{\alpha} = \dfrac{360°}{45°} = 8 \quad (\text{par}) \;\Rightarrow\; N = \dfrac{360°}{\alpha} - 1 = 8 - 1 = 7 \text{ imagens}$$</p>
+    <p>Como o resultado de \(360°/\alpha\) é par, a fórmula vale exatamente independentemente da posição do objeto entre os espelhos (não é necessário estar sobre a bissetriz) — são formadas \(7\) imagens distintas.</p>
+
+    <h5>Conclusão</h5>
+    <p><em>As leis da reflexão parecem, à primeira vista, simples o bastante para serem memorizadas em uma linha — mas seus desdobramentos são profundos: a distinção entre reflexão especular e difusa explica por que vemos o mundo do jeito que vemos; a Lei de Lambert quantifica precisamente como a luz difusa se distribui; e o espelho plano, o mais simples dos instrumentos ópticos, esconde sutilezas — como a verdadeira natureza da sua "inversão", seu campo visual limitado, e as regras precisas de translação e rotação — que só se revelam com um olhar atento e rigoroso. Dominar esses quatro pilares é o alicerce necessário antes de avançar para espelhos esféricos, lentes e instrumentos ópticos mais complexos.</em></p>
+  </div>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-exercise">
+    <h3>Agora pratique</h3>
+    <p class="topic-empty" id="grid-exercise-empty">Em breve, lista de exercícios em PDF sobre este tema.</p>
+    <div class="resource-grid" id="grid-exercise"></div>
+  </div>
+</div>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+<script src="assets/adgate.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });
+  });
+</script>
+<script>
+(function(){
+  var RESOURCES = [];
+  AdGate.init(RESOURCES);
+  if(RESOURCES.length){
+    document.getElementById('grid-exercise-empty').style.display = 'none';
+    document.getElementById('grid-exercise').innerHTML = RESOURCES.map(AdGate.cardHTML).join('');
+  }
+})();
+</script>
+
+</body>
+</html>
