@@ -192,7 +192,16 @@
 </script>
 <script>
 (function(){
-  var RESOURCES = [];
+  var RESOURCES = [
+    {
+      id:'fisica-refracao-luz-ex',
+      title:'Lista de Exercícios: Refração da Luz',
+      desc:'Nível vestibular, dificuldade crescente (fácil → ITA/IME): Lei de Snell, ângulo limite, lâmina, prisma e dedução de Fermat — 12 questões com figuras e gráficos.',
+      meta:'PDF · 3 páginas',
+      filename:'academia-das-exatas_fisica_refracao_luz_exercicios.pdf',
+      file:'materiais/fisica_refracao_luz_exercicios.pdf'
+    }
+  ];
   AdGate.init(RESOURCES);
   if(RESOURCES.length){
     document.getElementById('grid-exercise-empty').style.display = 'none';

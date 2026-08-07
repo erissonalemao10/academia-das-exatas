@@ -188,7 +188,16 @@
 </script>
 <script>
 (function(){
-  var RESOURCES = [];
+  var RESOURCES = [
+    {
+      id:'fisica-reflexao-luz-ex',
+      title:'Lista de Exercícios: Reflexão da Luz',
+      desc:'Nível vestibular, dificuldade crescente (fácil → ITA/IME): espelho plano, Lei de Lambert, rotação, associação de espelhos e retrorrefletor — 12 questões com figuras.',
+      meta:'PDF · 3 páginas',
+      filename:'academia-das-exatas_fisica_reflexao_luz_exercicios.pdf',
+      file:'materiais/fisica_reflexao_luz_exercicios.pdf'
+    }
+  ];
   AdGate.init(RESOURCES);
   if(RESOURCES.length){
     document.getElementById('grid-exercise-empty').style.display = 'none';
