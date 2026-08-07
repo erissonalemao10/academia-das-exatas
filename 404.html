@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página não encontrada — Academia das Exatas</title>
+<meta name="description" content="Essa página não existe ou foi movida. Volte para a Academia das Exatas.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .notfound-wrap{
+    min-height:70vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:60px 24px;
+  }
+  .notfound-code{
+    font-family:'Archivo', sans-serif; font-weight:900;
+    font-size:clamp(72px, 16vw, 140px);
+    color:var(--red); line-height:1; margin:0 0 8px;
+    letter-spacing:-2px;
+  }
+  .notfound-title{ font-size:1.4rem; font-weight:800; margin:0 0 12px; color:var(--ink); }
+  .notfound-sub{ color:var(--ink-soft); max-width:480px; margin:0 0 28px; line-height:1.6; }
+  .notfound-actions{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+  .notfound-actions a button{
+    font-family:inherit; font-size:0.95rem; font-weight:700;
+    padding:12px 22px; border-radius:10px; border:none; cursor:pointer;
+  }
+  .btn-primary{ background:var(--red); color:#fff; }
+  .btn-secondary{ background:var(--paper-dim); color:var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="index.html" class="brand">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="index.html" style="text-decoration:none;"><button type="button">Início</button></a>
+    </nav>
+  </div>
+</header>
+
+<div class="notfound-wrap">
+  <p class="notfound-code">404</p>
+  <h1 class="notfound-title">Essa página não existe (ou foi movida)</h1>
+  <p class="notfound-sub">O link que você seguiu pode estar quebrado, ou o conteúdo foi renomeado. Volte para a página inicial e navegue pelos assuntos de Física e Matemática.</p>
+  <div class="notfound-actions">
+    <a href="index.html" style="text-decoration:none;"><button type="button" class="btn-primary">Voltar para o início</button></a>
+  </div>
+</div>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+</body>
+</html>
