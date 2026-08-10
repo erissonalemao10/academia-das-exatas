@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressão Aritmética: Teoria Completa — Academia das Exatas</title>
+<meta name="description" content="Progressão Aritmética para o vestibular: termo geral, propriedades, soma de termos, relação com a função afim, aplicações e exemplos resolvidos, com figuras ilustrativas.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Academia das Exatas">
+<meta property="og:title" content="Progressão Aritmética: Teoria Completa — Academia das Exatas">
+<meta property="og:description" content="Progressão Aritmética para o vestibular: termo geral, propriedades, soma de termos, relação com a função afim, aplicações e exemplos resolvidos, com figuras ilustrativas.">
+<meta property="og:url" content="https://academiadasexatas.netlify.app/matematica-progressao-aritmetica.html">
+<meta property="og:image" content="https://academiadasexatas.netlify.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Progressão Aritmética: Teoria Completa — Academia das Exatas">
+<meta name="twitter:description" content="Progressão Aritmética para o vestibular: termo geral, propriedades, soma de termos, relação com a função afim, aplicações e exemplos resolvidos, com figuras ilustrativas.">
+<meta name="twitter:image" content="https://academiadasexatas.netlify.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<header class="rail">
+  <div class="rail-inner">
+    <a href="index.html" class="brand">Academia das Exatas <small>física · matemática</small></a>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="index.html" style="text-decoration:none;"><button type="button">Início</button></a>
+      <a href="index.html" style="text-decoration:none;"><button type="button" aria-current="page">Matemática</button></a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <a class="article-back" href="index.html">← Voltar para Matemática</a>
+  <span class="article-kicker">Matemática · Sequências</span>
+  <h1 class="article-title">Progressão Aritmética: Teoria Completa</h1>
+  <p class="article-sub">Um guia robusto para quem está prestes a prestar vestibular: termo geral, propriedades, soma dos termos, relação com a função afim, aplicações práticas e exemplos resolvidos — tudo em um só lugar.</p>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-body theory">
+    <p>Progressão aritmética é, ao mesmo tempo, um dos assuntos mais cobrados em vestibulares e um dos mais mal compreendidos — não pela dificuldade das fórmulas, mas por serem decoradas sem entender de onde vêm. Este texto cobre a progressão aritmética (PA) de forma completa: da definição às deduções, das propriedades às aplicações práticas, para que você não precise procurar em mais nenhum outro lugar.</p>
+
+    <h5>1. O que é uma progressão aritmética</h5>
+    <p>Uma <strong>sequência numérica</strong> é simplesmente uma lista ordenada de números, chamados <strong>termos</strong>. Uma <strong>progressão aritmética (PA)</strong> é uma sequência numérica em que, a partir do segundo termo, cada termo é igual ao termo anterior somado a uma constante fixa, chamada <strong>razão</strong> da progressão, representada por \(r\):</p>
+    <p class="formula-box">$$a_{n+1} = a_n + r$$</p>
+    <p>Ou seja: para caminhar de um termo ao próximo, sempre somamos a mesma quantidade \(r\). Isso é o que diferencia uma PA de uma sequência numérica qualquer — a "distância" entre termos consecutivos é sempre igual.</p>
+
+    <figure class="theory-figure">
+      <img src="img/pa/fig1_escada_termos.png" alt="Sequencia de termos de uma progressao aritmetica, cada um obtido somando a mesma razao r ao termo anterior">
+      <figcaption>Em uma PA, cada termo é obtido somando sempre a mesma razão r ao termo anterior — aqui, com a₁ = 2 e r = 3.</figcaption>
+    </figure>
+
+    <p>Por convenção, \(a_1\) representa o primeiro termo da progressão, \(a_2\) o segundo, e assim por diante, com \(a_n\) representando o termo genérico de posição \(n\) (o <strong>termo geral</strong>).</p>
+
+    <h5>2. O termo geral da PA</h5>
+    <p>Se cada termo é o anterior mais \(r\), então, partindo de \(a_1\):</p>
+    <p class="formula-box">$$a_2 = a_1 + r,\quad a_3 = a_1 + 2r,\quad a_4 = a_1 + 3r,\ \ldots$$</p>
+    <p>O padrão é claro: para chegar ao termo de posição \(n\), somamos \(r\) exatamente \((n-1)\) vezes ao primeiro termo — já que do primeiro termo até o \(n\)-ésimo há \((n-1)\) "saltos" de tamanho \(r\). Isso dá a fórmula do <strong>termo geral</strong>:</p>
+    <p class="formula-box">$$a_n = a_1 + (n-1)\,r$$</p>
+    <p>Essa é, sem dúvida, a fórmula mais usada em questões de PA — mas repare que ela não precisa ser "decorada às cegas": ela nasce diretamente da definição, contando quantos saltos de tamanho \(r\) são necessários para sair de \(a_1\) e chegar a \(a_n\).</p>
+    <p><strong>Forma generalizada:</strong> a mesma lógica vale entre dois termos quaisquer, não apenas a partir do primeiro. Para dois termos \(a_m\) e \(a_n\) de uma PA:</p>
+    <p class="formula-box">$$a_n = a_m + (n-m)\,r$$</p>
+    <p>Essa versão mais geral é extremamente útil quando o problema não informa diretamente o primeiro termo, apenas dois termos quaisquer da sequência.</p>
+
+    <h5>3. Classificação de uma PA</h5>
+    <p>O sinal da razão \(r\) determina o comportamento da progressão:</p>
+    <table class="theory-table">
+      <thead><tr><th>Razão</th><th>Classificação</th><th>Exemplo</th></tr></thead>
+      <tbody>
+        <tr><td>\(r > 0\)</td><td>Crescente (cada termo é maior que o anterior)</td><td>\((2, 5, 8, 11, \ldots)\), \(r=3\)</td></tr>
+        <tr><td>\(r < 0\)</td><td>Decrescente (cada termo é menor que o anterior)</td><td>\((10, 7, 4, 1, \ldots)\), \(r=-3\)</td></tr>
+        <tr><td>\(r = 0\)</td><td>Constante (todos os termos são iguais)</td><td>\((5, 5, 5, 5, \ldots)\), \(r=0\)</td></tr>
+      </tbody>
+    </table>
+
+    <h5>4. Propriedades importantes</h5>
+    <p><strong>4.1 Termo médio de três termos consecutivos.</strong> Se três números \(x\), \(y\), \(z\) estão em PA nessa ordem, então o termo do meio é a <strong>média aritmética</strong> dos outros dois:</p>
+    <p class="formula-box">$$y = \dfrac{x+z}{2}$$</p>
+    <p>Isso decorre diretamente da definição: se \(y = x + r\) e \(z = y + r\), então \(x + z = (y-r) + (y+r) = 2y\), logo \(y = (x+z)/2\). Essa propriedade é frequentemente usada "ao contrário": para verificar se três números estão em PA, basta checar se o dobro do termo do meio é igual à soma dos outros dois.</p>
+
+    <p><strong>4.2 Termos equidistantes dos extremos.</strong> Em uma PA finita, a soma de dois termos equidistantes dos extremos (um contado a partir do início, outro a partir do fim) é sempre igual à soma dos extremos:</p>
+    <p class="formula-box">$$a_1 + a_n = a_2 + a_{n-1} = a_3 + a_{n-2} = \ldots$$</p>
+
+    <figure class="theory-figure">
+      <img src="img/pa/fig3_truque_gauss.png" alt="Diagrama mostrando que termos equidistantes dos extremos de uma progressao aritmetica finita somam sempre o mesmo valor">
+      <figcaption>Termos equidistantes dos extremos de uma PA finita sempre somam o mesmo valor — a base do método de Gauss para somar os termos (seção 5).</figcaption>
+    </figure>
+
+    <p><strong>4.3 Interpolação de meios aritméticos.</strong> "Interpolar \(k\) meios aritméticos" entre dois números \(a\) e \(b\) significa construir uma PA que começa em \(a\), termina em \(b\), e tem \(k\) termos entre eles. Nesse caso, a PA terá \(k+2\) termos ao todo (contando os extremos), e a razão é encontrada aplicando a fórmula do termo geral com \(a_1 = a\) e \(a_{k+2} = b\):</p>
+    <p class="formula-box">$$r = \dfrac{b - a}{k+1}$$</p>
+
+    <h5>5. Soma dos termos de uma PA finita</h5>
+    <p>Uma das histórias mais contadas na matemática escolar é a do matemático alemão Carl Friedrich Gauss que, ainda criança, teria somado rapidamente todos os números de 1 a 100 percebendo o truque que veremos aqui.</p>
+    <p>A ideia: some a PA "de trás para frente" com ela mesma "de frente para trás", termo a termo:</p>
+    <p class="formula-box">$$S_n = a_1 + a_2 + \cdots + a_n$$</p>
+    <p class="formula-box">$$S_n = a_n + a_{n-1} + \cdots + a_1$$</p>
+    <p>Somando as duas linhas, termo a termo, cada par resulta em \(a_1 + a_n\) (pela propriedade da seção 4.2) — e há exatamente \(n\) desses pares:</p>
+    <p class="formula-box">$$2S_n = n\,(a_1 + a_n) \quad\Longrightarrow\quad S_n = \dfrac{(a_1 + a_n)\,n}{2}$$</p>
+    <p>Essa é a fórmula da <strong>soma dos \(n\) primeiros termos de uma PA</strong> — e repare que ela é, essencialmente, "a média entre o primeiro e o último termo, multiplicada pela quantidade de termos", uma interpretação que ajuda bastante a lembrar da fórmula sem decorá-la mecanicamente.</p>
+
+    <h5>6. PA e a função afim: a conexão que poucos veem</h5>
+    <p>Reescrevendo o termo geral \(a_n = a_1 + (n-1)r\) e organizando os termos:</p>
+    <p class="formula-box">$$a_n = r\cdot n + (a_1 - r)$$</p>
+    <p>Essa expressão tem exatamente a forma de uma <strong>função afim</strong> (função do 1º grau) na variável \(n\): \(f(n) = mn + b\), com coeficiente angular \(m = r\) e coeficiente linear \(b = a_1 - r\). Isso significa que os pontos \((n, a_n)\) de uma PA estão todos alinhados sobre uma mesma reta — a PA é, essencialmente, uma função afim "amostrada" apenas nos números naturais.</p>
+
+    <figure class="theory-figure">
+      <img src="img/pa/fig2_grafico_linear.png" alt="Grafico mostrando os termos de uma progressao aritmetica como pontos alinhados sobre uma reta, em funcao da posicao n">
+      <figcaption>Os termos de uma PA, quando marcados como pontos (n, aₙ), ficam alinhados sobre uma reta — a razão r é exatamente o coeficiente angular dessa reta.</figcaption>
+    </figure>
+
+    <p>Essa conexão é poderosa: tudo que você já sabe sobre retas (inclinação, crescimento, decrescimento) se aplica diretamente à PA. Uma razão \(r\) grande corresponde a uma reta mais "inclinada" (a sequência cresce ou decresce mais rápido); \(r=0\) corresponde a uma reta horizontal (sequência constante).</p>
+
+    <h5>7. Aplicações práticas</h5>
+    <p><strong>Juros simples.</strong> O regime de juros simples é uma aplicação direta de PA: se um capital \(C\) rende juros simples a uma taxa fixa por período, o valor total após cada período forma uma PA de razão igual ao valor do juro por período. É por isso que, no regime de juros simples, o valor "cresce em linha reta" com o tempo — exatamente a conexão com a função afim vista na seção 6.</p>
+    <p><strong>Problemas de contagem e organização.</strong> Situações como o número de assentos em fileiras de um teatro (quando cada fileira tem um número fixo de assentos a mais que a anterior), ou o número de tijolos em cada fileira de uma pilha, costumam ser PA disfarçadas — reconhecer o padrão "soma sempre a mesma quantidade" é o primeiro passo para resolver esses problemas.</p>
+    <p><strong>Depreciação linear e planejamento financeiro.</strong> Quando um bem perde o mesmo valor monetário a cada ano (depreciação linear, diferente da depreciação percentual, que seria uma PG), seu valor ao longo dos anos também forma uma PA decrescente.</p>
+
+    <h5>8. Exemplos resolvidos</h5>
+    <p><strong>Exemplo 1 — Termo geral.</strong> Determine o vigésimo termo da PA \((5, 9, 13, 17, \ldots)\).</p>
+    <p class="formula-box">$$a_1 = 5,\ r = 4 \;\Rightarrow\; a_{20} = 5 + (20-1)\cdot 4 = 5 + 76 = 81$$</p>
+
+    <p><strong>Exemplo 2 — Encontrando a razão a partir de dois termos.</strong> Em uma PA, \(a_3 = 11\) e \(a_8 = 31\). Determine a razão e o primeiro termo.</p>
+    <p class="formula-box">$$a_8 = a_3 + (8-3)\,r \;\Rightarrow\; 31 = 11 + 5r \;\Rightarrow\; r = 4$$</p>
+    <p class="formula-box">$$a_3 = a_1 + 2r \;\Rightarrow\; 11 = a_1 + 8 \;\Rightarrow\; a_1 = 3$$</p>
+
+    <p><strong>Exemplo 3 — Soma de termos.</strong> Calcule a soma dos 15 primeiros termos da PA \((2, 7, 12, \ldots)\).</p>
+    <p class="formula-box">$$a_1=2,\ r=5 \;\Rightarrow\; a_{15} = 2 + 14\cdot 5 = 72$$</p>
+    <p class="formula-box">$$S_{15} = \dfrac{(a_1+a_{15})\cdot 15}{2} = \dfrac{(2+72)\cdot 15}{2} = \dfrac{74\cdot 15}{2} = 555$$</p>
+
+    <p><strong>Exemplo 4 — Interpolação de meios aritméticos.</strong> Interpole 4 meios aritméticos entre 3 e 23.</p>
+    <p class="formula-box">$$r = \dfrac{23-3}{4+1} = \dfrac{20}{5} = 4 \;\Rightarrow\; (3,\ 7,\ 11,\ 15,\ 19,\ 23)$$</p>
+
+    <h5>9. Erros comuns</h5>
+    <blockquote>Usar \(n\) no lugar de \((n-1)\) na fórmula do termo geral — o erro mais frequente, geralmente por pressa. Confundir a fórmula da soma \(S_n = \frac{(a_1+a_n)n}{2}\) com uma média simples sem multiplicar pela quantidade de termos \(n\). Aplicar a fórmula da PA (soma constante) a uma sequência que na verdade é uma PG (razão constante por multiplicação, não por soma) — sempre verifique subtraindo termos consecutivos antes de aplicar qualquer fórmula. Esquecer que a fórmula generalizada \(a_n = a_m + (n-m)r\) exige que \(n\) e \(m\) sejam as <em>posições</em> dos termos, não os próprios valores.</blockquote>
+
+    <h5>Conclusão</h5>
+    <p><em>Progressão aritmética é um dos raros tópicos da matemática do Ensino Médio em que todas as fórmulas podem ser deduzidas, ao vivo, a partir de uma única ideia central: somar sempre a mesma quantidade. Dominar essa dedução — e não apenas decorar o resultado final — é o que separa quem resolve só os exercícios "padrão" de quem consegue lidar com qualquer variação que uma prova de vestibular possa apresentar. Entendida a conexão com a função afim e o raciocínio por trás da soma de Gauss, praticamente qualquer questão de PA se torna uma aplicação direta dessas poucas ideias centrais.</em></p>
+  </div>
+
+  <!-- ESPAÇO PARA ANÚNCIO — cole aqui o código do Google AdSense (ou outra rede) -->
+  <div class="ad-slot">Espaço reservado para anúncio</div>
+
+  <div class="article-exercise">
+    <h3>Agora pratique</h3>
+    <p class="topic-empty" id="grid-exercise-empty">Em breve, lista de exercícios em PDF sobre este tema.</p>
+    <div class="resource-grid" id="grid-exercise"></div>
+  </div>
+</div>
+
+<footer class="rail">
+  <p class="signature">Academia das Exatas</p>
+  <p>Materiais gratuitos de física e matemática para olimpíadas e vestibulares.</p>
+  <p>© 2026 Academia das Exatas · Uso educacional</p>
+</footer>
+
+<script src="assets/adgate.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });
+  });
+</script>
+<script>
+(function(){
+  var RESOURCES = [
+    {
+      id:'matematica-pa-ex',
+      title:'Lista de Exercícios: Progressão Aritmética',
+      desc:'Questões no estilo ENEM (contextualizadas, múltipla escolha) e vestibular tradicional — 12 questões, com gabarito para conferência.',
+      meta:'PDF · 3 páginas',
+      filename:'academia-das-exatas_matematica_progressao_aritmetica_exercicios.pdf',
+      file:'materiais/matematica_progressao_aritmetica_exercicios.pdf'
+    }
+  ];
+  AdGate.init(RESOURCES);
+  if(RESOURCES.length){
+    document.getElementById('grid-exercise-empty').style.display = 'none';
+    document.getElementById('grid-exercise').innerHTML = RESOURCES.map(AdGate.cardHTML).join('');
+  }
+})();
+</script>
+
+</body>
+</html>
