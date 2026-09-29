@@ -14,6 +14,8 @@ Tom: português do Brasil, informal e direto nas legendas ("pra", "tá", "coment
 - **Não mencione o site nem "link na bio"** (o site Academia das Exatas ainda não está pronto). Só volte a citar quando o usuário disser que o site está no ar.
 - O rodapé com `@erisson.alemao.prof` e o contador de slides são automáticos (`chrome.js`). Não os escreva à mão.
 - Sem emoji dentro das imagens (as fontes não têm). Emoji só na legenda.
+- Texto das imagens na **norma padrão** ("Comente", "Salve", "Não deixe passar", "para o ENEM"). O tom informal ("comenta", "pra", "tá") fica só na legenda.
+- Rigor conceitual: prefira a definição que os vestibulares cobram. Exemplo: refração é a **mudança de velocidade** ao trocar de meio, e o desvio só ocorre com incidência oblíqua. Evite generalizações regionais ("no inverno") e verbos imprecisos ("trocaram elétrons" → "elétrons passaram de um material para o outro").
 - Índices com `<sub>` (ex.: `v<sub>0</sub>`), nunca com os caracteres ₀ ₁ ₂.
 - **Confira toda fórmula, número e resposta** antes de gerar. Nada de afirmação exagerada ou não verificável. Na dúvida, escreva de forma mais cautelosa.
 
@@ -21,7 +23,7 @@ Tom: português do Brasil, informal e direto nas legendas ("pra", "tá", "coment
 
 1. Capa: pergunta-gancho com a palavra-chave em `<em>` (vermelho) e uma ilustração SVG simples.
 2. Um a três slides de explicação, diagrama ou lista.
-3. Desafio estilo ENEM (alternativas A–E, "Comenta a letra antes de ver a resposta").
+3. Desafio estilo ENEM (alternativas A–E, "Comente a letra antes de ver a resposta").
 4. Resposta com pegadinha (o erro mais comum), a não ser que o post seja só uma lista.
 5. Chamada final: salvar, enviar, comentar e seguir.
 
