@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Choque na maçaneta</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="icon-save"><path d="M12 6 H36 V42 L24 33 L12 42 Z" fill="none" stroke="#E8384F" stroke-width="4" stroke-linejoin="round"/></g>
+    <g id="icon-send"><path d="M6 22 L42 6 L30 42 L22 27 Z M22 27 L42 6" fill="none" stroke="#6FA8C9" stroke-width="4" stroke-linejoin="round"/></g>
+  </defs>
+</svg>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// física · eletrostática · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:100px;">Por que você leva <em>choque</em> na maçaneta?</h1>
+  <svg viewBox="0 0 700 460" width="880" height="578" style="position:absolute; left:100px; top:585px;">
+    <!-- porta -->
+    <rect x="520" y="0" width="200" height="460" fill="#24314F"/>
+    <rect x="520" y="0" width="8" height="460" fill="#0A1830"/>
+    <rect x="540" y="150" width="54" height="170" rx="14" fill="#9AA6BF"/>
+    <!-- maçaneta -->
+    <rect x="470" y="222" width="80" height="26" rx="8" fill="#C9D1E3"/>
+    <circle cx="452" cy="235" r="46" fill="#E4E8F2" stroke="#9AA6BF" stroke-width="5"/>
+    <circle cx="438" cy="220" r="12" fill="#FFFFFF" opacity=".9"/>
+    <!-- cargas induzidas -->
+    <g font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#E8384F" text-anchor="middle">
+      <text x="424" y="208">+</text><text x="418" y="246">+</text><text x="426" y="282">+</text>
+    </g>
+    <!-- mão -->
+    <g>
+      <rect x="-60" y="170" width="250" height="190" rx="70" fill="#F3F5FA"/>
+      <rect x="60" y="208" width="270" height="58" rx="29" fill="#F3F5FA"/>
+      <rect x="290" y="218" width="30" height="38" rx="10" fill="#E4E8F2" stroke="#C9D1E3" stroke-width="3"/>
+      <rect x="90" y="292" width="150" height="50" rx="25" fill="#E4E8F2"/>
+      <path d="M200 216 q10 21 0 42" fill="none" stroke="#C9D1E3" stroke-width="3" stroke-linecap="round"/>
+      <path d="M130 212 q10 25 0 50" fill="none" stroke="#C9D1E3" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- cargas na mão -->
+    <g fill="#3E6FA8">
+      <circle cx="40" cy="236" r="17"/><circle cx="36" cy="310" r="17"/><circle cx="165" cy="237" r="17"/><circle cx="250" cy="237" r="17"/><circle cx="60" cy="272" r="17"/>
+    </g>
+    <g stroke="#F3F5FA" stroke-width="4" stroke-linecap="round">
+      <line x1="32" y1="236" x2="48" y2="236"/><line x1="28" y1="310" x2="44" y2="310"/><line x1="157" y1="237" x2="173" y2="237"/><line x1="242" y1="237" x2="258" y2="237"/><line x1="52" y1="272" x2="68" y2="272"/>
+    </g>
+    <!-- faísca -->
+    <g filter="url(#glow)">
+      <path d="M332 236 L350 220 L358 250 L372 226 L382 248 L398 232 L406 236" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M332 236 L350 220 L358 250 L372 226 L382 248 L398 232 L406 236" fill="none" stroke="#6FA8C9" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" opacity=".35"/>
+    </g>
+    <g stroke="#F3F5FA" stroke-width="4" stroke-linecap="round" opacity=".8">
+      <line x1="368" y1="186" x2="362" y2="166"/><line x1="392" y1="192" x2="404" y2="174"/><line x1="346" y1="196" x2="332" y2="182"/>
+      <line x1="368" y1="286" x2="362" y2="306"/><line x1="392" y1="280" x2="404" y2="298"/>
+    </g>
+  </svg>
+</section>
+
+<!-- 2 · ATRITO -->
+<section class="slide" data-eyebrow="// de onde vem a carga">
+  <h2 style="margin-top:64px;">A culpa é do <em>atrito</em></h2>
+  <p class="body" style="margin-top:44px;">Quando dois materiais diferentes se esfregam, <span class="hl">elétrons passam de um para o outro</span>. Isso é a <b style="color:var(--red)">eletrização por atrito</b>.</p>
+  <svg viewBox="0 0 920 330" width="920" height="330" style="margin-top:40px;">
+    <!-- sola -->
+    <rect x="160" y="40" width="600" height="110" rx="40" fill="#E8384F"/>
+    <text x="460" y="108" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#FFFFFF">sola do sapato</text>
+    <!-- tapete -->
+    <rect x="40" y="170" width="840" height="120" rx="10" fill="#6FA8C9" opacity=".35"/>
+    <g stroke="#6FA8C9" stroke-width="4" stroke-linecap="round">
+      <line x1="80" y1="170" x2="80" y2="152"/><line x1="130" y1="170" x2="130" y2="150"/><line x1="800" y1="170" x2="800" y2="152"/><line x1="850" y1="170" x2="850" y2="150"/>
+    </g>
+    <text x="460" y="250" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#F3F5FA">tapete</text>
+    <!-- vai e vem -->
+    <g stroke="#F3F5FA" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M60 95 H140 M60 95 l18 -14 M60 95 l18 14"/>
+      <path d="M860 95 H780 M860 95 l-18 -14 M860 95 l-18 14"/>
+    </g>
+    <!-- elétrons migrando -->
+    <g font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#F3F5FA" text-anchor="middle">
+      <circle cx="300" cy="160" r="20" fill="#3E6FA8"/><text x="300" y="170">−</text>
+      <circle cx="460" cy="160" r="20" fill="#3E6FA8"/><text x="460" y="170">−</text>
+      <circle cx="620" cy="160" r="20" fill="#3E6FA8"/><text x="620" y="170">−</text>
+    </g>
+  </svg>
+  <p class="body" style="margin-top:36px; font-size:37px;">Arrastar o pé no tapete, levantar do sofá, tirar a blusa de lã: tudo isso carrega o seu corpo.</p>
+  <p class="body" style="margin-top:22px; font-size:37px;">E a sola de borracha é <b>isolante</b>: a carga não escoa para o chão. <b>Fica em você.</b></p>
+</section>
+
+<!-- 3 · FAÍSCA -->
+<section class="slide" data-eyebrow="// o choque">
+  <h2 style="margin-top:64px;">A faísca é uma <em>descarga elétrica</em></h2>
+  <p class="body" style="margin-top:44px;">A maçaneta é de metal, um <b>condutor</b>. Quando sua mão chega perto, a carga acumulada <span class="hl">salta pelo ar</span> de uma vez.</p>
+  <div style="margin-top:48px; display:grid; gap:20px;">
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:30px 44px;">
+      <span style="font-size:32px; color:var(--ink-soft); font-weight:600;">Tensão</span>
+      <span class="mono" style="font-size:46px; font-weight:700;">milhares de volts</span>
+    </div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:30px 44px;">
+      <span style="font-size:32px; color:var(--ink-soft); font-weight:600;">Energia</span>
+      <span class="mono" style="font-size:46px; font-weight:700;">milésimos de joule</span>
+    </div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:30px 44px;">
+      <span style="font-size:32px; color:var(--ink-soft); font-weight:600;">Duração</span>
+      <span class="mono" style="font-size:46px; font-weight:700;">&lt; 1 milionésimo de s</span>
+    </div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:37px;">Por isso assusta, mas não machuca: a <b>quantidade de carga é minúscula</b> e acaba num instante.</p>
+</section>
+
+<!-- 4 · DIAS SECOS -->
+<section class="slide" data-eyebrow="// por que piora no tempo seco">
+  <h2 style="margin-top:64px;">No ar seco, o choque <em>piora</em></h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:52px;">
+    <div class="card" style="padding:36px 34px;">
+      <div class="mono" style="font-size:28px; color:var(--blue); font-weight:700;">AR ÚMIDO</div>
+      <p style="font-size:33px; line-height:1.4; margin-top:16px;">Uma película finíssima de água nas superfícies deixa a carga <b>escapar aos poucos</b>.</p>
+    </div>
+    <div class="card" style="padding:36px 34px;">
+      <div class="mono" style="font-size:28px; color:var(--red); font-weight:700;">AR SECO</div>
+      <p style="font-size:33px; line-height:1.4; margin-top:16px;">Sem essa água, a carga <b>se acumula</b> até soltar de uma vez só.</p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:40px; font-size:37px;">É por isso que o choque aparece mais no inverno e em lugares com ar-condicionado.</p>
+  <div style="margin-top:44px; border:3px dashed rgba(201,209,227,.45); border-radius:22px; padding:30px 36px;">
+    <div class="mono" style="font-size:26px; color:var(--blue); margin-bottom:12px;">// dica anti-choque</div>
+    <p class="body" style="font-size:35px;">Encoste antes uma <b>chave ou moeda</b> na maçaneta. A faísca salta do metal, e não do seu dedo.</p>
+  </div>
+</section>
+
+<!-- 5 · DESAFIO -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:38px; line-height:1.42; font-weight:500;">Uma pessoa arrasta os pés sobre um tapete de lã e, ao tocar a maçaneta metálica, leva um pequeno choque. O processo que deixou a pessoa <b>eletrizada</b> foi a eletrização por:</p>
+    <div class="opts">
+      <div><b>A)</b> indução</div>
+      <div><b>B)</b> atrito</div>
+      <div><b>C)</b> contato</div>
+      <div><b>D)</b> aterramento</div>
+      <div><b>E)</b> polarização</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:48px; font-size:42px; text-align:center;"><b>Comenta a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- 6 · RESPOSTA + CTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>B</em>: atrito</h2>
+  <p class="body" style="margin-top:36px; font-size:37px;">O tapete e a sola trocaram elétrons ao se esfregarem. O choque é a <b>descarga</b>: a carga acumulada passa para a maçaneta, que é condutora.</p>
+  <div class="cta" style="margin-top:56px;">
+    <div><svg viewBox="0 0 48 48" width="76" height="76"><use href="#icon-save"/></svg><p class="body" style="font-size:38px;"><b>Salve</b> para revisar eletrostática</p></div>
+    <div><svg viewBox="0 0 48 48" width="76" height="76"><use href="#icon-send"/></svg><p class="body" style="font-size:38px;"><b>Envie</b> para quem vive levando choque na porta do carro</p></div>
+  </div>
+  <div class="card" style="margin-top:52px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

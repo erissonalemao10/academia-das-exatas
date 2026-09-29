@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Modelo de post · @erisson.alemao.prof</title>
+<!-- Copie este arquivo para instagram/AAAA-MM-DD/nome-do-post.html, apague os slides que não usar
+     e gere as imagens com: NODE_PATH=$(npm root -g) node instagram/_modelo/render.js instagram/AAAA-MM-DD/nome-do-post.html -->
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+<!-- Ícones reutilizáveis: <svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg> -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="icon-save"><path d="M12 6 H36 V42 L24 33 L12 42 Z" fill="none" stroke="#E8384F" stroke-width="4" stroke-linejoin="round"/></g>
+    <g id="icon-send"><path d="M6 22 L42 6 L30 42 L22 27 Z M22 27 L42 6" fill="none" stroke="#6FA8C9" stroke-width="4" stroke-linejoin="round"/></g>
+    <g id="icon-chat"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="#F3F5FA" stroke-width="4" stroke-linejoin="round"/></g>
+  </defs>
+</svg>
+
+<!-- ===== TIPO 1 · CAPA: pergunta-gancho + ilustração =====
+     data-eyebrow = linha pequena do topo. O contador (01/07) e o rodapé são automáticos (chrome.js). -->
+<section class="slide" data-eyebrow="// física · [assunto] · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:100px;">Por que [fenômeno] parece <em>[palavra-chave]</em>?</h1>
+  <!-- Ilustração em SVG ocupando a metade de baixo (top entre 560 e 650px, sem passar de 1190px) -->
+  <svg viewBox="0 0 600 500" width="700" height="583" style="position:absolute; left:190px; top:600px;">
+    <rect x="100" y="80" width="400" height="340" rx="24" fill="none" stroke="#F3F5FA" stroke-width="6" stroke-dasharray="14 12"/>
+    <text x="300" y="260" text-anchor="middle" font-family="JetBrains Mono" font-size="28" fill="#C9D1E3">[ilustração]</text>
+  </svg>
+</section>
+
+<!-- ===== TIPO 2 · EXPLICAÇÃO: título + texto + fórmula em cartão ===== -->
+<section class="slide" data-eyebrow="// o que está acontecendo">
+  <h2 style="margin-top:70px;">[Afirmação curta que quebra a expectativa com <em>destaque</em>]</h2>
+  <p class="body" style="margin-top:56px;">[Explicação em 2–3 frases. Use <b>negrito</b> para o conceito e <span class="hl">marca-texto</span> para a ideia central.]</p>
+  <div class="card" style="margin-top:60px; display:flex; align-items:center; justify-content:space-between; gap:40px;">
+    <div class="formula" style="font-size:76px;">n = <span class="frac"><span>c</span><span>v</span></span></div>
+    <div style="font-size:32px; line-height:1.4;"><b>n</b> = [significado]<br><span style="color:var(--ink-soft)">[valor típico / observação]</span></div>
+  </div>
+</section>
+
+<!-- ===== TIPO 3 · COMPARAÇÃO + DICA ===== -->
+<section class="slide" data-eyebrow="// [subtítulo]">
+  <h2 style="margin-top:64px;">[Título com <em>destaque</em>]</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:52px;">
+    <div class="card" style="padding:36px 34px;">
+      <div class="mono" style="font-size:28px; color:var(--blue); font-weight:700;">[LADO A]</div>
+      <p style="font-size:33px; line-height:1.4; margin-top:16px;">[Descrição com <b>destaque</b>.]</p>
+    </div>
+    <div class="card" style="padding:36px 34px;">
+      <div class="mono" style="font-size:28px; color:var(--red); font-weight:700;">[LADO B]</div>
+      <p style="font-size:33px; line-height:1.4; margin-top:16px;">[Descrição com <b>destaque</b>.]</p>
+    </div>
+  </div>
+  <div style="margin-top:44px; border:3px dashed rgba(201,209,227,.45); border-radius:22px; padding:30px 36px;">
+    <div class="mono" style="font-size:26px; color:var(--blue); margin-bottom:12px;">// dica de prova</div>
+    <p class="body" style="font-size:35px;">[Dica prática ou macete.]</p>
+  </div>
+</section>
+
+<!-- ===== TIPO 4 · LISTA DE FÓRMULAS (post "salve") =====
+     Até 6 linhas por slide. Com 5 linhas, use class="rows big". Índices: v<sub>0</sub> (não use ₀). -->
+<section class="slide" data-eyebrow="// bloco 1">
+  <h2 style="margin-top:60px;"><em>[Bloco]</em></h2>
+  <div class="rows" style="margin-top:44px;">
+    <div class="row"><span class="nm">[Nome da fórmula]</span><span class="fx">v<sub>m</sub> = Δs / Δt</span></div>
+    <div class="row"><span class="nm">[Nome da fórmula]</span><span class="fx">v = v<sub>0</sub> + a·t</span></div>
+    <div class="row"><span class="nm">[Nome da fórmula]</span><span class="fx">v² = v<sub>0</sub>² + 2aΔs</span></div>
+  </div>
+</section>
+
+<!-- ===== TIPO 5 · DESAFIO estilo ENEM (sempre com "Comenta a letra") ===== -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:38px; line-height:1.42; font-weight:500;">[Enunciado curto, com os dados em <b>negrito</b>.]</p>
+    <p class="mono" style="font-size:28px; color:var(--ink-soft); margin-top:18px;">Dados: [valores]</p>
+    <div class="opts">
+      <div><b>A)</b> [alternativa]</div>
+      <div><b>B)</b> [alternativa]</div>
+      <div><b>C)</b> [alternativa]</div>
+      <div><b>D)</b> [alternativa]</div>
+      <div><b>E)</b> [alternativa]</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:48px; font-size:42px; text-align:center;"><b>Comenta a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- ===== TIPO 6 · RESPOSTA + PEGADINHA ===== -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>[X]</em>: [resposta]</h2>
+  <div class="card" style="margin-top:44px;">
+    <div class="formula" style="font-size:44px;">[cálculo passo a passo]</div>
+  </div>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>[letra errada comum]</b>? [Por que é o erro mais comum.]</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:34px;">[Curiosidade extra ligada à questão.]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIPO 7 · CTA FINAL (sempre o último slide) ===== -->
+<section class="slide" data-eyebrow="// reta final do ENEM">
+  <h2 style="margin-top:64px; font-size:92px;">[Frase curta com <em>destaque</em>]</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar antes da prova</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para [quem se identifica com o tema]</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> [pergunta que gera ideia de próximo post]</p></div>
+  </div>
+  <div class="card" style="margin-top:64px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

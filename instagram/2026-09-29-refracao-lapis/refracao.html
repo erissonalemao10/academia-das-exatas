@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel Refração</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1E3C; --bg-deep:#071429; --paper:#F3F5FA; --paper-dim:#C9D1E3;
+    --ink:#16213A; --ink-soft:#4E5B78; --red:#E8384F; --red-dark:#A81F30;
+    --blue:#6FA8C9; --wood:#24314F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#222; font-family:'Inter',sans-serif; color:var(--paper);}
+  .slide{
+    width:1080px; height:1350px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.05), transparent 70%),
+      linear-gradient(var(--board-line,rgba(226,232,244,0.07)) 2px, transparent 2px) 0 0/60px 60px,
+      linear-gradient(90deg, rgba(226,232,244,0.07) 2px, transparent 2px) 0 0/60px 60px,
+      var(--bg);
+    border-bottom:22px solid var(--wood);
+    padding:72px 80px 0;
+    display:flex; flex-direction:column;
+    margin-bottom:40px;
+  }
+  .top{display:flex; justify-content:space-between; align-items:center;
+    font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--blue); letter-spacing:.5px;}
+  .count{color:var(--paper-dim); opacity:.7;}
+  .foot{position:absolute; left:80px; right:80px; bottom:56px;
+    display:flex; justify-content:space-between; align-items:center;}
+  .brand{font-family:'Archivo',sans-serif; font-weight:900; font-size:30px; text-transform:uppercase;
+    letter-spacing:0; word-spacing:.18em; display:flex; align-items:center; gap:14px; color:var(--paper);}
+  .brand.handle{text-transform:none; font-weight:800; letter-spacing:.2px;}
+  .brand::before{content:""; width:16px; height:16px; background:var(--red); display:inline-block;}
+  .swipe{font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--paper-dim);
+    display:flex; align-items:center; gap:12px;}
+  .swipe svg{width:44px; height:24px;}
+
+  h1,h2{font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; letter-spacing:-1px; word-spacing:.14em; line-height:.98;}
+  h1{font-size:112px;}
+  h2{font-size:78px;}
+  em{font-style:normal; color:var(--red);}
+  .blue{color:var(--blue);}
+  p.body{font-size:40px; line-height:1.38; color:var(--paper); font-weight:500;}
+  p.body b{color:var(--paper); font-weight:800;}
+  .soft{color:var(--paper-dim);}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .hl{background:linear-gradient(transparent 60%, rgba(232,56,79,.45) 60%); padding:0 4px;}
+
+  .chip{display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px;
+    padding:10px 20px; border-radius:999px; background:var(--red); color:#fff; letter-spacing:.5px;}
+  .chip.w{min-width:210px; text-align:center;}
+  .chip.ghost{background:transparent; border:3px solid var(--blue); color:var(--blue);}
+
+  .card{background:var(--paper); color:var(--ink); border-radius:26px; padding:44px 48px;
+    box-shadow:0 18px 40px rgba(3,9,22,.45);}
+  .formula{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:60px; white-space:nowrap;}
+  .formula .frac{vertical-align:middle; margin:0 .15em;}
+  .frac{display:inline-flex; flex-direction:column; align-items:center; line-height:1.05;}
+  .frac span:first-child{border-bottom:5px solid currentColor; padding:0 10px 6px;}
+  .frac span:last-child{padding-top:6px;}
+  sub{font-size:.55em; vertical-align:-0.35em; font-weight:700;}
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · CAPA ============ -->
+<section class="slide" id="s1">
+  <div class="top"><span>// física · óptica · cai no ENEM</span><span class="count">01/07</span></div>
+  <h1 style="margin-top:52px; font-size:100px;">Por que o lápis parece <em>quebrado</em> dentro d'água?</h1>
+  <svg viewBox="0 0 600 600" width="580" height="580" style="position:absolute; left:250px; top:650px;">
+    <!-- água -->
+    <polygon points="161,280 439,280 420,560 180,560" fill="#6FA8C9" opacity=".28"/>
+    <!-- lápis: parte de baixo (imagem aparente) -->
+    <g transform="translate(330 280) rotate(137.6)" opacity=".9">
+      <rect x="0" y="-15" width="150" height="30" fill="#E8384F"/>
+      <rect x="0" y="-15" width="150" height="9" fill="#FF6B7E" opacity=".6"/>
+      <polygon points="150,-15 196,0 150,15" fill="#E9C9A0"/>
+      <polygon points="182,-5 196,0 182,5" fill="#16213A"/>
+    </g>
+    <!-- posição real (fantasma) -->
+    <g transform="translate(330 280) rotate(121)" opacity=".55">
+      <rect x="0" y="-15" width="150" height="30" fill="none" stroke="#F3F5FA" stroke-width="3" stroke-dasharray="8 8"/>
+      <polygon points="150,-15 196,0 150,15" fill="none" stroke="#F3F5FA" stroke-width="3" stroke-dasharray="8 8"/>
+    </g>
+    <!-- lápis: parte de cima -->
+    <g transform="translate(330 280) rotate(-59)">
+      <rect x="-2" y="-15" width="252" height="30" fill="#E8384F"/>
+      <rect x="-2" y="-15" width="252" height="9" fill="#FF6B7E" opacity=".6"/>
+      <rect x="250" y="-16" width="18" height="32" fill="#9AA6BF"/>
+      <rect x="268" y="-15" width="30" height="30" rx="6" fill="#F29BA8"/>
+    </g>
+    <!-- linha d'água -->
+    <line x1="161" y1="280" x2="439" y2="280" stroke="#6FA8C9" stroke-width="5"/>
+    <!-- copo -->
+    <path d="M150 120 L180 560 Q182 572 194 572 L406 572 Q418 572 420 560 L450 120" fill="none" stroke="#F3F5FA" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- anotação -->
+    <text x="470" y="520" font-family="JetBrains Mono" font-size="22" fill="#C9D1E3">posição</text>
+    <text x="470" y="546" font-family="JetBrains Mono" font-size="22" fill="#C9D1E3">real</text>
+    <path d="M466 512 Q380 500 262 438" fill="none" stroke="#C9D1E3" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round"/>
+  </svg>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe">arrasta <svg viewBox="0 0 44 24"><path d="M2 12 H40 M30 3 L41 12 L30 21" fill="none" stroke="#E8384F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- ============ 2 · SPOILER ============ -->
+<section class="slide" id="s2">
+  <div class="top"><span>// o que está acontecendo</span><span class="count">02/07</span></div>
+  <h2 style="margin-top:70px;">Spoiler: o lápis está inteiro.<br>Quem muda de caminho é a <em>luz</em>.</h2>
+  <p class="body" style="margin-top:56px;">A luz viaja <b>mais devagar na água</b> do que no ar. Quando ela atravessa a fronteira entre os dois meios, <span class="hl">muda de direção</span>.</p>
+  <p class="body" style="margin-top:28px;">Esse fenômeno se chama <b style="color:var(--red)">REFRAÇÃO</b>.</p>
+  <div class="card" style="margin-top:60px; display:flex; align-items:center; justify-content:space-between; gap:40px;">
+    <div class="formula" style="font-size:76px;">n = <span class="frac"><span>c</span><span>v</span></span></div>
+    <div style="font-size:32px; line-height:1.4; color:var(--ink);">
+      <b>n</b> = índice de refração<br>
+      água: <b class="mono">n ≈ 1,33</b><br>
+      <span style="color:var(--ink-soft)">→ a luz fica ~25% mais lenta</span>
+    </div>
+  </div>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe">arrasta <svg viewBox="0 0 44 24"><path d="M2 12 H40 M30 3 L41 12 L30 21" fill="none" stroke="#E8384F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- ============ 3 · DIAGRAMA ============ -->
+<section class="slide" id="s3">
+  <div class="top"><span>// o truque do seu cérebro</span><span class="count">03/07</span></div>
+  <h2 style="margin-top:56px; font-size:70px;">Seu cérebro acha que a luz veio em <em>linha reta</em></h2>
+  <svg viewBox="0 0 900 640" width="880" height="626" style="margin-top:24px; margin-left:0;">
+    <rect x="30" y="300" width="840" height="320" rx="10" fill="#6FA8C9" opacity=".2"/>
+    <line x1="30" y1="300" x2="870" y2="300" stroke="#6FA8C9" stroke-width="5"/>
+    <text x="50" y="275" font-family="JetBrains Mono" font-size="26" fill="#C9D1E3">AR  n = 1,00</text>
+    <text x="50" y="345" font-family="JetBrains Mono" font-size="26" fill="#6FA8C9">ÁGUA  n ≈ 1,33</text>
+    <!-- normal -->
+    <line x1="450" y1="150" x2="450" y2="450" stroke="#C9D1E3" stroke-width="3" stroke-dasharray="10 10"/>
+    <text x="438" y="172" text-anchor="end" font-family="JetBrains Mono" font-size="22" fill="#C9D1E3">normal</text>
+    <!-- prolongamento (imaginário) -->
+    <line x1="450" y1="300" x2="330" y2="478" stroke="#6FA8C9" stroke-width="4" stroke-dasharray="4 12" stroke-linecap="round"/>
+    <!-- raio real: P -> I -> olho -->
+    <line x1="330" y1="560" x2="450" y2="300" stroke="#E8384F" stroke-width="6" stroke-linecap="round"/>
+    <line x1="450" y1="300" x2="589" y2="93" stroke="#E8384F" stroke-width="6" stroke-linecap="round"/>
+    <polygon points="0,-13 26,0 0,13" fill="#E8384F" transform="translate(385 441) rotate(-65.2)"/>
+    <polygon points="0,-13 26,0 0,13" fill="#E8384F" transform="translate(520 196) rotate(-56.1)"/>
+    <!-- olho -->
+    <g transform="translate(613 58) rotate(34)">
+      <path d="M-44 0 Q0 -30 44 0 Q0 30 -44 0 Z" fill="#F3F5FA"/>
+      <circle cx="0" cy="0" r="14" fill="#16213A"/>
+      <circle cx="5" cy="-4" r="4" fill="#F3F5FA"/>
+    </g>
+    <!-- pontos -->
+    <circle cx="330" cy="560" r="14" fill="#E8384F"/>
+    <text x="200" y="572" font-family="Archivo" font-weight="900" font-size="34" fill="#E8384F">P</text>
+    <text x="96" y="608" font-family="JetBrains Mono" font-size="22" fill="#F3F5FA">onde a ponta ESTÁ</text>
+    <circle cx="330" cy="478" r="14" fill="none" stroke="#6FA8C9" stroke-width="5"/>
+    <text x="196" y="468" font-family="Archivo" font-weight="900" font-size="34" fill="#6FA8C9">P'</text>
+    <text x="70" y="430" font-family="JetBrains Mono" font-size="22" fill="#6FA8C9">onde você VÊ a ponta</text>
+    <!-- desvio -->
+    <text x="660" y="150" font-family="JetBrains Mono" font-size="22" fill="#F3F5FA">a luz se</text>
+    <text x="660" y="178" font-family="JetBrains Mono" font-size="22" fill="#F3F5FA">afasta da normal</text>
+    <text x="660" y="206" font-family="JetBrains Mono" font-size="22" fill="#F3F5FA">ao sair da água</text>
+  </svg>
+  <p class="body" style="margin-top:4px; font-size:34px;">Ele prolonga o raio para trás e "enxerga" a ponta em <b class="blue">P'</b>, <b>mais perto da superfície</b> do que ela está de verdade.</p>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe">arrasta <svg viewBox="0 0 44 24"><path d="M2 12 H40 M30 3 L41 12 L30 21" fill="none" stroke="#E8384F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- ============ 4 · PISCINA ============ -->
+<section class="slide" id="s4">
+  <div class="top"><span>// mesmo motivo</span><span class="count">04/07</span></div>
+  <h2 style="margin-top:56px; font-size:72px;">É por isso que a piscina parece <em>mais rasa</em></h2>
+  <div style="display:flex; gap:40px; margin-top:52px; align-items:flex-start;">
+    <svg viewBox="0 0 360 520" width="360" height="520" style="flex:none;">
+      <rect x="20" y="40" width="320" height="440" fill="#6FA8C9" opacity=".2"/>
+      <line x1="10" y1="40" x2="350" y2="40" stroke="#6FA8C9" stroke-width="5"/>
+      <path d="M20 40 V480 H340 V40" fill="none" stroke="#F3F5FA" stroke-width="6" stroke-linejoin="round"/>
+      <!-- fundo aparente -->
+      <line x1="20" y1="370" x2="340" y2="370" stroke="#6FA8C9" stroke-width="5" stroke-dasharray="14 10"/>
+      <!-- cotas -->
+      <line x1="64" y1="48" x2="64" y2="472" stroke="#E8384F" stroke-width="4"/>
+      <polygon points="64,40 54,62 74,62" fill="#E8384F"/>
+      <polygon points="64,480 54,458 74,458" fill="#E8384F"/>
+      <text x="80" y="290" font-family="JetBrains Mono" font-weight="700" font-size="32" fill="#E8384F">2,0 m</text>
+      <text x="80" y="318" font-family="JetBrains Mono" font-size="20" fill="#F3F5FA">real</text>
+      <line x1="300" y1="48" x2="300" y2="362" stroke="#6FA8C9" stroke-width="4"/>
+      <polygon points="300,40 290,62 310,62" fill="#6FA8C9"/>
+      <polygon points="300,370 290,348 310,348" fill="#6FA8C9"/>
+      <text x="286" y="180" text-anchor="end" font-family="JetBrains Mono" font-weight="700" font-size="32" fill="#6FA8C9">1,5 m</text>
+      <text x="286" y="210" text-anchor="end" font-family="JetBrains Mono" font-size="20" fill="#6FA8C9">aparente</text>
+    </svg>
+    <div style="flex:1;">
+      <p class="body" style="font-size:36px;">Olhando de cima (quase na vertical), vale:</p>
+      <div class="card" style="margin-top:28px; padding:36px 32px;">
+        <div class="formula" style="font-size:44px;">h<sub>ap</sub> = h<sub>real</sub> · <span class="frac"><span>n<sub>obs</sub></span><span>n<sub>obj</sub></span></span></div>
+        <div style="font-size:26px; color:var(--ink-soft); margin-top:18px; line-height:1.4;">obs = meio do observador<br>obj = meio do objeto</div>
+      </div>
+      <p class="body" style="font-size:34px; margin-top:32px;"><span class="mono" style="font-weight:700;">2,0 × <span class="frac" style="vertical-align:middle; font-size:30px; margin:0 .2em;"><span>1</span><span>1,33</span></span> ≈ <span style="color:var(--blue)">1,5 m</span></span></p>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px; font-size:36px;">Aquele "dá pé" pode <b style="color:var(--red)">não dar</b>. Meio metro some da sua vista.</p>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe">arrasta <svg viewBox="0 0 44 24"><path d="M2 12 H40 M30 3 L41 12 L30 21" fill="none" stroke="#E8384F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- ============ 5 · DESAFIO ============ -->
+<section class="slide" id="s5">
+  <div class="top"><span>// sua vez</span><span class="count">05/07</span></div>
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:38px; line-height:1.42; font-weight:500;">Um peixe está <b>80 cm</b> abaixo da superfície de um lago de águas calmas. Um pescador, olhando quase verticalmente, vê o peixe a que profundidade?</p>
+    <p class="mono" style="font-size:28px; color:var(--ink-soft); margin-top:18px;">Dados: n<sub>água</sub> = 4/3 · n<sub>ar</sub> = 1</p>
+    <div style="margin-top:34px; display:grid; gap:20px; font-size:44px; font-weight:600;">
+      <div style="display:flex; gap:22px; align-items:center;"><span class="mono" style="color:var(--red); font-weight:700;">A)</span> 40 cm</div>
+      <div style="display:flex; gap:22px; align-items:center;"><span class="mono" style="color:var(--red); font-weight:700;">B)</span> 60 cm</div>
+      <div style="display:flex; gap:22px; align-items:center;"><span class="mono" style="color:var(--red); font-weight:700;">C)</span> 80 cm</div>
+      <div style="display:flex; gap:22px; align-items:center;"><span class="mono" style="color:var(--red); font-weight:700;">D)</span> 1,07 m</div>
+      <div style="display:flex; gap:22px; align-items:center;"><span class="mono" style="color:var(--red); font-weight:700;">E)</span> 1,20 m</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:56px; font-size:42px; text-align:center;"><b>Comenta a letra</b> antes de ver a resposta</p>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe">resposta <svg viewBox="0 0 44 24"><path d="M2 12 H40 M30 3 L41 12 L30 21" fill="none" stroke="#E8384F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- ============ 6 · RESOLUÇÃO ============ -->
+<section class="slide" id="s6">
+  <div class="top"><span>// resolução</span><span class="count">06/07</span></div>
+  <h2 style="margin-top:56px;">Resposta: <em>B) 60 cm</em></h2>
+  <div class="card" style="margin-top:44px;">
+    <div class="formula" style="font-size:40px;">h<sub>ap</sub> = 80 · <span class="frac"><span>1</span><span>4/3</span></span> = 80 · <span class="frac"><span>3</span><span>4</span></span> = <span style="color:var(--red)">60 cm</span></div>
+  </div>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>D</b>? Você inverteu a razão. Quem olha do ar vê o objeto na água <b>mais perto</b>, nunca mais longe.</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:34px;">E o peixe? Ele vê o pescador <b class="blue">mais alto</b> do que ele está: a altura aparece multiplicada por <span class="mono" style="font-weight:700;">4/3</span>.</p>
+    </div>
+  </div>
+  <div style="margin-top:40px; border:3px dashed rgba(201,209,227,.45); border-radius:22px; padding:28px 36px;">
+    <div class="mono" style="font-size:26px; color:var(--blue); margin-bottom:16px;">// regra de bolso</div>
+    <div style="display:grid; grid-template-columns:1fr auto; gap:12px 24px; font-size:32px; line-height:1.3; align-items:baseline;">
+      <span>você no <b>ar</b>, objeto na <b>água</b></span><span>→ <b class="blue">mais perto</b> <span class="mono">×3/4</span></span>
+      <span>você na <b>água</b>, objeto no <b>ar</b></span><span>→ <b class="blue">mais longe</b> <span class="mono">×4/3</span></span>
+    </div>
+  </div>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe">arrasta <svg viewBox="0 0 44 24"><path d="M2 12 H40 M30 3 L41 12 L30 21" fill="none" stroke="#E8384F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+</section>
+
+<!-- ============ 7 · CTA ============ -->
+<section class="slide" id="s7">
+  <div class="top"><span>// reta final do ENEM</span><span class="count">07/07</span></div>
+  <h2 style="margin-top:64px; font-size:96px;">Refração <em>cai</em>.<br>Não deixa passar.</h2>
+  <div style="margin-top:64px; display:grid; gap:44px;">
+    <div style="display:flex; gap:32px; align-items:center;">
+      <svg viewBox="0 0 48 48" width="84" height="84" style="flex:none;"><path d="M12 6 H36 V42 L24 33 L12 42 Z" fill="none" stroke="#E8384F" stroke-width="4" stroke-linejoin="round"/></svg>
+      <p class="body" style="font-size:40px;"><b>Salve</b> para revisar antes da prova</p>
+    </div>
+    <div style="display:flex; gap:32px; align-items:center;">
+      <svg viewBox="0 0 48 48" width="84" height="84" style="flex:none;"><path d="M6 22 L42 6 L30 42 L22 27 Z M22 27 L42 6" fill="none" stroke="#6FA8C9" stroke-width="4" stroke-linejoin="round"/></svg>
+      <p class="body" style="font-size:40px;"><b>Envie</b> para o amigo que jura que "dá pé"</p>
+    </div>
+    <div style="display:flex; gap:32px; align-items:center;">
+      <svg viewBox="0 0 48 48" width="84" height="84" style="flex:none;"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="#F3F5FA" stroke-width="4" stroke-linejoin="round"/></svg>
+      <p class="body" style="font-size:40px;"><b>Comente</b> qual fenômeno de Física você quer ver no próximo post</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:64px; text-align:center; padding:34px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+  <div class="foot">
+    <span class="brand handle">@erisson.alemao.prof</span>
+    <span class="swipe" style="color:var(--paper-dim);">física · matemática</span>
+  </div>
+</section>
+
+</body>
+</html>
