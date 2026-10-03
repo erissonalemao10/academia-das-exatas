@@ -130,3 +130,29 @@
   .tema-diploma .card, .tema-diploma .rows{--red:#A36F00;}
   .tema-alerta .card, .tema-alerta .rows{--red:#D9480F;}
   .tema-aviso .card, .tema-aviso .rows{box-shadow:0 10px 26px rgba(28,37,65,.16);}
+
+  /* ---- informativos: família azul + branco ---- */
+  .tema-royal{ /* azul royal + amarelo */
+    --bg:#1E4FA8; --wood:#163C82; --grid:rgba(255,255,255,0.08);
+    --paper:#FFFFFF; --paper-dim:#CFDDF5; --red:#FFC94A; --on-accent:#0F1E3C;
+    --blue:#CFE0FF; --hl:rgba(255,201,74,.45); --ink:#0F1E3C; --ink-soft:#4E5B78;
+  }
+  .tema-royal .card, .tema-royal .rows{--red:#1E4FA8;}
+  .tema-ceu{ /* azul-claro + marinho + vermelho da marca */
+    --bg:#DCEAF8; --wood:#0F1E3C; --grid:rgba(15,30,60,0.07);
+    --paper:#0F1E3C; --paper-dim:#4E5B78; --card:#FFFFFF; --red:#D92C45; --on-accent:#FFFFFF;
+    --blue:#2457C5; --hl:rgba(217,44,69,.22); --ink:#0F1E3C; --ink-soft:#4E5B78;
+  }
+  .tema-branco{ /* branco + azul royal */
+    --bg:#FFFFFF; --wood:#2457C5; --grid:rgba(36,87,197,0.07);
+    --paper:#0F1E3C; --paper-dim:#56607A; --card:#EEF3FB; --red:#2457C5; --on-accent:#FFFFFF;
+    --blue:#2457C5; --hl:rgba(36,87,197,.20); --ink:#0F1E3C; --ink-soft:#56607A;
+  }
+  .tema-ouro{ /* marinho profundo + dourado */
+    --bg:#0A1630; --wood:#E8B547; --grid:rgba(226,232,244,0.06);
+    --paper:#F3F5FA; --paper-dim:#C9D1E3; --red:#E8B547; --on-accent:#0A1630;
+    --blue:#9FB8E0; --hl:rgba(232,181,71,.40); --ink:#0A1630; --ink-soft:#4E5B78;
+  }
+  .tema-ouro .card, .tema-ouro .rows{--red:#9C7300;}
+  .tema-ceu .card, .tema-ceu .rows{box-shadow:0 10px 26px rgba(15,30,60,.14);}
+  .tema-branco .card, .tema-branco .rows{box-shadow:none; border:2px solid #D6E1F3;}
