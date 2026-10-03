@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Desafio porcentagem</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body class="tema-matematica">
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="icon-save"><path d="M12 6 H36 V42 L24 33 L12 42 Z" fill="none" style="stroke:var(--red)" stroke-width="4" stroke-linejoin="round"/></g>
+    <g id="icon-send"><path d="M6 22 L42 6 L30 42 L22 27 Z M22 27 L42 6" fill="none" style="stroke:var(--blue)" stroke-width="4" stroke-linejoin="round"/></g>
+    <g id="icon-chat"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" style="stroke:var(--paper)" stroke-width="4" stroke-linejoin="round"/></g>
+  </defs>
+</svg>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · desafio relâmpago" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">RESOLVA EM 10 SEGUNDOS</span></div>
+  <h1 style="margin-top:36px; font-size:90px;">Subiu <em>10%</em> e depois caiu <em>10%</em>. Voltou ao preço inicial?</h1>
+  <div class="card" style="margin-top:56px; text-align:center; padding:52px 30px;">
+    <div class="mono" style="font-size:56px; font-weight:700; white-space:nowrap;">R$ 100 → +10% → −10%</div>
+    <div class="mono" style="font-size:96px; font-weight:700; color:var(--red); margin-top:14px;">= R$ ?</div>
+  </div>
+  <div style="margin-top:52px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 60 60" width="70" height="70"><circle cx="30" cy="34" r="22" fill="none" style="stroke:var(--paper)" stroke-width="4"/><path d="M30 34 V20 M24 6 H36" style="stroke:var(--red)" stroke-width="4" stroke-linecap="round"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// o truque: fator multiplicativo">
+  <h2 style="margin-top:64px;">Não volta: fica <em>1% mais barato</em></h2>
+  <p class="body" style="margin-top:44px;">Aumentar 10% é multiplicar por <b>1,10</b>. Diminuir 10% é multiplicar por <b>0,90</b>.</p>
+  <div class="card" style="margin-top:48px; text-align:center; padding:48px 30px;">
+    <div class="formula" style="font-size:58px;">100 × 1,10 × 0,90</div>
+    <div class="mono" style="font-size:110px; font-weight:700; color:var(--red); line-height:1.1; margin-top:10px;">= R$ 99</div>
+  </div>
+  <p class="body" style="margin-top:48px; font-size:37px;">O desconto de 10% incide sobre <span class="hl">R$ 110</span>, um valor maior. Por isso tira R$ 11, e não R$ 10.</p>
+  <div style="margin-top:40px; display:flex; gap:16px;"><span class="chip">PORCENTAGEM</span><span class="chip ghost">cai no ENEM</span></div>
+</section>
+
+<!-- 3 · GENERALIZAÇÃO -->
+<section class="slide" data-eyebrow="// vale para qualquer porcentagem">
+  <h2 style="margin-top:60px; font-size:70px;">Sobe e desce igual: <em>sempre perde</em></h2>
+  <p class="body" style="margin-top:32px; font-size:35px;">Subir p% e depois cair os mesmos p% deixa o valor <b>menor</b> que o inicial.</p>
+  <div class="rows" style="margin-top:36px;">
+    <div class="row"><span class="nm">+10% e −10%</span><span class="fx">1,10 × 0,90 = <span style="color:var(--red)">0,99</span></span></div>
+    <div class="row"><span class="nm">+20% e −20%</span><span class="fx">1,20 × 0,80 = <span style="color:var(--red)">0,96</span></span></div>
+    <div class="row"><span class="nm">+50% e −50%</span><span class="fx">1,50 × 0,50 = <span style="color:var(--red)">0,75</span></span></div>
+  </div>
+  <div style="margin-top:36px; border:3px dashed rgba(28,37,65,.28); border-radius:22px; padding:24px 36px;">
+    <div class="mono" style="font-size:26px; color:var(--blue); margin-bottom:10px;">// e se a ordem for outra?</div>
+    <p class="body" style="font-size:35px;">Tanto faz: cair 10% e depois subir 10% também dá <b>R$ 99</b>. A ordem dos fatores não altera o produto.</p>
+  </div>
+</section>
+
+<!-- 4 · CAI NO ENEM -->
+<section class="slide" data-eyebrow="// cai no ENEM">
+  <h2 style="margin-top:64px;">Dois aumentos de 10% não dão <em>20%</em></h2>
+  <div class="card" style="margin-top:48px; text-align:center; padding:44px 30px;">
+    <div class="formula" style="font-size:54px;">100 × 1,10 × 1,10</div>
+    <div class="mono" style="font-size:96px; font-weight:700; color:var(--red); line-height:1.1; margin-top:10px;">= 121 (+21%)</div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:37px;">Em aumentos e descontos seguidos, <b>multiplique os fatores</b>. Nunca some as porcentagens.</p>
+  <div style="margin-top:40px; border:3px dashed rgba(28,37,65,.28); border-radius:22px; padding:28px 36px;">
+    <div class="mono" style="font-size:26px; color:var(--blue); margin-bottom:12px;">// desafio bônus</div>
+    <p class="body" style="font-size:35px;">Uma loja dá 20% de desconto e, no caixa, mais 10%. Qual é o desconto total? <b>Comente!</b></p>
+  </div>
+</section>
+
+<!-- 5 · CTA -->
+<section class="slide" data-eyebrow="// porcentagem no ENEM">
+  <h2 style="margin-top:64px; font-size:92px;">Porcentagem <em>cai</em> todo ano.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar antes da prova</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem cai em toda promoção</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+  </div>
+  <div class="card" style="margin-top:64px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>
