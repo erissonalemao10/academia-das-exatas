@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gráficos MRU e MRUV</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<style>
+  .graf{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:44px;}
+  .graf .card{padding:26px 26px 30px; text-align:center;}
+  .graf .tt{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:var(--ink);}
+  .graf .nt{font-size:27px; line-height:1.35; color:var(--ink-soft); margin-top:10px;}
+  .graf .nt b{color:var(--ink);}
+  .ax{fill:none; stroke:#16213A; stroke-width:4; stroke-linecap:round;}
+  .ln{fill:none; stroke:#E8384F; stroke-width:7; stroke-linecap:round;}
+  .ar{fill:#6FA8C9; opacity:.35;}
+  .lb{font-family:'JetBrains Mono',monospace; font-size:26px; font-weight:700; fill:#4E5B78;}
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// física · cinemática · revisão ENEM">
+  <h1 style="margin-top:48px; font-size:92px;">Gráficos de MRU e MRUV: <em>o que cada um mostra</em></h1>
+  <div style="margin-top:52px; display:grid; gap:18px;">
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">MRU: velocidade constante</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">02</span></div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">MRUV: aceleração constante</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">03</span></div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">Inclinação e área: a cola</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">04</span></div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">Treino com gabarito</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">05</span></div>
+  </div>
+</section>
+
+<!-- 2 · MRU -->
+<section class="slide" data-eyebrow="// bloco 1 · MRU">
+  <h2 style="margin-top:60px;">MRU: velocidade <em>constante</em></h2>
+  <div class="graf">
+    <div class="card">
+      <div class="tt">s × t</div>
+      <svg viewBox="0 0 300 220" width="100%"><path class="ax" d="M40 190 H285 M40 190 V15"/><path class="ln" d="M40 160 L270 40"/><text class="lb" x="270" y="215">t</text><text class="lb" x="8" y="30">s</text></svg>
+      <div class="nt">Reta inclinada.<br><b>Inclinação = velocidade</b></div>
+    </div>
+    <div class="card">
+      <div class="tt">v × t</div>
+      <svg viewBox="0 0 300 220" width="100%"><rect class="ar" x="40" y="90" width="210" height="100"/><path class="ax" d="M40 190 H285 M40 190 V15"/><path class="ln" d="M40 90 H250"/><text class="lb" x="270" y="215">t</text><text class="lb" x="8" y="30">v</text></svg>
+      <div class="nt">Reta horizontal.<br><b>Área = deslocamento</b></div>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// equação</div>
+    <p class="mono" style="font-size:40px; font-weight:700;">s = s<sub>0</sub> + v · t</p>
+  </div>
+</section>
+
+<!-- 3 · MRUV -->
+<section class="slide" data-eyebrow="// bloco 2 · MRUV">
+  <h2 style="margin-top:60px;">MRUV: aceleração <em>constante</em></h2>
+  <div class="graf">
+    <div class="card">
+      <div class="tt">s × t</div>
+      <svg viewBox="0 0 300 220" width="100%"><path class="ax" d="M40 190 H285 M40 190 V15"/><path class="ln" d="M40 175 Q170 175 265 30"/><text class="lb" x="270" y="215">t</text><text class="lb" x="8" y="30">s</text></svg>
+      <div class="nt">Parábola.<br><b>Concavidade para cima: a &gt; 0</b></div>
+    </div>
+    <div class="card">
+      <div class="tt">v × t</div>
+      <svg viewBox="0 0 300 220" width="100%"><path class="ar" d="M40 190 L40 160 L250 50 L250 190 Z"/><path class="ax" d="M40 190 H285 M40 190 V15"/><path class="ln" d="M40 160 L250 50"/><text class="lb" x="270" y="215">t</text><text class="lb" x="8" y="30">v</text></svg>
+      <div class="nt">Reta inclinada.<br><b>Inclinação = aceleração</b></div>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// e o gráfico a × t?</div>
+    <p>É uma reta horizontal. A <b>área</b> embaixo dele dá a <b>variação da velocidade</b>.</p>
+  </div>
+</section>
+
+<!-- 4 · A COLA -->
+<section class="slide" data-eyebrow="// a cola da prova">
+  <h2 style="margin-top:60px;">Inclinação e <em>área</em></h2>
+  <div class="rows big" style="margin-top:44px;">
+    <div class="row"><span class="nm">Inclinação do s × t</span><span class="fx">velocidade</span></div>
+    <div class="row"><span class="nm">Inclinação do v × t</span><span class="fx">aceleração</span></div>
+    <div class="row"><span class="nm">Área do v × t</span><span class="fx" style="color:var(--red)">deslocamento</span></div>
+    <div class="row"><span class="nm">Área do a × t</span><span class="fx" style="color:var(--red)">variação de v</span></div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// pegadinha comum</div>
+    <p>No gráfico <b>v × t</b>, a altura é a velocidade, e não a posição. Leia sempre o nome dos eixos.</p>
+  </div>
+</section>
+
+<!-- 5 · TREINO -->
+<section class="slide" data-eyebrow="// treino rápido">
+  <h2 style="margin-top:60px;">Leia o <em>gráfico</em></h2>
+  <div class="card" style="margin-top:40px; padding:24px 40px;">
+    <svg viewBox="0 0 560 300" width="100%">
+      <path class="ar" d="M70 260 L470 60 L470 260 Z"/>
+      <path class="ax" d="M70 260 H540 M70 260 V20"/>
+      <path class="ln" d="M70 260 L470 60"/>
+      <path d="M470 60 V260 M70 60 H470" fill="none" stroke="#9AA6BF" stroke-width="3" stroke-dasharray="8 8"/>
+      <text class="lb" x="470" y="292" text-anchor="middle">4</text><text class="lb" x="22" y="68">20</text>
+      <text class="lb" x="556" y="244" text-anchor="end">t (s)</text><text class="lb" x="80" y="36">v (m/s)</text>
+    </svg>
+  </div>
+  <p class="body" style="margin-top:28px; font-size:33px;">Cubra a coluna da direita e responda.</p>
+  <div class="rows" style="margin-top:22px;">
+    <div class="row"><span class="nm">Aceleração: 20 ÷ 4</span><span class="fx" style="color:var(--red)">5 m/s²</span></div>
+    <div class="row"><span class="nm">Deslocamento: área = 4 · 20 / 2</span><span class="fx" style="color:var(--red)">40 m</span></div>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="slide" data-eyebrow="// como revisar">
+  <h2 style="margin-top:64px; font-size:90px;">Gráfico <em>cai</em> todo ano.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para ter a cola sempre à mão</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> qual gráfico mais te confunde</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para o seu grupo de estudos</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

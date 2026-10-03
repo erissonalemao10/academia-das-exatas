@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Piso frio</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// física · termologia · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:96px;">Por que o piso parece mais frio que o <em>tapete</em>?</h1>
+  <svg viewBox="0 0 920 480" width="920" height="480" style="position:absolute; left:80px; top:690px;">
+    <!-- cerâmica -->
+    <g style="stroke:var(--bg)" stroke-width="6">
+      <rect x="0" y="300" width="140" height="90" style="fill:var(--paper-dim)"/><rect x="140" y="300" width="140" height="90" style="fill:var(--paper)"/><rect x="280" y="300" width="140" height="90" style="fill:var(--paper-dim)"/>
+      <rect x="0" y="390" width="140" height="90" style="fill:var(--paper)"/><rect x="140" y="390" width="140" height="90" style="fill:var(--paper-dim)"/><rect x="280" y="390" width="140" height="90" style="fill:var(--paper)"/>
+    </g>
+    <!-- tapete -->
+    <rect x="500" y="300" width="420" height="180" rx="16" style="fill:var(--red)" opacity=".85"/>
+    <g fill="none" style="stroke:var(--paper)" stroke-width="4" opacity=".45">
+      <path d="M520 340 q20 -16 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+      <path d="M520 390 q20 -16 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+      <path d="M520 440 q20 -16 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+    </g>
+    <!-- termômetros -->
+    <g transform="translate(210 40)">
+      <rect x="-18" y="0" width="36" height="200" rx="18" fill="none" style="stroke:var(--paper)" stroke-width="5"/>
+      <rect x="-8" y="90" width="16" height="120" rx="8" style="fill:var(--blue)"/><circle cx="0" cy="222" r="26" style="fill:var(--blue)"/>
+      <text x="40" y="110" font-family="JetBrains Mono" font-weight="700" font-size="40" style="fill:var(--paper)">20 °C</text>
+    </g>
+    <g transform="translate(650 40)">
+      <rect x="-18" y="0" width="36" height="200" rx="18" fill="none" style="stroke:var(--paper)" stroke-width="5"/>
+      <rect x="-8" y="90" width="16" height="120" rx="8" style="fill:var(--blue)"/><circle cx="0" cy="222" r="26" style="fill:var(--blue)"/>
+      <text x="40" y="110" font-family="JetBrains Mono" font-weight="700" font-size="40" style="fill:var(--paper)">20 °C</text>
+    </g>
+  </svg>
+</section>
+
+<!-- 2 · EXPLICAÇÃO -->
+<section class="slide" data-eyebrow="// o que está acontecendo">
+  <h2 style="margin-top:64px;">Os dois estão na <em>mesma temperatura</em></h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">Piso e tapete estão em equilíbrio térmico com o ambiente. O que muda é a <span class="hl">rapidez com que tiram calor</span> do seu pé.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:44px;">
+    <div class="card" style="padding:34px 32px;">
+      <div class="mono" style="font-size:27px; color:var(--blue); font-weight:700;">CERÂMICA</div>
+      <p style="font-size:31px; line-height:1.4; margin-top:14px;">Conduz bem o calor: tira calor do pé <b>rápido</b>. Sensação de frio.</p>
+    </div>
+    <div class="card" style="padding:34px 32px;">
+      <div class="mono" style="font-size:27px; color:var(--red); font-weight:700;">TAPETE</div>
+      <p style="font-size:31px; line-height:1.4; margin-top:14px;">Fibras com ar preso: isolante. Tira calor <b>devagar</b>. Sensação morna.</p>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// a ideia-chave</div>
+    <p>O corpo sente o <b>fluxo de calor</b>, e não a temperatura do objeto.</p>
+  </div>
+</section>
+
+<!-- 3 · CONDUTIVIDADE -->
+<section class="slide" data-eyebrow="// quem manda é a condutividade">
+  <h2 style="margin-top:60px;">Lei de <em>Fourier</em></h2>
+  <div class="card" style="margin-top:40px; text-align:center; padding:36px 30px;">
+    <div class="formula" style="font-size:62px;">Φ = <span class="frac"><span>k · A · ΔT</span><span>L</span></span></div>
+    <div style="font-size:27px; margin-top:16px; color:var(--ink-soft);"><b style="color:var(--ink)">Φ</b> fluxo de calor · <b style="color:var(--ink)">k</b> condutividade térmica · <b style="color:var(--ink)">L</b> espessura</div>
+  </div>
+  <p class="body" style="margin-top:32px; font-size:33px;">Condutividade aproximada, em W/(m·K):</p>
+  <div class="rows" style="margin-top:22px;">
+    <div class="row" style="padding:18px 0;"><span class="nm">Cobre</span><span class="fx">≈ 400</span></div>
+    <div class="row" style="padding:18px 0;"><span class="nm">Cerâmica</span><span class="fx">≈ 1</span></div>
+    <div class="row" style="padding:18px 0;"><span class="nm">Madeira</span><span class="fx">≈ 0,15</span></div>
+    <div class="row" style="padding:18px 0;"><span class="nm">Lã (tapete)</span><span class="fx" style="color:var(--red)">≈ 0,04</span></div>
+  </div>
+</section>
+
+<!-- 4 · DESAFIO -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:35px; line-height:1.42; font-weight:500;">Numa manhã fria, uma pessoa descalça sente o piso de cerâmica mais frio que o tapete. Os dois estão no mesmo cômodo há horas. Isso acontece porque a cerâmica:</p>
+    <div class="opts" style="font-size:33px; gap:16px;">
+      <div><b>A)</b> está a uma temperatura menor</div>
+      <div><b>B)</b> conduz calor melhor que o tapete</div>
+      <div><b>C)</b> produz frio</div>
+      <div><b>D)</b> tem calor específico menor</div>
+      <div><b>E)</b> reflete o calor do corpo</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:40px; font-size:42px; text-align:center;"><b>Comente a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- 5 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>B</em>: conduz melhor</h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">A cerâmica tem condutividade térmica maior e retira calor do pé mais depressa. Daí a sensação de frio.</p>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>A</b>? Depois de horas no mesmo cômodo, piso e tapete estão na <b>mesma temperatura</b>.</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:34px;">Numa sauna é o contrário: o metal parece <b>mais quente</b> que a madeira, porque entrega calor ao corpo mais rápido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="slide" data-eyebrow="// reta final do ENEM">
+  <h2 style="margin-top:64px; font-size:92px;">Calor <em>cai</em>. Não deixe passar.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar termologia</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem jura que o piso está gelado</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> outro exemplo que você já percebeu</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pizza grande ou duas médias</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · geometria · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:90px;">Uma pizza de 40 cm ou <em>duas de 20 cm</em>: qual tem mais pizza?</h1>
+  <svg viewBox="0 0 920 500" width="920" height="500" style="position:absolute; left:80px; top:680px;">
+    <defs><g id="pz">
+      <circle cx="0" cy="0" r="100" fill="#F2C14E" stroke="#C98A2B" stroke-width="12"/>
+      <circle cx="-38" cy="-30" r="14" fill="#D9432D"/><circle cx="36" cy="-42" r="14" fill="#D9432D"/><circle cx="-10" cy="34" r="14" fill="#D9432D"/><circle cx="48" cy="26" r="14" fill="#D9432D"/><circle cx="-52" cy="30" r="12" fill="#D9432D"/>
+    </g></defs>
+    <use href="#pz" transform="translate(230 225) scale(1.8)"/>
+    <use href="#pz" transform="translate(690 125) scale(.9)"/>
+    <use href="#pz" transform="translate(690 335) scale(.9)"/>
+    <path d="M50 440 H410 M50 428 V452 M410 428 V452" fill="none" style="stroke:var(--paper)" stroke-width="4"/>
+    <text x="230" y="490" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--paper)">40 cm</text>
+    <text x="830" y="128" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--paper)">20 cm</text>
+    <text x="830" y="353" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--paper)">20 cm</text>
+    <text x="520" y="245" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="54" style="fill:var(--red)">OU</text>
+  </svg>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// a resposta">
+  <h2 style="margin-top:64px;">A grande tem o <em>dobro</em> de pizza</h2>
+  <p class="body" style="margin-top:40px; font-size:36px;">Compare as áreas (raio = metade do diâmetro):</p>
+  <div class="rows big" style="margin-top:36px;">
+    <div class="row"><span class="nm">Uma de 40 cm</span><span class="fx">π · 20² ≈ <span style="color:var(--red)">1.257 cm²</span></span></div>
+    <div class="row"><span class="nm">Duas de 20 cm</span><span class="fx">2 · π · 10² ≈ 628 cm²</span></div>
+  </div>
+  <p class="body" style="margin-top:40px; font-size:37px;">Dobrar o diâmetro <span class="hl">quadruplica</span> a área. As duas pequenas juntas têm só metade da grande.</p>
+</section>
+
+<!-- 3 · A REGRA -->
+<section class="slide" data-eyebrow="// por que acontece">
+  <h2 style="margin-top:64px;">A área cresce com o <em>quadrado</em></h2>
+  <div class="card" style="margin-top:44px; text-align:center; padding:40px 30px;">
+    <div class="formula" style="font-size:80px;">A = π · r²</div>
+  </div>
+  <div class="rows big" style="margin-top:36px;">
+    <div class="row"><span class="nm">Diâmetro × 2</span><span class="fx">área × 4</span></div>
+    <div class="row"><span class="nm">Diâmetro × 3</span><span class="fx">área × 9</span></div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// na pizzaria</div>
+    <p>Compare o <b>preço por cm²</b>. Quase sempre, a pizza maior sai mais em conta.</p>
+  </div>
+</section>
+
+<!-- 4 · DESAFIO -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:36px; line-height:1.42; font-weight:500;">Uma pizzaria vende pizza de <b>30 cm por R$ 40</b> e de <b>20 cm por R$ 20</b>. Qual tem o menor preço por área?</p>
+    <div class="opts" style="font-size:33px; gap:16px;">
+      <div><b>A)</b> a de 20 cm</div>
+      <div><b>B)</b> a de 30 cm</div>
+      <div><b>C)</b> as duas têm o mesmo preço por área</div>
+      <div><b>D)</b> não dá para comparar sem o valor de π</div>
+      <div><b>E)</b> a de 20 cm, porque custa menos</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:42px; text-align:center;"><b>Comente a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- 5 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>B</em>: a de 30 cm</h2>
+  <div class="rows" style="margin-top:40px;">
+    <div class="row"><span class="nm">Área: (30 ÷ 20)²</span><span class="fx">2,25 vezes maior</span></div>
+    <div class="row"><span class="nm">Preço: 40 ÷ 20</span><span class="fx">só 2 vezes maior</span></div>
+  </div>
+  <div style="margin-top:40px; display:grid; gap:28px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:33px;">Marcou <b>A</b>? Você comparou pelo diâmetro (1,5 vez maior), e não pela área (2,25 vezes).</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:33px;">Na razão entre as áreas, o π <b>se cancela</b>. Por isso a letra D está errada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="slide" data-eyebrow="// geometria no ENEM">
+  <h2 style="margin-top:64px; font-size:90px;">Geometria <em>cai</em> todo ano.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para a próxima pizza</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem sempre pede duas pequenas</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> qual você pediria agora</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>
