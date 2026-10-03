@@ -21,6 +21,10 @@ Tom: português do Brasil, informal e direto nas legendas ("pra", "tá", "coment
 - Sem emoji dentro das imagens (as fontes não têm). Emoji só na legenda.
 - Texto das imagens na **norma padrão** ("Comente", "Salve", "Não deixe passar", "para o ENEM"). O tom informal ("comenta", "pra", "tá") fica só na legenda.
 - Rigor conceitual: prefira a definição que os vestibulares cobram. Exemplo: refração é a **mudança de velocidade** ao trocar de meio, e o desvio só ocorre com incidência oblíqua. Evite generalizações regionais ("no inverno") e verbos imprecisos ("trocaram elétrons" → "elétrons passaram de um material para o outro").
+- Ilustrações e gráficos do mesmo slide devem descrever **a mesma situação** (ex.: s × t e v × t do mesmo movimento).
+- Valores aproximados levam **≈** (densidade da água, constantes, medidas do dia a dia). Nada de "quase sempre", "sempre", "nunca" sem prova.
+- Em geometria, lado do quadrado/triângulo como **ℓ** (o "l" da fonte mono parece "1").
+- Revise o sentido das frases de cálculo ("diferença entre cada termo e o anterior", e não "subtraia cada termo do anterior").
 - Índices com `<sub>` (ex.: `v<sub>0</sub>`), nunca com os caracteres ₀ ₁ ₂.
 - **Confira toda fórmula, número e resposta** antes de gerar. Nada de afirmação exagerada ou não verificável. Na dúvida, escreva de forma mais cautelosa.
 
