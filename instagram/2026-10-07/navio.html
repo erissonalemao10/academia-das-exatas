@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Navio flutua</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// física · hidrostática · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:90px;">Por que um navio de aço <em>flutua</em> e um prego afunda?</h1>
+  <svg viewBox="0 0 920 500" width="920" height="500" style="position:absolute; left:80px; top:660px;">
+    <rect x="0" y="150" width="920" height="350" style="fill:var(--blue)" opacity=".18"/>
+    <path d="M0 150 Q40 138 80 150 T160 150 T240 150 T320 150 T400 150 T480 150 T560 150 T640 150 T720 150 T800 150 T880 150 T960 150" fill="none" style="stroke:var(--blue)" stroke-width="5"/>
+    <!-- navio -->
+    <g transform="translate(120 40)">
+      <path d="M0 80 H420 L370 170 H50 Z" style="fill:var(--paper)"/>
+      <rect x="120" y="30" width="170" height="50" rx="6" style="fill:var(--paper-dim)"/>
+      <rect x="220" y="0" width="34" height="34" rx="4" style="fill:var(--red)"/>
+      <g style="fill:var(--bg)"><circle cx="150" cy="56" r="8"/><circle cx="190" cy="56" r="8"/><circle cx="230" cy="56" r="8"/><circle cx="270" cy="56" r="8"/></g>
+    </g>
+    <!-- prego afundando -->
+    <g transform="translate(700 300) rotate(20)">
+      <rect x="-8" y="-60" width="16" height="120" style="fill:var(--paper-dim)"/>
+      <rect x="-26" y="-70" width="52" height="12" rx="3" style="fill:var(--paper-dim)"/>
+      <path d="M-8 60 L0 84 L8 60 Z" style="fill:var(--paper-dim)"/>
+    </g>
+    <path d="M800 270 V420 M786 404 L800 420 L814 404" fill="none" style="stroke:var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g style="fill:var(--paper-dim)" opacity=".6"><circle cx="690" cy="200" r="7"/><circle cx="712" cy="174" r="5"/><circle cx="700" cy="232" r="4"/></g>
+  </svg>
+</section>
+
+<!-- 2 · EMPUXO -->
+<section class="slide" data-eyebrow="// o que está acontecendo">
+  <h2 style="margin-top:64px;">A força que segura: <em>empuxo</em></h2>
+  <p class="body" style="margin-top:40px;">Todo corpo dentro de um líquido recebe uma força para cima, igual ao <span class="hl">peso do líquido deslocado</span>. É o princípio de Arquimedes.</p>
+  <div class="card" style="margin-top:48px; text-align:center;">
+    <div class="formula" style="font-size:72px;">E = d<sub>L</sub> · V<sub>sub</sub> · g</div>
+    <div style="font-size:29px; line-height:1.45; margin-top:22px; color:var(--ink-soft);"><b style="color:var(--ink)">d<sub>L</sub></b> densidade do líquido · <b style="color:var(--ink)">V<sub>sub</sub></b> volume submerso<br><b style="color:var(--ink)">g</b> aceleração da gravidade</div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:37px;">Quanto mais líquido o corpo desloca, <b>maior o empuxo</b>.</p>
+</section>
+
+<!-- 3 · DENSIDADE MÉDIA -->
+<section class="slide" data-eyebrow="// o segredo do casco">
+  <h2 style="margin-top:64px; font-size:74px;">O que importa é a densidade <em>média</em></h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px;">
+    <div class="card" style="padding:34px 32px;">
+      <div class="mono" style="font-size:27px; color:var(--blue); font-weight:700;">PREGO</div>
+      <p style="font-size:31px; line-height:1.4; margin-top:14px;">Aço maciço: cerca de <b>7,8 g/cm³</b>, mais que a água (1 g/cm³). <b>Afunda.</b></p>
+    </div>
+    <div class="card" style="padding:34px 32px;">
+      <div class="mono" style="font-size:27px; color:var(--red); font-weight:700;">NAVIO</div>
+      <p style="font-size:31px; line-height:1.4; margin-top:14px;">Casco oco, cheio de ar: a densidade média de <b>aço + ar</b> fica abaixo de 1 g/cm³. <b>Flutua.</b></p>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// regra de bolso</div>
+    <p>Flutua quem tem densidade média <b>menor</b> que a do líquido. Por isso um navio carregado afunda mais na água.</p>
+  </div>
+</section>
+
+<!-- 4 · DESAFIO -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:36px; line-height:1.42; font-weight:500;">Um bloco de madeira flutua em equilíbrio na água, com parte do volume submerso. O empuxo sobre o bloco é:</p>
+    <div class="opts" style="font-size:33px; gap:16px;">
+      <div><b>A)</b> maior que o peso do bloco</div>
+      <div><b>B)</b> igual ao peso do bloco</div>
+      <div><b>C)</b> menor que o peso do bloco</div>
+      <div><b>D)</b> nulo, porque o bloco flutua</div>
+      <div><b>E)</b> igual ao peso da água com o volume do bloco inteiro</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:42px; text-align:center;"><b>Comente a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- 5 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>B</em>: igual ao peso</h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Parado e flutuando, o bloco está em equilíbrio: as forças se anulam, então <b>E = P</b>.</p>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>A</b>? O empuxo só é maior que o peso enquanto o corpo está <b>subindo</b>. Em equilíbrio, E = P.</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:34px;">A fração submersa é d<sub>corpo</sub> / d<sub>líquido</sub>. O gelo (≈ 0,92 g/cm³) fica cerca de <b>92%</b> submerso na água doce: a "ponta do iceberg".</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="slide" data-eyebrow="// reta final do ENEM">
+  <h2 style="margin-top:64px; font-size:88px;">Hidrostática <em>cai</em>. Não deixe passar.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar empuxo</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem acha que navio flutua por ser leve</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> outro objeto que te intriga por flutuar</p></div>
+  </div>
+  <div class="card" style="margin-top:56px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

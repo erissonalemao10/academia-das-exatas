@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Desafio das moedas</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · desafio relâmpago" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">RESOLVA EM 10 SEGUNDOS</span></div>
+  <h1 style="margin-top:36px; font-size:88px;">Jogando 2 moedas, qual a chance de sair <em>pelo menos uma cara</em>?</h1>
+  <div class="card" style="margin-top:52px; display:flex; justify-content:space-around; align-items:center; padding:44px 30px;">
+    <div class="mono" style="font-size:80px; font-weight:700;">1/2</div>
+    <div class="mono" style="font-size:80px; font-weight:700;">2/3</div>
+    <div class="mono" style="font-size:80px; font-weight:700;">3/4</div>
+  </div>
+  <div style="margin-top:48px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 48 48" width="70" height="70"><use href="#icon-timer"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// liste todos os casos">
+  <h2 style="margin-top:64px;">Resposta: <em>3/4</em></h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Com 2 moedas existem <b>4 resultados</b>, todos com a mesma chance:</p>
+  <div class="rows big" style="margin-top:36px;">
+    <div class="row"><span class="nm">cara · cara</span><svg viewBox="0 0 48 48" width="56" height="56"><use href="#icon-check"/></svg></div>
+    <div class="row"><span class="nm">cara · coroa</span><svg viewBox="0 0 48 48" width="56" height="56"><use href="#icon-check"/></svg></div>
+    <div class="row"><span class="nm">coroa · cara</span><svg viewBox="0 0 48 48" width="56" height="56"><use href="#icon-check"/></svg></div>
+    <div class="row"><span class="nm">coroa · coroa</span><svg viewBox="0 0 48 48" width="56" height="56" style="--paper-dim:#9AA3B5"><use href="#icon-x"/></svg></div>
+  </div>
+  <p class="body" style="margin-top:36px; font-size:36px;"><b>3 casos favoráveis</b> em 4 possíveis: 3/4 = 75%.</p>
+</section>
+
+<!-- 3 · PEGADINHA -->
+<section class="slide" data-eyebrow="// a pegadinha">
+  <h2 style="margin-top:64px;">Por que tanta gente responde <em>2/3</em>?</h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">Pensam em 3 resultados: <b>0, 1 ou 2 caras</b>. Mas eles <span class="hl">não têm a mesma chance</span>.</p>
+  <div class="rows big" style="margin-top:40px;">
+    <div class="row"><span class="nm">0 caras (coroa · coroa)</span><span class="fx">1/4</span></div>
+    <div class="row"><span class="nm">1 cara (2 jeitos)</span><span class="fx" style="color:var(--red)">2/4</span></div>
+    <div class="row"><span class="nm">2 caras (cara · cara)</span><span class="fx">1/4</span></div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// curiosidade</div>
+    <p>Até o matemático francês <b>d'Alembert</b> errou essa conta, em 1754.</p>
+  </div>
+</section>
+
+<!-- 4 · ATALHO -->
+<section class="slide" data-eyebrow="// cai no ENEM">
+  <h2 style="margin-top:64px;">Atalho: use o <em>complementar</em></h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">"Pelo menos um" é tudo, menos o caso em que <b>não sai nenhum</b>.</p>
+  <div class="card" style="margin-top:44px; text-align:center; padding:44px 30px;">
+    <div class="formula" style="font-size:46px;">P = 1 − P(nenhuma cara)</div>
+    <div class="mono" style="font-size:84px; font-weight:700; color:var(--red); margin-top:14px;">1 − 1/4 = 3/4</div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// desafio bônus</div>
+    <p>E com <b>3 moedas</b>? Qual a chance de sair pelo menos uma cara? <b>Comente!</b></p>
+  </div>
+</section>
+
+<!-- 5 · CTA -->
+<section class="slide" data-eyebrow="// probabilidade no ENEM">
+  <h2 style="margin-top:64px; font-size:90px;">Probabilidade <em>cai</em> todo ano.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar antes da prova</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem respondeu 1/2</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

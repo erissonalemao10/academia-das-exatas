@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Efeito Doppler</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// física · ondulatória · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:96px;">Por que a sirene <em>muda de som</em> quando passa?</h1>
+  <svg viewBox="0 0 920 520" width="920" height="520" style="position:absolute; left:80px; top:660px;">
+    <defs><clipPath id="cl"><rect x="0" y="0" width="920" height="520"/></clipPath></defs>
+    <g clip-path="url(#cl)" fill="none" style="stroke:var(--blue)" stroke-width="5">
+      <circle cx="470" cy="270" r="50"/>
+      <circle cx="430" cy="270" r="120" opacity=".85"/>
+      <circle cx="390" cy="270" r="190" opacity=".7"/>
+      <circle cx="350" cy="270" r="260" opacity=".55"/>
+      <circle cx="310" cy="270" r="330" opacity=".4"/>
+    </g>
+    <!-- ambulância -->
+    <g transform="translate(410 236)">
+      <rect x="0" y="0" width="120" height="58" rx="10" style="fill:var(--paper)"/>
+      <rect x="84" y="10" width="28" height="22" rx="4" style="fill:var(--blue)"/>
+      <rect x="30" y="18" width="24" height="8" style="fill:var(--red)"/><rect x="38" y="10" width="8" height="24" style="fill:var(--red)"/>
+      <rect x="20" y="-10" width="26" height="10" rx="3" style="fill:var(--red)"/>
+      <circle cx="26" cy="62" r="11" style="fill:var(--bg); stroke:var(--paper)" stroke-width="5"/>
+      <circle cx="94" cy="62" r="11" style="fill:var(--bg); stroke:var(--paper)" stroke-width="5"/>
+    </g>
+    <path d="M440 180 H520 M502 166 L520 180 L502 194" fill="none" style="stroke:var(--paper)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="830" y="200" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--red); paint-order:stroke; stroke:var(--bg); stroke-width:14px; stroke-linejoin:round;">mais agudo</text>
+    <text x="6" y="200" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--paper-dim); paint-order:stroke; stroke:var(--bg); stroke-width:14px; stroke-linejoin:round;">mais grave</text>
+    <!-- pessoas -->
+    <g transform="translate(830 310)" style="fill:var(--paper)"><circle cx="0" cy="-60" r="18"/><rect x="-16" y="-38" width="32" height="70" rx="12"/></g>
+    <g transform="translate(40 310)" style="fill:var(--paper-dim)"><circle cx="0" cy="-60" r="18"/><rect x="-16" y="-38" width="32" height="70" rx="12"/></g>
+  </svg>
+</section>
+
+<!-- 2 · EXPLICAÇÃO -->
+<section class="slide" data-eyebrow="// o que está acontecendo">
+  <h2 style="margin-top:64px;">É o efeito <em>Doppler</em></h2>
+  <p class="body" style="margin-top:40px;">A sirene emite sempre a mesma frequência. O que muda é a frequência que <span class="hl">chega ao seu ouvido</span>.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px;">
+    <div class="card" style="padding:34px 32px;">
+      <div class="mono" style="font-size:27px; color:var(--red); font-weight:700;">APROXIMANDO</div>
+      <p style="font-size:32px; line-height:1.4; margin-top:14px;">As ondas chegam <b>mais juntas</b>: frequência maior, som mais agudo.</p>
+    </div>
+    <div class="card" style="padding:34px 32px;">
+      <div class="mono" style="font-size:27px; color:var(--blue); font-weight:700;">AFASTANDO</div>
+      <p style="font-size:32px; line-height:1.4; margin-top:14px;">As ondas chegam <b>mais espaçadas</b>: frequência menor, som mais grave.</p>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// atenção</div>
+    <p>A velocidade do som <b>não muda</b>: ela depende do meio (o ar), e não do movimento da fonte.</p>
+  </div>
+</section>
+
+<!-- 3 · NA CONTA -->
+<section class="slide" data-eyebrow="// quanto muda?">
+  <h2 style="margin-top:64px;">Fazendo a <em>conta</em></h2>
+  <div class="card" style="margin-top:44px; display:flex; align-items:center; justify-content:space-between; gap:30px;">
+    <div class="formula" style="font-size:56px;">f<sub>obs</sub> = f · <span class="frac"><span>v</span><span>v − v<sub>F</sub></span></span></div>
+    <div style="font-size:28px; line-height:1.45;">fonte se aproximando,<br>observador parado</div>
+  </div>
+  <p class="body" style="margin-top:36px; font-size:34px;">Sirene de <b>700 Hz</b>, som a <b>340 m/s</b>, ambulância a 72 km/h = <b>20 m/s</b>:</p>
+  <div class="rows big" style="margin-top:30px;">
+    <div class="row"><span class="nm">Aproximando: 700 · 340 / 320</span><span class="fx" style="color:var(--red)">≈ 744 Hz</span></div>
+    <div class="row"><span class="nm">Afastando: 700 · 340 / 360</span><span class="fx">≈ 661 Hz</span></div>
+  </div>
+</section>
+
+<!-- 4 · DESAFIO -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:36px; line-height:1.42; font-weight:500;">Uma ambulância com a sirene ligada se aproxima de um pedestre parado. Em relação ao som emitido, o pedestre percebe um som com:</p>
+    <div class="opts" style="font-size:34px; gap:16px;">
+      <div><b>A)</b> frequência maior e mesma velocidade</div>
+      <div><b>B)</b> frequência menor e mesma velocidade</div>
+      <div><b>C)</b> mesma frequência e velocidade maior</div>
+      <div><b>D)</b> frequência maior e velocidade maior</div>
+      <div><b>E)</b> mesma frequência e mesma velocidade</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:42px; text-align:center;"><b>Comente a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- 5 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>A</em>: frequência maior</h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">As frentes de onda chegam mais juntas ao pedestre, então ele percebe uma <b>frequência maior</b> que a emitida.</p>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>D</b>? A velocidade do som depende do <b>meio</b>. Com o ar parado, ela é a mesma, ande a fonte ou não.</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:34px;">O mesmo efeito é usado no <b>ultrassom Doppler</b>, que mede o fluxo do sangue, e em radares meteorológicos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="slide" data-eyebrow="// reta final do ENEM">
+  <h2 style="margin-top:64px; font-size:92px;">Ondas <em>caem</em>. Não deixe passar.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar ondulatória</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem imita a sirene passando</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> onde mais você já percebeu esse efeito</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

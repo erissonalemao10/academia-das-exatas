@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Média, mediana e moda</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<style>
+  .row .nm b{display:block; color:var(--ink); font-size:34px; font-weight:800; margin-bottom:4px;}
+  .dados{display:flex; gap:14px; justify-content:center;}
+  .dados span{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:44px; background:var(--card); border:2px solid #E3E6EE; border-radius:14px; padding:10px 22px; color:var(--ink);}
+</style>
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · estatística">
+  <h1 style="margin-top:52px; font-size:100px;">Média, mediana e moda <em>sem confusão</em></h1>
+  <div style="margin-top:56px; display:grid; gap:18px;">
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">O que é cada uma</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">02</span></div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">Quando a média engana</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">03</span></div>
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center; padding:26px 40px;"><span style="font-size:36px; font-weight:700;">Treino rápido com gabarito</span><span class="mono" style="font-size:30px; color:var(--ink-soft);">04</span></div>
+  </div>
+  <div style="margin-top:44px; display:flex; align-items:center; gap:22px;">
+    <svg viewBox="0 0 48 48" width="60" height="60"><use href="#icon-save"/></svg>
+    <p class="body" style="font-size:38px;"><b>Salve</b> e use como cola de revisão</p>
+  </div>
+</section>
+
+<!-- 2 · DEFINIÇÕES -->
+<section class="slide" data-eyebrow="// o que é cada uma">
+  <h2 style="margin-top:60px;">As três <em>medidas</em></h2>
+  <div class="dados" style="margin-top:40px;"><span>2</span><span>3</span><span>3</span><span>5</span><span>7</span><span>10</span></div>
+  <div class="rows" style="margin-top:36px;">
+    <div class="row"><span class="nm"><b>Média</b>soma ÷ quantidade: 30 ÷ 6</span><span class="fx" style="color:var(--red)">5</span></div>
+    <div class="row"><span class="nm"><b>Mediana</b>valor do meio, em ordem: (3 + 5) ÷ 2</span><span class="fx" style="color:var(--red)">4</span></div>
+    <div class="row"><span class="nm"><b>Moda</b>valor que mais se repete</span><span class="fx" style="color:var(--red)">3</span></div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// atenção</div>
+    <p>Para a mediana, <b>coloque em ordem</b> primeiro. Com quantidade par, faça a média dos dois do meio.</p>
+  </div>
+</section>
+
+<!-- 3 · QUANDO A MÉDIA ENGANA -->
+<section class="slide" data-eyebrow="// cai no ENEM">
+  <h2 style="margin-top:60px;">Quando a média <em>engana</em></h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Salários de 5 pessoas, em mil reais:</p>
+  <div class="dados" style="margin-top:28px;"><span>2</span><span>2</span><span>3</span><span>3</span><span style="color:var(--red)">40</span></div>
+  <div class="rows big" style="margin-top:36px;">
+    <div class="row"><span class="nm">Média: 50 ÷ 5</span><span class="fx">10 mil</span></div>
+    <div class="row"><span class="nm">Mediana</span><span class="fx" style="color:var(--red)">3 mil</span></div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// regra de prova</div>
+    <p>Um valor extremo puxa a média. Para representar o grupo, a <b>mediana</b> costuma ser melhor.</p>
+  </div>
+</section>
+
+<!-- 4 · TREINO -->
+<section class="slide" data-eyebrow="// treino rápido">
+  <h2 style="margin-top:60px;">Teste em <em>30 segundos</em></h2>
+  <div class="dados" style="margin-top:40px;"><span>4</span><span>8</span><span>6</span><span>6</span><span>10</span></div>
+  <p class="body" style="margin-top:28px; font-size:34px; text-align:center;">Cubra a coluna da direita e calcule.</p>
+  <div class="rows big" style="margin-top:32px;">
+    <div class="row"><span class="nm">Média: 34 ÷ 5</span><span class="fx" style="color:var(--red)">6,8</span></div>
+    <div class="row"><span class="nm">Mediana (4, 6, 6, 8, 10)</span><span class="fx" style="color:var(--red)">6</span></div>
+    <div class="row"><span class="nm">Moda</span><span class="fx" style="color:var(--red)">6</span></div>
+  </div>
+</section>
+
+<!-- 5 · CTA -->
+<section class="slide" data-eyebrow="// como revisar">
+  <h2 style="margin-top:64px; font-size:90px;">Estatística <em>cai</em> todo ano.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para ter a cola sempre à mão</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> qual das três você mais confundia</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para o seu grupo de estudos</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

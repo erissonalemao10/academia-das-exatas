@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Apertos de mão</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · contagem" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">RESOLVA EM 10 SEGUNDOS</span><span class="chip ghost">estilo OBMEP</span></div>
+  <h1 style="margin-top:36px; font-size:80px;">10 pessoas se cumprimentam, cada dupla <em>uma vez</em>. Quantos apertos de mão?</h1>
+  <div class="card" style="margin-top:44px; display:flex; align-items:center; justify-content:space-between; padding:30px 48px;">
+    <svg id="grafo" viewBox="-160 -160 320 320" width="330" height="330"></svg>
+    <div class="mono" style="font-size:120px; font-weight:700; color:var(--red);">= ?</div>
+  </div>
+  <div style="margin-top:40px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 48 48" width="70" height="70"><use href="#icon-timer"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// o raciocínio">
+  <h2 style="margin-top:64px;">Resposta: <em>45</em> apertos</h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">Cada pessoa aperta a mão de <b>9</b> outras: 10 × 9 = 90. Mas assim cada aperto foi contado <span class="hl">duas vezes</span> (Ana com Bia e Bia com Ana).</p>
+  <div class="card" style="margin-top:44px; text-align:center; padding:44px 30px;">
+    <div class="mono" style="font-size:80px; font-weight:700; white-space:nowrap;">10 × 9 ÷ 2 = <span style="color:var(--red)">45</span></div>
+  </div>
+  <div style="margin-top:44px; display:flex; gap:26px;">
+    <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+    <p class="body" style="font-size:34px;">Respondeu <b>90</b>? Você contou cada aperto duas vezes. Aqui a ordem <b>não importa</b>.</p>
+  </div>
+</section>
+
+<!-- 3 · FÓRMULA -->
+<section class="slide" data-eyebrow="// cai na OBMEP e no ENEM">
+  <h2 style="margin-top:60px; font-size:70px;">É uma <em>combinação</em> de n, 2 a 2</h2>
+  <div class="card" style="margin-top:36px; text-align:center; padding:32px 30px;">
+    <div class="formula" style="font-size:66px;">C<sub>n,2</sub> = <span class="frac"><span>n · (n − 1)</span><span>2</span></span></div>
+  </div>
+  <div class="rows" style="margin-top:28px;">
+    <div class="row"><span class="nm">5 pessoas</span><span class="fx">5 · 4 / 2 = <span style="color:var(--red)">10</span></span></div>
+    <div class="row"><span class="nm">10 pessoas</span><span class="fx">10 · 9 / 2 = <span style="color:var(--red)">45</span></span></div>
+    <div class="row"><span class="nm">30 pessoas</span><span class="fx">30 · 29 / 2 = <span style="color:var(--red)">435</span></span></div>
+  </div>
+  <div class="tip" style="margin-top:32px; padding:22px 36px;">
+    <div class="lbl">// desafio bônus</div>
+    <p>Num campeonato com <b>20 times</b>, todos jogam contra todos uma vez. Quantos jogos? <b>Comente!</b></p>
+  </div>
+</section>
+
+<!-- 4 · CTA -->
+<section class="slide" data-eyebrow="// contagem">
+  <h2 style="margin-top:64px; font-size:88px;">Contagem <em>cai</em> na OBMEP e no ENEM.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar combinação</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem vai fazer a OBMEP</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+  </div>
+  <div class="card" style="margin-top:56px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script>
+// desenha 10 pontos num círculo com todas as ligações (45 segmentos)
+(function(){
+  const g = document.getElementById('grafo'), n = 10, R = 140, p = [];
+  for (let i = 0; i < n; i++) { const a = -Math.PI/2 + 2*Math.PI*i/n; p.push([R*Math.cos(a), R*Math.sin(a)]); }
+  let h = '';
+  for (let i = 0; i < n; i++) for (let j = i+1; j < n; j++)
+    h += `<line x1="${p[i][0]}" y1="${p[i][1]}" x2="${p[j][0]}" y2="${p[j][1]}" style="stroke:var(--blue)" stroke-width="2" opacity=".55"/>`;
+  p.forEach(q => h += `<circle cx="${q[0]}" cy="${q[1]}" r="13" style="fill:var(--red)"/>`);
+  g.innerHTML = h;
+})();
+</script>
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>
