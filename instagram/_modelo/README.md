@@ -4,7 +4,17 @@ Todo post segue este modelo. Para criar um novo, basta pedir ao Claude, por exem
 *"crie um post sobre leis de Newton para sexta às 10h"*. A skill `.claude/skills/post-instagram`
 faz o resto: monta os slides neste padrão, gera as imagens e agenda no Metricool.
 
-## Identidade visual
+## Cores por tipo de post (definidas em 03/10/2026)
+
+| Tipo | Classe no `<body>` | Fundo | Destaque |
+|---|---|---|---|
+| **Física** | nenhuma (padrão) | azul-marinho `#0F1E3C` | vermelho `#E8384F` |
+| **Matemática** | `tema-matematica` | caderno claro `#F7F4EA` quadriculado | verde-azulado `#0E8F80` |
+| **Informativos** (olimpíadas, datas de prova, avisos) | `tema-informativo` | azul royal `#1E4FA8` | amarelo `#FFC94A` |
+
+Os três seguem o mesmo layout; só as cores mudam. Comparações em `../_teste-cores/`.
+
+## Identidade visual (Física, o padrão)
 
 | Item | Valor |
 |---|---|

@@ -12,6 +12,11 @@ Tom: português do Brasil, informal e direto nas legendas ("pra", "tá", "coment
 
 - **Sempre** use o padrão de `instagram/_modelo/` (leia `README.md` e `modelo.html` antes de começar). Não invente outro visual.
 - **Não mencione o site nem "link na bio"** (o site Academia das Exatas ainda não está pronto). Só volte a citar quando o usuário disser que o site está no ar.
+- **Cor por tipo de post** (classe no `<body>`):
+  - **Física**: `<body>` (azul-marinho + vermelho, o padrão);
+  - **Matemática**: `<body class="tema-matematica">` (caderno claro + verde-azulado);
+  - **Informativos** (olimpíadas, datas de prova, avisos, calendário): `<body class="tema-informativo">` (azul royal + amarelo).
+  Nas ilustrações SVG use as variáveis do tema (`style="stroke:var(--paper)"`, `fill:var(--red)`), nunca cores fixas, para que funcionem nos temas claros.
 - O rodapé com `@erisson.alemao.prof` e o contador de slides são automáticos (`chrome.js`). Não os escreva à mão.
 - Sem emoji dentro das imagens (as fontes não têm). Emoji só na legenda.
 - Texto das imagens na **norma padrão** ("Comente", "Salve", "Não deixe passar", "para o ENEM"). O tom informal ("comenta", "pra", "tá") fica só na legenda.

@@ -1,0 +1,68 @@
+/* Temas testados e não escolhidos (03/10/2026). Mantidos só para as imagens de comparação. */
+  /* ---- temas por matéria: aplique no <body class="tema-..."> ----
+     Física usa o padrão (azul-quadro + vermelho). Os demais temas só trocam as variáveis. */
+  .tema-verde{ /* lousa verde + giz amarelo */
+    --bg:#103B2F; --wood:#1E5543; --grid:rgba(225,245,232,0.07);
+    --paper:#F4F1E6; --paper-dim:#C3D6CB; --red:#F2C14E; --on-accent:#1B2A22;
+    --blue:#8ED1B5; --hl:rgba(242,193,78,.45); --ink:#14261F; --ink-soft:#4A5E55;
+  }
+  .tema-roxo{ /* ametista + laranja */
+    --bg:#251642; --wood:#3B2768; --grid:rgba(236,228,255,0.07);
+    --paper:#F6F3FC; --paper-dim:#D2C8EA; --red:#FF8A3D; --on-accent:#24123F;
+    --blue:#B9A7FF; --hl:rgba(255,138,61,.45); --ink:#1E1433; --ink-soft:#5B4E78;
+  }
+  .tema-petroleo{ /* azul-petróleo + coral */
+    --bg:#0B2D35; --wood:#154753; --grid:rgba(220,242,246,0.07);
+    --paper:#F2F8F9; --paper-dim:#BFD8DD; --red:#FF6F59; --on-accent:#2A0E09;
+    --blue:#6CCAD3; --hl:rgba(255,111,89,.45); --ink:#10262C; --ink-soft:#4C666C;
+  }
+  /* destaque dentro dos cartões claros: versão mais escura do acento, para ter contraste */
+  .tema-verde .card, .tema-verde .rows{--red:#9A6A00;}
+  .tema-roxo .card, .tema-roxo .rows{--red:#D45A12;}
+  .tema-petroleo .card, .tema-petroleo .rows{--red:#D9432D;}
+
+  /* ---- candidatos para informativos (olimpíadas, provas, avisos) ---- */
+  .tema-aviso{ /* amarelo de aviso + vermelho */
+    --bg:#FFD54A; --wood:#1C2541; --grid:rgba(28,37,65,0.08);
+    --paper:#1C2541; --paper-dim:#4A4F5E; --card:#FFFFFF; --red:#C81D35; --on-accent:#FFFFFF;
+    --blue:#1C2541; --hl:rgba(200,29,53,.22); --ink:#1C2541; --ink-soft:#4E5568;
+  }
+  .tema-medalha{ /* grafite + ouro e prata */
+    --bg:#17181F; --wood:#2B2D38; --grid:rgba(240,240,245,0.06);
+    --paper:#F4F2EC; --paper-dim:#B9B6AC; --red:#E3B341; --on-accent:#1A1408;
+    --blue:#C9CCD6; --hl:rgba(227,179,65,.40); --ink:#17181F; --ink-soft:#55575F;
+  }
+  .tema-diploma{ /* vinho + dourado */
+    --bg:#4A1228; --wood:#6B1D3A; --grid:rgba(255,235,240,0.07);
+    --paper:#FBF4EE; --paper-dim:#E2C9CF; --red:#F2C14E; --on-accent:#3A0E1F;
+    --blue:#EDB6C4; --hl:rgba(242,193,78,.40); --ink:#2E0A18; --ink-soft:#6A4552;
+  }
+  .tema-alerta{ /* laranja forte + azul-marinho */
+    --bg:#D9480F; --wood:#1C2541; --grid:rgba(255,255,255,0.10);
+    --paper:#FFFFFF; --paper-dim:#FFE1D1; --red:#1C2541; --on-accent:#FFFFFF;
+    --blue:#FFE1D1; --hl:rgba(255,255,255,.38); --ink:#1C2541; --ink-soft:#56607A;
+  }
+  .tema-medalha .card, .tema-medalha .rows{--red:#9C7300;}
+  .tema-diploma .card, .tema-diploma .rows{--red:#A36F00;}
+  .tema-alerta .card, .tema-alerta .rows{--red:#D9480F;}
+  .tema-aviso .card, .tema-aviso .rows{box-shadow:0 10px 26px rgba(28,37,65,.16);}
+
+  /* ---- informativos: família azul + branco ---- */
+  .tema-ceu{ /* azul-claro + marinho + vermelho da marca */
+    --bg:#DCEAF8; --wood:#0F1E3C; --grid:rgba(15,30,60,0.07);
+    --paper:#0F1E3C; --paper-dim:#4E5B78; --card:#FFFFFF; --red:#D92C45; --on-accent:#FFFFFF;
+    --blue:#2457C5; --hl:rgba(217,44,69,.22); --ink:#0F1E3C; --ink-soft:#4E5B78;
+  }
+  .tema-branco{ /* branco + azul royal */
+    --bg:#FFFFFF; --wood:#2457C5; --grid:rgba(36,87,197,0.07);
+    --paper:#0F1E3C; --paper-dim:#56607A; --card:#EEF3FB; --red:#2457C5; --on-accent:#FFFFFF;
+    --blue:#2457C5; --hl:rgba(36,87,197,.20); --ink:#0F1E3C; --ink-soft:#56607A;
+  }
+  .tema-ouro{ /* marinho profundo + dourado */
+    --bg:#0A1630; --wood:#E8B547; --grid:rgba(226,232,244,0.06);
+    --paper:#F3F5FA; --paper-dim:#C9D1E3; --red:#E8B547; --on-accent:#0A1630;
+    --blue:#9FB8E0; --hl:rgba(232,181,71,.40); --ink:#0A1630; --ink-soft:#4E5B78;
+  }
+  .tema-ouro .card, .tema-ouro .rows{--red:#9C7300;}
+  .tema-ceu .card, .tema-ceu .rows{box-shadow:0 10px 26px rgba(15,30,60,.14);}
+  .tema-branco .card, .tema-branco .rows{box-shadow:none; border:2px solid #D6E1F3;}
