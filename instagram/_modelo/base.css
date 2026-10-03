@@ -10,8 +10,8 @@
     width:1080px; height:1350px; position:relative; overflow:hidden;
     background:
       radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.05), transparent 70%),
-      linear-gradient(var(--board-line,rgba(226,232,244,0.07)) 2px, transparent 2px) 0 0/60px 60px,
-      linear-gradient(90deg, rgba(226,232,244,0.07) 2px, transparent 2px) 0 0/60px 60px,
+      linear-gradient(var(--grid,rgba(226,232,244,0.07)) 2px, transparent 2px) 0 0/60px 60px,
+      linear-gradient(90deg, var(--grid,rgba(226,232,244,0.07)) 2px, transparent 2px) 0 0/60px 60px,
       var(--bg);
     border-bottom:22px solid var(--wood);
     padding:72px 80px 0;
@@ -40,14 +40,14 @@
   p.body b{color:var(--paper); font-weight:800;}
   .soft{color:var(--paper-dim);}
   .mono{font-family:'JetBrains Mono',monospace;}
-  .hl{background:linear-gradient(transparent 60%, rgba(232,56,79,.45) 60%); padding:0 4px;}
+  .hl{background:linear-gradient(transparent 60%, var(--hl,rgba(232,56,79,.45)) 60%); padding:0 4px;}
 
   .chip{display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px;
-    padding:10px 20px; border-radius:999px; background:var(--red); color:#fff; letter-spacing:.5px;}
+    padding:10px 20px; border-radius:999px; background:var(--red); color:var(--on-accent,#fff); letter-spacing:.5px;}
   .chip.w{min-width:210px; text-align:center;}
   .chip.ghost{background:transparent; border:3px solid var(--blue); color:var(--blue);}
 
-  .card{background:var(--paper); color:var(--ink); border-radius:26px; padding:44px 48px;
+  .card{background:var(--card,var(--paper)); color:var(--ink); border-radius:26px; padding:44px 48px;
     box-shadow:0 18px 40px rgba(3,9,22,.45);}
   .formula{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:60px; white-space:nowrap;}
   .formula .frac{vertical-align:middle; margin:0 .15em;}
@@ -57,7 +57,7 @@
   sub{font-size:.55em; vertical-align:-0.35em; font-weight:700;}
 
   /* ---- extras compartilhados ---- */
-  .rows{background:var(--paper); color:var(--ink); border-radius:26px; padding:10px 44px; box-shadow:0 18px 40px rgba(3,9,22,.45);}
+  .rows{background:var(--card,var(--paper)); color:var(--ink); border-radius:26px; padding:10px 44px; box-shadow:0 18px 40px rgba(3,9,22,.45);}
   .row{display:flex; justify-content:space-between; align-items:center; gap:24px; padding:26px 0; border-bottom:2px dashed #C9D1E3;}
   .row:last-child{border-bottom:none;}
   .row .nm{font-size:29px; color:var(--ink-soft); font-weight:600; line-height:1.25;}
@@ -73,3 +73,34 @@
 
   .rows.big .row{padding:28px 0;}
   .rows.big .fx{font-size:46px;}
+
+  /* ---- temas por matéria: aplique no <body class="tema-..."> ----
+     Física usa o padrão (azul-quadro + vermelho). Os demais temas só trocam as variáveis. */
+  .tema-verde{ /* lousa verde + giz amarelo */
+    --bg:#103B2F; --wood:#1E5543; --grid:rgba(225,245,232,0.07);
+    --paper:#F4F1E6; --paper-dim:#C3D6CB; --red:#F2C14E; --on-accent:#1B2A22;
+    --blue:#8ED1B5; --hl:rgba(242,193,78,.45); --ink:#14261F; --ink-soft:#4A5E55;
+  }
+  .tema-roxo{ /* ametista + laranja */
+    --bg:#251642; --wood:#3B2768; --grid:rgba(236,228,255,0.07);
+    --paper:#F6F3FC; --paper-dim:#D2C8EA; --red:#FF8A3D; --on-accent:#24123F;
+    --blue:#B9A7FF; --hl:rgba(255,138,61,.45); --ink:#1E1433; --ink-soft:#5B4E78;
+  }
+  .tema-petroleo{ /* azul-petróleo + coral */
+    --bg:#0B2D35; --wood:#154753; --grid:rgba(220,242,246,0.07);
+    --paper:#F2F8F9; --paper-dim:#BFD8DD; --red:#FF6F59; --on-accent:#2A0E09;
+    --blue:#6CCAD3; --hl:rgba(255,111,89,.45); --ink:#10262C; --ink-soft:#4C666C;
+  }
+  .tema-caderno{ /* fundo claro de caderno quadriculado + verde-azulado */
+    --bg:#F7F4EA; --wood:#1F3B57; --grid:rgba(58,110,165,0.13);
+    --paper:#1C2541; --paper-dim:#5A6480; --card:#FFFFFF; --red:#0E8F80; --on-accent:#FFFFFF;
+    --blue:#2F6CA8; --hl:rgba(14,143,128,.28); --ink:#1C2541; --ink-soft:#56607A;
+  }
+  .tema-caderno .card, .tema-caderno .rows{box-shadow:0 10px 26px rgba(28,37,65,.14); border:2px solid #E3E6EE;}
+  .tema-caderno .slide{background:
+      linear-gradient(var(--grid) 2px, transparent 2px) 0 0/60px 60px,
+      linear-gradient(90deg, var(--grid) 2px, transparent 2px) 0 0/60px 60px, var(--bg);}
+  /* destaque dentro dos cartões claros: versão mais escura do acento, para ter contraste */
+  .tema-verde .card, .tema-verde .rows{--red:#9A6A00;}
+  .tema-roxo .card, .tema-roxo .rows{--red:#D45A12;}
+  .tema-petroleo .card, .tema-petroleo .rows{--red:#D9432D;}

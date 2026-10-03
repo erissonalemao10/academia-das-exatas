@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Teste de cores · Matemática</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body class="tema-caderno">
+
+<!-- 1 · CAPA: desafio relâmpago -->
+<section class="slide" data-eyebrow="// matemática · desafio relâmpago" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">RESOLVA EM 10 SEGUNDOS</span></div>
+  <h1 style="margin-top:36px; font-size:90px;">Subiu <em>10%</em> e depois caiu <em>10%</em>. Voltou ao preço inicial?</h1>
+  <div class="card" style="margin-top:56px; text-align:center; padding:52px 30px;">
+    <div class="mono" style="font-size:56px; font-weight:700; white-space:nowrap;">R$ 100 → +10% → −10%</div>
+    <div class="mono" style="font-size:96px; font-weight:700; color:var(--red); margin-top:14px;">= R$ ?</div>
+  </div>
+  <div style="margin-top:52px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 60 60" width="70" height="70"><circle cx="30" cy="34" r="22" fill="none" style="stroke:var(--paper)" stroke-width="4"/><path d="M30 34 V20 M24 6 H36" style="stroke:var(--red)" stroke-width="4" stroke-linecap="round"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · EXPLICAÇÃO -->
+<section class="slide" data-eyebrow="// o truque: fator multiplicativo">
+  <h2 style="margin-top:64px;">Não volta: fica <em>1% mais barato</em></h2>
+  <p class="body" style="margin-top:44px;">Aumentar 10% é multiplicar por <b>1,10</b>. Diminuir 10% é multiplicar por <b>0,90</b>.</p>
+  <div class="card" style="margin-top:48px; text-align:center; padding:48px 30px;">
+    <div class="formula" style="font-size:58px;">100 × 1,10 × 0,90</div>
+    <div class="mono" style="font-size:110px; font-weight:700; color:var(--red); line-height:1.1; margin-top:10px;">= R$ 99</div>
+  </div>
+  <p class="body" style="margin-top:48px; font-size:37px;">O desconto de 10% incide sobre <span class="hl">R$ 110</span>, um valor maior. Por isso tira R$ 11, e não R$ 10.</p>
+  <div style="margin-top:36px; display:flex; gap:16px;"><span class="chip">PORCENTAGEM</span><span class="chip ghost">cai no ENEM</span></div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>
