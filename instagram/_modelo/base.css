@@ -104,3 +104,29 @@
   .tema-verde .card, .tema-verde .rows{--red:#9A6A00;}
   .tema-roxo .card, .tema-roxo .rows{--red:#D45A12;}
   .tema-petroleo .card, .tema-petroleo .rows{--red:#D9432D;}
+
+  /* ---- candidatos para informativos (olimpíadas, provas, avisos) ---- */
+  .tema-aviso{ /* amarelo de aviso + vermelho */
+    --bg:#FFD54A; --wood:#1C2541; --grid:rgba(28,37,65,0.08);
+    --paper:#1C2541; --paper-dim:#4A4F5E; --card:#FFFFFF; --red:#C81D35; --on-accent:#FFFFFF;
+    --blue:#1C2541; --hl:rgba(200,29,53,.22); --ink:#1C2541; --ink-soft:#4E5568;
+  }
+  .tema-medalha{ /* grafite + ouro e prata */
+    --bg:#17181F; --wood:#2B2D38; --grid:rgba(240,240,245,0.06);
+    --paper:#F4F2EC; --paper-dim:#B9B6AC; --red:#E3B341; --on-accent:#1A1408;
+    --blue:#C9CCD6; --hl:rgba(227,179,65,.40); --ink:#17181F; --ink-soft:#55575F;
+  }
+  .tema-diploma{ /* vinho + dourado */
+    --bg:#4A1228; --wood:#6B1D3A; --grid:rgba(255,235,240,0.07);
+    --paper:#FBF4EE; --paper-dim:#E2C9CF; --red:#F2C14E; --on-accent:#3A0E1F;
+    --blue:#EDB6C4; --hl:rgba(242,193,78,.40); --ink:#2E0A18; --ink-soft:#6A4552;
+  }
+  .tema-alerta{ /* laranja forte + azul-marinho */
+    --bg:#D9480F; --wood:#1C2541; --grid:rgba(255,255,255,0.10);
+    --paper:#FFFFFF; --paper-dim:#FFE1D1; --red:#1C2541; --on-accent:#FFFFFF;
+    --blue:#FFE1D1; --hl:rgba(255,255,255,.38); --ink:#1C2541; --ink-soft:#56607A;
+  }
+  .tema-medalha .card, .tema-medalha .rows{--red:#9C7300;}
+  .tema-diploma .card, .tema-diploma .rows{--red:#A36F00;}
+  .tema-alerta .card, .tema-alerta .rows{--red:#D9480F;}
+  .tema-aviso .card, .tema-aviso .rows{box-shadow:0 10px 26px rgba(28,37,65,.16);}
