@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Próximo número da sequência</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<style>
+  .seq{display:flex; justify-content:center; gap:18px; font-family:'JetBrains Mono',monospace; font-weight:700;}
+  .seq span{min-width:96px; text-align:center;}
+  .dif{display:flex; justify-content:center; gap:18px; font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--red); margin-top:10px; padding-left:57px;}
+  .dif span{min-width:96px; text-align:center;}
+  .prods{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:40px;}
+  .prods div{background:var(--card); border:2px solid #E3E6EE; border-radius:18px; padding:22px 10px; text-align:center; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:38px; color:var(--ink);}
+  .prods div b{color:var(--red);}
+</style>
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · sequências" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">RESOLVA EM 10 SEGUNDOS</span><span class="chip ghost">estilo OBMEP</span></div>
+  <h1 style="margin-top:36px; font-size:110px;">Qual é o <em>próximo número</em>?</h1>
+  <div class="card" style="margin-top:60px; padding:56px 20px;">
+    <div class="seq" style="font-size:76px;"><span>2</span><span>6</span><span>12</span><span>20</span><span>30</span><span style="color:var(--red)">?</span></div>
+  </div>
+  <div style="margin-top:52px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 48 48" width="70" height="70"><use href="#icon-timer"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// olhe as diferenças">
+  <h2 style="margin-top:64px;">Resposta: <em>42</em></h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">Subtraia cada termo do anterior: as diferenças crescem <b>de 2 em 2</b>.</p>
+  <div class="card" style="margin-top:44px; padding:44px 20px;">
+    <div class="seq" style="font-size:60px;"><span>2</span><span>6</span><span>12</span><span>20</span><span>30</span><span style="color:var(--red)">42</span></div>
+    <div class="dif" style="font-size:40px;"><span>+4</span><span>+6</span><span>+8</span><span>+10</span><span>+12</span></div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:37px;">A próxima diferença é <b>12</b>: 30 + 12 = <b>42</b>.</p>
+</section>
+
+<!-- 3 · PADRÃO -->
+<section class="slide" data-eyebrow="// o padrão escondido">
+  <h2 style="margin-top:64px;">O padrão <em>escondido</em></h2>
+  <div class="card" style="margin-top:36px; text-align:center; padding:30px;"><div class="formula" style="font-size:64px;">a<sub>n</sub> = n · (n + 1)</div></div>
+  <div class="prods" style="margin-top:28px;">
+    <div>1 · 2 = <b>2</b></div><div>2 · 3 = <b>6</b></div><div>3 · 4 = <b>12</b></div>
+    <div>4 · 5 = <b>20</b></div><div>5 · 6 = <b>30</b></div><div>6 · 7 = <b>42</b></div>
+  </div>
+  <p class="body" style="margin-top:32px; font-size:35px;">Produto de dois números <b>consecutivos</b>. Com a fórmula, você acha qualquer termo sem listar todos.</p>
+  <div class="tip">
+    <div class="lbl">// desafio bônus</div>
+    <p>Qual é o <b>10º termo</b> dessa sequência? <b>Comente!</b></p>
+  </div>
+</section>
+
+<!-- 4 · CTA -->
+<section class="slide" data-eyebrow="// sequências na OBMEP">
+  <h2 style="margin-top:64px; font-size:90px;">Padrões <em>caem</em> na OBMEP.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para treinar antes da prova</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem vai fazer a OBMEP</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

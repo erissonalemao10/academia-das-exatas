@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Por que o céu é azul</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// física · óptica · cai no ENEM">
+  <h1 style="margin-top:52px; font-size:120px;">Por que o céu é <em>azul</em>?</h1>
+  <svg viewBox="0 0 920 600" width="920" height="600" style="position:absolute; left:80px; top:560px;">
+    <!-- sol -->
+    <circle cx="110" cy="130" r="70" fill="#FFC94A"/>
+    <g stroke="#FFC94A" stroke-width="7" stroke-linecap="round">
+      <line x1="110" y1="30" x2="110" y2="10"/><line x1="110" y1="230" x2="110" y2="250"/><line x1="10" y1="130" x2="-10" y2="130"/><line x1="210" y1="130" x2="230" y2="130"/>
+      <line x1="40" y1="60" x2="26" y2="46"/><line x1="180" y1="200" x2="194" y2="214"/><line x1="180" y1="60" x2="194" y2="46"/><line x1="40" y1="200" x2="26" y2="214"/>
+    </g>
+    <!-- feixe de luz branca -->
+    <line x1="200" y1="170" x2="470" y2="300" style="stroke:var(--paper)" stroke-width="10" stroke-linecap="round"/>
+    <!-- molécula -->
+    <circle cx="500" cy="315" r="26" style="fill:var(--paper-dim)"/><circle cx="530" cy="330" r="22" style="fill:var(--paper-dim)"/>
+    <!-- vermelho segue -->
+    <path d="M555 345 L860 490" fill="none" style="stroke:var(--red)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M832 492 L862 491 L846 466" fill="none" style="stroke:var(--red)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- azul espalhado -->
+    <g fill="none" stroke="#6FA8C9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M520 280 L560 150 M545 166 L560 150 L571 172"/>
+      <path d="M545 300 L700 200 M678 202 L700 200 L690 222"/>
+      <path d="M555 325 L740 330 M722 316 L740 330 L722 344"/>
+      <path d="M520 350 L560 500 M546 484 L560 500 L570 478"/>
+      <path d="M490 350 L400 480 M403 456 L400 480 L422 470"/>
+      <path d="M480 290 L410 170 M412 194 L410 170 L432 182"/>
+    </g>
+    <text x="915" y="110" text-anchor="end" font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#6FA8C9">azul: espalha muito</text>
+    <text x="600" y="560" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--red)">vermelho: segue</text>
+  </svg>
+</section>
+
+<!-- 2 · ESPALHAMENTO -->
+<section class="slide" data-eyebrow="// o que está acontecendo">
+  <h2 style="margin-top:64px;">A luz do Sol é <em>branca</em></h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">Ela tem todas as cores. Ao atravessar o ar, a luz bate nas moléculas de nitrogênio e oxigênio e é <span class="hl">espalhada em todas as direções</span>.</p>
+  <div class="card" style="margin-top:44px; text-align:center; padding:36px 30px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Espalhamento de Rayleigh</div>
+    <div class="formula" style="font-size:62px; margin-top:12px;">intensidade ∝ <span class="frac"><span>1</span><span>λ<sup>4</sup></span></span></div>
+  </div>
+  <p class="body" style="margin-top:40px; font-size:36px;">Como o azul (≈ 450 nm) tem comprimento de onda menor que o vermelho (≈ 700 nm), ele é espalhado <b>quase 6 vezes mais</b>. Para onde você olhar, chega azul.</p>
+</section>
+
+<!-- 3 · PÔR DO SOL -->
+<section class="slide" data-eyebrow="// e no fim da tarde?">
+  <h2 style="margin-top:64px;">Por que o pôr do sol é <em>laranja</em>?</h2>
+  <p class="body" style="margin-top:40px; font-size:37px;">Com o Sol baixo, a luz atravessa uma camada de ar <b>muito maior</b>. O azul vai sendo espalhado pelo caminho, e chegam até você principalmente o <span class="hl">laranja e o vermelho</span>.</p>
+  <svg viewBox="0 0 920 340" width="920" height="340" style="margin-top:30px;">
+    <circle cx="460" cy="1100" r="900" style="fill:var(--blue)" opacity=".28"/>
+    <circle cx="460" cy="1100" r="800" style="fill:var(--bg); stroke:var(--paper-dim)" stroke-width="4"/>
+    <text x="830" y="318" text-anchor="middle" font-family="JetBrains Mono" font-size="24" style="fill:var(--paper)">atmosfera</text>
+    <line x1="460" y1="110" x2="460" y2="200" stroke="#FFC94A" stroke-width="4" stroke-dasharray="8 8"/>
+    <line x1="460" y1="200" x2="460" y2="300" stroke="#FFC94A" stroke-width="10" stroke-linecap="round"/>
+    <line x1="0" y1="300" x2="48" y2="300" style="stroke:var(--red)" stroke-width="4" stroke-dasharray="8 8"/>
+    <line x1="48" y1="300" x2="460" y2="300" style="stroke:var(--red)" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="460" cy="300" r="13" style="fill:var(--paper)"/>
+    <text x="480" y="140" font-family="JetBrains Mono" font-weight="700" font-size="26" fill="#FFC94A">meio-dia: caminho curto</text>
+    <text x="20" y="262" font-family="JetBrains Mono" font-weight="700" font-size="26" style="fill:var(--red)">pôr do sol: caminho longo</text>
+  </svg>
+  <div class="tip" style="margin-top:24px;">
+    <div class="lbl">// e por que não roxo?</div>
+    <p>O Sol emite menos violeta, parte dele é absorvida no alto da atmosfera e nossos olhos são menos sensíveis a essa cor.</p>
+  </div>
+</section>
+
+<!-- 4 · DESAFIO -->
+<section class="slide" data-eyebrow="// sua vez" data-swipe="resposta">
+  <div style="margin-top:48px; display:flex; gap:16px; align-items:center;">
+    <span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span>
+  </div>
+  <div class="card" style="margin-top:36px;">
+    <p style="font-size:37px; line-height:1.42; font-weight:500;">O céu é azul porque, em comparação com a luz vermelha, a luz azul:</p>
+    <div class="opts" style="font-size:34px; gap:16px;">
+      <div><b>A)</b> é mais espalhada pelas moléculas do ar</div>
+      <div><b>B)</b> é refletida pela superfície dos oceanos</div>
+      <div><b>C)</b> é emitida em maior quantidade pelo Sol</div>
+      <div><b>D)</b> é mais refratada pelas nuvens</div>
+      <div><b>E)</b> é menos espalhada pelo ar</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:44px; font-size:42px; text-align:center;"><b>Comente a letra</b> antes de ver a resposta</p>
+</section>
+
+<!-- 5 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:74px;">Letra <em>A</em>: mais espalhada</h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Comprimentos de onda menores são muito mais espalhados pelas moléculas do ar. É o espalhamento de Rayleigh.</p>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>B</b>? O céu é azul até sobre o deserto. Ele <b>não</b> é um reflexo do mar.</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">BÔNUS</span>
+      <p class="body" style="font-size:34px;">Em Marte é o contrário: o céu do dia é amarelado e o <b>pôr do sol é azulado</b>, por causa da poeira fina no ar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CTA -->
+<section class="slide" data-eyebrow="// reta final do ENEM">
+  <h2 style="margin-top:64px; font-size:92px;">Óptica <em>cai</em>. Não deixe passar.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar óptica</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem acha que o céu reflete o mar</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> outra curiosidade que você quer entender</p></div>
+  </div>
+  <div class="card" style="margin-top:56px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>
