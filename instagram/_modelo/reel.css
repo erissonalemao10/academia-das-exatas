@@ -26,9 +26,9 @@ body{margin:0; background:#222;}
 [data-at]{transform-box:fill-box; transform-origin:center;}
 
 /* legendas (geradas a partir da narração) */
-.r-cap{position:absolute; left:60px; right:60px; top:1190px; height:250px; display:flex; align-items:center; justify-content:center; text-align:center;}
+.r-cap{position:absolute; left:60px; right:150px; top:1190px; height:250px; display:flex; align-items:center; justify-content:center; text-align:center;}
 .r-cap-in{font-family:'Inter',sans-serif; font-weight:800; font-size:66px; line-height:1.16; color:#fff;
-  max-width:940px;}
+  max-width:870px;}
 .r-cap-in span.box{background:rgba(7,20,41,.78); padding:6px 22px; border-radius:18px;
   -webkit-box-decoration-break:clone; box-decoration-break:clone;}
 .r-cap-in .ch{color:#FFC94A;}

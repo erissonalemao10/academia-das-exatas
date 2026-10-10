@@ -27,6 +27,12 @@ Tom: português do Brasil, informal e direto nas legendas ("pra", "tá", "coment
 - Revise o sentido das frases de cálculo ("diferença entre cada termo e o anterior", e não "subtraia cada termo do anterior").
 - Índices com `<sub>` (ex.: `v<sub>0</sub>`), nunca com os caracteres ₀ ₁ ₂.
 - **Confira toda fórmula, número e resposta** antes de gerar. Nada de afirmação exagerada ou não verificável. Na dúvida, escreva de forma mais cautelosa.
+- Títulos (`h1`, `h2`) ficam em caixa-alta: símbolo de unidade dentro deles sai errado ("2 KG", "6 S").
+  Proteja com `<span style="text-transform:none">kg</span>` e use `&nbsp;` entre número e unidade.
+- **Massa não é peso**: kg mede massa. Até em desafio de matemática, escreva "tem massa de 1 kg", e não "pesa 1 kg".
+- Valor exato leva "=", não "≈" (500 s = 8 min 20 s). Use "≈" só para aproximações.
+- Regência na norma padrão: "de qual questão você mais gostou?", "Comente quantas você acertou". Sem "aí" nem "tem" no lugar de "há" nas imagens.
+- Agradecimentos em nome do perfil sem marcar gênero ("o nosso muito obrigado"), e não "obrigado/obrigada".
 
 ## Estrutura de um carrossel (4 a 7 slides)
 
@@ -71,7 +77,8 @@ neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `
    - Cena 1 = gancho (pergunta ou mito) com a palavra-chave em `<em>`; ela vira a capa.
    - Última cena = desafio para comentar + "siga para mais fenômenos" (`data-hold="1.2"`).
    - Animações por elemento: `data-at="s2+0.5"` (2ª frase da fala + 0,5 s) e `data-anim`.
-   - Conteúdo entre y = 300 e 1150 px; as legendas ficam logo abaixo.
+   - Conteúdo entre y = 300 e 1150 px; as legendas ficam logo abaixo. Nenhum texto além de x = 990 abaixo
+     de y = 1050 (botões do Instagram). Confira com `node instagram/_modelo/check-reel.js` antes de gerar o vídeo.
 2. **Narração**: norma padrão, frases curtas. Números e unidades por extenso com `[mostra|fala]`,
    ex.: `[340 m/s|trezentos e quarenta metros por segundo]`. Não fale "ENEM" (a voz pronuncia mal):
    deixe o ENEM no visual e na legenda. Evite "só ferve" (soa "sofre") e "desvia" no fim de frase.
