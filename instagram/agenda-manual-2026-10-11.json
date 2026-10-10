@@ -1,0 +1,335 @@
+{
+ "periodo": "11 a 18/10",
+ "subtitulo": "11 a 18 de outubro",
+ "commit": "bfe7733ce45af1a05985684ecc3a5d1a48ffb2c0",
+ "nota": "O Metricool ainda publica sozinho os últimos posts do limite de outubro: <b>sáb 10/10</b> (10h, 13h e 19h) e <b>dom 11/10</b> (9h e 12h). Todos os posts desta página viraram rascunho lá, para nada sair em dobro.",
+ "dias": [
+  [
+   "2026-10-11",
+   "Dom 11/10",
+   ""
+  ],
+  [
+   "2026-10-12",
+   "Seg 12/10",
+   "Dia das Crianças"
+  ],
+  [
+   "2026-10-13",
+   "Ter 13/10",
+   ""
+  ],
+  [
+   "2026-10-14",
+   "Qua 14/10",
+   ""
+  ],
+  [
+   "2026-10-15",
+   "Qui 15/10",
+   "Dia do Professor"
+  ],
+  [
+   "2026-10-16",
+   "Sex 16/10",
+   "véspera da OBMEP"
+  ],
+  [
+   "2026-10-17",
+   "Sáb 17/10",
+   "2ª fase da OBMEP"
+  ],
+  [
+   "2026-10-18",
+   "Dom 18/10",
+   ""
+  ]
+ ],
+ "posts": [
+  [
+   "2026-10-11",
+   "20h",
+   "car",
+   "simulado-semana"
+  ],
+  [
+   "2026-10-12",
+   "10h",
+   "car",
+   "tijolo"
+  ],
+  [
+   "2026-10-12",
+   "12h",
+   "car",
+   "valores-fisica"
+  ],
+  [
+   "2026-10-12",
+   "16h",
+   "yt",
+   "reel-trovao"
+  ],
+  [
+   "2026-10-12",
+   "18h",
+   "reel",
+   "reel-trovao"
+  ],
+  [
+   "2026-10-13",
+   "10h",
+   "car",
+   "fracoes-porcentagem"
+  ],
+  [
+   "2026-10-13",
+   "12h",
+   "car",
+   "carros-encontro"
+  ],
+  [
+   "2026-10-13",
+   "16h",
+   "yt",
+   "reel-astronauta"
+  ],
+  [
+   "2026-10-13",
+   "18h",
+   "reel",
+   "reel-astronauta"
+  ],
+  [
+   "2026-10-14",
+   "10h",
+   "car",
+   "lirio-lago"
+  ],
+  [
+   "2026-10-14",
+   "12h",
+   "car",
+   "angulos-notaveis"
+  ],
+  [
+   "2026-10-14",
+   "16h",
+   "yt",
+   "reel-fases-lua"
+  ],
+  [
+   "2026-10-14",
+   "18h",
+   "reel",
+   "reel-fases-lua"
+  ],
+  [
+   "2026-10-15",
+   "10h",
+   "car",
+   "dia-do-professor"
+  ],
+  [
+   "2026-10-15",
+   "12h",
+   "car",
+   "caderno-caneta"
+  ],
+  [
+   "2026-10-15",
+   "16h",
+   "yt",
+   "reel-arco-iris"
+  ],
+  [
+   "2026-10-15",
+   "18h",
+   "reel",
+   "reel-arco-iris"
+  ],
+  [
+   "2026-10-16",
+   "10h",
+   "car",
+   "obmep-ideias"
+  ],
+  [
+   "2026-10-16",
+   "12h",
+   "car",
+   "algarismo-unidades"
+  ],
+  [
+   "2026-10-16",
+   "16h",
+   "yt",
+   "reel-panela-pressao"
+  ],
+  [
+   "2026-10-16",
+   "18h",
+   "reel",
+   "reel-panela-pressao"
+  ],
+  [
+   "2026-10-17",
+   "10h",
+   "car",
+   "obmep-hoje"
+  ],
+  [
+   "2026-10-17",
+   "18h",
+   "car",
+   "prefixos-si"
+  ],
+  [
+   "2026-10-18",
+   "12h",
+   "car",
+   "tabuleiro"
+  ],
+  [
+   "2026-10-18",
+   "18h",
+   "car",
+   "simulado-semana"
+  ]
+ ],
+ "youtube": {
+  "reel-trovao": {
+   "ep": 1,
+   "title": "Por que o trovão vem depois do relâmpago? ⚡ Calcule a distância do raio",
+   "body": "Por que o trovão vem depois do relâmpago? Luz e som nascem juntos no raio, mas a luz é quase 900 mil vezes mais rápida que o som. Daí vem o truque: conte os segundos entre o clarão e o trovão e divida por 3. O resultado é a distância do raio em quilômetros.",
+   "desafio": "🎯 Desafio: você contou 9 segundos. A que distância caiu o raio? Responda nos comentários!\n⚠️ Trovão quase junto com o clarão = raio perto. Procure abrigo.",
+   "hashtags": "#fisica #curiosidades #enem #trovao #shorts",
+   "tags": [
+    "por que o trovão vem depois do relâmpago",
+    "trovão e relâmpago",
+    "distância do raio",
+    "velocidade do som",
+    "velocidade da luz",
+    "raio",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "vestibular",
+    "ondas sonoras",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-astronauta": {
+   "ep": 2,
+   "title": "Por que o astronauta flutua no espaço? Não é falta de gravidade! 🧑‍🚀",
+   "body": "Por que os astronautas flutuam no espaço? Não é falta de gravidade! Na Estação Espacial Internacional, a uns 400 km de altura, a gravidade da Terra ainda vale quase 90% da que você sente aqui no chão. O segredo é a queda livre: a estação e os astronautas caem juntos o tempo todo, mas andam de lado tão rápido (uns 28 mil km/h) que nunca chegam ao chão. Isso é uma órbita.",
+   "desafio": "🎯 Desafio: na superfície da Lua, a sua massa muda ou só o seu peso? Responda nos comentários!",
+   "hashtags": "#fisica #curiosidades #astronauta #enem #shorts",
+   "tags": [
+    "por que o astronauta flutua",
+    "astronauta flutuando",
+    "gravidade no espaço",
+    "estação espacial internacional",
+    "queda livre",
+    "órbita",
+    "gravidade",
+    "gravitação",
+    "peso e massa",
+    "espaço",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-fases-lua": {
+   "ep": 3,
+   "title": "Como acontecem as fases da Lua? 🌙 Não é a sombra da Terra!",
+   "body": "Como acontecem as fases da Lua? Não é a sombra da Terra! O Sol sempre ilumina metade da Lua. Conforme ela gira em torno da Terra, nós vemos essa metade iluminada de ângulos diferentes: inteira na lua cheia, quase nada na lua nova. A sombra da Terra só aparece na Lua durante um eclipse lunar.",
+   "desafio": "🎯 Desafio: em qual fase da Lua pode acontecer um eclipse solar? Responda nos comentários!",
+   "hashtags": "#fasesdalua #astronomia #curiosidades #fisica #shorts",
+   "tags": [
+    "fases da lua",
+    "como acontecem as fases da lua",
+    "lua nova",
+    "lua cheia",
+    "quarto crescente",
+    "quarto minguante",
+    "eclipse lunar",
+    "eclipse solar",
+    "astronomia",
+    "lua",
+    "universo",
+    "curiosidades",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-arco-iris": {
+   "ep": 4,
+   "title": "Como se forma o arco-íris? 🌈 Refração e dispersão da luz",
+   "body": "Como se forma o arco-íris? A luz branca do Sol entra na gota de chuva, sofre refração, reflete no fundo da gota e sai de novo. Como cada cor desvia um pouco diferente (dispersão), as cores saem separadas, entre uns 40° e 42° em relação aos raios de sol. Por isso o arco-íris é um pedaço de círculo centrado na sombra da sua cabeça.",
+   "desafio": "🎯 Desafio: por que é difícil ver arco-íris ao meio-dia, com o Sol bem alto? Responda nos comentários!",
+   "hashtags": "#arcoiris #fisica #curiosidades #optica #shorts",
+   "tags": [
+    "como se forma o arco-íris",
+    "arco-íris",
+    "arco iris",
+    "refração da luz",
+    "dispersão da luz",
+    "óptica",
+    "luz",
+    "gota de chuva",
+    "cores",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-panela-pressao": {
+   "ep": 5,
+   "title": "Por que a panela de pressão cozinha mais rápido? 🔥 A física explica",
+   "body": "Por que a panela de pressão cozinha mais rápido? Numa panela comum, ao nível do mar, a água ferve a 100 °C e para de esquentar. A temperatura de ebulição depende da pressão: na panela de pressão, o vapor preso aumenta a pressão e a água só ferve perto de 120 °C. Comida mais quente cozinha mais rápido. Na montanha é o contrário: em La Paz, na Bolívia, a água ferve perto de 88 °C.",
+   "desafio": "🎯 Desafio: no alto do Everest, a água ferve acima ou abaixo de 100 °C? Responda nos comentários!",
+   "hashtags": "#fisica #curiosidades #paneladepressao #enem #shorts",
+   "tags": [
+    "panela de pressão",
+    "por que a panela de pressão cozinha mais rápido",
+    "como funciona a panela de pressão",
+    "ponto de ebulição",
+    "temperatura de ebulição",
+    "pressão atmosférica",
+    "termologia",
+    "mudança de estado",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ]
+  }
+ }
+}

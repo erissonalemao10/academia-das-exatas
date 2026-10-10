@@ -63,6 +63,10 @@ Formatos que mais performam (pesquisa de concorrentes, set/2026): **pergunta cur
    - `createScheduledPost` com `providers:[{"network":"instagram"}]`, `instagramData:{"type":"POST"}`,
      `media` = URLs raw na ordem dos slides, `text` = legenda, `autoPublish:true`.
    - Publicar é público: agende só quando o usuário tiver pedido o agendamento ou confirmado o horário.
+   - **Limite do plano gratuito: 20 publicações por mês**, contando Instagram e YouTube. Só conta o que é
+     publicado (rascunho não conta), e o contador zera no dia 1º. Antes de agendar, some as publicações do mês
+     (`getAnalyticsDataByMetrics` com `IGPO02`, mais `getScheduledPosts`) e agende só o que couber. O resto vai
+     para a agenda manual (seção no fim). Desde 11/10/2026 o perfil publica à mão o que passa do limite.
 7. Responda com uma tabela (horário, tema, link `plannerUrl`) e as capas (`SendUserFile`).
 
 ## Reels: série "Fenômenos explicados"
@@ -111,3 +115,20 @@ neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `
      "curiosidades científicas" e "fenômenos explicados". Até 500 caracteres no total.
    - Nunca "para crianças": o vídeo perde anúncios personalizados e comentários.
    Registre tudo em `youtube/semana-AAAA-MM-DD.md` (modelo: `youtube/semana-2026-10-12.md`).
+   Os Shorts também contam no limite de 20 do Metricool; o que não couber vai para a agenda manual.
+
+## Agenda manual (o que passa do limite do Metricool)
+
+Uma página (artifact) com os posts a agendar à mão: miniaturas que abrem as imagens em tamanho real, links
+para o vídeo e a capa, legendas, títulos, descrições e tags com botão "Copiar", os ajustes do YouTube e uma
+caixa "Agendado" por post (salva só no aparelho de quem marca).
+
+1. Faça push dos arquivos e anote o commit. Monte `instagram/agenda-manual-AAAA-MM-DD.json`
+   (modelo: `instagram/agenda-manual-2026-10-11.json`): período, commit, nota do topo, dias,
+   posts `[data, hora, tipo, nome]` (tipo `car`, `reel` ou `yt`) e os dados de cada Short.
+2. Gere: `python3 instagram/_modelo/agenda-manual.py instagram/agenda-manual-AAAA-MM-DD.json <pasta temporária>`.
+   A saída padrão é a lista de miniaturas para o `files` do artifact.
+3. Publique `<pasta>/agenda-manual.html` com `root` = a pasta, `files` = a lista e `icon:"calendar"`.
+   Para corrigir a mesma semana, republique pelo mesmo caminho: a chave das marcações é a primeira data.
+4. Se algum post já estava no Metricool e não cabe no limite, passe para rascunho (`draft:true`) para não sair em dobro.
+   Na semana de 12/10/2026, os 25 posts de 11/10 20h a 18/10 viraram rascunho e foram para a agenda manual.

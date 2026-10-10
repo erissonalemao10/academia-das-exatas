@@ -1,0 +1,178 @@
+<title>Agenda manual de {{PERIODO}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap">
+<style>
+/* Layout: uma coluna de cartões por dia, como a grade de horários de um quadro de aula; hora em mono à esquerda do cabeçalho de cada post. */
+:root{
+  --bg:#EDF0F6; --surface:#FFFFFF; --ink:#16213A; --ink-soft:#4E5B78; --line:#D3DAE7;
+  --accent:#C42A40; --accent-soft:#FBE6E9; --blue:#2C6A8F; --blue-soft:#E1EEF5;
+  --yt:#16213A; --yt-ink:#FFFFFF; --ok:#1F7A4D; --ok-soft:#E2F3EA;
+  --f-display:'Archivo','Arial Narrow',Arial,sans-serif;
+  --f-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1E3C; --surface:#16284B; --ink:#F3F5FA; --ink-soft:#C0C9DC; --line:#2B3D63;
+  --accent:#F05A6E; --accent-soft:#3A2240; --blue:#7DB3D3; --blue-soft:#1C3554;
+  --yt:#F3F5FA; --yt-ink:#0F1E3C; --ok:#5CCB92; --ok-soft:#173A33; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0F1E3C; --surface:#16284B; --ink:#F3F5FA; --ink-soft:#C0C9DC; --line:#2B3D63;
+  --accent:#F05A6E; --accent-soft:#3A2240; --blue:#7DB3D3; --blue-soft:#1C3554;
+  --yt:#F3F5FA; --yt-ink:#0F1E3C; --ok:#5CCB92; --ok-soft:#173A33; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:15px; line-height:1.5}
+.wrap{max-width:760px; margin:0 auto; padding-inline:16px; padding-block:24px 64px; display:flex; flex-direction:column; gap:28px}
+h1,h2,h3{margin:0; text-wrap:balance}
+h1{font-family:var(--f-display); font-weight:900; font-size:clamp(28px,7vw,40px); line-height:1; text-transform:uppercase; letter-spacing:-.5px}
+.sub{margin:6px 0 0; color:var(--ink-soft)}
+.progress{display:flex; align-items:center; gap:12px; margin-top:16px; font-variant-numeric:tabular-nums}
+.bar{flex:1; height:8px; border-radius:99px; background:var(--line); overflow:hidden}
+.bar i{display:block; height:100%; width:0; background:var(--ok); transition:width .3s}
+.progress b{font-family:var(--f-mono); font-size:14px}
+.filter{display:flex; align-items:center; gap:8px; margin-top:10px; color:var(--ink-soft); font-size:14px}
+.filter input{width:18px; height:18px; accent-color:var(--ok)}
+
+.note{background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:10px; padding:14px 16px; margin:0}
+.note b{color:var(--ink)}
+.guide{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
+.guide section{min-width:0}
+.guide h2{font-family:var(--f-display); font-weight:800; font-size:17px; text-transform:uppercase; letter-spacing:.3px; margin-bottom:6px}
+.guide ol{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:4px; color:var(--ink-soft)}
+.guide ol b{color:var(--ink)}
+.guide p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft)}
+
+.dia{display:flex; flex-direction:column; gap:12px}
+.dia h2{font-family:var(--f-display); font-weight:900; font-size:22px; text-transform:uppercase; letter-spacing:-.2px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; padding-bottom:6px; border-bottom:2px solid var(--ink)}
+.dia .obs{font-family:var(--f-body); font-weight:600; font-size:13px; text-transform:none; letter-spacing:0; color:var(--accent)}
+.dia.vazio{display:none}
+
+.post{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:12px; min-width:0}
+.post.is-done{background:var(--ok-soft); border-color:transparent}
+.post.is-done .post-title,.post.is-done .hora{opacity:.6}
+.post-head{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.hora{font-family:var(--f-mono); font-weight:700; font-size:20px; font-variant-numeric:tabular-nums; min-width:3.2ch}
+.chip{font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; padding:3px 9px; border-radius:99px}
+.chip-car{background:var(--blue-soft); color:var(--blue)}
+.chip-reel{background:var(--accent-soft); color:var(--accent)}
+.chip-yt{background:var(--yt); color:var(--yt-ink)}
+.done{margin-left:auto; display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px; cursor:pointer; padding:6px 10px; border-radius:8px; border:1px solid var(--line)}
+.done input{width:20px; height:20px; accent-color:var(--ok); margin:0}
+.post.is-done .done{border-color:var(--ok); color:var(--ok)}
+.post-title{font-size:16px; font-weight:700; line-height:1.35}
+.hint{margin:0; font-size:13px; color:var(--ink-soft)}
+
+.strip{display:flex; gap:8px; overflow-x:auto; padding-bottom:4px; -webkit-overflow-scrolling:touch}
+.th{position:relative; flex:0 0 auto; display:block; border-radius:6px; overflow:hidden; outline-offset:2px; line-height:0}
+.th img{width:96px; height:120px; object-fit:cover; display:block; background:var(--line)}
+.th span{position:absolute; left:4px; top:4px; font-family:var(--f-mono); font-size:11px; line-height:1; padding:3px 5px; border-radius:4px; background:rgba(7,20,41,.8); color:#F3F5FA}
+.th.tall img{width:72px; height:128px}
+.media{display:flex; gap:14px; align-items:center}
+.media-links{display:flex; flex-direction:column; gap:8px; min-width:0}
+.lnk{color:var(--blue); font-weight:600; text-underline-offset:3px}
+
+.copy{border:1px solid var(--line); border-radius:10px; overflow:hidden; min-width:0}
+.copy-head{display:flex; justify-content:space-between; align-items:center; padding:6px 6px 6px 12px; border-bottom:1px solid var(--line)}
+.lbl{font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--ink-soft)}
+.btn-copy{font:inherit; font-weight:700; font-size:13px; padding:6px 14px; border-radius:7px; border:0; background:var(--ink); color:var(--bg); cursor:pointer; min-width:84px}
+.btn-copy.ok{background:var(--ok); color:var(--surface)}
+.copy-text{white-space:pre-wrap; overflow-wrap:anywhere; padding:10px 12px; font-size:14px; max-height:11em; overflow-y:auto; user-select:text; -webkit-user-select:text}
+.copy.short .copy-text{max-height:none}
+.ajustes{margin:0; padding-left:18px; font-size:14px; color:var(--ink-soft); display:flex; flex-direction:column; gap:2px}
+.ajustes b{color:var(--ink)}
+
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+.foot{font-size:13px; color:var(--ink-soft); margin:0}
+@media (prefers-reduced-motion: reduce){ .bar i{transition:none} }
+</style>
+
+<main class="wrap">
+  <header>
+    <h1>Agenda manual</h1>
+    <p class="sub">@erisson.alemao.prof · {{SUBTITULO}} · {{TOTAL}} posts para agendar à mão</p>
+    <div class="progress"><div class="bar"><i id="bar"></i></div><b id="count">0 de {{TOTAL}}</b></div>
+    <label class="filter"><input type="checkbox" id="so-falta"> Mostrar só o que falta agendar</label>
+  </header>
+
+  <p class="note">{{NOTA}}</p>
+
+  <div class="guide">
+    <section>
+      <h2>Instagram</h2>
+      <ol>
+        <li>Toque nas miniaturas e <b>salve as imagens</b> no celular (toque longo → Salvar). No reel, abra e salve o vídeo e a capa.</li>
+        <li>No Instagram, toque em <b>+</b> e escolha <b>Post</b> ou <b>Reel</b>. Selecione as imagens na ordem 1, 2, 3…</li>
+        <li>No reel, toque em <b>Editar capa → Adicionar da galeria</b> e escolha a capa.</li>
+        <li>Toque em <b>Copiar</b> e cole a legenda.</li>
+        <li>Em <b>Mais opções</b>, ative <b>Programar este post</b>, escolha o dia e a hora e toque em <b>Programar</b>.</li>
+      </ol>
+      <p>No iPhone, o vídeo abre como download: no app Arquivos, toque nele, depois em Compartilhar → Salvar vídeo.</p>
+    </section>
+    <section>
+      <h2>YouTube</h2>
+      <ol>
+        <li>Abra e salve o vídeo do card.</li>
+        <li>No computador, entre em <b>studio.youtube.com</b> e clique em <b>Criar → Enviar vídeos</b>.</li>
+        <li>Copie e cole o <b>título</b> e a <b>descrição</b>. Em <b>Mostrar mais</b>, cole as <b>tags</b>.</li>
+        <li>Marque os ajustes listados no card.</li>
+        <li>Em <b>Visibilidade</b>, escolha <b>Programar</b>: o dia do card, às 16h.</li>
+      </ol>
+    </section>
+  </div>
+
+{{DIAS}}
+
+  <p class="foot">As marcações de "Agendado" ficam salvas só neste aparelho. As imagens abrem do repositório do GitHub, em tamanho real.</p>
+</main>
+
+<script>
+(function(){
+  var KEY = 'agenda-manual-{{CHAVE}}';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-post]'));
+  var total = boxes.length;
+  var soFalta = document.getElementById('so-falta');
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function refresh(){
+    var n = 0;
+    boxes.forEach(function(b){
+      var card = document.getElementById(b.dataset.post);
+      card.classList.toggle('is-done', b.checked);
+      card.hidden = soFalta.checked && b.checked;
+      if (b.checked) n++;
+    });
+    document.querySelectorAll('.dia').forEach(function(d){
+      var vis = d.querySelectorAll('.post:not([hidden])').length;
+      d.classList.toggle('vazio', vis === 0);
+    });
+    document.getElementById('count').textContent = n + ' de ' + total;
+    document.getElementById('bar').style.width = (total ? 100 * n / total : 0) + '%';
+  }
+  boxes.forEach(function(b){
+    b.checked = !!state[b.dataset.post];
+    b.addEventListener('change', function(){ state[b.dataset.post] = b.checked; save(); refresh(); });
+  });
+  soFalta.addEventListener('change', refresh);
+  refresh();
+
+  function selectText(el){
+    try { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
+  }
+  document.addEventListener('click', function(ev){
+    var btn = ev.target.closest('.btn-copy');
+    if (!btn) return;
+    var el = document.getElementById(btn.dataset.target);
+    var text = el.textContent;
+    function ok(){ btn.textContent = 'Copiado'; btn.classList.add('ok'); setTimeout(function(){ btn.textContent = 'Copiar'; btn.classList.remove('ok'); }, 1800); }
+    function fail(){ selectText(el); btn.textContent = 'Selecionado'; setTimeout(function(){ btn.textContent = 'Copiar'; }, 2200); }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fail);
+      else fail();
+    } catch (e) { fail(); }
+  });
+})();
+</script>
