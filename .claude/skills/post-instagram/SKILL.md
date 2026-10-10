@@ -65,7 +65,7 @@ Formatos que mais performam (pesquisa de concorrentes, set/2026): **pergunta cur
    - Publicar é público: agende só quando o usuário tiver pedido o agendamento ou confirmado o horário.
 7. Responda com uma tabela (horário, tema, link `plannerUrl`) e as capas (`SendUserFile`).
 
-## Reels: série "Fenômenos explicados com IA"
+## Reels: série "Fenômenos explicados"
 
 Vídeo vertical 1080 × 1920 com cenas animadas no mesmo visual dos carrosséis, narração com voz
 neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `reel.js`,
@@ -93,6 +93,11 @@ neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `
    Whisper (`sherpa-onnx-whisper-small`, mesmo release, pasta `asr-models`) e compare com a fala:
    troque as palavras que a voz pronunciar mal.
 6. Legenda `legenda-reel-<nome>.txt`: gancho, explicação curta, desafio, a linha
-   "🤖 Série Fenômenos explicados com IA, episódio N. A narração é gerada por inteligência artificial." e hashtags.
-7. Agende no Metricool como reel: `instagramData:{"type":"REEL","showReelOnFeed":true,"isAiGenerated":true}`,
-   `media` = URL raw do `.mp4`, `videoThumbnailUrl` = URL raw da capa.
+   "📺 Série Fenômenos explicados, episódio N." e hashtags. Sem menção a IA no vídeo nem na legenda
+   (decisão do perfil em 10/10/2026).
+7. Agende no Metricool como reel: `instagramData:{"type":"REEL","showReelOnFeed":true,"isAiGenerated":false}`,
+   `media` = URL raw do `.mp4` (de preferência presa ao commit: `.../<sha>/instagram/...`), `videoThumbnailUrl` = URL raw da capa.
+   O selo "Informações de IA" do Instagram fica desligado por decisão do perfil (10/10/2026). A regra da Meta pede
+   o selo para áudio realista gerado por IA e prevê punição; se o perfil mudar de ideia, basta `isAiGenerated:true`.
+8. YouTube (Shorts): o canal ainda não está conectado ao Metricool. Gere o pacote em `youtube/` (título, descrição,
+   tags, categoria Educação, "não é para crianças") para envio manual no YouTube Studio.

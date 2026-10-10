@@ -66,12 +66,12 @@ NODE_PATH=$(npm root -g) node instagram/_modelo/render.js instagram/AAAA-MM-DD/n
 
 Precisa do Node com o Playwright/Chromium instalado. As fontes estão em `fonts/`, então não é preciso internet.
 
-## Reels (série "Fenômenos explicados com IA", desde 12/10/2026)
+## Reels (série "Fenômenos explicados", desde 12/10/2026)
 
 | Item | Valor |
 |---|---|
 | Formato | Vídeo vertical 1080 × 1920, 30 fps, MP4 (H.264 + AAC), 45 a 60 s |
-| Visual | O mesmo da Física (azul-marinho + vermelho), com a etiqueta `FENÔMENOS EXPLICADOS COM IA` no topo |
+| Visual | O mesmo da Física (azul-marinho + vermelho), com a etiqueta `FENÔMENOS EXPLICADOS` no topo |
 | Narração | Voz neural pt-BR (Piper "cadu", via sherpa-onnx), gerada offline |
 | Legendas | Geradas da própria narração, em blocos curtos, destaque em amarelo |
 | Capa | `reel-<nome>-capa.jpg`: a 1ª cena completa, sem legenda |

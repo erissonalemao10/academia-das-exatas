@@ -18,7 +18,7 @@
   const LEAD = 0.25, GAP = 0.32, TAIL = 0.5, FIRST_LEAD = 0.1;
 
   stage.insertAdjacentHTML('afterbegin',
-    `<div class="r-top"><span class="r-serie">${stage.dataset.serie || 'FENÔMENOS EXPLICADOS COM IA'}</span><span class="r-ep">${stage.dataset.ep || ''}</span></div>`);
+    `<div class="r-top"><span class="r-serie">${stage.dataset.serie || 'FENÔMENOS EXPLICADOS'}</span><span class="r-ep">${stage.dataset.ep || ''}</span></div>`);
   stage.insertAdjacentHTML('beforeend',
     `<div class="r-cap"><div class="r-cap-in"></div></div><div class="r-foot"><span class="brand handle">@erisson.alemao.prof</span></div>`);
   const capEl = stage.querySelector('.r-cap-in');
