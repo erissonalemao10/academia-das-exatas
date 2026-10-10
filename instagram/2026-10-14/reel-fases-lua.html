@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · As fases da Lua são a sombra da Terra?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .stamp{font-family:'Archivo',sans-serif; font-weight:900; font-size:96px; color:var(--red); border:10px solid var(--red); border-radius:22px; padding:6px 34px; letter-spacing:4px; display:inline-block;}
+  .lbl-fase{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; fill:#F3F5FA;}
+</style>
+</head>
+<body>
+<div class="reel" data-ep="#03 · astronomia">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="As fases da Lua são a sombra da Terra? *Não!* A explicação é mais simples do que parece.">
+    <h1 style="margin-top:20px; font-size:96px;">As fases da Lua são a <em>sombra</em> da Terra?</h1>
+    <svg viewBox="0 0 920 360" width="920" height="360" style="margin-top:40px;">
+      <g transform="translate(0 0)">
+        <circle cx="92" cy="110" r="72" fill="#2A3A5C" stroke="#4E5B78" stroke-width="3"/>
+        <circle cx="276" cy="110" r="72" fill="#2A3A5C" stroke="#4E5B78" stroke-width="3"/><path class="lua" data-cx="276" data-cy="110" data-r="72" data-k="0.2" data-lado="L" fill="#F3F5FA"/>
+        <circle cx="460" cy="110" r="72" fill="#2A3A5C" stroke="#4E5B78" stroke-width="3"/><path class="lua" data-cx="460" data-cy="110" data-r="72" data-k="0.5" data-lado="L" fill="#F3F5FA"/>
+        <circle cx="644" cy="110" r="72" fill="#2A3A5C" stroke="#4E5B78" stroke-width="3"/><path class="lua" data-cx="644" data-cy="110" data-r="72" data-k="0.8" data-lado="L" fill="#F3F5FA"/>
+        <circle cx="828" cy="110" r="72" fill="#F3F5FA"/>
+      </g>
+      <text x="460" y="232" text-anchor="middle" font-family="JetBrains Mono" font-size="24" fill="#C9D1E3">nova → cheia (como vemos do hemisfério Sul)</text>
+      <g data-at="s2" data-anim="pop" data-dur="0.35">
+        <foreignObject x="300" y="240" width="380" height="140"><div xmlns="http://www.w3.org/1999/xhtml" class="stamp" style="transform:rotate(-6deg);">MITO</div></foreignObject>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 2 · METADE ILUMINADA -->
+  <section class="cena" data-fala="A Lua não tem luz própria. O Sol ilumina sempre *metade* dela: a metade virada para ele.">
+    <h2 style="margin-top:20px;">O Sol ilumina sempre <em>metade</em></h2>
+    <svg viewBox="0 0 920 560" width="920" height="560" style="margin-top:20px;">
+      <circle cx="-60" cy="280" r="190" fill="#FFC94A"/>
+      <g data-at="s1+0.3" data-anim="draw" data-dur="0.8" stroke="#FFC94A" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 0">
+        <path d="M160 170 H400"/><path d="M180 280 H400"/><path d="M160 390 H400"/>
+      </g>
+      <circle cx="600" cy="280" r="170" fill="#2A3A5C" stroke="#4E5B78" stroke-width="4"/>
+      <path class="lua" data-cx="600" data-cy="280" data-r="170" data-k="0.5" data-lado="L" fill="#F3F5FA" data-at="s2" data-anim="fade" data-dur="0.6"/>
+      <g data-at="s2+0.6" data-anim="fade" font-family="JetBrains Mono" font-weight="700" font-size="30">
+        <text x="520" y="510" text-anchor="middle" fill="#F3F5FA">iluminada</text>
+        <text x="700" y="510" text-anchor="middle" fill="#C9D1E3">escura</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 3 · ÓRBITA -->
+  <section class="cena" data-fala="Enquanto a Lua gira em torno da Terra, nós vemos essa metade iluminada de ângulos diferentes. Na lua nova, a face iluminada fica virada para o outro lado. Na lua cheia, vemos a face iluminada inteira. Entre elas, ficam os quartos *crescente* e *minguante*.">
+    <h2 style="margin-top:20px; font-size:78px;">Muda o <em>ângulo</em> de onde vemos</h2>
+    <svg viewBox="0 0 920 640" width="920" height="640" style="margin-top:16px;" data-fx="orbita">
+      <g stroke="#FFC94A" stroke-width="5" stroke-linecap="round"><path d="M0 220 H90 M0 320 H90 M0 420 H90"/><path d="M76 208 L92 220 L76 232 M76 308 L92 320 L76 332 M76 408 L92 420 L76 432" fill="none"/></g>
+      <text x="6" y="190" font-family="JetBrains Mono" font-weight="700" font-size="26" fill="#FFC94A">luz do Sol</text>
+      <circle cx="400" cy="320" r="230" fill="none" stroke="#4E5B78" stroke-width="3" stroke-dasharray="10 10"/>
+      <circle cx="400" cy="320" r="52" fill="#2F6CA8"/><path d="M400 268 A52 52 0 0 0 400 372 Z" fill="#6FA8C9"/>
+      <text x="400" y="400" text-anchor="middle" font-family="JetBrains Mono" font-size="24" fill="#C9D1E3">Terra</text>
+      <g id="lua-orb"><circle r="34" fill="#2A3A5C" stroke="#6E7C99" stroke-width="3"/><path d="M0 -34 A34 34 0 0 0 0 34 Z" fill="#F3F5FA"/></g>
+      <g class="lbl-fase">
+        <text data-at="s2+0.4" data-anim="fade" x="170" y="264" text-anchor="middle">NOVA</text>
+        <text data-at="s3+1.5" data-anim="fade" x="680" y="320" text-anchor="start">CHEIA</text>
+        <text data-at="s4+0.4" data-anim="fade" x="400" y="606" text-anchor="middle">QUARTO CRESCENTE</text>
+        <text data-at="s4+1.0" data-anim="fade" x="400" y="52" text-anchor="middle">QUARTO MINGUANTE</text>
+      </g>
+      <g transform="translate(800 520)">
+        <circle r="74" fill="#2A3A5C" stroke="#6E7C99" stroke-width="3"/><path id="lua-vista" fill="#F3F5FA"/>
+        <text y="110" text-anchor="middle" font-family="JetBrains Mono" font-size="22" fill="#C9D1E3">como vemos</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 4 · ECLIPSE -->
+  <section class="cena" data-fala="E a sombra da Terra? Ela só cai sobre a Lua num *eclipse lunar*, que acontece em algumas luas cheias, quando Sol, Terra e Lua ficam bem alinhados.">
+    <h2 style="margin-top:20px;">A sombra da Terra é o <em>eclipse</em></h2>
+    <svg viewBox="0 0 920 420" width="920" height="420" style="margin-top:40px;">
+      <circle cx="-30" cy="210" r="150" fill="#FFC94A"/>
+      <path data-at="s2" data-anim="fade" d="M470 140 L860 192 L860 228 L470 280 Z" fill="#071429" opacity=".9"/>
+      <circle cx="470" cy="210" r="70" fill="#2F6CA8"/>
+      <circle cx="800" cy="210" r="34" fill="#F3F5FA"/>
+      <circle data-at="s2+0.8" data-anim="fade" data-dur="0.8" cx="800" cy="210" r="34" fill="#B5523B"/>
+      <g font-family="JetBrains Mono" font-weight="700" font-size="28">
+        <text x="40" y="400" fill="#FFC94A">Sol</text><text x="470" y="320" text-anchor="middle" fill="#6FA8C9">Terra</text><text x="800" y="290" text-anchor="middle" fill="#F3F5FA">Lua</text>
+      </g>
+    </svg>
+    <div class="card" data-at="s2+1.6" data-anim="up" style="margin-top:20px; padding:30px 40px;">
+      <div style="font-size:38px; font-weight:800;">Eclipse lunar: só na <span style="color:var(--red);">lua cheia</span></div>
+      <div style="font-size:30px; color:var(--ink-soft); font-weight:600; margin-top:8px;">e só quando os três ficam alinhados</div>
+    </div>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.2" data-fala="O ciclo das fases dura uns [29,5 dias|vinte e nove dias e meio]. Comente: em qual fase da Lua pode acontecer um *eclipse solar*? E siga para mais fenômenos.">
+    <div style="margin-top:20px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">ciclo ≈ 29,5 dias</span></div>
+    <h2 style="margin-top:34px;">Em qual fase pode haver <em>eclipse solar</em>?</h2>
+    <div class="card" data-at="s2+0.4" data-anim="up" style="margin-top:48px; display:flex; align-items:center; gap:30px; padding:34px 40px;">
+      <svg viewBox="0 0 48 48" width="84" height="84"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="#16213A" stroke-width="4" stroke-linejoin="round"/></svg>
+      <div style="font-size:42px; font-weight:800;">Comente a resposta</div>
+    </div>
+    <div class="card" data-at="s3" data-anim="up" style="margin-top:28px; text-align:center; padding:30px;">
+      <div style="font-size:32px; color:var(--ink-soft); font-weight:600;">Siga para mais fenômenos</div>
+      <div class="mono" style="font-size:50px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+    </div>
+  </section>
+
+</div>
+<script>
+// parte iluminada da Lua: k = fração iluminada (0 a 1), lado = 'L' (esquerda) ou 'R' (direita)
+function moonPath(cx, cy, r, k, lado){
+  const rx = Math.abs(1 - 2 * k) * r, L = lado === 'L';
+  return `M${cx} ${cy - r} A${r} ${r} 0 0 ${L ? 0 : 1} ${cx} ${cy + r} A${rx} ${r} 0 0 ${(k < 0.5) === L ? 1 : 0} ${cx} ${cy - r} Z`;
+}
+document.querySelectorAll('path.lua').forEach(p => { const d = p.dataset; p.setAttribute('d', moonPath(+d.cx, +d.cy, +d.r, +d.k, d.lado)); });
+
+const ease = x => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+window.FX = {
+  // Lua em volta da Terra (vista de cima, de cima do polo Norte: sentido anti-horário).
+  // θ = 180° é lua nova (entre a Terra e o Sol); θ = 0° é lua cheia.
+  orbita(el, t, info){
+    const s = info.scene.sents.map(x => x.start - info.scene.start);
+    const keys = [[0, 120], [s[1], 180], [s[2], 180], [s[2] + 1.6, 360], [s[3], 360], [s[3] + 2.0, 450]];
+    let th = keys[keys.length - 1][1];
+    for (let i = 0; i < keys.length - 1; i++) {
+      const [t0, a0] = keys[i], [t1, a1] = keys[i + 1];
+      if (t <= t0) { th = a0; break; }
+      if (t < t1) { th = a0 + (a1 - a0) * ease((t - t0) / (t1 - t0)); break; }
+    }
+    const rad = th * Math.PI / 180;
+    el.querySelector('#lua-orb').setAttribute('transform', `translate(${400 + 230 * Math.cos(rad)} ${320 - 230 * Math.sin(rad)})`);
+    const k = (1 + Math.cos(rad)) / 2, a = ((th % 360) + 360) % 360;
+    const lado = a > 180 ? 'L' : 'R'; // crescente (180°–360°): iluminada à esquerda no hemisfério Sul
+    el.querySelector('#lua-vista').setAttribute('d', k < 0.01 ? '' : k > 0.99 ? moonPath(0, 0, 74, 0.999, 'L') : moonPath(0, 0, 74, k, lado));
+  },
+};
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

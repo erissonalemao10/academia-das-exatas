@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Como se forma o arco-íris</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .note{font-family:'JetBrains Mono',monospace; font-size:24px; fill:#C9D1E3;}
+  .lab{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px;}
+</style>
+</head>
+<body>
+<div class="reel" data-ep="#04 · óptica">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Para ver um arco-íris, o Sol precisa estar *atrás de você*. Sabe por quê?">
+    <h1 style="margin-top:20px; font-size:96px;">Como se forma<br>o <em>arco-íris</em>?</h1>
+    <svg viewBox="0 0 920 520" width="920" height="520" style="margin-top:30px; overflow:hidden;">
+      <g class="arco" data-cx="560" data-cy="560" data-r0="300" data-dr="18" data-at="0.3" data-anim="draw" data-dur="1.4" fill="none" stroke-width="19"></g>
+      <rect x="0" y="470" width="920" height="60" fill="#24314F"/>
+      <line x1="0" y1="470" x2="920" y2="470" stroke="#4E5B78" stroke-width="4"/>
+      <circle cx="70" cy="80" r="50" fill="#FFC94A"/>
+      <g transform="translate(150 360)"><circle cx="0" cy="0" r="24" fill="#F3F5FA"/><path d="M0 24 V80 M0 40 L-26 66 M0 40 L26 66 M0 80 L-20 110 M0 80 L20 110" stroke="#F3F5FA" stroke-width="10" stroke-linecap="round" fill="none"/></g>
+      <g data-at="s1+1.0" data-anim="fade"><path d="M118 112 L148 330" stroke="#FFC94A" stroke-width="4" stroke-dasharray="10 10"/><text x="30" y="200" class="lab" fill="#FFC94A">Sol atrás</text></g>
+    </svg>
+  </section>
+
+  <!-- 2 · REFRAÇÃO -->
+  <section class="cena" data-fala="A luz do Sol é uma mistura de cores. Quando ela entra numa gota de chuva, sofre *refração*: muda de velocidade e de direção.">
+    <h2 style="margin-top:20px;">1. A luz entra e <em>desvia</em></h2>
+    <svg viewBox="0 0 920 600" width="920" height="600" style="margin-top:20px;">
+      <circle cx="560" cy="300" r="230" fill="#6FA8C9" fill-opacity=".18" stroke="#6FA8C9" stroke-width="5"/>
+      <path class="raio" data-n="1.333" data-seg="in" stroke="#F3F5FA" stroke-width="9" fill="none" stroke-linecap="round" data-at="s2" data-anim="draw" data-dur="0.8"/>
+      <path class="raio" data-n="1.333" data-seg="a" stroke="#F3F5FA" stroke-width="9" fill="none" stroke-linecap="round" data-at="s2+0.9" data-anim="draw" data-dur="0.7"/>
+      <text x="40" y="60" class="lab" fill="#F3F5FA" data-at="s1+0.3" data-anim="fade">luz branca</text>
+      <text x="560" y="590" text-anchor="middle" class="lab" fill="#6FA8C9">gota de chuva</text>
+    </svg>
+  </section>
+
+  <!-- 3 · DISPERSÃO -->
+  <section class="cena" data-fala="Só que cada cor muda de direção de um jeito um pouco diferente, porque o índice de refração da água depende da cor. Isso é a *dispersão*: o violeta muda mais de direção, e o vermelho, menos.">
+    <h2 style="margin-top:20px;">2. Cada cor desvia <em>diferente</em></h2>
+    <svg viewBox="0 0 920 600" width="920" height="600" style="margin-top:20px;">
+      <circle cx="560" cy="300" r="230" fill="#6FA8C9" fill-opacity=".18" stroke="#6FA8C9" stroke-width="5"/>
+      <path class="raio" data-n="1.333" data-seg="in" stroke="#F3F5FA" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <g class="leque" data-seg="a" data-at="s1+0.5" data-anim="draw" data-dur="0.9" fill="none" stroke-width="7" stroke-linecap="round"></g>
+      <g data-at="s2+0.8" data-anim="fade" style="font-size:28px;"><text x="20" y="470" class="lab" fill="#B98CFF" style="font-size:28px;">violeta: desvia mais</text><text x="20" y="512" class="lab" fill="#E8384F" style="font-size:28px;">vermelho: desvia menos</text></g>
+      <text x="560" y="590" text-anchor="middle" class="note">esquema fora de escala</text>
+    </svg>
+  </section>
+
+  <!-- 4 · REFLEXÃO E SAÍDA -->
+  <section class="cena" data-fala="Dentro da gota, a luz reflete no fundo e sai de novo, refratando outra vez. As cores saem separadas, com ângulos de uns [40° a 42°|quarenta a quarenta e dois graus] em relação aos raios de sol.">
+    <h2 style="margin-top:20px;">3. Reflete e sai <em>separada</em></h2>
+    <svg viewBox="0 0 920 640" width="920" height="640" style="margin-top:10px;">
+      <circle cx="560" cy="250" r="230" fill="#6FA8C9" fill-opacity=".18" stroke="#6FA8C9" stroke-width="5"/>
+      <g id="gota4">
+        <path class="raio" data-n="1.333" data-seg="in" data-cy="250" stroke="#F3F5FA" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <g class="leque" data-seg="a" data-cy="250" fill="none" stroke-width="7" stroke-linecap="round"></g>
+        <g class="leque" data-seg="b" data-cy="250" data-at="s1" data-anim="draw" data-dur="0.8" fill="none" stroke-width="7" stroke-linecap="round"></g>
+        <g class="leque" data-seg="c" data-cy="250" data-at="s1+1.0" data-anim="draw" data-dur="1.0" fill="none" stroke-width="7" stroke-linecap="round"></g>
+      </g>
+      <g data-at="s2" data-anim="fade">
+        <path d="M300 471 H604" stroke="#F3F5FA" stroke-width="3" stroke-dasharray="10 9" fill="none"/>
+        <text x="40" y="506" class="note" style="font-size:26px;">raios de sol →</text>
+      </g>
+      <g data-at="s2+0.6" data-anim="fade"><text x="40" y="580" class="lab" fill="#B98CFF">violeta ≈ 40°</text><text x="40" y="630" class="lab" fill="#E8384F">vermelho ≈ 42°</text></g>
+      <text x="900" y="630" text-anchor="end" class="note">esquema fora de escala</text>
+    </svg>
+  </section>
+
+  <!-- 5 · CÍRCULO -->
+  <section class="cena" data-fala="Por isso o arco-íris é um pedaço de *círculo*, centrado na sombra da sua cabeça: são todas as gotas que estão nesse ângulo. O vermelho fica por fora, e o violeta, por dentro.">
+    <h2 style="margin-top:20px;">Um pedaço de <em>círculo</em></h2>
+    <svg viewBox="0 0 920 620" width="920" height="620" style="margin-top:20px; overflow:hidden;">
+      <rect x="0" y="420" width="920" height="200" fill="#071429" opacity=".6"/>
+      <g class="arco" data-cx="460" data-cy="520" data-r0="300" data-dr="16" fill="none" stroke-width="17" data-full="1"></g>
+      <rect x="0" y="420" width="920" height="200" fill="#0F1E3C" opacity=".82"/>
+      <line x1="0" y1="420" x2="920" y2="420" stroke="#C9D1E3" stroke-width="4"/>
+      <text x="16" y="408" class="note">horizonte</text>
+      <g data-at="s1+0.6" data-anim="fade">
+        <circle cx="460" cy="520" r="14" fill="#F3F5FA"/>
+        <text x="460" y="580" text-anchor="middle" class="lab" fill="#F3F5FA">sombra da sua cabeça</text>
+      </g>
+      <g data-at="s1+2.4" data-anim="draw" data-dur="0.6"><path d="M460 520 L460 230" stroke="#FFC94A" stroke-width="5" stroke-dasharray="12 10" fill="none"/></g>
+      <text data-at="s1+2.9" data-anim="fade" x="480" y="330" class="lab" fill="#FFC94A">≈ 42°</text>
+      <g data-at="s2" data-anim="fade"><text x="40" y="80" class="lab" fill="#E8384F">vermelho: por fora</text><text x="40" y="126" class="lab" fill="#B98CFF">violeta: por dentro</text></g>
+    </svg>
+  </section>
+
+  <!-- 6 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.2" data-fala="Comente: por que é difícil ver um arco-íris ao meio-dia, com o Sol bem alto? E siga para mais fenômenos.">
+    <div style="margin-top:20px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">cai no ENEM</span></div>
+    <h2 style="margin-top:34px; font-size:76px;">Por que é difícil ver arco-íris <em>ao meio-dia</em>?</h2>
+    <div class="card" data-at="s1+1.2" data-anim="up" style="margin-top:44px; display:flex; align-items:center; gap:30px; padding:34px 40px;">
+      <svg viewBox="0 0 48 48" width="84" height="84"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="#16213A" stroke-width="4" stroke-linejoin="round"/></svg>
+      <div style="font-size:42px; font-weight:800;">Comente a resposta</div>
+    </div>
+    <div class="card" data-at="s2" data-anim="up" style="margin-top:28px; text-align:center; padding:30px;">
+      <div style="font-size:32px; color:var(--ink-soft); font-weight:600;">Siga para mais fenômenos</div>
+      <div class="mono" style="font-size:50px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+    </div>
+  </section>
+
+</div>
+<script>
+const CORES = [['#E8384F', 1.300], ['#FF8A3D', 1.315], ['#FFC94A', 1.330], ['#3DBB6B', 1.345], ['#4F8DFF', 1.360], ['#B98CFF', 1.375]];
+// arcos do arco-íris: vermelho por fora, violeta por dentro
+document.querySelectorAll('g.arco').forEach(g => {
+  const cx = +g.dataset.cx, cy = +g.dataset.cy, r0 = +g.dataset.r0, dr = +g.dataset.dr;
+  g.innerHTML = CORES.map(([c], i) => { const r = r0 - i * dr; return `<path d="M${cx - r} ${cy} A${r} ${r} 0 0 1 ${cx + r} ${cy}" stroke="${c}"/>`; }).join('');
+});
+// traçado de um raio numa gota (lei de Snell + reflexão), com dispersão exagerada para aparecer no desenho
+function raio(n, cx, cy, R, b){
+  const sub = (a, c) => [a[0] - c[0], a[1] - c[1]], add = (a, c) => [a[0] + c[0], a[1] + c[1]], mul = (a, k) => [a[0] * k, a[1] * k], dot = (a, c) => a[0] * c[0] + a[1] * c[1];
+  const C = [cx, cy];
+  const refr = (d, N, eta) => { const ci = -dot(N, d), k = 1 - eta * eta * (1 - ci * ci); return add(mul(d, eta), mul(N, eta * ci - Math.sqrt(k))); };
+  const P1 = [cx - Math.sqrt(R * R - b * b), cy - b], d0 = [1, 0];
+  const t1 = refr(d0, mul(sub(P1, C), 1 / R), 1 / n);
+  const P2 = add(P1, mul(t1, -2 * dot(sub(P1, C), t1)));
+  const N2 = mul(sub(P2, C), 1 / R), t2 = sub(t1, mul(N2, 2 * dot(t1, N2)));
+  const P3 = add(P2, mul(t2, -2 * dot(sub(P2, C), t2)));
+  const t3 = refr(t2, mul(sub(P3, C), -1 / R), n);
+  return { P1, P2, P3, t3 };
+}
+function seg(cx, cy, R, n, s){
+  const { P1, P2, P3, t3 } = raio(n, cx, cy, R, 0.86 * R), E = [P3[0] + t3[0] * 230, P3[1] + t3[1] * 230];
+  const p = { in: [[P1[0] - 520, P1[1]], P1], a: [P1, P2], b: [P2, P3], c: [P3, E] }[s];
+  return { d: `M${p[0][0].toFixed(1)} ${p[0][1].toFixed(1)} L${p[1][0].toFixed(1)} ${p[1][1].toFixed(1)}`, E, t3 };
+}
+document.querySelectorAll('path.raio').forEach(p => p.setAttribute('d', seg(560, +(p.dataset.cy || 300), 230, +p.dataset.n, p.dataset.seg).d));
+document.querySelectorAll('g.leque').forEach(g => {
+  const cy = +(g.dataset.cy || 300);
+  g.innerHTML = CORES.map(([c, n]) => `<path d="${seg(560, cy, 230, n, g.dataset.seg).d}" stroke="${c}"/>`).join('');
+});
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

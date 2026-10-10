@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Algarismo das unidades de 2^100</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<style>
+  .ciclo{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:40px;}
+  .ciclo .card{text-align:center; padding:26px 10px;}
+  .ciclo .p{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:38px; color:var(--ink-soft);}
+  .ciclo .u{font-family:'Archivo',sans-serif; font-weight:900; font-size:76px; color:var(--red); margin-top:6px;}
+</style>
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · estilo OBMEP" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">estilo OBMEP</span></div>
+  <h1 style="margin-top:36px; font-size:90px;">Em que algarismo <em>termina</em> este número?</h1>
+  <div class="card" style="margin-top:56px; text-align:center; padding:60px 30px;">
+    <div class="formula" style="font-size:150px;">2<sup>100</sup></div>
+    <div class="mono" style="font-size:40px; color:var(--ink-soft); margin-top:24px;">algarismo das unidades = <span style="color:var(--red); font-weight:700;">?</span></div>
+  </div>
+  <div style="margin-top:48px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 48 48" width="70" height="70"><use href="#icon-timer"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · O CICLO -->
+<section class="slide" data-eyebrow="// procure o padrão">
+  <h2 style="margin-top:64px;">O final <em>se repete</em></h2>
+  <p class="body" style="margin-top:32px; font-size:36px;">Olhe só o último algarismo das primeiras potências de 2:</p>
+  <div class="ciclo">
+    <div class="card"><div class="p">2<sup>1</sup> = 2</div><div class="u">2</div></div>
+    <div class="card"><div class="p">2<sup>2</sup> = 4</div><div class="u">4</div></div>
+    <div class="card"><div class="p">2<sup>3</sup> = 8</div><div class="u">8</div></div>
+    <div class="card"><div class="p">2<sup>4</sup> = 16</div><div class="u">6</div></div>
+    <div class="card"><div class="p">2<sup>5</sup> = 32</div><div class="u">2</div></div>
+    <div class="card"><div class="p">2<sup>6</sup> = 64</div><div class="u">4</div></div>
+    <div class="card"><div class="p">2<sup>7</sup> = 128</div><div class="u">8</div></div>
+    <div class="card"><div class="p">2<sup>8</sup> = 256</div><div class="u">6</div></div>
+  </div>
+  <p class="body" style="margin-top:36px; font-size:36px;">O ciclo <b>2, 4, 8, 6</b> se repete a cada <b>4 expoentes</b>.</p>
+</section>
+
+<!-- 3 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:64px;">Resposta: <em>6</em></h2>
+  <div class="card" style="margin-top:44px; text-align:center; padding:40px 30px;">
+    <div class="formula" style="font-size:54px;">100 ÷ 4 = 25, resto <span style="color:var(--red)">0</span></div>
+    <div style="font-size:32px; color:var(--ink-soft); font-weight:600; margin-top:16px;">resto 0 → último do ciclo, igual a 2<sup>4</sup>, 2<sup>8</sup>, 2<sup>12</sup>…</div>
+  </div>
+  <div style="margin-top:44px; display:flex; gap:26px;">
+    <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+    <p class="body" style="font-size:34px;">Resto 0 <b>não</b> é a 1ª posição do ciclo (2): é a <b>4ª</b> (6).</p>
+  </div>
+  <div class="tip">
+    <div class="lbl">// desafio bônus</div>
+    <p>Em que algarismo termina <b>3<sup>100</sup></b>? Dica: o ciclo é 3, 9, 7, 1. <b>Comente!</b></p>
+  </div>
+</section>
+
+<!-- 4 · CTA -->
+<section class="slide" data-eyebrow="// olimpíadas">
+  <h2 style="margin-top:64px; font-size:92px;">Número gigante? <em>Ache o ciclo</em>.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem faz a OBMEP amanhã</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para treinar padrões</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

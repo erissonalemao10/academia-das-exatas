@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Quando os carros se encontram</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="carro"><rect x="0" y="22" width="150" height="44" rx="14"/><path d="M28 24 L48 0 H102 L124 24 Z"/><circle cx="36" cy="68" r="17" fill="#0F1E3C" stroke="#C9D1E3" stroke-width="5"/><circle cx="114" cy="68" r="17" fill="#0F1E3C" stroke="#C9D1E3" stroke-width="5"/></g>
+</defs></svg>
+
+<!-- 1 · CAPA + DESAFIO -->
+<section class="slide" data-eyebrow="// física · cinemática · cai no ENEM" data-swipe="resposta">
+  <div style="margin-top:44px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">estilo ENEM</span></div>
+  <h1 style="margin-top:30px; font-size:84px;">Quando os carros se <em>encontram</em>?</h1>
+  <svg viewBox="0 0 920 210" width="920" height="210" style="margin-top:30px;">
+    <line x1="0" y1="150" x2="920" y2="150" style="stroke:var(--paper-dim)" stroke-width="4"/>
+    <use href="#carro" x="20" y="64" style="fill:var(--red)"/>
+    <g transform="translate(900 64) scale(-1 1)"><use href="#carro" style="fill:var(--blue)"/></g>
+    <path d="M190 40 H300 M286 28 L302 40 L286 52" fill="none" style="stroke:var(--red)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M730 40 H620 M634 28 L618 40 L634 52" fill="none" style="stroke:var(--blue)" stroke-width="6" stroke-linecap="round"/>
+    <text x="245" y="22" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--red)">60 km/h</text>
+    <text x="675" y="22" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--blue)">90 km/h</text>
+    <path d="M95 190 H825" style="stroke:var(--paper)" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="460" y="182" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" style="fill:var(--paper)">150 km</text>
+  </svg>
+  <div class="card" style="margin-top:30px; padding:34px 44px;">
+    <p style="font-size:35px; line-height:1.42; font-weight:500;">Os dois partem <b>no mesmo instante</b>, um em direção ao outro, com velocidades constantes. Depois de quanto tempo eles se encontram?</p>
+    <div class="opts" style="grid-template-columns:1fr 1fr 1fr; font-size:36px; gap:14px 10px; margin-top:24px;">
+      <div><b>A)</b> 30 min</div><div><b>B)</b> 1 h</div><div><b>C)</b> 1 h 30</div>
+      <div><b>D)</b> 2 h</div><div><b>E)</b> 5 h</div>
+    </div>
+  </div>
+  <p class="body" style="margin-top:36px; font-size:40px; text-align:center;"><b>Comente a letra</b> antes de arrastar</p>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:56px; font-size:76px;">Letra <em>B</em>: 1 hora</h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Em sentidos opostos, a distância entre eles diminui <b>60 + 90 = 150 km</b> a cada hora.</p>
+  <div class="card" style="margin-top:40px; text-align:center; padding:40px 30px;">
+    <div class="formula" style="font-size:58px;">t = <span class="frac"><span>150 km</span><span>150 km/h</span></span> = <span style="color:var(--red)">1 h</span></div>
+  </div>
+  <div style="margin-top:44px; display:grid; gap:30px;">
+    <div style="display:flex; gap:26px;">
+      <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+      <p class="body" style="font-size:34px;">Marcou <b>E</b>? Você fez 90 − 60 = 30 km/h. Subtrair só vale quando um carro <b>persegue</b> o outro.</p>
+    </div>
+    <div style="display:flex; gap:26px;">
+      <span class="chip ghost w" style="flex:none; height:fit-content;">CONFERA</span>
+      <p class="body" style="font-size:34px;">Em 1 h, um anda 60 km e o outro, 90 km. Somando: <b>150 km</b>. Eles se encontram a 60 km do ponto de partida do mais lento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · REGRA -->
+<section class="slide" data-eyebrow="// velocidade relativa">
+  <h2 style="margin-top:64px;">Some ou <em>subtraia</em>?</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:52px;">
+    <div class="card" style="padding:36px 34px;">
+      <div class="mono" style="font-size:28px; color:var(--blue); font-weight:700;">SENTIDOS OPOSTOS</div>
+      <p style="font-size:33px; line-height:1.4; margin-top:16px;">Um vai ao encontro do outro: <b>some</b> as velocidades.</p>
+      <div class="formula" style="font-size:40px; margin-top:18px;">v<sub>rel</sub> = v<sub>1</sub> + v<sub>2</sub></div>
+    </div>
+    <div class="card" style="padding:36px 34px;">
+      <div class="mono" style="font-size:28px; color:var(--red); font-weight:700;">MESMO SENTIDO</div>
+      <p style="font-size:33px; line-height:1.4; margin-top:16px;">Um persegue o outro: <b>subtraia</b> as velocidades.</p>
+      <div class="formula" style="font-size:40px; margin-top:18px;">v<sub>rel</sub> = v<sub>1</sub> − v<sub>2</sub></div>
+    </div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// desafio bônus</div>
+    <p>E se os dois andassem <b>no mesmo sentido</b>, com o de 90 km/h atrás, 150 km antes do outro? <b>Comente o tempo!</b></p>
+  </div>
+</section>
+
+<!-- 4 · CTA -->
+<section class="slide" data-eyebrow="// reta final do ENEM">
+  <h2 style="margin-top:64px; font-size:92px;">Cinemática <em>cai</em>. Treine.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar velocidade relativa</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem sempre subtrai</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

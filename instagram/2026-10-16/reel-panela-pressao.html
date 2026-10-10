@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Por que a panela de pressão cozinha mais rápido</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .lab{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px;}
+  .note{font-family:'JetBrains Mono',monospace; font-size:24px; fill:#C9D1E3;}
+  .cmp{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:30px;}
+  .cmp .card{padding:30px 28px; text-align:center;}
+  .cmp .k{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:27px; color:var(--ink-soft);}
+  .cmp .v{font-family:'Archivo',sans-serif; font-weight:900; font-size:76px; margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="reel" data-ep="#05 · termologia">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Por que a panela de pressão cozinha o feijão tão rápido?">
+    <h1 style="margin-top:20px; font-size:92px;">Por que a panela de pressão é <em>mais rápida</em>?</h1>
+    <svg viewBox="0 0 920 470" width="920" height="470" style="margin-top:70px;">
+      <use href="#panela" x="0" y="0"/>
+    </svg>
+  </section>
+
+  <!-- 2 · PATAMAR DE 100 °C -->
+  <section class="cena" data-fala="Em uma panela comum, ao nível do mar, a água ferve a [100 °C|cem graus]. E, enquanto ferve, a temperatura *para de subir*: o calor vai todo para transformar água em vapor.">
+    <h2 style="margin-top:20px;">Fervendo, a temperatura <em>não sobe</em></h2>
+    <svg viewBox="0 0 920 560" width="920" height="560" style="margin-top:30px;">
+      <path d="M110 500 H880 M110 500 V40" stroke="#C9D1E3" stroke-width="5" fill="none"/>
+      <path d="M864 488 L884 500 L864 512 M98 56 L110 36 L122 56" stroke="#C9D1E3" stroke-width="5" fill="none"/>
+      <text x="880" y="545" text-anchor="end" class="lab" fill="#C9D1E3">tempo</text>
+      <text x="96" y="40" text-anchor="end" class="lab" fill="#C9D1E3">T</text>
+      <path d="M110 180 H860" stroke="#4E5B78" stroke-width="3" stroke-dasharray="10 10"/>
+      <text x="96" y="190" text-anchor="end" class="lab" fill="#F3F5FA">100 °C</text>
+      <path data-at="s1+0.4" data-anim="draw" data-dur="1.6" d="M110 440 L420 180 L860 180" stroke="#E8384F" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <g data-at="s2" data-anim="fade">
+        <rect x="420" y="90" width="440" height="64" rx="14" fill="#F3F5FA"/>
+        <text x="640" y="133" text-anchor="middle" class="lab" fill="#16213A">ebulição: T constante</text>
+      </g>
+      <g data-at="s2+1.4" data-anim="fade"><text x="640" y="250" text-anchor="middle" class="note" style="font-size:28px;">calor → água vira vapor</text></g>
+    </svg>
+  </section>
+
+  <!-- 3 · PRESSÃO × EBULIÇÃO -->
+  <section class="cena" data-fala="Só que a temperatura de ebulição depende da *pressão*. Quanto maior a pressão sobre a água, mais quente ela precisa ficar para ferver.">
+    <h2 style="margin-top:20px;">Mais pressão, ferve <em>mais quente</em></h2>
+    <div class="rows big" style="margin-top:50px;">
+      <div class="row" style="padding:22px 0;"><span class="nm" style="font-size:30px;">PRESSÃO</span><span class="nm" style="font-size:30px;">FERVE A</span></div>
+      <div class="row" data-at="s2" data-anim="left"><span class="fx">≈ 0,65 atm</span><span class="fx">≈ 88 °C</span></div>
+      <div class="row" data-at="s2+0.4" data-anim="left"><span class="fx">1 atm</span><span class="fx">100 °C</span></div>
+      <div class="row" data-at="s2+0.8" data-anim="left"><span class="fx">≈ 2 atm</span><span class="fx" style="color:var(--red);">≈ 120 °C</span></div>
+    </div>
+    <p class="body" data-at="s2+1.6" data-anim="up" style="margin-top:40px; font-size:38px; text-align:center;">1 atm = pressão do ar <b>ao nível do mar</b></p>
+  </section>
+
+  <!-- 4 · A PANELA FECHADA -->
+  <section class="cena" data-fala="A panela de pressão é fechada e prende o vapor. A pressão lá dentro sobe, e a água passa a ferver perto de [120 °C|cento e vinte graus]. Mais quente, o feijão cozinha bem mais rápido.">
+    <h2 style="margin-top:20px; font-size:78px;">Vapor preso = <em>mais pressão</em></h2>
+    <svg viewBox="0 0 920 360" width="920" height="360" style="margin-top:60px;">
+      <g transform="translate(130 -30) scale(.78)"><use href="#panela"/></g>
+    </svg>
+    <div class="cmp">
+      <div class="card" data-at="s2+1.0" data-anim="up"><div class="k">PANELA COMUM</div><div class="v">100 °C</div></div>
+      <div class="card" data-at="s2+1.4" data-anim="up"><div class="k">PANELA DE PRESSÃO</div><div class="v" style="color:var(--red);">≈ <span data-at="s2+1.5" data-anim="count" data-from="100" data-to="120" data-dur="1.4">100</span> °C</div></div>
+    </div>
+  </section>
+
+  <!-- 5 · LA PAZ -->
+  <section class="cena" data-fala="Nas montanhas, acontece o contrário. Em La Paz, na Bolívia, a mais de [3.600 m|três mil e seiscentos metros] de altitude, a água ferve perto de [88 °C|oitenta e oito graus], e o macarrão demora mais para cozinhar.">
+    <h2 style="margin-top:20px;">Na montanha, ferve <em>mais frio</em></h2>
+    <svg viewBox="0 0 920 520" width="920" height="520" style="margin-top:30px;">
+      <path d="M0 500 L170 260 L230 230 L560 230 L640 130 L700 60 L790 190 L920 300 V500 Z" fill="#24314F" stroke="#4E5B78" stroke-width="4"/>
+      <path d="M660 110 L700 60 L740 115 L718 105 L700 125 L682 105 Z" fill="#F3F5FA"/>
+      <g fill="#C9D1E3"><rect x="300" y="196" width="26" height="34"/><rect x="332" y="180" width="22" height="50"/><rect x="360" y="202" width="30" height="28"/><rect x="396" y="188" width="20" height="42"/><rect x="422" y="206" width="28" height="24"/></g>
+      <g data-at="s2" data-anim="pop">
+        <circle cx="375" cy="160" r="14" fill="#E8384F"/>
+        <rect x="40" y="10" width="330" height="110" rx="18" fill="#F3F5FA"/>
+        <text x="205" y="56" text-anchor="middle" class="lab" fill="#16213A">La Paz (Bolívia)</text>
+        <text x="205" y="100" text-anchor="middle" class="lab" fill="#4E5B78">≈ 3 600 m</text>
+      </g>
+      <g data-at="s2+1.6" data-anim="pop">
+        <rect x="270" y="320" width="380" height="130" rx="22" fill="#F3F5FA"/>
+        <text x="460" y="370" text-anchor="middle" class="lab" fill="#4E5B78" style="font-size:26px;">a água ferve a</text>
+        <text x="460" y="430" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="58" fill="#E8384F">≈ 88 °C</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 6 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.2" data-fala="Comente: no alto do Everest, a água ferve acima ou abaixo de [100 °C|cem graus]? E siga para mais fenômenos.">
+    <div style="margin-top:20px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">cai no ENEM</span></div>
+    <h2 style="margin-top:34px;">No Everest, ferve acima ou abaixo de <em>100 °C</em>?</h2>
+    <div class="card" data-at="s1+1.2" data-anim="up" style="margin-top:44px; display:flex; align-items:center; gap:30px; padding:34px 40px;">
+      <svg viewBox="0 0 48 48" width="84" height="84"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="#16213A" stroke-width="4" stroke-linejoin="round"/></svg>
+      <div style="font-size:42px; font-weight:800;">Comente a resposta</div>
+    </div>
+    <div class="card" data-at="s2" data-anim="up" style="margin-top:28px; text-align:center; padding:30px;">
+      <div style="font-size:32px; color:var(--ink-soft); font-weight:600;">Siga para mais fenômenos</div>
+      <div class="mono" style="font-size:50px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+    </div>
+  </section>
+
+</div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="panela">
+    <g class="vapor" fill="#F3F5FA"><circle cx="470" cy="60" r="18"/><circle cx="470" cy="60" r="18"/><circle cx="470" cy="60" r="18"/><circle cx="470" cy="60" r="18"/></g>
+    <rect x="455" y="96" width="30" height="40" rx="6" fill="#C9D1E3"/>
+    <path d="M250 170 Q460 100 670 170 Z" fill="#C9D1E3"/>
+    <rect x="230" y="166" width="460" height="26" rx="10" fill="#9AA6BF"/>
+    <rect x="690" y="168" width="200" height="22" rx="11" fill="#16213A" stroke="#4E5B78" stroke-width="3"/>
+    <path d="M250 192 H670 V380 Q670 420 630 420 H290 Q250 420 250 380 Z" fill="#C9D1E3"/>
+    <rect x="250" y="250" width="420" height="10" fill="#9AA6BF"/>
+    <path d="M280 460 Q300 430 320 460 Q340 490 360 460 M400 460 Q420 430 440 460 Q460 490 480 460 M520 460 Q540 430 560 460 Q580 490 600 460" stroke="#E8384F" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+</defs></svg>
+<script>
+// fumacinha saindo da válvula (anima os círculos dentro de cada cópia da panela)
+window.FX = {};
+let __t = 0;
+const __render = () => {};
+document.querySelectorAll('.cena').forEach(c => c.querySelectorAll('svg').forEach(svg => { if (svg.querySelector('use[href="#panela"]')) svg.setAttribute('data-fx', 'vapor'); }));
+window.FX.vapor = (el, t) => {
+  document.querySelectorAll('#panela .vapor circle').forEach((c, i) => {
+    const ph = (t * 0.7 + i / 4) % 1;
+    c.setAttribute('cy', 76 - ph * 70); c.setAttribute('cx', 470 + Math.sin(ph * 6 + i) * 18);
+    c.setAttribute('r', 12 + ph * 20); c.setAttribute('opacity', (1 - ph) * 0.7);
+  });
+};
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

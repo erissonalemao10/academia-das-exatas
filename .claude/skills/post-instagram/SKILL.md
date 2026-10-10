@@ -1,6 +1,6 @@
 ---
 name: post-instagram
-description: Cria e agenda posts de Instagram (carrosséis de Física e Matemática) para @erisson.alemao.prof no padrão visual da casa. Use sempre que o usuário pedir para criar, montar, refazer ou agendar um post, carrossel, legenda ou calendário de posts do Instagram.
+description: Cria e agenda posts de Instagram (carrosséis e reels de Física e Matemática) para @erisson.alemao.prof no padrão visual da casa. Use sempre que o usuário pedir para criar, montar, refazer ou agendar um post, carrossel, reel, legenda ou calendário de posts do Instagram.
 ---
 
 # Posts do Instagram · @erisson.alemao.prof
@@ -58,3 +58,34 @@ Formatos que mais performam (pesquisa de concorrentes, set/2026): **pergunta cur
      `media` = URLs raw na ordem dos slides, `text` = legenda, `autoPublish:true`.
    - Publicar é público: agende só quando o usuário tiver pedido o agendamento ou confirmado o horário.
 7. Responda com uma tabela (horário, tema, link `plannerUrl`) e as capas (`SendUserFile`).
+
+## Reels: série "Fenômenos explicados com IA"
+
+Vídeo vertical 1080 × 1920 com cenas animadas no mesmo visual dos carrosséis, narração com voz
+neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `reel.js`,
+`render-reel.js` e `tts.py` (leia o cabeçalho de `reel.js` para a marcação). Exemplos em
+`instagram/2026-10-12/reel-trovao.html` e nos outros `reel-*.html` da semana de 12/10.
+
+1. Crie `instagram/AAAA-MM-DD/reel-<nome>.html`: um `<div class="reel" data-ep="#NN · área">` com
+   uma `<section class="cena" data-fala="...">` por cena (5 ou 6 cenas, 45 a 60 s no total).
+   - Cena 1 = gancho (pergunta ou mito) com a palavra-chave em `<em>`; ela vira a capa.
+   - Última cena = desafio para comentar + "siga para mais fenômenos" (`data-hold="1.2"`).
+   - Animações por elemento: `data-at="s2+0.5"` (2ª frase da fala + 0,5 s) e `data-anim`.
+   - Conteúdo entre y = 300 e 1150 px; as legendas ficam logo abaixo.
+2. **Narração**: norma padrão, frases curtas. Números e unidades por extenso com `[mostra|fala]`,
+   ex.: `[340 m/s|trezentos e quarenta metros por segundo]`. Não fale "ENEM" (a voz pronuncia mal):
+   deixe o ENEM no visual e na legenda. Evite "só ferve" (soa "sofre") e "desvia" no fim de frase.
+3. Prepare a voz uma vez por sessão (não vai para o repositório):
+   ```bash
+   python3 -m venv $TTS/venv && $TTS/venv/bin/pip install sherpa-onnx soundfile numpy
+   curl -sSL https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-pt_BR-cadu-medium.tar.bz2 | tar xj -C $TTS
+   ```
+4. Gere: `NODE_PATH=$(npm root -g) REEL_PY=$TTS/venv/bin/python REEL_TTS_DIR=$TTS REEL_PREVIEW_DIR=<pasta temporária> node instagram/_modelo/render-reel.js instagram/AAAA-MM-DD/reel-<nome>.html`
+   → `reel-<nome>.mp4` e `reel-<nome>-capa.jpg`.
+5. **Confira**: abra as prévias (fim de cada cena) e a capa. Se puder, transcreva o áudio com
+   Whisper (`sherpa-onnx-whisper-small`, mesmo release, pasta `asr-models`) e compare com a fala:
+   troque as palavras que a voz pronunciar mal.
+6. Legenda `legenda-reel-<nome>.txt`: gancho, explicação curta, desafio, a linha
+   "🤖 Série Fenômenos explicados com IA, episódio N. A narração é gerada por inteligência artificial." e hashtags.
+7. Agende no Metricool como reel: `instagramData:{"type":"REEL","showReelOnFeed":true,"isAiGenerated":true}`,
+   `media` = URL raw do `.mp4`, `videoThumbnailUrl` = URL raw da capa.

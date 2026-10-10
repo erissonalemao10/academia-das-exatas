@@ -1,0 +1,37 @@
+/* Reels 1080 × 1920 · mesmo visual dos carrosséis (usa as variáveis e classes de base.css).
+   Zonas seguras do Instagram: o topo (até ~200 px) e o rodapé (abaixo de ~1560 px) ficam
+   cobertos pela interface; a coluna da direita tem os botões. Conteúdo entre 300 e 1150 px. */
+body{margin:0; background:#222;}
+.reel{
+  width:1080px; height:1920px; position:relative; overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(255,255,255,0.06), transparent 70%),
+    linear-gradient(var(--grid,rgba(226,232,244,0.07)) 2px, transparent 2px) 0 0/60px 60px,
+    linear-gradient(90deg, var(--grid,rgba(226,232,244,0.07)) 2px, transparent 2px) 0 0/60px 60px,
+    var(--bg);
+  border-bottom:26px solid var(--wood);
+}
+.r-top{position:absolute; left:80px; right:80px; top:212px; display:flex; justify-content:space-between; align-items:center;}
+.r-serie{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:27px; letter-spacing:.5px;
+  padding:10px 22px; border-radius:999px; background:var(--red); color:#fff;}
+.r-ep{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:var(--paper-dim);}
+
+.cena{position:absolute; left:80px; right:80px; top:300px; height:860px; display:flex; flex-direction:column; visibility:hidden;}
+.cena.on{visibility:visible;}
+.cena h1{font-size:104px;}
+.cena h2{font-size:84px;}
+.cena p.body{font-size:44px;}
+.cena .big{font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-1px; line-height:1;}
+.cena svg{overflow:visible;}
+[data-at]{transform-box:fill-box; transform-origin:center;}
+
+/* legendas (geradas a partir da narração) */
+.r-cap{position:absolute; left:60px; right:60px; top:1190px; height:250px; display:flex; align-items:center; justify-content:center; text-align:center;}
+.r-cap-in{font-family:'Inter',sans-serif; font-weight:800; font-size:66px; line-height:1.16; color:#fff;
+  max-width:940px;}
+.r-cap-in span.box{background:rgba(7,20,41,.78); padding:6px 22px; border-radius:18px;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;}
+.r-cap-in .ch{color:#FFC94A;}
+.r-foot{position:absolute; left:80px; top:1466px;}
+.r-foot .brand{font-size:32px;}
+.capa .r-cap{display:none;}

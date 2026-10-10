@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>A planta que dobra todo dia</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+</head>
+<body class="tema-matematica">
+
+<!-- 1 · CAPA -->
+<section class="slide" data-eyebrow="// matemática · progressão geométrica" data-swipe="resposta">
+  <div style="margin-top:52px; display:flex; gap:16px;"><span class="chip">RESOLVA EM 10 SEGUNDOS</span></div>
+  <h1 style="margin-top:36px; font-size:90px;">Em que dia o lago estava <em>pela metade</em>?</h1>
+  <div class="card" style="margin-top:48px; padding:40px 44px;">
+    <p style="font-size:38px; line-height:1.45; font-weight:500;">Uma planta aquática <b>dobra</b> a área que cobre <b>a cada dia</b>. No <b>dia 30</b>, ela cobre o lago <b>inteiro</b>.</p>
+    <p style="font-size:42px; font-weight:800; margin-top:22px; color:var(--red);">Em que dia ela cobria metade do lago?</p>
+  </div>
+  <div style="margin-top:48px; display:flex; align-items:center; justify-content:center; gap:26px;">
+    <svg viewBox="0 0 48 48" width="70" height="70"><use href="#icon-timer"/></svg>
+    <p class="body" style="font-size:40px;"><b>Comente seu palpite</b> antes de arrastar</p>
+  </div>
+</section>
+
+<!-- 2 · RESPOSTA -->
+<section class="slide" data-eyebrow="// resolução">
+  <h2 style="margin-top:64px;">Resposta: <em>dia 29</em></h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Ande <b>para trás</b>: se a área dobra a cada dia, um dia antes ela era a <b>metade</b>.</p>
+  <div class="rows big" style="margin-top:36px;">
+    <div class="row"><span class="nm">dia 30</span><span class="fx">100%</span></div>
+    <div class="row"><span class="nm">dia 29</span><span class="fx" style="color:var(--red)">50%</span></div>
+    <div class="row"><span class="nm">dia 28</span><span class="fx">25%</span></div>
+    <div class="row"><span class="nm">dia 27</span><span class="fx">12,5%</span></div>
+  </div>
+  <div style="margin-top:40px; display:flex; gap:26px;">
+    <span class="chip w" style="flex:none; height:fit-content;">PEGADINHA</span>
+    <p class="body" style="font-size:34px;">Respondeu <b>dia 15</b>? Isso valeria se a planta crescesse a mesma área todo dia (PA). Aqui ela <b>dobra</b> (PG).</p>
+  </div>
+</section>
+
+<!-- 3 · PG -->
+<section class="slide" data-eyebrow="// progressão geométrica">
+  <h2 style="margin-top:64px;">Dobrar todo dia é uma <em>PG</em></h2>
+  <p class="body" style="margin-top:36px; font-size:36px;">Em uma progressão geométrica, cada termo é o anterior <b>multiplicado pela razão q</b>. Aqui, <b>q = 2</b>.</p>
+  <div class="card" style="margin-top:40px; text-align:center; padding:40px 30px;">
+    <div class="formula" style="font-size:66px;">a<sub>n</sub> = a<sub>1</sub> · q<sup>n − 1</sup></div>
+    <div style="font-size:32px; color:var(--ink-soft); font-weight:600; margin-top:16px;">voltar um termo = dividir por q</div>
+  </div>
+  <div class="tip">
+    <div class="lbl">// desafio bônus</div>
+    <p>Se no dia 1 já houvesse <b>o dobro</b> de plantas, em que dia o lago ficaria coberto? <b>Comente!</b></p>
+  </div>
+</section>
+
+<!-- 4 · CTA -->
+<section class="slide" data-eyebrow="// progressões">
+  <h2 style="margin-top:64px; font-size:92px;">PA soma, <em>PG multiplica</em>.</h2>
+  <div class="cta" style="margin-top:60px;">
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-chat"/></svg><p class="body" style="font-size:39px;"><b>Comente</b> a resposta do desafio bônus</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-save"/></svg><p class="body" style="font-size:39px;"><b>Salve</b> para revisar progressões</p></div>
+    <div><svg viewBox="0 0 48 48" width="80" height="80"><use href="#icon-send"/></svg><p class="body" style="font-size:39px;"><b>Envie</b> para quem respondeu dia 15</p></div>
+  </div>
+  <div class="card" style="margin-top:60px; text-align:center; padding:32px;">
+    <div style="font-size:30px; color:var(--ink-soft); font-weight:600;">Siga para mais Física e Matemática</div>
+    <div class="mono" style="font-size:48px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+  </div>
+</section>
+
+<script src="../_modelo/chrome.js"></script>
+</body>
+</html>

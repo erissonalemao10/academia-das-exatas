@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Por que o trovão chega depois do relâmpago</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .flash{position:absolute; left:-80px; top:-300px; width:1080px; height:1920px; background:#fff; opacity:0; pointer-events:none;}
+  .vel{display:grid; gap:26px; margin-top:48px;}
+  .vel .card{padding:32px 40px;}
+  .vel .lbl{display:flex; justify-content:space-between; align-items:baseline;}
+  .vel .nm{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:34px;}
+  .vel .v{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:44px;}
+  .track{height:30px; border-radius:99px; background:#E3E6EE; margin-top:20px; overflow:hidden;}
+  .track i{display:block; height:100%; border-radius:99px;}
+</style>
+</head>
+<body>
+<div class="reel" data-ep="#01 · ondas">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Por que você vê o *relâmpago* e só depois escuta o *trovão*?">
+    <h1 style="margin-top:20px; font-size:100px;">Por que o trovão chega <em>depois</em>?</h1>
+    <svg viewBox="0 0 920 470" width="920" height="470" style="margin-top:40px;">
+      <g fill="#C9D1E3" opacity=".9">
+        <circle cx="300" cy="120" r="80"/><circle cx="400" cy="90" r="100"/><circle cx="510" cy="125" r="78"/><circle cx="220" cy="150" r="56"/><rect x="220" y="120" width="340" height="86" rx="40"/>
+      </g>
+      <g data-at="0.45" data-anim="pop" data-dur="0.3">
+        <path d="M410 190 L345 330 L400 330 L355 460 L490 290 L428 290 L470 190 Z" fill="#FFC94A"/>
+      </g>
+      <g data-at="s1+1.4" data-anim="draw" fill="none" style="stroke:var(--blue)" stroke-width="9" stroke-linecap="round">
+        <path d="M560 300 A70 70 0 0 1 560 400"/><path d="M610 260 A120 120 0 0 1 610 440"/><path d="M660 220 A170 170 0 0 1 660 480"/>
+      </g>
+      <text x="740" y="250" data-at="s1+1.6" data-anim="fade" font-family="JetBrains Mono" font-weight="700" font-size="34" style="fill:var(--blue)">BUM!</text>
+    </svg>
+    <div class="flash" data-fx="flash"></div>
+  </section>
+
+  <!-- 2 · NASCEM JUNTOS -->
+  <section class="cena" data-fala="Os dois nascem *juntos*. O raio aquece o ar a dezenas de milhares de graus, e o ar se expande de repente, produzindo o trovão.">
+    <h2 style="margin-top:20px;">Luz e som nascem <em>juntos</em></h2>
+    <svg viewBox="0 0 920 520" width="920" height="520" style="margin-top:30px;">
+      <g data-fx="rings" data-start="1.2" fill="none" stroke="#FFC94A" stroke-width="6">
+        <circle cx="460" cy="260" r="40"/><circle cx="460" cy="260" r="40"/><circle cx="460" cy="260" r="40"/>
+      </g>
+      <path d="M470 40 L405 200 L455 200 L410 360 L530 175 L475 175 L515 40 Z" fill="#FFC94A"/>
+      <g data-at="s2" data-anim="fade">
+        <text x="460" y="470" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="34" style="fill:var(--paper)">ar a dezenas de milhares de °C</text>
+        <text x="460" y="512" text-anchor="middle" font-family="JetBrains Mono" font-size="30" style="fill:var(--paper-dim)">expande de repente → trovão</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 3 · VELOCIDADES -->
+  <section class="cena" data-fala="A diferença é a *velocidade*. A luz viaja a [300 mil km/s|trezentos mil quilômetros por segundo]. O som, só uns [340 m/s|trezentos e quarenta metros por segundo].">
+    <h2 style="margin-top:20px;">A diferença é a <em>velocidade</em></h2>
+    <div class="vel">
+      <div class="card" data-at="s2" data-anim="left">
+        <div class="lbl"><span class="nm" style="color:#B8860B;">LUZ</span><span class="v">≈ 300 000 km/s</span></div>
+        <div class="track"><i data-at="s2+0.3" data-anim="grow" data-dur="0.5" style="width:100%; background:#FFC94A;"></i></div>
+      </div>
+      <div class="card" data-at="s3" data-anim="left">
+        <div class="lbl"><span class="nm" style="color:var(--blue);">SOM NO AR</span><span class="v">≈ 340 m/s</span></div>
+        <div class="track"><i data-at="s3+0.3" data-anim="grow" style="width:1.2%; background:var(--blue);"></i></div>
+      </div>
+    </div>
+    <div data-at="s3+1.6" data-anim="pop" style="margin-top:56px; text-align:center;">
+      <div class="big" style="font-size:118px; color:var(--red);">≈ 900 000×</div>
+      <p class="body" style="font-size:40px; margin-top:12px;">a luz é quase <b>900 mil vezes</b> mais rápida</p>
+    </div>
+  </section>
+
+  <!-- 4 · O TRUQUE -->
+  <section class="cena" data-fala="Por isso existe um truque. Conte os segundos entre o clarão e o trovão e divida por três. O resultado é a distância do raio, em quilômetros.">
+    <h2 style="margin-top:20px;">O truque dos <em>3 segundos</em></h2>
+    <div style="display:flex; align-items:center; gap:40px; margin-top:56px;" data-at="s2" data-anim="up">
+      <svg viewBox="0 0 48 48" width="150" height="150"><use href="#icon-timer"/></svg>
+      <div class="big" style="font-size:150px;"><span data-at="s2+0.3" data-anim="count" data-from="0" data-to="3" data-dur="2.4">0</span><span style="font-size:80px; color:var(--paper-dim);"> s</span></div>
+    </div>
+    <div class="card" data-at="s3" data-anim="pop" style="margin-top:56px; text-align:center; padding:44px 30px;">
+      <div class="formula" style="font-size:96px;">d ≈ t ÷ 3</div>
+      <div style="font-size:34px; color:var(--ink-soft); font-weight:600; margin-top:14px;">d em quilômetros · t em segundos</div>
+    </div>
+  </section>
+
+  <!-- 5 · EXEMPLO -->
+  <section class="cena" data-fala="Contou seis segundos? O raio caiu a uns dois quilômetros. Em três segundos, o som anda cerca de um quilômetro.">
+    <h2 style="margin-top:20px;">Contou <em>6 s</em>?</h2>
+    <div class="card" data-at="s1+0.4" data-anim="up" style="margin-top:44px; text-align:center; padding:40px 30px;">
+      <div class="formula" style="font-size:80px;">6 ÷ 3 ≈ <span style="color:var(--red);">2 km</span></div>
+    </div>
+    <svg viewBox="0 0 920 260" width="920" height="260" style="margin-top:50px;">
+      <g data-at="s2" data-anim="fade">
+        <circle cx="90" cy="120" r="26" style="fill:var(--paper)"/><path d="M90 146 V220 M90 170 L55 200 M90 170 L125 200 M90 220 L60 258 M90 220 L120 258" style="stroke:var(--paper)" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <path d="M800 20 L760 120 L795 120 L765 210 L850 100 L810 100 L840 20 Z" fill="#FFC94A"/>
+      </g>
+      <g data-at="s2+0.3" data-anim="draw" data-dur="1.2" fill="none" style="stroke:var(--blue)" stroke-width="7" stroke-dasharray="1 0">
+        <path d="M150 230 H740"/>
+      </g>
+      <g data-at="s2+1.2" data-anim="fade" font-family="JetBrains Mono" font-weight="700">
+        <text x="445" y="200" text-anchor="middle" font-size="36" style="fill:var(--paper)">≈ 2 km</text>
+      </g>
+    </svg>
+    <div class="tip" data-at="s3" data-anim="up" style="margin-top:20px;">
+      <div class="lbl">// fique atento</div>
+      <p>Trovão quase junto com o clarão: o raio está <b>perto</b>. Procure abrigo.</p>
+    </div>
+  </section>
+
+  <!-- 6 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.2" data-fala="Comente: se você contou *nove segundos*, a que distância caiu o raio? E siga para mais fenômenos.">
+    <div style="margin-top:20px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">cai no ENEM</span></div>
+    <h2 style="margin-top:34px;">Contou <em>9 s</em>. A que distância caiu o raio?</h2>
+    <div class="card" data-at="s1+1.2" data-anim="up" style="margin-top:48px; display:flex; align-items:center; gap:30px; padding:34px 40px;">
+      <svg viewBox="0 0 48 48" width="84" height="84"><g transform="translate(0 0)"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="#16213A" stroke-width="4" stroke-linejoin="round"/></g></svg>
+      <div style="font-size:42px; font-weight:800;">Comente a resposta</div>
+    </div>
+    <div class="card" data-at="s2" data-anim="up" style="margin-top:28px; text-align:center; padding:30px;">
+      <div style="font-size:32px; color:var(--ink-soft); font-weight:600;">Siga para mais fenômenos</div>
+      <div class="mono" style="font-size:50px; font-weight:700; color:var(--ink); margin-top:8px;">@erisson.alemao.prof</div>
+    </div>
+  </section>
+
+</div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="icon-timer"><circle cx="24" cy="27" r="17" fill="none" style="stroke:var(--paper)" stroke-width="4"/><path d="M24 27 V16 M19 5 H29" fill="none" style="stroke:var(--red)" stroke-width="4" stroke-linecap="round"/></g>
+</defs></svg>
+<script>
+window.FX = {
+  // dois clarões rápidos logo no começo
+  flash(el, t){ const a = Math.max(0, 1 - Math.abs(t - 0.5) / 0.07) * 0.55, b = Math.max(0, 1 - Math.abs(t - 0.72) / 0.06) * 0.35; el.style.opacity = Math.max(a, b); },
+  // ondas de ar quente saindo do raio
+  rings(el, t){
+    const t0 = parseFloat(el.dataset.start || 0);
+    [...el.children].forEach((c, i) => {
+      if (t < t0) { c.setAttribute('opacity', 0); return; }
+      const ph = ((t - t0) * 0.55 + i / 3) % 1;
+      c.setAttribute('r', 50 + ph * 330); c.setAttribute('opacity', (1 - ph) * 0.85);
+    });
+  },
+};
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>
