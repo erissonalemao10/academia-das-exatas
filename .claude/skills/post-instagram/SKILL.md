@@ -99,5 +99,15 @@ neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `
    `media` = URL raw do `.mp4` (de preferência presa ao commit: `.../<sha>/instagram/...`), `videoThumbnailUrl` = URL raw da capa.
    O selo "Informações de IA" do Instagram fica desligado por decisão do perfil (10/10/2026). A regra da Meta pede
    o selo para áudio realista gerado por IA e prevê punição; se o perfil mudar de ideia, basta `isAiGenerated:true`.
-8. YouTube (Shorts): o canal ainda não está conectado ao Metricool. Gere o pacote em `youtube/` (título, descrição,
-   tags, categoria Educação, "não é para crianças") para envio manual no YouTube Studio.
+8. YouTube (Shorts): o canal está conectado ao Metricool (desde 10/10/2026). Agende cada vídeo num post **separado**,
+   só com `providers:[{"network":"youtube"}]`, às 16h (pico do YouTube no Metricool), com a mesma URL raw do `.mp4`
+   e a capa em `videoThumbnailUrl`:
+   `youtubeData:{"title":…,"type":"short","privacy":"public","tags":[…],"category":"EDUCATION","madeForKids":false,"isAiGeneratedContent":false}`.
+   SEO para monetização:
+   - Título com a pergunta que a pessoa busca e a resposta-gancho depois. Sem "#Shorts" no título.
+   - Descrição com a 1ª frase igual à pergunta, depois a explicação, o desafio, "🔔 Inscreva-se para ver o próximo
+     fenômeno explicado.", a linha da série e 5 hashtags (`#fisica #curiosidades` + tema + `#shorts`).
+   - Tags com a pergunta completa, as variações do tema, "fisica" sem acento, "curiosidades",
+     "curiosidades científicas" e "fenômenos explicados". Até 500 caracteres no total.
+   - Nunca "para crianças": o vídeo perde anúncios personalizados e comentários.
+   Registre tudo em `youtube/semana-AAAA-MM-DD.md` (modelo: `youtube/semana-2026-10-12.md`).
