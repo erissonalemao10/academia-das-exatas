@@ -96,6 +96,11 @@ neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `
 5. **Confira**: abra as prévias (fim de cada cena) e a capa. Se puder, transcreva o áudio com
    Whisper (`sherpa-onnx-whisper-small`, mesmo release, pasta `asr-models`) e compare com a fala:
    troque as palavras que a voz pronunciar mal.
+   A última cena é sempre o cartão de CTA (a partir de 19/10/2026): desafio para comentar (`.r-ask` com `#ico-chat`)
+   e `.r-social` com Instagram `@erisson.alemao.prof` (`#ico-ig`) e YouTube `@erissonalemao` (`#ico-yt`); a fala termina
+   com "Siga o perfil e se inscreva no canal para mais …", que vale para as duas plataformas.
+   Modelo: `instagram/2026-10-19/reel-gelo-flutua.html`. Séries: "Fenômenos explicados" (Física) e
+   "Mito ou verdade?" (`data-serie`, `<body class="tema-matematica">` quando for Matemática).
 6. Legenda `legenda-reel-<nome>.txt`: gancho, explicação curta, desafio, a linha
    "📺 Série Fenômenos explicados, episódio N." e hashtags. Sem menção a IA no vídeo nem na legenda
    (decisão do perfil em 10/10/2026).

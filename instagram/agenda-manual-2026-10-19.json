@@ -1,0 +1,118 @@
+{
+ "periodo": "19 a 25/10",
+ "subtitulo": "19 a 25 de outubro",
+ "commit": "f3aedf0e35bbdb69424b126f1ed44b98eb7c9364",
+ "nota": "Semana de <b>2 vídeos por dia</b>, os mesmos no Instagram (reel) e no YouTube (Short), às <b>12h</b> e às <b>18h</b>. Por enquanto, estão aqui os 2 vídeos de teste de segunda. Os outros entram nesta mesma página depois da aprovação.",
+ "dias": [
+  [
+   "2026-10-19",
+   "Seg 19/10",
+   ""
+  ],
+  [
+   "2026-10-20",
+   "Ter 20/10",
+   ""
+  ],
+  [
+   "2026-10-21",
+   "Qua 21/10",
+   ""
+  ],
+  [
+   "2026-10-22",
+   "Qui 22/10",
+   ""
+  ],
+  [
+   "2026-10-23",
+   "Sex 23/10",
+   ""
+  ],
+  [
+   "2026-10-24",
+   "Sáb 24/10",
+   ""
+  ],
+  [
+   "2026-10-25",
+   "Dom 25/10",
+   ""
+  ]
+ ],
+ "posts": [
+  [
+   "2026-10-19",
+   "12h",
+   "reel",
+   "reel-papel-lua"
+  ],
+  [
+   "2026-10-19",
+   "12h",
+   "yt",
+   "reel-papel-lua"
+  ],
+  [
+   "2026-10-19",
+   "18h",
+   "reel",
+   "reel-gelo-flutua"
+  ],
+  [
+   "2026-10-19",
+   "18h",
+   "yt",
+   "reel-gelo-flutua"
+  ]
+ ],
+ "youtube": {
+  "reel-papel-lua": {
+   "title": "Dobrar um papel 42 vezes chega à Lua? 📄🌙 Mito ou verdade",
+   "descricao": "Dobrar uma folha de papel 42 vezes faz ela chegar à Lua? Na teoria, sim! Uma folha tem uns 0,1 mm e cada dobra dobra a espessura: com 10 dobras são uns 10 cm, com 30 passa de 100 km e com 42 chega a uns 440 mil km, mais que os 384 mil km até a Lua. Na prática, é difícil dobrar uma folha comum mais de 7 vezes. É o crescimento exponencial (potências de 2), tema que cai no ENEM.\n\n🎯 Desafio: com quantas dobras o papel passaria do Monte Everest (8 849 m)? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 1\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#matematica #curiosidades #enem #mitoouverdade #shorts",
+   "tags": [
+    "dobrar papel 42 vezes",
+    "papel dobrado 42 vezes chega à lua",
+    "dobrar papel até a lua",
+    "potência de 2",
+    "crescimento exponencial",
+    "progressão geométrica",
+    "potências",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de matemática",
+    "curiosidades científicas",
+    "matematica",
+    "matemática",
+    "enem",
+    "matemática para o enem",
+    "desafio de matemática"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-gelo-flutua": {
+   "title": "Por que o gelo flutua na água? 🧊 A física explica",
+   "descricao": "Por que o gelo flutua na água? A maioria das substâncias fica mais densa quando congela, mas a água faz o contrário. Ao congelar, as moléculas formam uma rede hexagonal cheia de espaços vazios: o gelo tem densidade de uns 0,92 g/cm³, menor que a da água líquida (1 g/cm³). Por isso ele boia, uma garrafa cheia estoura no congelador e só uns 10% de um iceberg ficam fora da água. E é o gelo por cima que protege a vida nos lagos no inverno.\n\n🎯 Desafio: se o gelo afundasse, o que aconteceria com os lagos no inverno? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 6\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #gelo #shorts",
+   "tags": [
+    "por que o gelo flutua",
+    "gelo flutua na água",
+    "densidade do gelo",
+    "densidade",
+    "empuxo",
+    "hidrostática",
+    "dilatação anômala da água",
+    "iceberg",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  }
+ }
+}
