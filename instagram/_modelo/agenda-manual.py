@@ -10,7 +10,8 @@ commit indicado no JSON, então os arquivos precisam já estar enviados (git pus
 
 O JSON tem: periodo, subtitulo, commit, nota (HTML), dias [[data, rótulo, observação]],
 posts [[data, hora, tipo, nome]] com tipo car (carrossel), reel ou yt (YouTube Short),
-e youtube {nome do reel: {ep, title, body, desafio, hashtags, tags}}.
+e youtube {nome do reel: {title, tags, playlist e descricao (texto completo)}} ou, no formato antigo,
+{ep, title, body, desafio, hashtags, tags}, que monta a descrição com o rodapé de "Fenômenos explicados".
 """
 import glob, html, json, os, sys
 from PIL import Image
@@ -71,12 +72,13 @@ for i, (date, hora, tipo, nome) in enumerate(cfg["posts"]):
         else:
             v = cfg["youtube"][nome]
             titulo = v["title"]
-            desc = "\n\n".join([v["body"], v["desafio"], YT_FOOT.format(ep=v["ep"]), v["hashtags"]])
+            desc = v.get("descricao") or "\n\n".join([v["body"], v["desafio"], YT_FOOT.format(ep=v["ep"]), v["hashtags"]])
             body.append(copy_block(f"{pid}-tit", "Título", v["title"], "short"))
             body.append(copy_block(f"{pid}-desc", "Descrição", desc))
             body.append(copy_block(f"{pid}-tags", "Tags", ", ".join(v["tags"]), "short"))
+            playlist = f'<li>Playlist: <b>{e(v["playlist"])}</b></li>' if v.get("playlist") else ""
             body.append('<ul class="ajustes"><li>Público: <b>não é conteúdo para crianças</b></li>'
-                        '<li>Categoria: <b>Educação</b></li><li>Conteúdo alterado ou sintético: <b>não</b></li>'
+                        f'<li>Categoria: <b>Educação</b></li>{playlist}<li>Conteúdo alterado ou sintético: <b>não</b></li>'
                         f'<li>Visibilidade: <b>Programar</b> para {e(hora)}</li></ul>')
     cards[date].append(
         f'<article class="post" id="{pid}" data-rede="{tipo}">'

@@ -60,7 +60,7 @@
   </section>
 
   <!-- 4 · GARRAFA E ICEBERG -->
-  <section class="cena" data-fala="Por isso uma garrafa cheia de água estoura no congelador. E, em um iceberg, só cerca de [10%|dez por cento] fica fora da água.">
+  <section class="cena" data-fala="Por isso uma garrafa cheia de água estoura no congelador. E, em um [iceberg|aicebérgue], só cerca de [10%|dez por cento] fica fora da água.">
     <h2 style="margin-top:10px;">Só a <em>pontinha</em> fica de fora</h2>
     <svg viewBox="0 0 920 560" width="920" height="560" style="margin-top:30px;">
       <g data-at="s1" data-anim="pop">
@@ -69,8 +69,7 @@
         <text x="96" y="540" text-anchor="middle" class="lab" fill="#C9D1E3" style="font-size:26px;">estoura</text>
       </g>
       <g data-at="s2" data-anim="fade">
-        <path d="M520 120 L560 70 L600 100 L630 170 Z" fill="#E8F1F8"/>
-        <path d="M478 170 L630 170 L760 260 L720 420 L600 500 L450 440 L400 300 Z" fill="#E8F1F8" opacity=".9"/>
+        <path d="M474 170 L512 120 L548 66 L584 98 L612 136 L640 170 L760 262 L724 420 L600 500 L452 444 L400 302 Z" fill="#E8F1F8"/>
         <rect x="260" y="170" width="660" height="390" fill="#2F6CA8" opacity=".6"/>
         <path d="M260 170 H920" stroke="#6FA8C9" stroke-width="5"/>
         <path d="M660 70 V166" stroke="#FFC94A" stroke-width="4"/><text x="676" y="128" class="lab" fill="#FFC94A">≈ 10%</text>
@@ -116,7 +115,7 @@
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   const liq = document.getElementById('liq');
   for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++)
-    add(liq, 'circle', { cx: 60 + c * 44 + (rnd() - .5) * 22, cy: 80 + r * 42 + (rnd() - .5) * 22, r: 15, fill: '#6FA8C9' });
+    add(liq, 'circle', { cx: 60 + c * 44 + (rnd() - .5) * 12, cy: 80 + r * 42 + (rnd() - .5) * 12, r: 14, fill: '#6FA8C9' });
   const hex = document.getElementById('hex'), s = 48, seen = new Set(), pts = [];
   for (let c = 0; c < 4; c++) for (let r = 0; r < 4; r++) {
     const cx = 560 + c * 1.5 * s, cy = 110 + r * Math.sqrt(3) * s + (c % 2 ? Math.sqrt(3) / 2 * s : 0);
