@@ -96,9 +96,13 @@ neural em português e legendas na tela. Modelo: `instagram/_modelo/reel.css`, `
 5. **Confira**: abra as prévias (fim de cada cena) e a capa. Se puder, transcreva o áudio com
    Whisper (`sherpa-onnx-whisper-small`, mesmo release, pasta `asr-models`) e compare com a fala:
    troque as palavras que a voz pronunciar mal.
-   **Dois CTAs por vídeo** (pedido do perfil em 13/10/2026). A cena 2, logo depois do gancho, é o CTA inicial:
-   chip "ANTES DA RESPOSTA" (ou "ANTES DA EXPLICAÇÃO"), "Siga e se inscreva", os dois cartões `.r-social` e a fala
-   "Antes da resposta: siga o perfil e se inscreva no canal. Todo dia tem vídeo novo!".
+   **Dois CTAs por vídeo** (pedido do perfil em 13/10/2026). Em teste na semana de 19/10:
+   - CTA inicial **completo** (só 19/10): a cena 2, logo depois do gancho, tem chip "ANTES DA RESPOSTA"
+     (ou "ANTES DA EXPLICAÇÃO"), "Siga e se inscreva", os dois cartões `.r-social` e a fala
+     "Antes da resposta: siga o perfil e se inscreva no canal. Todo dia tem vídeo novo!".
+   - **Selo leve** (20 a 25/10, padrão recomendado): `data-selo="2"` no `.reel` mostra o selo mudo
+     "Siga + inscreva-se" (ícones do Instagram e do YouTube) por ~4 s no começo da cena 2, sem fala e sem cena extra,
+     para não segurar a explicação. Compare a retenção das duas versões antes de fixar uma.
    A última cena é sempre o cartão de CTA final: desafio para comentar (`.r-ask` com `#ico-chat`)
    e `.r-social` com Instagram `@erisson.alemao.prof` (`#ico-ig`) e YouTube `@erissonalemao` (`#ico-yt`); a fala termina
    com "Siga o perfil e se inscreva no canal para mais …", que vale para as duas plataformas.
