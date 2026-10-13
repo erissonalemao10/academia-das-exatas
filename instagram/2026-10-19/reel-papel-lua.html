@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Dobrar um papel 42 vezes chega à Lua?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .lab{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px;}
+  .mv{display:flex; align-items:center; justify-content:center; gap:26px; margin-top:26px;
+    font-family:'Archivo',sans-serif; font-weight:900; font-size:46px; color:var(--paper-dim);}
+  .mv .chip{font-size:44px; padding:12px 34px;}
+  .rows .nm small{display:block; font-size:24px; font-weight:500; margin-top:4px;}
+  .bars{display:grid; gap:40px; margin-top:56px;}
+  .bars .k{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:var(--paper-dim); margin-bottom:14px;}
+  .bars .bar{height:84px; border-radius:16px; display:flex; align-items:center; padding-left:26px;
+    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:38px; color:#fff; white-space:nowrap;}
+  .stamp{display:inline-block; font-family:'Archivo',sans-serif; font-weight:900; font-size:92px; color:var(--red);
+    border:10px solid var(--red); border-radius:22px; padding:4px 34px; letter-spacing:4px; transform:rotate(-6deg);}
+  .big2{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:72px; color:var(--ink); white-space:nowrap;}
+</style>
+</head>
+<body class="tema-matematica">
+<div class="reel" data-serie="MITO OU VERDADE?" data-ep="#01 · potências">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Se você dobrar uma folha de papel [42 vezes|quarenta e duas vezes], ela chega até a Lua. Mito ou verdade?">
+    <h1 style="margin-top:10px; font-size:92px;">Dobrar um papel <em>42 vezes</em> chega à Lua?</h1>
+    <svg viewBox="0 0 920 400" width="920" height="400" style="margin-top:24px;">
+      <path data-at="0.4" data-anim="draw" data-dur="1.4" d="M200 300 Q470 60 742 108" fill="none" stroke="#1C2541" stroke-width="6" stroke-dasharray="16 14" stroke-linecap="round"/>
+      <circle cx="120" cy="320" r="92" fill="#2F6CA8"/>
+      <path d="M62 282 Q90 250 128 270 Q150 296 120 318 Q86 330 70 312 Z M140 352 Q170 334 196 352 Q186 390 156 392 Q132 380 140 352 Z" fill="#0E8F80"/>
+      <circle cx="808" cy="104" r="62" fill="#C3C9D5"/>
+      <circle cx="786" cy="88" r="12" fill="#A9B1C0"/><circle cx="828" cy="124" r="16" fill="#A9B1C0"/><circle cx="822" cy="76" r="7" fill="#A9B1C0"/>
+      <text x="808" y="210" text-anchor="middle" class="lab" fill="#56607A">Lua</text>
+      <text x="120" y="226" text-anchor="middle" class="lab" fill="#56607A">Terra</text>
+      <g data-at="0.2" data-anim="pop"><g transform="translate(250 330) rotate(-14)"><rect x="-52" y="-34" width="104" height="68" rx="4" fill="#FFFFFF" stroke="#1C2541" stroke-width="4"/><path d="M-52 -34 L0 34 M0 -34 V34" stroke="#C9D1E3" stroke-width="3"/></g></g>
+    </svg>
+    <div class="mv" data-at="s2" data-anim="pop"><span class="chip ghost">MITO</span>ou<span class="chip">VERDADE</span></div>
+  </section>
+
+  <!-- 2 · CADA DOBRA DOBRA -->
+  <section class="cena" data-fala="Uma folha comum tem uns [0,1 mm|zero vírgula um milímetro] de espessura. A cada dobra, a espessura *dobra*.">
+    <h2 style="margin-top:10px;">Cada dobra <em>dobra</em> a espessura</h2>
+    <div class="rows big" style="margin-top:44px;">
+      <div class="row" data-at="s1" data-anim="left"><span class="nm">sem dobrar</span><span class="fx">0,1 mm</span></div>
+      <div class="row" data-at="s2" data-anim="left"><span class="nm">1 dobra</span><span class="fx">0,2 mm</span></div>
+      <div class="row" data-at="s2+0.4" data-anim="left"><span class="nm">2 dobras</span><span class="fx">0,4 mm</span></div>
+      <div class="row" data-at="s2+0.8" data-anim="left"><span class="nm">3 dobras</span><span class="fx">0,8 mm</span></div>
+    </div>
+    <p class="body" data-at="s2+1.4" data-anim="up" style="margin-top:40px; text-align:center; font-size:40px;"><b class="mono">× 2</b> a cada dobra</p>
+  </section>
+
+  <!-- 3 · CRESCE RÁPIDO -->
+  <section class="cena" data-fala="Com [10 dobras|dez dobras], já são uns [10 cm|dez centímetros]. Com [20|vinte], passa de [100 m|cem metros]. Com [30|trinta], mais de [100 km|cem quilômetros]!">
+    <h2 style="margin-top:10px;">Cresce <em>muito</em> rápido</h2>
+    <div class="rows big" style="margin-top:44px;">
+      <div class="row" data-at="s1" data-anim="left"><span class="nm">10 dobras<small>a altura de uma xícara</small></span><span class="fx">≈ 10 cm</span></div>
+      <div class="row" data-at="s2" data-anim="left"><span class="nm">20 dobras<small>prédio de 35 andares</small></span><span class="fx">≈ 105 m</span></div>
+      <div class="row" data-at="s3" data-anim="left"><span class="nm">30 dobras<small>onde começa o espaço</small></span><span class="fx" style="color:var(--red);">≈ 107 km</span></div>
+    </div>
+  </section>
+
+  <!-- 4 · 42 DOBRAS -->
+  <section class="cena" data-fala="Com [42 dobras|quarenta e duas dobras], seriam uns *[440 mil km|quatrocentos e quarenta mil quilômetros]*. A Lua fica a uns [384 mil km|trezentos e oitenta e quatro mil quilômetros]. *Verdade*, pelo menos na teoria!">
+    <h2 style="margin-top:10px;">42 dobras: <em>passa da Lua</em></h2>
+    <div class="bars">
+      <div data-at="s1"><div class="k">papel com 42 dobras</div><div class="bar" data-at="s1+0.2" data-anim="grow" data-dur="1.2" style="width:920px; background:var(--red);">≈ <span data-at="s1+0.2" data-anim="count" data-from="0" data-to="440" data-dur="1.2">0</span>&nbsp;mil km</div></div>
+      <div data-at="s2"><div class="k">distância até a Lua</div><div class="bar" data-at="s2+0.2" data-anim="grow" data-dur="1.0" style="width:800px; background:#2F6CA8;">≈ 384 mil km</div></div>
+    </div>
+    <div style="margin-top:56px; display:flex; align-items:center; gap:30px;" data-at="s3" data-anim="pop">
+      <span class="stamp">VERDADE</span><span class="soft" style="font-size:36px; font-weight:600;">na teoria</span>
+    </div>
+  </section>
+
+  <!-- 5 · POTÊNCIA DE 2 -->
+  <section class="cena" data-fala="Na prática, uma folha comum mal passa de [7 dobras|sete dobras]. É o poder de uma *potência de 2*: [2⁴²|dois elevado a quarenta e dois] passa de [4 trilhões|quatro trilhões].">
+    <h2 style="margin-top:10px;">O poder da <em>potência de 2</em></h2>
+    <div class="card" data-at="s1" data-anim="up" style="margin-top:44px; display:flex; align-items:center; gap:30px; padding:32px 40px;">
+      <svg viewBox="0 0 64 64" width="90" height="90" style="flex:none;"><rect x="10" y="14" width="44" height="36" rx="3" fill="#F7F4EA" stroke="#1C2541" stroke-width="3"/><path d="M10 32 H54 M32 14 V50" stroke="#C9D1E3" stroke-width="3"/></svg>
+      <div style="font-size:38px; font-weight:700; line-height:1.3;">Na prática, uma folha comum mal passa de <span style="color:var(--red);">7 dobras</span></div>
+    </div>
+    <div class="card" data-at="s2" data-anim="up" style="margin-top:30px; text-align:center; padding:38px 30px;">
+      <div class="big2">2<sup>42</sup> ≈ 4,4 trilhões</div>
+      <div class="mono" style="font-size:34px; color:var(--ink-soft); margin-top:16px;">0,1 mm × 2<sup>42</sup> ≈ 440 000 km</div>
+    </div>
+    <p class="body" data-at="s2+1.6" data-anim="up" style="margin-top:36px; text-align:center; font-size:34px;">Crescimento exponencial: cai no <b>ENEM</b></p>
+  </section>
+
+  <!-- 6 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: com quantas dobras o papel passaria do Monte Everest? Siga o perfil e se inscreva no canal para mais desafios.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">Everest: 8 849 m</span></div>
+    <h2 style="margin-top:26px; font-size:70px;">Com quantas dobras o papel passa do <em>Everest</em>?</h2>
+    <div class="r-ask" data-at="s1+1.0" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s2" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

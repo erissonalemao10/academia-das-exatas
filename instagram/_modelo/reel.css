@@ -35,3 +35,13 @@ body{margin:0; background:#222;}
 .r-foot{position:absolute; left:80px; top:1466px;}
 .r-foot .brand{font-size:32px;}
 .capa .r-cap{display:none;}
+
+/* cartão final de CTA: desafio para comentar + seguir no Instagram e se inscrever no YouTube */
+.r-ask{display:flex; align-items:center; gap:24px; font-size:38px; font-weight:800; color:var(--paper);}
+.r-ask svg{width:64px; height:64px; flex:none; color:var(--red);}
+.r-social{display:grid; gap:20px;}
+.r-social .net{display:flex; align-items:center; gap:28px; background:var(--card,var(--paper)); color:var(--ink);
+  border-radius:26px; padding:24px 32px; box-shadow:0 18px 40px rgba(3,9,22,.45);}
+.r-social svg{width:84px; height:84px; flex:none;}
+.r-social .k{font-size:28px; font-weight:600; color:var(--ink-soft); line-height:1.2;}
+.r-social .h{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:44px; line-height:1.15; white-space:nowrap;}

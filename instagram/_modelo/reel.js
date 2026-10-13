@@ -23,6 +23,14 @@
     `<div class="r-cap"><div class="r-cap-in"></div></div><div class="r-foot"><span class="brand handle">@erisson.alemao.prof</span></div>`);
   const capEl = stage.querySelector('.r-cap-in');
 
+  // ícones do cartão de CTA (.r-social): <svg><use href="#ico-ig"/></svg>, #ico-yt e #ico-chat
+  document.body.insertAdjacentHTML('beforeend', `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="ig-grad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEC053"/><stop offset=".45" stop-color="#F2203E"/><stop offset="1" stop-color="#8A3AB9"/></linearGradient>
+    <symbol id="ico-ig" viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="13" fill="url(#ig-grad)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="24" cy="24" r="6.4" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="32.6" cy="15.4" r="2.2" fill="#fff"/></symbol>
+    <symbol id="ico-yt" viewBox="0 0 48 48"><rect x="1" y="8" width="46" height="32" rx="10" fill="#FF0033"/><path d="M19.5 16.5 L32 24 L19.5 31.5 Z" fill="#fff"/></symbol>
+    <symbol id="ico-chat" viewBox="0 0 48 48"><path d="M8 10 H40 V32 H22 L13 40 V32 H8 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></symbol>
+  </defs></svg>`);
+
   function tokenize(s){
     const out = []; let hl = false; let m;
     const re = /(\*?)\[([^|\]]+)\|([^\]]+)\](\*?)([.,!?:;]*)|(\S+)/g;
