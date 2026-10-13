@@ -23,6 +23,12 @@
     `<div class="r-cap"><div class="r-cap-in"></div></div><div class="r-foot"><span class="brand handle">@erisson.alemao.prof</span></div>`);
   const capEl = stage.querySelector('.r-cap-in');
 
+  // selo de CTA leve (data-selo="2"): aparece no topo, sem narração, no começo da cena indicada
+  const seloScene = parseInt(stage.dataset.selo || 0);
+  if (seloScene) stage.insertAdjacentHTML('beforeend',
+    `<div class="r-selo"><svg><use href="#ico-ig"/></svg><svg><use href="#ico-yt"/></svg><span>Siga + inscreva-se</span></div>`);
+  const seloEl = stage.querySelector('.r-selo'), epEl = stage.querySelector('.r-ep');
+
   // ícones do cartão de CTA (.r-social): <svg><use href="#ico-ig"/></svg>, #ico-yt e #ico-chat
   document.body.insertAdjacentHTML('beforeend', `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <linearGradient id="ig-grad" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEC053"/><stop offset=".45" stop-color="#F2203E"/><stop offset="1" stop-color="#8A3AB9"/></linearGradient>
@@ -141,6 +147,14 @@
     const s = S[cur], lt = t - s.start;
     s.anims.forEach(o => apply(o, lt));
     s.fx.forEach(el => { const f = window.FX && window.FX[el.dataset.fx]; if (f) f(el, lt, { dur: s.end - s.start, scene: s }); });
+    if (seloEl) {
+      const sc = S[Math.min(seloScene, S.length) - 1], a = t - (sc.start + 0.3), D = 4;
+      const inP = easeOut(clamp(a / 0.45)), outP = clamp((a - (D - 0.4)) / 0.4), on = a >= 0 && a < D;
+      const pulse = 1 + 0.06 * Math.sin(clamp((a - 0.9) / 0.5) * Math.PI);
+      seloEl.style.opacity = on ? inP * (1 - outP) : 0;
+      seloEl.style.transform = `translateX(${(1 - inP + outP) * 60}px) scale(${on ? pulse : 1})`;
+      if (epEl) epEl.style.opacity = on ? outP : 1;
+    }
     let html = '';
     if (!opts.noCaption) {
       for (const x of s.sents) for (const c of x.chunks) if (t >= c.start && t < x.start + x.dur + GAP * 0.9) html = c.html;

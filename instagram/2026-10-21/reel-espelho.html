@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Por que o espelho troca esquerda e direita?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .capo{font-family:'Archivo',sans-serif; font-weight:900; font-size:64px; letter-spacing:3px; color:#E8384F;}
+</style>
+</head>
+<body>
+<div class="reel" data-ep="#08 · óptica" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Por que o espelho troca a esquerda pela direita, mas não troca o de cima pelo de baixo?">
+    <h1 style="margin-top:10px; font-size:90px;">Por que o espelho troca <em>esquerda e direita</em>?</h1>
+    <svg viewBox="0 0 920 520" width="920" height="400" style="margin-top:20px;">
+      <use href="#cena-espelho"/>
+      <g transform="translate(600 120) scale(.72)"><use href="#frente"/></g>
+      <g transform="translate(160 170)"><use href="#costas"/></g>
+    </svg>
+  </section>
+
+  <!-- 2 · NÃO TROCA -->
+  <section class="cena" data-fala="Na verdade, o espelho *não troca* esquerda e direita. Se você levanta a mão do lado da janela, a imagem também levanta a mão do lado da janela.">
+    <h2 style="margin-top:10px;">Ele <em>não troca</em> os lados</h2>
+    <svg viewBox="0 0 920 520" width="920" height="520" style="margin-top:30px;">
+      <use href="#cena-espelho"/>
+      <g data-at="s2" data-anim="fade"><rect x="850" y="40" width="64" height="110" rx="6" fill="#FFC94A" opacity=".85"/><path d="M882 40 V150 M850 95 H914" stroke="#16213A" stroke-width="5"/><text x="882" y="186" text-anchor="middle" class="lab" fill="#FFC94A" style="font-size:24px;">janela</text></g>
+      <g transform="translate(600 120) scale(.72)"><use href="#frente-mao"/></g>
+      <g transform="translate(160 170)"><use href="#costas-mao"/></g>
+      <g data-at="s2+0.8" data-anim="fade"><text x="460" y="510" text-anchor="middle" class="lab" fill="#FFC94A">as duas mãos do lado da janela</text></g>
+    </svg>
+  </section>
+
+  <!-- 3 · FRENTE E TRÁS -->
+  <section class="cena" data-fala="O que ele inverte é *frente e trás*. Cada ponto da imagem aparece à mesma distância do espelho, só que do outro lado.">
+    <h2 style="margin-top:10px;">Ele inverte <em>frente e trás</em></h2>
+    <svg viewBox="0 0 920 460" width="920" height="460" style="margin-top:40px;">
+      <rect x="452" y="20" width="16" height="420" rx="6" fill="#6FA8C9"/>
+      <g data-at="s1+0.3" data-anim="pop"><circle cx="200" cy="230" r="34" fill="#E8384F"/><text x="200" y="300" text-anchor="middle" class="lab" fill="#F3F5FA">objeto</text></g>
+      <g data-at="s2" data-anim="pop"><circle cx="720" cy="230" r="34" fill="#E8384F" opacity=".55"/><text x="720" y="300" text-anchor="middle" class="lab" fill="#C9D1E3">imagem</text></g>
+      <g data-at="s2+0.6" data-anim="fade" font-family="JetBrains Mono" font-weight="700" font-size="40" fill="#FFC94A" text-anchor="middle">
+        <path d="M234 180 H452 M468 180 H686" stroke="#FFC94A" stroke-width="4"/>
+        <path d="M234 168 V192 M452 168 V192 M468 168 V192 M686 168 V192" stroke="#FFC94A" stroke-width="4"/>
+        <text x="343" y="160">d</text><text x="577" y="160">d</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 4 · AMBULÂNCIA -->
+  <section class="cena" data-fala="A sensação de troca vem de imaginar que você deu meia-volta para entrar no lugar da imagem. É por isso que a palavra ambulância vem escrita ao contrário no capô: no retrovisor, ela aparece do jeito certo.">
+    <h2 style="margin-top:10px;">Por isso o capô vem <em>ao contrário</em></h2>
+    <div class="card" data-at="s2" data-anim="up" style="margin-top:44px; text-align:center; padding:34px 20px;">
+      <div class="k mono" style="font-size:26px; color:var(--ink-soft); font-weight:700;">NO CAPÔ</div>
+      <div class="capo" style="transform:scaleX(-1); margin-top:10px;">AMBULÂNCIA</div>
+    </div>
+    <div class="card" data-at="s2+2.2" data-anim="up" style="margin-top:28px; text-align:center; padding:34px 20px; border:4px solid #6FA8C9;">
+      <div class="k mono" style="font-size:26px; color:var(--ink-soft); font-weight:700;">NO RETROVISOR</div>
+      <div class="capo" style="margin-top:10px;">AMBULÂNCIA</div>
+    </div>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: se você se afasta [1 metro|um metro] do espelho, quanto a sua imagem se afasta de você? Siga o perfil e se inscreva no canal para mais fenômenos.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">cai no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:70px;">Você se afasta 1 <span style="text-transform:none">m</span>. A imagem se afasta <em>quanto</em>?</h2>
+    <div class="r-ask" data-at="s1+1.0" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s2" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="cena-espelho"><rect x="380" y="20" width="440" height="440" rx="14" fill="#24314F" stroke="#6FA8C9" stroke-width="8"/><text x="790" y="448" text-anchor="end" class="lab" fill="#6FA8C9" style="font-size:24px;">espelho</text></g>
+  <g id="costas">
+    <circle cx="60" cy="40" r="44" fill="#C9D1E3"/>
+    <rect x="0" y="96" width="120" height="170" rx="38" fill="#C9D1E3"/>
+    <path d="M10 126 L-24 240 M110 126 L144 240" stroke="#C9D1E3" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <g id="costas-mao">
+    <circle cx="60" cy="40" r="44" fill="#C9D1E3"/>
+    <rect x="0" y="96" width="120" height="170" rx="38" fill="#C9D1E3"/>
+    <path d="M10 126 L-24 240 M110 126 L160 10" stroke="#C9D1E3" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="162" cy="2" r="20" fill="#FFC94A"/>
+  </g>
+  <g id="frente">
+    <circle cx="60" cy="40" r="44" fill="#F3F5FA"/><circle cx="44" cy="34" r="6" fill="#16213A"/><circle cx="76" cy="34" r="6" fill="#16213A"/>
+    <rect x="0" y="96" width="120" height="170" rx="38" fill="#F3F5FA"/>
+    <path d="M10 126 L-24 240 M110 126 L144 240" stroke="#F3F5FA" stroke-width="28" stroke-linecap="round"/>
+    <path d="M36 262 L30 390 M84 262 L90 390" stroke="#F3F5FA" stroke-width="30" stroke-linecap="round"/>
+  </g>
+  <g id="frente-mao">
+    <circle cx="60" cy="40" r="44" fill="#F3F5FA"/><circle cx="44" cy="34" r="6" fill="#16213A"/><circle cx="76" cy="34" r="6" fill="#16213A"/>
+    <rect x="0" y="96" width="120" height="170" rx="38" fill="#F3F5FA"/>
+    <path d="M10 126 L-24 240 M110 126 L160 10" stroke="#F3F5FA" stroke-width="28" stroke-linecap="round"/>
+    <path d="M36 262 L30 390 M84 262 L90 390" stroke="#F3F5FA" stroke-width="30" stroke-linecap="round"/>
+    <circle cx="162" cy="2" r="20" fill="#FFC94A"/>
+  </g>
+</defs></svg>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

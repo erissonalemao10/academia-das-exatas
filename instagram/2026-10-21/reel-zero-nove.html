@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · 0,999… é igual a 1?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .eq{display:grid; gap:22px; margin-top:44px;}
+  .eq .card{display:flex; justify-content:center; align-items:center; gap:24px; padding:28px 30px;}
+  .eq .x{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:40px; color:var(--red); text-align:center;}
+  .eq .formula{font-size:62px;}
+</style>
+</head>
+<body class="tema-matematica">
+<div class="reel" data-serie="MITO OU VERDADE?" data-ep="#03 · dízimas" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Zero vírgula nove nove nove, com noves para sempre, é igual a um. Mito ou verdade?">
+    <h1 style="margin-top:10px; font-size:96px;">Isso é <em>verdade</em>?</h1>
+    <div class="card" data-at="0.2" data-anim="pop" style="margin-top:50px; text-align:center; padding:60px 30px;">
+      <div class="big2" style="font-size:120px;">0,999… = 1</div>
+      <div style="font-size:32px; color:var(--ink-soft); margin-top:16px; font-weight:600;">com noves para sempre</div>
+    </div>
+    <div class="mv" data-at="s2" data-anim="pop" style="margin-top:50px;"><span class="chip ghost">MITO</span>ou<span class="chip">VERDADE</span></div>
+  </section>
+
+  <!-- 2 · VERDADE: 1/3 -->
+  <section class="cena" data-fala="*Verdade!* Vamos usar frações. Um terço é igual a zero vírgula três três três, com três para sempre.">
+    <div data-at="s1" data-anim="pop" style="margin-top:20px;"><span class="stamp">VERDADE</span></div>
+    <p class="body" data-at="s2" data-anim="up" style="margin-top:60px; font-size:42px; color:var(--paper);">Comece com uma fração conhecida:</p>
+    <div class="card" data-at="s3" data-anim="up" style="margin-top:30px; text-align:center; padding:44px 30px;">
+      <div class="formula" style="font-size:80px;"><span class="frac"><span>1</span><span>3</span></span> = 0,333…</div>
+    </div>
+  </section>
+
+  <!-- 3 · VEZES 3 -->
+  <section class="cena" data-fala="Agora multiplique os dois lados por três. Três terços é um. E zero vírgula três três três, vezes três, dá zero vírgula nove nove nove.">
+    <h2 style="margin-top:10px;">Multiplique por <em>3</em></h2>
+    <div class="eq">
+      <div class="card" data-at="s1" data-anim="up"><div class="formula"><span class="frac"><span>1</span><span>3</span></span> = 0,333…</div></div>
+      <div class="x" data-at="s1+0.8" data-anim="fade">× 3 &nbsp; dos dois lados</div>
+      <div class="card" data-at="s2" data-anim="up"><div class="formula"><span class="frac"><span>3</span><span>3</span></span> = 0,999…</div></div>
+      <div class="card" data-at="s3+0.6" data-anim="pop" style="border:4px solid var(--red);"><div class="formula" style="color:var(--red);">1 = 0,999…</div></div>
+    </div>
+  </section>
+
+  <!-- 4 · NADA NO MEIO -->
+  <section class="cena" data-fala="Outro jeito de ver: se fossem números diferentes, existiria algum número entre eles. Mas não existe nenhum. São só dois jeitos de escrever o *mesmo número*.">
+    <h2 style="margin-top:10px;">Não cabe <em>nada no meio</em></h2>
+    <svg viewBox="0 0 920 360" width="920" height="360" style="margin-top:40px;">
+      <path d="M40 200 H880" stroke="#1C2541" stroke-width="6"/>
+      <g font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#1C2541" text-anchor="middle">
+        <path d="M80 180 V220 M860 180 V220" stroke="#1C2541" stroke-width="6"/>
+        <text x="80" y="270">0,9</text><text x="860" y="270">1</text>
+        <g data-at="s1+0.4" data-anim="fade"><path d="M782 186 V214" stroke="#2F6CA8" stroke-width="5"/><text x="760" y="160" fill="#2F6CA8">0,99</text></g>
+        <g data-at="s1+0.9" data-anim="fade"><path d="M852 190 V210" stroke="#2F6CA8" stroke-width="4"/><text x="690" y="324" fill="#2F6CA8">0,999…</text><path d="M748 300 L850 216" stroke="#2F6CA8" stroke-width="3"/></g>
+      </g>
+      <g data-at="s2" data-anim="pop"><rect x="520" y="10" width="380" height="76" rx="16" fill="#0E8F80"/><text x="710" y="60" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#fff">nenhum número aqui</text></g>
+    </svg>
+    <p class="body" data-at="s3" data-anim="up" style="margin-top:30px; font-size:40px; text-align:center;"><b>0,999…</b> e <b>1</b>: o <b>mesmo número</b></p>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: quanto dá zero vírgula três três três mais zero vírgula seis seis seis, com as dízimas para sempre? Siga o perfil e se inscreva no canal para mais desafios.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">dízimas no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:76px;">0,333… + 0,666… = <em>?</em></h2>
+    <div class="r-ask" data-at="s1+1.0" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s2" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

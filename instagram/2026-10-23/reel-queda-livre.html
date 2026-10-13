@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Mais pesado cai mais rápido?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+</head>
+<body>
+<div class="reel" data-serie="MITO OU VERDADE?" data-ep="#05 · queda livre" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Se você soltar um martelo e uma pena da mesma altura, o martelo chega primeiro porque é mais pesado. Mito ou verdade?">
+    <h1 style="margin-top:10px; font-size:96px;">Mais pesado cai <em>mais rápido</em>?</h1>
+    <svg viewBox="0 0 920 420" width="920" height="400" style="margin-top:24px;">
+      <g transform="translate(300 70)"><use href="#martelo"/></g>
+      <g transform="translate(620 70)"><use href="#pena"/></g>
+      <path d="M300 170 V400 M620 170 V400" stroke="#4E5B78" stroke-width="4" stroke-dasharray="12 12"/>
+      <rect x="120" y="404" width="680" height="10" rx="5" fill="#4E5B78"/>
+      <text x="300" y="30" text-anchor="middle" class="lab" fill="#C9D1E3">martelo</text>
+      <text x="620" y="30" text-anchor="middle" class="lab" fill="#C9D1E3">pena</text>
+    </svg>
+    <div class="mv" data-at="s2" data-anim="pop"><span class="chip ghost">MITO</span>ou<span class="chip">VERDADE</span></div>
+  </section>
+
+  <!-- 2 · RESISTÊNCIA DO AR -->
+  <section class="cena" data-fala="*Mito!* Aqui na Terra, a pena demora por causa da *resistência do ar*, não por ser leve.">
+    <div data-at="s1" data-anim="pop" style="margin-top:20px;"><span class="stamp">MITO</span></div>
+    <svg viewBox="0 0 920 520" width="920" height="520" style="margin-top:40px;">
+      <g transform="translate(250 220)"><use href="#martelo"/></g>
+      <g transform="translate(640 220)"><use href="#pena"/></g>
+      <g data-at="s2" data-anim="fade" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="8">
+        <path d="M640 140 V40 M622 62 L640 36 L658 62" stroke="#6FA8C9"/>
+        <path d="M640 300 V380 M622 358 L640 384 L658 358" stroke="#FFC94A"/>
+        <path d="M250 150 V124 M236 136 L250 118 L264 136" stroke="#6FA8C9"/>
+        <path d="M250 300 V420 M232 398 L250 424 L268 398" stroke="#FFC94A"/>
+      </g>
+      <g data-at="s2+0.6" data-anim="fade">
+        <text x="672" y="62" class="lab" fill="#6FA8C9">resistência</text><text x="672" y="98" class="lab" fill="#6FA8C9">do ar</text>
+        <text x="690" y="370" class="lab" fill="#FFC94A">peso</text>
+        <text x="272" y="410" class="lab" fill="#FFC94A">peso</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 3 · MESMA ACELERAÇÃO -->
+  <section class="cena" data-fala="Sem ar, todos os corpos caem com a mesma aceleração, uns [10 m/s²|dez metros por segundo ao quadrado]. Galileu já defendia isso há quase [400 anos|quatrocentos anos].">
+    <h2 style="margin-top:10px;">Sem ar, <em>todos caem juntos</em></h2>
+    <svg viewBox="0 0 920 440" width="920" height="440" style="margin-top:20px;">
+      <g data-at="s1+0.3" data-anim="fade">
+        <circle cx="330" cy="40" r="34" fill="#E8384F" opacity=".25"/><circle cx="330" cy="90" r="34" fill="#E8384F" opacity=".4"/><circle cx="330" cy="190" r="34" fill="#E8384F" opacity=".6"/><circle cx="330" cy="370" r="34" fill="#E8384F"/>
+        <circle cx="590" cy="40" r="16" fill="#FFC94A" opacity=".25"/><circle cx="590" cy="90" r="16" fill="#FFC94A" opacity=".4"/><circle cx="590" cy="190" r="16" fill="#FFC94A" opacity=".6"/><circle cx="590" cy="370" r="16" fill="#FFC94A"/>
+        <path d="M250 40 H670 M250 90 H670 M250 190 H670 M250 370 H670" stroke="#4E5B78" stroke-width="3" stroke-dasharray="8 10"/>
+      </g>
+    </svg>
+    <div class="card" data-at="s1+1.0" data-anim="up" style="margin-top:30px; text-align:center; padding:30px;">
+      <div class="formula" style="font-size:56px;">a ≈ 10 m/s² <span style="font-size:36px; color:var(--ink-soft);">para todos</span></div>
+    </div>
+  </section>
+
+  <!-- 4 · APOLLO 15 -->
+  <section class="cena" data-fala="Em [1971|mil novecentos e setenta e um], um astronauta da missão Apollo 15 fez o teste na Lua, onde não há ar. Ele soltou um martelo e uma pena, e os dois chegaram *juntos* ao chão.">
+    <h2 style="margin-top:10px;">O teste na <em>Lua</em></h2>
+    <svg viewBox="0 0 920 620" width="920" height="620" style="margin-top:20px;">
+      <path d="M0 540 Q200 510 460 530 T920 520 V620 H0 Z" fill="#9AA6BF"/>
+      <circle cx="160" cy="580" r="22" fill="#7D889E"/><circle cx="760" cy="575" r="16" fill="#7D889E"/>
+      <text x="40" y="60" class="lab" fill="#C9D1E3">Apollo 15 · 1971</text>
+      <g data-at="s2" data-anim="fade"><g data-fx="cai"><g class="o"><g transform="translate(360 0)"><use href="#martelo"/></g></g><g class="o"><g transform="translate(560 0)"><use href="#pena"/></g></g></g></g>
+      <g data-at="s2+3.3" data-anim="pop"><rect x="300" y="100" width="320" height="70" rx="16" fill="#F3F5FA"/><text x="460" y="148" text-anchor="middle" class="lab" fill="#16213A">chegaram juntos</text></g>
+    </svg>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: se você soltar uma folha de papel aberta e outra amassada, qual chega primeiro? Siga o perfil e se inscreva no canal para mais desafios.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">cai no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:72px;">Papel aberto ou <em>amassado</em>: qual chega antes?</h2>
+    <div class="r-ask" data-at="s1+1.0" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s2" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="martelo"><rect x="-10" y="0" width="20" height="90" rx="6" fill="#C9A06B"/><rect x="-50" y="-8" width="100" height="38" rx="8" fill="#9AA6BF"/></g>
+  <g id="pena"><path d="M0 90 Q-34 40 0 -10 Q34 40 0 90 Z" fill="#F3F5FA"/><path d="M0 100 V-4" stroke="#9AA6BF" stroke-width="4"/></g>
+</defs></svg>
+<script>
+window.FX = {
+  // queda igual para os dois a partir do início da 2ª frase (≈ 2,2 s de queda na animação)
+  cai: (el, t, info) => {
+    const s2 = info.scene.sents[1] ? info.scene.sents[1].start - info.scene.start : 0;
+    const tt = Math.max(0, t - s2 - 0.3), y = Math.min(80 + 0.5 * 85 * tt * tt, 430);
+    el.querySelectorAll('.o').forEach(o => o.setAttribute('transform', `translate(0 ${y.toFixed(1)})`));
+  },
+};
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

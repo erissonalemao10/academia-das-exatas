@@ -1,0 +1,12 @@
+Por que o espelho troca esquerda e direita, mas não troca em cima e embaixo? 🪞
+
+Na verdade, ele não troca esquerda e direita: a mão do lado da janela continua do lado da janela na imagem. O espelho plano inverte frente e trás, e cada ponto da imagem fica à mesma distância do espelho, do outro lado. Por isso AMBULÂNCIA vem escrito ao contrário no capô: no retrovisor, aparece certo.
+
+🎯 Desafio: se você se afasta 1 m do espelho, quanto a sua imagem se afasta de você? Comenta!
+
+📺 Série Fenômenos explicados, episódio 8.
+
+👉 Segue @erisson.alemao.prof pra mais fenômenos de Física
+▶️ No YouTube: @erissonalemao
+
+#fisica #enem #enem2026 #vestibular #optica #espelhoplano #reflexao #fisicaparaoenem #curiosidades #ciencia #exatas #professordefisica

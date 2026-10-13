@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · 23 pessoas e o mesmo aniversário</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+</head>
+<body class="tema-matematica">
+<div class="reel" data-serie="MITO OU VERDADE?" data-ep="#04 · probabilidade" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Numa sala com só [23|vinte e três] pessoas, a chance de duas fazerem aniversário no mesmo dia passa de [50%|cinquenta por cento]. Mito ou verdade?">
+    <h1 style="margin-top:10px; font-size:84px;">23 pessoas: <em>50%</em> de chance de aniversário igual?</h1>
+    <svg viewBox="0 0 920 330" width="920" height="330" style="margin-top:24px;"><g id="gente"></g></svg>
+    <div class="mv" data-at="s2" data-anim="pop"><span class="chip ghost">MITO</span>ou<span class="chip">VERDADE</span></div>
+  </section>
+
+  <!-- 2 · VERDADE -->
+  <section class="cena" data-fala="*Verdade!* Parece pouco, porque o ano tem [365|trezentos e sessenta e cinco] dias. Mas o segredo é contar os *pares* de pessoas.">
+    <div data-at="s1" data-anim="pop" style="margin-top:20px;"><span class="stamp">VERDADE</span></div>
+    <div class="duo" style="margin-top:60px;">
+      <div class="card" data-at="s2" data-anim="up"><div class="k">DIAS NO ANO</div><div class="v">365</div></div>
+      <div class="card" data-at="s2+0.4" data-anim="up"><div class="k">PESSOAS</div><div class="v" style="color:var(--red);">23</div></div>
+    </div>
+    <p class="body" data-at="s3" data-anim="up" style="margin-top:44px; text-align:center; font-size:42px;">O segredo: contar os <b>pares</b></p>
+  </section>
+
+  <!-- 3 · PARES -->
+  <section class="cena" data-fala="Com [23|vinte e três] pessoas, dá para formar [253|duzentos e cinquenta e três] pares diferentes. Cada par é mais uma chance de coincidência.">
+    <h2 style="margin-top:10px;">São <em>253 pares</em></h2>
+    <svg viewBox="0 0 920 400" width="920" height="400" style="margin-top:20px;"><g id="rede" data-at="s1" data-anim="draw" data-dur="1.6"></g><g id="nos"></g></svg>
+    <div class="card" data-at="s1+1.2" data-anim="up" style="margin-top:24px; text-align:center; padding:30px;">
+      <div class="formula" style="font-size:56px;">23 × 22 ÷ 2 = <span style="color:var(--red);">253</span></div>
+    </div>
+  </section>
+
+  <!-- 4 · GRÁFICO -->
+  <section class="cena" data-fala="Fazendo a conta, a chance chega a uns [51%|cinquenta e um por cento]. Com [50|cinquenta] pessoas, passa de [97%|noventa e sete por cento]!">
+    <h2 style="margin-top:10px;">A chance <em>dispara</em></h2>
+    <svg viewBox="0 0 920 600" width="920" height="600" style="margin-top:24px;">
+      <g font-family="JetBrains Mono" font-weight="700" font-size="26" fill="#56607A">
+        <path d="M100 520 H880 M100 520 V40" stroke="#1C2541" stroke-width="4" fill="none"/>
+        <path d="M100 330 H880 M100 140 H880" stroke="#C9CFDB" stroke-width="2" stroke-dasharray="8 8"/>
+        <text x="88" y="528" text-anchor="end">0%</text><text x="88" y="338" text-anchor="end">50%</text><text x="88" y="148" text-anchor="end">100%</text>
+        <text x="100" y="562" text-anchor="middle">0</text><text x="360" y="562" text-anchor="middle">20</text><text x="620" y="562" text-anchor="middle">40</text><text x="880" y="562" text-anchor="middle">60</text>
+        <text x="880" y="596" text-anchor="end">pessoas na sala</text>
+      </g>
+      <path id="curva" d="" fill="none" stroke="#0E8F80" stroke-width="8" stroke-linecap="round" data-at="0.2" data-anim="draw" data-dur="2.2"/>
+      <g data-at="s1" data-anim="pop"><circle id="p23" r="14" fill="#1C2541"/><g id="l23"><rect x="-130" y="-92" width="260" height="66" rx="14" fill="#1C2541"/><text y="-48" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#fff">23 → 50,7%</text></g></g>
+      <g data-at="s2" data-anim="pop"><circle id="p50" r="14" fill="#0E8F80"/><g id="l50"><rect x="-200" y="20" width="260" height="66" rx="14" fill="#0E8F80"/><text x="-70" y="64" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="30" fill="#fff">50 → 97%</text></g></g>
+    </svg>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: na sua turma tem alguém que faz aniversário no mesmo dia que você? Siga o perfil e se inscreva no canal para mais desafios.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">probabilidade no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:72px;">Na sua turma tem <em>aniversário igual</em>?</h2>
+    <div class="r-ask" data-at="s1+1.0" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s2" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<script>
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  const add = (g, tag, a) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); g.appendChild(e); return e; };
+  // 23 pessoas (duas destacadas)
+  const gente = document.getElementById('gente');
+  for (let i = 0; i < 23; i++) {
+    const c = i % 8, r = Math.floor(i / 8), x = 70 + c * 112 + (r === 2 ? 56 : 0), y = 50 + r * 104, hl = i === 5 || i === 18;
+    const cor = hl ? '#0E8F80' : '#9AA6BF';
+    add(gente, 'circle', { cx: x, cy: y, r: 22, fill: cor });
+    add(gente, 'rect', { x: x - 30, y: y + 26, width: 60, height: 50, rx: 22, fill: cor });
+  }
+  // rede de pares (8 pessoas, 28 pares, só para ilustrar)
+  const rede = document.getElementById('rede'), nos = document.getElementById('nos'), P = [];
+  for (let i = 0; i < 8; i++) { const a = -Math.PI / 2 + i * Math.PI / 4; P.push([460 + 180 * Math.cos(a), 200 + 180 * Math.sin(a)]); }
+  for (let i = 0; i < 8; i++) for (let j = i + 1; j < 8; j++) add(rede, 'line', { x1: P[i][0], y1: P[i][1], x2: P[j][0], y2: P[j][1], stroke: '#2F6CA8', 'stroke-width': 3, opacity: .55 });
+  P.forEach(([x, y]) => add(nos, 'circle', { cx: x, cy: y, r: 20, fill: '#1C2541' }));
+  // curva da probabilidade de pelo menos um aniversário repetido
+  const X = n => 100 + n / 60 * 780, Y = p => 520 - p * 380;
+  const prob = n => { let q = 1; for (let k = 0; k < n; k++) q *= (365 - k) / 365; return 1 - q; };
+  let d = ''; for (let n = 0; n <= 60; n++) d += (n ? ' L' : 'M') + X(n).toFixed(1) + ' ' + Y(prob(n)).toFixed(1);
+  document.getElementById('curva').setAttribute('d', d);
+  const put = (id, n) => document.getElementById(id).setAttribute('transform', `translate(${X(n).toFixed(1)} ${Y(prob(n)).toFixed(1)})`);
+  document.getElementById('p23').setAttribute('cx', X(23)); document.getElementById('p23').setAttribute('cy', Y(prob(23)));
+  document.getElementById('p50').setAttribute('cx', X(50)); document.getElementById('p50').setAttribute('cy', Y(prob(50)));
+  put('l23', 23); put('l50', 50);
+})();
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

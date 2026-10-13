@@ -36,6 +36,26 @@ body{margin:0; background:#222;}
 .r-foot .brand{font-size:32px;}
 .capa .r-cap{display:none;}
 
+/* peças comuns das cenas */
+.lab{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px;}
+.mv{display:flex; align-items:center; justify-content:center; gap:26px; margin-top:26px;
+  font-family:'Archivo',sans-serif; font-weight:900; font-size:46px; color:var(--paper-dim);}
+.mv .chip{font-size:44px; padding:12px 34px;}
+.stamp{display:inline-block; font-family:'Archivo',sans-serif; font-weight:900; font-size:92px; color:var(--red);
+  border:10px solid var(--red); border-radius:22px; padding:4px 34px; letter-spacing:4px; transform:rotate(-6deg);}
+.duo{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+.duo .card{padding:30px 24px; text-align:center;}
+.duo .k{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:27px; color:var(--ink-soft); line-height:1.25;}
+.duo .v{font-family:'Archivo',sans-serif; font-weight:900; font-size:62px; margin-top:8px; white-space:nowrap;}
+.duo .u{font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--ink-soft); margin-top:4px;}
+.big2{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:68px; color:var(--ink); white-space:nowrap;}
+
+/* selo de CTA leve no topo (data-selo na .reel): ícones + "Siga + inscreva-se", ~4 s, sem narração */
+.r-selo{position:absolute; right:80px; top:200px; display:flex; align-items:center; gap:12px; opacity:0;
+  background:#FFFFFF; color:#16213A; border-radius:999px; padding:8px 24px 8px 12px;
+  font-family:'Inter',sans-serif; font-weight:800; font-size:33px; box-shadow:0 10px 26px rgba(3,9,22,.35); transform-origin:right center;}
+.r-selo svg{width:58px; height:58px; flex:none;}
+
 /* cartão final de CTA: desafio para comentar + seguir no Instagram e se inscrever no YouTube */
 .r-ask{display:flex; align-items:center; gap:24px; font-size:38px; font-weight:800; color:var(--paper);}
 .r-ask svg{width:64px; height:64px; flex:none; color:var(--red);}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Por que o ventilador refresca?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+</head>
+<body>
+<div class="reel" data-ep="#09 · termologia" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="O ventilador não esfria o ar do quarto. Então por que ele refresca?">
+    <h1 style="margin-top:10px; font-size:86px;">Se não esfria o ar, por que o ventilador <em>refresca</em>?</h1>
+    <svg viewBox="0 0 920 440" width="920" height="400" style="margin-top:16px;">
+      <use href="#ventilador" x="0" y="0"/>
+      <g stroke="#6FA8C9" stroke-width="7" stroke-linecap="round" fill="none" data-fx="vento">
+        <path class="v" d="M560 120 q60 -20 120 0 t120 0"/><path class="v" d="M560 200 q60 -20 120 0 t120 0"/><path class="v" d="M560 280 q60 -20 120 0 t120 0"/>
+      </g>
+    </svg>
+  </section>
+
+  <!-- 2 · NÃO ESFRIA -->
+  <section class="cena" data-fala="Ele só empurra o ar de um lado para o outro. O motor ainda *aquece* o ambiente um pouquinho.">
+    <h2 style="margin-top:10px;">O ar continua <em>na mesma temperatura</em></h2>
+    <div class="duo" style="margin-top:50px;">
+      <div class="card" data-at="s1" data-anim="up"><div class="k">VENTILADOR<br>DESLIGADO</div><div class="v">28 °C</div></div>
+      <div class="card" data-at="s1+0.5" data-anim="up"><div class="k">VENTILADOR<br>LIGADO</div><div class="v">28 °C</div></div>
+    </div>
+    <div class="card" data-at="s2" data-anim="up" style="margin-top:30px; display:flex; gap:24px; align-items:center; padding:28px 36px;">
+      <svg viewBox="0 0 48 48" width="70" height="70" style="flex:none;"><circle cx="24" cy="24" r="21" fill="#E8384F"/><path d="M24 12 V28 M17 21 L24 12 L31 21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div style="font-size:36px; font-weight:800; line-height:1.25;">O motor libera um pouco de <span style="color:var(--red);">calor</span></div>
+    </div>
+  </section>
+
+  <!-- 3 · CONVECÇÃO -->
+  <section class="cena" data-fala="Seu corpo aquece o ar que fica colado na pele. O vento troca esse ar quente por ar novo, e você perde calor mais rápido.">
+    <h2 style="margin-top:10px;">O vento leva o <em>ar quente</em> da pele</h2>
+    <svg viewBox="0 0 920 520" width="920" height="520" style="margin-top:30px;">
+      <path d="M140 520 V240 Q140 140 240 140 H460 Q560 140 560 240 V520 Z" fill="#C9D1E3"/>
+      <circle cx="350" cy="70" r="66" fill="#C9D1E3"/>
+      <path d="M110 520 V240 Q110 110 240 110 H460 Q590 110 590 240 V520" fill="none" stroke="#E8384F" stroke-width="18" opacity=".55" data-at="s1+0.3" data-anim="draw" data-dur="1.2"/>
+      <text x="610" y="190" class="lab" fill="#E8384F" data-at="s1+1.0" data-anim="fade">ar quente</text>
+      <g data-at="s2" data-anim="fade" stroke="#6FA8C9" stroke-width="8" stroke-linecap="round" fill="none">
+        <path d="M900 260 H660 M680 240 L656 260 L680 280"/><path d="M900 360 H660 M680 340 L656 360 L680 380"/><path d="M900 460 H660 M680 440 L656 460 L680 480"/>
+      </g>
+      <text x="780" y="322" text-anchor="middle" class="lab" fill="#6FA8C9" data-at="s2" data-anim="fade">ar novo</text>
+    </svg>
+  </section>
+
+  <!-- 4 · EVAPORAÇÃO -->
+  <section class="cena" data-fala="E o vento acelera a *evaporação do suor*. Para evaporar, a água tira calor da sua pele. É o mesmo motivo de sentir frio ao sair do banho.">
+    <h2 style="margin-top:10px;">O suor <em>evapora</em> e leva calor</h2>
+    <svg viewBox="0 0 920 500" width="920" height="500" style="margin-top:30px;">
+      <rect x="0" y="360" width="920" height="140" rx="20" fill="#E8B8A0"/>
+      <text x="460" y="450" text-anchor="middle" class="lab" fill="#7A3B2E">pele</text>
+      <g fill="#6FA8C9"><path d="M180 360 q-20 -30 0 -50 q20 20 0 50 Z"/><path d="M420 360 q-20 -30 0 -50 q20 20 0 50 Z"/><path d="M660 360 q-20 -30 0 -50 q20 20 0 50 Z"/></g>
+      <g data-fx="vapor" data-at="s1+0.4" data-anim="fade"><circle class="b" r="10" fill="#C9D1E3"/><circle class="b" r="10" fill="#C9D1E3"/><circle class="b" r="10" fill="#C9D1E3"/><circle class="b" r="10" fill="#C9D1E3"/><circle class="b" r="10" fill="#C9D1E3"/><circle class="b" r="10" fill="#C9D1E3"/></g>
+      <g data-at="s2" data-anim="fade" stroke="#E8384F" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M300 340 V200 M282 220 L300 196 L318 220"/><path d="M540 340 V200 M522 220 L540 196 L558 220"/>
+      </g>
+      <text x="420" y="170" text-anchor="middle" class="lab" fill="#E8384F" data-at="s2" data-anim="fade">calor sai da pele</text>
+    </svg>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: num quarto vazio, deixar o ventilador ligado esfria o quarto? Siga o perfil e se inscreva no canal para mais fenômenos.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">cai no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:72px;">Ventilador ligado esfria o <em>quarto vazio</em>?</h2>
+    <div class="r-ask" data-at="s1+1.0" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s2" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="ventilador">
+    <rect x="250" y="400" width="200" height="30" rx="15" fill="#4E5B78"/>
+    <rect x="335" y="250" width="30" height="160" fill="#4E5B78"/>
+    <circle cx="350" cy="200" r="170" fill="none" stroke="#C9D1E3" stroke-width="8"/>
+    <g class="pas"><path d="M350 200 Q300 80 350 50 Q400 80 350 200 Z" fill="#6FA8C9"/><path d="M350 200 Q300 80 350 50 Q400 80 350 200 Z" fill="#6FA8C9" transform="rotate(120 350 200)"/><path d="M350 200 Q300 80 350 50 Q400 80 350 200 Z" fill="#6FA8C9" transform="rotate(240 350 200)"/></g>
+    <circle cx="350" cy="200" r="26" fill="#F3F5FA"/>
+  </g>
+</defs></svg>
+<script>
+window.FX = {
+  vento: (el, t) => {
+    el.querySelectorAll('.v').forEach((p, i) => { const ph = (t * 0.9 + i * 0.33) % 1; p.setAttribute('transform', `translate(${(ph * 60).toFixed(1)} 0)`); p.setAttribute('opacity', (Math.sin(ph * Math.PI)).toFixed(2)); });
+    document.querySelectorAll('#ventilador .pas').forEach(g => g.setAttribute('transform', `rotate(${(t * 720) % 360} 350 200)`));
+  },
+  vapor: (el, t) => el.querySelectorAll('.b').forEach((c, i) => {
+    const ph = (t * 0.5 + i / 6) % 1, x0 = [180, 420, 660][i % 3] + (i > 2 ? 30 : -20);
+    c.setAttribute('cx', (x0 + Math.sin(ph * 6 + i) * 14).toFixed(1)); c.setAttribute('cy', (300 - ph * 160).toFixed(1));
+    c.setAttribute('r', (8 + ph * 12).toFixed(1)); c.setAttribute('opacity', ((1 - ph) * 0.8).toFixed(2));
+  }),
+};
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

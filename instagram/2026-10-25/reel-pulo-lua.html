@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Na Lua você pula 6 vezes mais alto?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+</head>
+<body>
+<div class="reel" data-serie="MITO OU VERDADE?" data-ep="#07 · gravitação" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Na Lua, você pularia seis vezes mais alto do que aqui na Terra. Mito ou verdade?">
+    <h1 style="margin-top:10px; font-size:92px;">Na Lua, você pula <em>6 vezes</em> mais alto?</h1>
+    <svg viewBox="0 0 920 400" width="920" height="380" style="margin-top:20px;">
+      <path d="M0 360 Q230 340 460 356 T920 350 V400 H0 Z" fill="#9AA6BF"/>
+      <path d="M200 340 Q260 90 320 340" fill="none" stroke="#FFC94A" stroke-width="5" stroke-dasharray="12 10" data-at="0.4" data-anim="draw" data-dur="1.0"/>
+      <path d="M560 340 Q620 290 680 340" fill="none" stroke="#6FA8C9" stroke-width="5" stroke-dasharray="12 10" data-at="0.4" data-anim="draw" data-dur="0.6"/>
+      <g transform="translate(260 150)"><use href="#boneco"/></g>
+      <g transform="translate(620 280) scale(.8)"><use href="#boneco"/></g>
+      <text x="260" y="396" text-anchor="middle" class="lab" fill="#16213A">Lua</text>
+      <text x="620" y="396" text-anchor="middle" class="lab" fill="#16213A">Terra</text>
+    </svg>
+    <div class="mv" data-at="s2" data-anim="pop"><span class="chip ghost">MITO</span>ou<span class="chip">VERDADE</span></div>
+  </section>
+
+  <!-- 2 · GRAVIDADE 6× MENOR -->
+  <section class="cena" data-fala="*Verdade*, com o mesmo impulso no pulo. A gravidade na Lua é uns [6 vezes|seis vezes] menor que a da Terra: cerca de [1,6 m/s²|um vírgula seis metros por segundo ao quadrado].">
+    <div data-at="s1" data-anim="pop" style="margin-top:20px;"><span class="stamp">VERDADE</span></div>
+    <div class="duo" style="margin-top:60px;">
+      <div class="card" data-at="s2" data-anim="up"><div class="k">TERRA</div><div class="v">9,8</div><div class="u">m/s²</div></div>
+      <div class="card" data-at="s2+0.5" data-anim="up"><div class="k">LUA</div><div class="v" style="color:var(--red);">1,6</div><div class="u">m/s²</div></div>
+    </div>
+    <p class="body" data-at="s2+1.4" data-anim="up" style="margin-top:44px; text-align:center; font-size:40px;">9,8 ÷ 1,6 ≈ <b>6</b></p>
+  </section>
+
+  <!-- 3 · ALTURA × GRAVIDADE -->
+  <section class="cena" data-fala="Com a mesma velocidade de saída, a altura do pulo é *inversamente proporcional* à gravidade. Gravidade seis vezes menor, altura seis vezes maior.">
+    <h2 style="margin-top:10px;">Menos gravidade, <em>mais altura</em></h2>
+    <div class="card" data-at="s1" data-anim="up" style="margin-top:50px; text-align:center; padding:44px 30px;">
+      <div class="formula" style="font-size:84px;">h = <span class="frac"><span>v²</span><span>2g</span></span></div>
+    </div>
+    <div class="rows big" style="margin-top:34px;" data-at="s2" data-anim="up">
+      <div class="row"><span class="nm">gravidade</span><span class="fx">g ÷ 6</span></div>
+      <div class="row"><span class="nm">altura do pulo</span><span class="fx" style="color:var(--red);">h × 6</span></div>
+    </div>
+  </section>
+
+  <!-- 4 · 50 CM → 3 M -->
+  <section class="cena" data-fala="Quem pula [50 cm|cinquenta centímetros] aqui pularia uns [3 m|três metros] lá. Mas os astronautas pulavam bem menos, por causa do traje pesado e duro.">
+    <h2 style="margin-top:10px;">50 <span style="text-transform:none">cm</span> aqui, <em>3 <span style="text-transform:none">m</span></em> lá</h2>
+    <svg viewBox="0 0 920 600" width="920" height="600" style="margin-top:20px;">
+      <path d="M80 560 H840" stroke="#4E5B78" stroke-width="4"/>
+      <rect x="220" y="472" width="140" height="88" rx="10" fill="#6FA8C9" data-at="s1" data-anim="up"/>
+      <rect x="560" y="32" width="140" height="528" rx="10" fill="#E8384F" data-at="s1+0.6" data-anim="up"/>
+      <text x="290" y="456" text-anchor="middle" class="lab" fill="#F3F5FA" data-at="s1" data-anim="fade">50 cm</text>
+      <text x="630" y="300" text-anchor="middle" class="lab" fill="#fff" data-at="s1+0.6" data-anim="fade">3 m</text>
+      <text x="290" y="596" text-anchor="middle" class="lab" fill="#C9D1E3">Terra</text>
+      <text x="630" y="596" text-anchor="middle" class="lab" fill="#C9D1E3">Lua</text>
+    </svg>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: no planeta Júpiter, a gravidade é umas [2,5 vezes|duas vezes e meia] maior. Quanto você pularia lá? Siga o perfil e se inscreva no canal para mais desafios.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">gravitação no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:70px;">Em Júpiter (<span style="text-transform:none">g × 2,5</span>), você pularia <em>quanto</em>?</h2>
+    <div class="r-ask" data-at="s2+0.5" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s3" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <g id="boneco"><circle cx="0" cy="0" r="26" fill="#F3F5FA"/><path d="M0 26 V100 M0 46 L-40 80 M0 46 L40 80 M0 100 L-30 160 M0 100 L30 160" stroke="#F3F5FA" stroke-width="16" stroke-linecap="round"/></g>
+</defs></svg>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>

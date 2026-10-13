@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reel · Por que não existe som no espaço?</title>
+<link href="../_modelo/fonts/fonts.css" rel="stylesheet">
+<link href="../_modelo/base.css" rel="stylesheet">
+<link href="../_modelo/reel.css" rel="stylesheet">
+<style>
+  .tri{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px;}
+  .tri .card{padding:30px 16px; text-align:center;}
+  .tri .k{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:28px; color:var(--ink-soft);}
+  .tri .v{font-family:'Archivo',sans-serif; font-weight:900; font-size:46px; margin-top:8px; white-space:nowrap;}
+  .tri .u{font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="reel" data-ep="#12 · ondas" data-selo="2">
+
+  <!-- 1 · GANCHO -->
+  <section class="cena" data-fala="Nos filmes, as explosões no espaço fazem um barulhão. Mas no espaço de verdade, você não ouviria nada. Por quê?">
+    <h1 style="margin-top:10px; font-size:96px;">Por que não existe <em>som</em> no espaço?</h1>
+    <svg viewBox="0 0 920 460" width="920" height="440" style="margin-top:20px;">
+      <rect x="0" y="0" width="920" height="460" rx="30" fill="#071429"/>
+      <g fill="#F3F5FA"><circle cx="80" cy="60" r="3"/><circle cx="830" cy="90" r="4"/><circle cx="160" cy="380" r="3"/><circle cx="720" cy="400" r="3"/><circle cx="600" cy="50" r="2"/></g>
+      <g data-fx="boom" transform="translate(460 230)"><path class="b" d="M0 -150 L36 -60 L130 -90 L70 -10 L150 50 L50 50 L60 150 L0 80 L-60 150 L-50 50 L-150 50 L-70 -10 L-130 -90 L-36 -60 Z" fill="#FFC94A"/><path d="M0 -80 L20 -30 L70 -40 L36 4 L80 30 L26 30 L30 80 L0 44 L-30 80 L-26 30 L-80 30 L-36 4 L-70 -40 L-20 -30 Z" fill="#E8384F"/></g>
+      <g data-at="s3" data-anim="pop"><text x="760" y="160" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="64" fill="#F3F5FA">BUM?</text><path d="M680 170 L840 110" stroke="#E8384F" stroke-width="10" stroke-linecap="round"/></g>
+    </svg>
+  </section>
+
+  <!-- 2 · ONDA MECÂNICA -->
+  <section class="cena" data-fala="O som é uma *onda mecânica*: ele precisa de um meio, como o ar, a água ou o metal, para se propagar.">
+    <h2 style="margin-top:10px;">O som precisa de um <em>meio</em></h2>
+    <div class="tri">
+      <div class="card" data-at="s1+1.2" data-anim="up"><div class="k">AR</div><div class="v">340</div><div class="u">m/s</div></div>
+      <div class="card" data-at="s1+1.6" data-anim="up"><div class="k">ÁGUA</div><div class="v">≈ 1 500</div><div class="u">m/s</div></div>
+      <div class="card" data-at="s1+2.0" data-anim="up"><div class="k">AÇO</div><div class="v">≈ 5 900</div><div class="u">m/s</div></div>
+    </div>
+    <p class="body" data-at="s1+2.6" data-anim="up" style="margin-top:40px; text-align:center; font-size:38px;">velocidade do som em cada meio</p>
+  </section>
+
+  <!-- 3 · COMPRESSÕES -->
+  <section class="cena" data-fala="Quando algo vibra, empurra as moléculas do ar, que empurram as vizinhas. Essa sequência de compressões é o que chega ao seu ouvido.">
+    <h2 style="margin-top:10px;">Uma molécula <em>empurra</em> a outra</h2>
+    <svg viewBox="0 0 920 460" width="920" height="460" style="margin-top:30px;">
+      <g transform="translate(40 150)"><rect x="0" y="20" width="60" height="120" rx="10" fill="#9AA6BF"/><path d="M60 40 L120 0 V160 L60 120 Z" fill="#C9D1E3"/></g>
+      <g id="moleculas" data-fx="onda"></g>
+      <g transform="translate(860 230)"><path d="M-30 -70 Q40 -70 40 0 Q40 50 0 60 Q-20 64 -20 40 Q-20 20 0 10 Q10 0 0 -20 Q-14 -34 -30 -20" fill="none" stroke="#F3F5FA" stroke-width="10" stroke-linecap="round"/></g>
+      <text x="460" y="440" text-anchor="middle" class="lab" fill="#C9D1E3" data-at="s2" data-anim="fade">compressão → compressão → ouvido</text>
+    </svg>
+  </section>
+
+  <!-- 4 · VÁCUO -->
+  <section class="cena" data-fala="No espaço quase não há moléculas: é praticamente *vácuo*. Sem meio, o som não viaja. Já a luz é onda eletromagnética e atravessa o vácuo: por isso vemos o Sol, mas não ouvimos nada dele.">
+    <h2 style="margin-top:10px;">No vácuo: <em>luz sim, som não</em></h2>
+    <svg viewBox="0 0 920 360" width="920" height="360" style="margin-top:30px;">
+      <rect x="0" y="0" width="920" height="360" rx="30" fill="#071429"/>
+      <circle cx="140" cy="180" r="90" fill="#FFC94A"/>
+      <g data-at="s3" data-anim="draw" data-dur="1.0" stroke="#FFC94A" stroke-width="6"><path d="M250 140 H700"/><path d="M250 220 H700"/></g>
+      <circle cx="780" cy="180" r="56" fill="#2F6CA8"/><path d="M748 160 q20 -20 40 0 q10 20 30 10" fill="none" stroke="#0E8F80" stroke-width="10"/>
+    </svg>
+    <div class="duo" style="margin-top:30px;">
+      <div class="card" data-at="s3" data-anim="up"><div class="k">LUZ</div><div style="font-size:36px; font-weight:800; margin-top:8px; color:#1F7A4D;">atravessa o vácuo</div></div>
+      <div class="card" data-at="s1+0.8" data-anim="up"><div class="k">SOM</div><div style="font-size:36px; font-weight:800; margin-top:8px; color:var(--red);">precisa de meio</div></div>
+    </div>
+  </section>
+
+  <!-- 5 · DESAFIO E CTA -->
+  <section class="cena" data-hold="1.5" data-fala="Comente: dois astronautas encostam os capacetes. Eles conseguem se ouvir? Siga o perfil e se inscreva no canal para mais fenômenos.">
+    <div style="margin-top:4px; display:flex; gap:16px;"><span class="chip">DESAFIO</span><span class="chip ghost">ondas no ENEM</span></div>
+    <h2 style="margin-top:26px; font-size:72px;">Capacete com capacete: dá para <em>ouvir</em>?</h2>
+    <div class="r-ask" data-at="s2+0.5" data-anim="up" style="margin-top:34px;"><svg><use href="#ico-chat"/></svg>Comente a sua resposta</div>
+    <div class="r-social" data-at="s3" data-anim="up" style="margin-top:38px;">
+      <div class="net"><svg><use href="#ico-ig"/></svg><div><div class="k">Siga no Instagram</div><div class="h">@erisson.alemao.prof</div></div></div>
+      <div class="net"><svg><use href="#ico-yt"/></svg><div><div class="k">Inscreva-se no YouTube</div><div class="h">@erissonalemao</div></div></div>
+    </div>
+  </section>
+
+</div>
+<script>
+(function(){
+  const NS = 'http://www.w3.org/2000/svg', g = document.getElementById('moleculas');
+  for (let c = 0; c < 26; c++) for (let r = 0; r < 6; r++) {
+    const e = document.createElementNS(NS, 'circle');
+    e.setAttribute('r', 7); e.setAttribute('fill', '#6FA8C9'); e.dataset.x = 190 + c * 24; e.setAttribute('cy', 110 + r * 46);
+    g.appendChild(e);
+  }
+})();
+window.FX = {
+  boom: (el, t) => { const s = 0.9 + 0.12 * Math.sin(t * 6); el.setAttribute('transform', `translate(460 230) scale(${s.toFixed(3)})`); },
+  onda: (el, t) => el.querySelectorAll('circle').forEach(c => {
+    const x = +c.dataset.x; c.setAttribute('cx', (x + 9 * Math.sin(2 * Math.PI * (x / 160 - t * 0.8))).toFixed(1));
+  }),
+};
+</script>
+<script src="../_modelo/reel.js"></script>
+</body>
+</html>
