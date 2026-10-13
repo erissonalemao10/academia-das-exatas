@@ -1,0 +1,857 @@
+{
+ "periodo": "outubro",
+ "subtitulo": "11 a 25 de outubro",
+ "commit": "6cffa01e2b599dec421a5cbc929f6153f44668c5",
+ "nota": "Tudo o que <b>não sai pelo Metricool</b> em outubro, num lugar só. De 11 a 18/10: os posts que passaram do limite de 20 publicações (viraram rascunho lá). De 19 a 25/10: <b>2 vídeos por dia</b>, os mesmos no Instagram e no YouTube, às 12h e às 18h. Se algum dia já passou e o post não saiu, publique quando der ou pule.",
+ "dias": [
+  [
+   "2026-10-11",
+   "Dom 11/10",
+   ""
+  ],
+  [
+   "2026-10-12",
+   "Seg 12/10",
+   "Dia das Crianças"
+  ],
+  [
+   "2026-10-13",
+   "Ter 13/10",
+   ""
+  ],
+  [
+   "2026-10-14",
+   "Qua 14/10",
+   ""
+  ],
+  [
+   "2026-10-15",
+   "Qui 15/10",
+   "Dia do Professor"
+  ],
+  [
+   "2026-10-16",
+   "Sex 16/10",
+   "véspera da OBMEP"
+  ],
+  [
+   "2026-10-17",
+   "Sáb 17/10",
+   "2ª fase da OBMEP"
+  ],
+  [
+   "2026-10-18",
+   "Dom 18/10",
+   ""
+  ],
+  [
+   "2026-10-19",
+   "Seg 19/10",
+   "CTA inicial completo"
+  ],
+  [
+   "2026-10-20",
+   "Ter 20/10",
+   ""
+  ],
+  [
+   "2026-10-21",
+   "Qua 21/10",
+   ""
+  ],
+  [
+   "2026-10-22",
+   "Qui 22/10",
+   ""
+  ],
+  [
+   "2026-10-23",
+   "Sex 23/10",
+   ""
+  ],
+  [
+   "2026-10-24",
+   "Sáb 24/10",
+   ""
+  ],
+  [
+   "2026-10-25",
+   "Dom 25/10",
+   ""
+  ]
+ ],
+ "posts": [
+  [
+   "2026-10-11",
+   "20h",
+   "car",
+   "simulado-semana"
+  ],
+  [
+   "2026-10-12",
+   "10h",
+   "car",
+   "tijolo"
+  ],
+  [
+   "2026-10-12",
+   "12h",
+   "car",
+   "valores-fisica"
+  ],
+  [
+   "2026-10-12",
+   "16h",
+   "yt",
+   "reel-trovao"
+  ],
+  [
+   "2026-10-12",
+   "18h",
+   "reel",
+   "reel-trovao"
+  ],
+  [
+   "2026-10-13",
+   "10h",
+   "car",
+   "fracoes-porcentagem"
+  ],
+  [
+   "2026-10-13",
+   "12h",
+   "car",
+   "carros-encontro"
+  ],
+  [
+   "2026-10-13",
+   "16h",
+   "yt",
+   "reel-astronauta"
+  ],
+  [
+   "2026-10-13",
+   "18h",
+   "reel",
+   "reel-astronauta"
+  ],
+  [
+   "2026-10-14",
+   "10h",
+   "car",
+   "lirio-lago"
+  ],
+  [
+   "2026-10-14",
+   "12h",
+   "car",
+   "angulos-notaveis"
+  ],
+  [
+   "2026-10-14",
+   "16h",
+   "yt",
+   "reel-fases-lua"
+  ],
+  [
+   "2026-10-14",
+   "18h",
+   "reel",
+   "reel-fases-lua"
+  ],
+  [
+   "2026-10-15",
+   "10h",
+   "car",
+   "dia-do-professor"
+  ],
+  [
+   "2026-10-15",
+   "12h",
+   "car",
+   "caderno-caneta"
+  ],
+  [
+   "2026-10-15",
+   "16h",
+   "yt",
+   "reel-arco-iris"
+  ],
+  [
+   "2026-10-15",
+   "18h",
+   "reel",
+   "reel-arco-iris"
+  ],
+  [
+   "2026-10-16",
+   "10h",
+   "car",
+   "obmep-ideias"
+  ],
+  [
+   "2026-10-16",
+   "12h",
+   "car",
+   "algarismo-unidades"
+  ],
+  [
+   "2026-10-16",
+   "16h",
+   "yt",
+   "reel-panela-pressao"
+  ],
+  [
+   "2026-10-16",
+   "18h",
+   "reel",
+   "reel-panela-pressao"
+  ],
+  [
+   "2026-10-17",
+   "10h",
+   "car",
+   "obmep-hoje"
+  ],
+  [
+   "2026-10-17",
+   "18h",
+   "car",
+   "prefixos-si"
+  ],
+  [
+   "2026-10-18",
+   "12h",
+   "car",
+   "tabuleiro"
+  ],
+  [
+   "2026-10-18",
+   "18h",
+   "car",
+   "simulado-semana"
+  ],
+  [
+   "2026-10-19",
+   "12h",
+   "reel",
+   "reel-papel-lua"
+  ],
+  [
+   "2026-10-19",
+   "12h",
+   "yt",
+   "reel-papel-lua"
+  ],
+  [
+   "2026-10-19",
+   "18h",
+   "reel",
+   "reel-gelo-flutua"
+  ],
+  [
+   "2026-10-19",
+   "18h",
+   "yt",
+   "reel-gelo-flutua"
+  ],
+  [
+   "2026-10-20",
+   "12h",
+   "reel",
+   "reel-raio"
+  ],
+  [
+   "2026-10-20",
+   "12h",
+   "yt",
+   "reel-raio"
+  ],
+  [
+   "2026-10-20",
+   "18h",
+   "reel",
+   "reel-micro-ondas"
+  ],
+  [
+   "2026-10-20",
+   "18h",
+   "yt",
+   "reel-micro-ondas"
+  ],
+  [
+   "2026-10-21",
+   "12h",
+   "reel",
+   "reel-zero-nove"
+  ],
+  [
+   "2026-10-21",
+   "12h",
+   "yt",
+   "reel-zero-nove"
+  ],
+  [
+   "2026-10-21",
+   "18h",
+   "reel",
+   "reel-espelho"
+  ],
+  [
+   "2026-10-21",
+   "18h",
+   "yt",
+   "reel-espelho"
+  ],
+  [
+   "2026-10-22",
+   "12h",
+   "reel",
+   "reel-aniversario"
+  ],
+  [
+   "2026-10-22",
+   "12h",
+   "yt",
+   "reel-aniversario"
+  ],
+  [
+   "2026-10-22",
+   "18h",
+   "reel",
+   "reel-ventilador"
+  ],
+  [
+   "2026-10-22",
+   "18h",
+   "yt",
+   "reel-ventilador"
+  ],
+  [
+   "2026-10-23",
+   "12h",
+   "reel",
+   "reel-queda-livre"
+  ],
+  [
+   "2026-10-23",
+   "12h",
+   "yt",
+   "reel-queda-livre"
+  ],
+  [
+   "2026-10-23",
+   "18h",
+   "reel",
+   "reel-estrelas"
+  ],
+  [
+   "2026-10-23",
+   "18h",
+   "yt",
+   "reel-estrelas"
+  ],
+  [
+   "2026-10-24",
+   "12h",
+   "reel",
+   "reel-area-quadrado"
+  ],
+  [
+   "2026-10-24",
+   "12h",
+   "yt",
+   "reel-area-quadrado"
+  ],
+  [
+   "2026-10-24",
+   "18h",
+   "reel",
+   "reel-led"
+  ],
+  [
+   "2026-10-24",
+   "18h",
+   "yt",
+   "reel-led"
+  ],
+  [
+   "2026-10-25",
+   "12h",
+   "reel",
+   "reel-pulo-lua"
+  ],
+  [
+   "2026-10-25",
+   "12h",
+   "yt",
+   "reel-pulo-lua"
+  ],
+  [
+   "2026-10-25",
+   "18h",
+   "reel",
+   "reel-som-espaco"
+  ],
+  [
+   "2026-10-25",
+   "18h",
+   "yt",
+   "reel-som-espaco"
+  ]
+ ],
+ "youtube": {
+  "reel-trovao": {
+   "ep": 1,
+   "title": "Por que o trovão vem depois do relâmpago? ⚡ Calcule a distância do raio",
+   "body": "Por que o trovão vem depois do relâmpago? Luz e som nascem juntos no raio, mas a luz é quase 900 mil vezes mais rápida que o som. Daí vem o truque: conte os segundos entre o clarão e o trovão e divida por 3. O resultado é a distância do raio em quilômetros.",
+   "desafio": "🎯 Desafio: você contou 9 segundos. A que distância caiu o raio? Responda nos comentários!\n⚠️ Trovão quase junto com o clarão = raio perto. Procure abrigo.",
+   "hashtags": "#fisica #curiosidades #enem #trovao #shorts",
+   "tags": [
+    "por que o trovão vem depois do relâmpago",
+    "trovão e relâmpago",
+    "distância do raio",
+    "velocidade do som",
+    "velocidade da luz",
+    "raio",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "vestibular",
+    "ondas sonoras",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-astronauta": {
+   "ep": 2,
+   "title": "Por que o astronauta flutua no espaço? Não é falta de gravidade! 🧑‍🚀",
+   "body": "Por que os astronautas flutuam no espaço? Não é falta de gravidade! Na Estação Espacial Internacional, a uns 400 km de altura, a gravidade da Terra ainda vale quase 90% da que você sente aqui no chão. O segredo é a queda livre: a estação e os astronautas caem juntos o tempo todo, mas andam de lado tão rápido (uns 28 mil km/h) que nunca chegam ao chão. Isso é uma órbita.",
+   "desafio": "🎯 Desafio: na superfície da Lua, a sua massa muda ou só o seu peso? Responda nos comentários!",
+   "hashtags": "#fisica #curiosidades #astronauta #enem #shorts",
+   "tags": [
+    "por que o astronauta flutua",
+    "astronauta flutuando",
+    "gravidade no espaço",
+    "estação espacial internacional",
+    "queda livre",
+    "órbita",
+    "gravidade",
+    "gravitação",
+    "peso e massa",
+    "espaço",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-fases-lua": {
+   "ep": 3,
+   "title": "Como acontecem as fases da Lua? 🌙 Não é a sombra da Terra!",
+   "body": "Como acontecem as fases da Lua? Não é a sombra da Terra! O Sol sempre ilumina metade da Lua. Conforme ela gira em torno da Terra, nós vemos essa metade iluminada de ângulos diferentes: inteira na lua cheia, quase nada na lua nova. A sombra da Terra só aparece na Lua durante um eclipse lunar.",
+   "desafio": "🎯 Desafio: em qual fase da Lua pode acontecer um eclipse solar? Responda nos comentários!",
+   "hashtags": "#fasesdalua #astronomia #curiosidades #fisica #shorts",
+   "tags": [
+    "fases da lua",
+    "como acontecem as fases da lua",
+    "lua nova",
+    "lua cheia",
+    "quarto crescente",
+    "quarto minguante",
+    "eclipse lunar",
+    "eclipse solar",
+    "astronomia",
+    "lua",
+    "universo",
+    "curiosidades",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-arco-iris": {
+   "ep": 4,
+   "title": "Como se forma o arco-íris? 🌈 Refração e dispersão da luz",
+   "body": "Como se forma o arco-íris? A luz branca do Sol entra na gota de chuva, sofre refração, reflete no fundo da gota e sai de novo. Como cada cor desvia um pouco diferente (dispersão), as cores saem separadas, entre uns 40° e 42° em relação aos raios de sol. Por isso o arco-íris é um pedaço de círculo centrado na sombra da sua cabeça.",
+   "desafio": "🎯 Desafio: por que é difícil ver arco-íris ao meio-dia, com o Sol bem alto? Responda nos comentários!",
+   "hashtags": "#arcoiris #fisica #curiosidades #optica #shorts",
+   "tags": [
+    "como se forma o arco-íris",
+    "arco-íris",
+    "arco iris",
+    "refração da luz",
+    "dispersão da luz",
+    "óptica",
+    "luz",
+    "gota de chuva",
+    "cores",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-panela-pressao": {
+   "ep": 5,
+   "title": "Por que a panela de pressão cozinha mais rápido? 🔥 A física explica",
+   "body": "Por que a panela de pressão cozinha mais rápido? Numa panela comum, ao nível do mar, a água ferve a 100 °C e para de esquentar. A temperatura de ebulição depende da pressão: na panela de pressão, o vapor preso aumenta a pressão e a água só ferve perto de 120 °C. Comida mais quente cozinha mais rápido. Na montanha é o contrário: em La Paz, na Bolívia, a água ferve perto de 88 °C.",
+   "desafio": "🎯 Desafio: no alto do Everest, a água ferve acima ou abaixo de 100 °C? Responda nos comentários!",
+   "hashtags": "#fisica #curiosidades #paneladepressao #enem #shorts",
+   "tags": [
+    "panela de pressão",
+    "por que a panela de pressão cozinha mais rápido",
+    "como funciona a panela de pressão",
+    "ponto de ebulição",
+    "temperatura de ebulição",
+    "pressão atmosférica",
+    "termologia",
+    "mudança de estado",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ]
+  },
+  "reel-papel-lua": {
+   "title": "Dobrar um papel 42 vezes chega à Lua? 📄🌙 Mito ou verdade",
+   "descricao": "Dobrar uma folha de papel 42 vezes faz ela chegar à Lua? Na teoria, sim! Uma folha tem uns 0,1 mm e cada dobra dobra a espessura: com 10 dobras são uns 10 cm, com 30 passa de 100 km e com 42 chega a uns 440 mil km, mais que os 384 mil km até a Lua. Na prática, é difícil dobrar uma folha comum mais de 7 vezes. É o crescimento exponencial (potências de 2), tema que cai no ENEM.\n\n🎯 Desafio: com quantas dobras o papel passaria do Monte Everest (8 849 m)? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 1\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#matematica #curiosidades #enem #mitoouverdade #shorts",
+   "tags": [
+    "dobrar papel 42 vezes",
+    "papel dobrado 42 vezes chega à lua",
+    "dobrar papel até a lua",
+    "potência de 2",
+    "crescimento exponencial",
+    "progressão geométrica",
+    "potências",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de matemática",
+    "curiosidades científicas",
+    "matematica",
+    "matemática",
+    "enem",
+    "matemática para o enem",
+    "desafio de matemática"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-gelo-flutua": {
+   "title": "Por que o gelo flutua na água? 🧊 A física explica",
+   "descricao": "Por que o gelo flutua na água? A maioria das substâncias fica mais densa quando congela, mas a água faz o contrário. Ao congelar, as moléculas formam uma rede hexagonal cheia de espaços vazios: o gelo tem densidade de uns 0,92 g/cm³, menor que a da água líquida (1 g/cm³). Por isso ele boia, uma garrafa cheia estoura no congelador e só uns 10% de um iceberg ficam fora da água. E é o gelo por cima que protege a vida nos lagos no inverno.\n\n🎯 Desafio: se o gelo afundasse, o que aconteceria com os lagos no inverno? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 6\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #gelo #shorts",
+   "tags": [
+    "por que o gelo flutua",
+    "gelo flutua na água",
+    "densidade do gelo",
+    "densidade",
+    "empuxo",
+    "hidrostática",
+    "dilatação anômala da água",
+    "iceberg",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  },
+  "reel-raio": {
+   "title": "Um raio nunca cai duas vezes no mesmo lugar? ⚡ Mito ou verdade",
+   "descricao": "Um raio nunca cai duas vezes no mesmo lugar? Mito! O Cristo Redentor, no Rio de Janeiro, é atingido por uns 6 raios por ano, e o Empire State, em Nova York, por uns 20. O raio procura o caminho mais fácil até o chão, e pontos altos e pontiagudos concentram cargas elétricas: é o poder das pontas, o princípio do para-raios. Tema de eletrostática que cai no ENEM.\n\n🎯 Desafio: Numa tempestade, é mais seguro ficar dentro do carro ou embaixo de uma árvore? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 2\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #raio #shorts",
+   "tags": [
+    "raio cai duas vezes no mesmo lugar",
+    "um raio nunca cai duas vezes no mesmo lugar",
+    "raio",
+    "para-raios",
+    "poder das pontas",
+    "eletrostática",
+    "cristo redentor raio",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-micro-ondas": {
+   "title": "Como o micro-ondas esquenta a comida? 📡 A física explica",
+   "descricao": "Como o micro-ondas esquenta a comida? Ele produz ondas eletromagnéticas, da mesma família das ondas de rádio, com frequência de uns 2,45 GHz. As moléculas de água são polares (um lado positivo e outro negativo) e giram tentando acompanhar o campo elétrico da onda, que muda de sentido bilhões de vezes por segundo. Essa agitação vira calor. E a comida não fica radioativa: as ondas param quando o aparelho desliga.\n\n🎯 Desafio: Por que não se deve colocar metal no micro-ondas? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 7\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #microondas #shorts",
+   "tags": [
+    "como funciona o micro-ondas",
+    "como o micro-ondas esquenta a comida",
+    "micro-ondas",
+    "ondas eletromagnéticas",
+    "molécula de água polar",
+    "comida no micro-ondas fica radioativa",
+    "ondas",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  },
+  "reel-zero-nove": {
+   "title": "0,999… é igual a 1? 🤯 Mito ou verdade na matemática",
+   "descricao": "0,999… é igual a 1? Verdade! Um terço é 0,333…, com três para sempre. Multiplicando os dois lados por 3, três terços dá 1 e 0,333… vezes 3 dá 0,999…, então 0,999… = 1. Outro jeito de ver: se fossem números diferentes, existiria um número entre eles, e não existe nenhum. Dízimas periódicas e frações caem no ENEM.\n\n🎯 Desafio: Quanto dá 0,333… + 0,666…? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 3\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#matematica #curiosidades #enem #mitoouverdade #shorts",
+   "tags": [
+    "0",
+    "999 é igual a 1",
+    "zero vírgula nove nove nove",
+    "0",
+    "999... = 1",
+    "dízima periódica",
+    "dízimas periódicas",
+    "frações",
+    "números reais",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de matemática",
+    "matematica",
+    "matemática",
+    "enem",
+    "matemática para o enem",
+    "desafio de matemática"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-espelho": {
+   "title": "Por que o espelho inverte esquerda e direita? 🪞 A física explica",
+   "descricao": "Por que o espelho inverte esquerda e direita, mas não em cima e embaixo? Na verdade, ele não troca esquerda e direita: se você levanta a mão do lado da janela, a imagem levanta a mão do lado da janela. O que o espelho plano inverte é frente e trás: cada ponto da imagem fica à mesma distância do espelho, só que do outro lado. Por isso a palavra AMBULÂNCIA vem escrita ao contrário no capô: no retrovisor, ela aparece certa.\n\n🎯 Desafio: Se você se afasta 1 m do espelho, quanto a sua imagem se afasta de você? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 8\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #espelho #shorts",
+   "tags": [
+    "por que o espelho inverte esquerda e direita",
+    "espelho inverte",
+    "espelho plano",
+    "reflexão da luz",
+    "óptica",
+    "ambulância escrita ao contrário",
+    "imagem no espelho",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  },
+  "reel-aniversario": {
+   "title": "23 pessoas e 50% de chance de aniversário igual? 🎂 O paradoxo do aniversário",
+   "descricao": "Numa sala com só 23 pessoas, a chance de duas fazerem aniversário no mesmo dia passa de 50%? Verdade! Parece pouco, porque o ano tem 365 dias, mas o segredo é contar os pares: com 23 pessoas, são 253 pares diferentes (23 × 22 ÷ 2). A probabilidade chega a uns 51%, e com 50 pessoas passa de 97%. É o paradoxo do aniversário, um clássico de probabilidade e análise combinatória.\n\n🎯 Desafio: Na sua turma tem alguém que faz aniversário no mesmo dia que você? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 4\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#matematica #curiosidades #enem #probabilidade #shorts",
+   "tags": [
+    "paradoxo do aniversário",
+    "probabilidade de aniversário no mesmo dia",
+    "23 pessoas aniversário",
+    "probabilidade",
+    "análise combinatória",
+    "combinação",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de matemática",
+    "matematica",
+    "matemática",
+    "enem",
+    "matemática para o enem",
+    "desafio de matemática"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-ventilador": {
+   "title": "Por que o ventilador refresca se não esfria o ar? 🌀 A física explica",
+   "descricao": "Por que o ventilador refresca se ele não esfria o ar? O ventilador só empurra o ar, e o motor ainda aquece o ambiente um pouquinho. Ele refresca porque troca o ar quente que fica colado na pele por ar novo (convecção) e acelera a evaporação do suor: para evaporar, a água tira calor da sua pele. É o mesmo motivo de sentir frio ao sair do banho.\n\n🎯 Desafio: Num quarto vazio, deixar o ventilador ligado esfria o quarto? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 9\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #ventilador #shorts",
+   "tags": [
+    "por que o ventilador refresca",
+    "ventilador esfria o ar",
+    "como funciona o ventilador",
+    "evaporação do suor",
+    "convecção",
+    "termologia",
+    "calor",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  },
+  "reel-queda-livre": {
+   "title": "Objetos mais pesados caem mais rápido? 🔨🪶 O martelo e a pena na Lua",
+   "descricao": "Objetos mais pesados caem mais rápido? Mito! Aqui na Terra, a pena demora por causa da resistência do ar, não por ser leve. Sem ar, todos os corpos caem com a mesma aceleração, uns 10 m/s², como Galileu já defendia há quase 400 anos. Em 1971, um astronauta da missão Apollo 15 soltou um martelo e uma pena na Lua, onde não há ar, e os dois chegaram juntos ao chão.\n\n🎯 Desafio: Se você soltar uma folha de papel aberta e outra amassada, qual chega primeiro? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 5\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #quedalivre #shorts",
+   "tags": [
+    "objetos mais pesados caem mais rápido",
+    "martelo e pena na lua",
+    "queda livre",
+    "aceleração da gravidade",
+    "resistência do ar",
+    "galileu",
+    "apollo 15",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de física",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-estrelas": {
+   "title": "Por que as estrelas piscam? ✨ E por que os planetas não",
+   "descricao": "Por que as estrelas piscam, mas os planetas quase não piscam? A luz da estrela atravessa a atmosfera, que tem camadas de ar com temperaturas e densidades diferentes, sempre em movimento. Cada camada desvia um pouco a luz (refração), e como o ar se mexe, o desvio muda o tempo todo e o brilho parece oscilar. A estrela está tão longe que chega como um ponto de luz; o planeta, mais perto, aparece como um pequeno disco, e as oscilações se compensam.\n\n🎯 Desafio: Um astronauta na Estação Espacial vê as estrelas piscarem? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 10\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #astronomia #enem #shorts",
+   "tags": [
+    "por que as estrelas piscam",
+    "estrelas piscam",
+    "por que os planetas não piscam",
+    "refração da luz",
+    "refração atmosférica",
+    "astronomia",
+    "óptica",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  },
+  "reel-area-quadrado": {
+   "title": "Dobrou o lado, a área dobra? 📐 Mito ou verdade na geometria",
+   "descricao": "Se você dobrar o lado de um quadrado, a área também dobra? Mito! Um quadrado de lado 2 tem área 4; com lado 4, a área vai para 16, quatro vezes maior. A área depende do lado ao quadrado: dobrando o lado, a área fica 2² = 4 vezes maior, e no cubo o volume fica 2³ = 8 vezes maior. Por isso uma pizza de 40 cm tem 4 vezes mais pizza que uma de 20 cm. Semelhança e razão entre áreas caem no ENEM.\n\n🎯 Desafio: Se você triplicar o lado de um quadrado, a área fica quantas vezes maior? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 6\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#matematica #curiosidades #enem #geometria #shorts",
+   "tags": [
+    "dobrar o lado do quadrado dobra a área",
+    "área do quadrado",
+    "razão entre áreas",
+    "semelhança de figuras",
+    "geometria plana",
+    "volume do cubo",
+    "pizza grande ou duas pequenas",
+    "mito ou verdade",
+    "curiosidades de matemática",
+    "curiosidades",
+    "matematica",
+    "matemática",
+    "enem",
+    "matemática para o enem",
+    "desafio de matemática"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-led": {
+   "title": "Por que a lâmpada de LED gasta menos? 💡 A conta na física",
+   "descricao": "Por que a lâmpada de LED gasta menos energia? A incandescente esquenta um filamento até ele brilhar, e só uns 5% da energia vira luz: o resto vira calor. No LED, a luz sai direto de um material semicondutor, quase sem esquentar, e uma LED de 9 W ilumina como uma incandescente de 60 W. Com E = P × t, ligadas 5 h por dia durante um mês (150 h), a de 60 W gasta 9 kWh e a de LED, só 1,35 kWh.\n\n🎯 Desafio: Se o kWh custa R$ 1, quanto você economiza por mês trocando essa lâmpada? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 11\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #energia #shorts",
+   "tags": [
+    "por que o led gasta menos",
+    "lâmpada led x incandescente",
+    "consumo de energia",
+    "kwh",
+    "potência elétrica",
+    "energia elétrica",
+    "eficiência energética",
+    "conta de luz",
+    "curiosidades",
+    "curiosidades de física",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  },
+  "reel-pulo-lua": {
+   "title": "Na Lua, você pula 6 vezes mais alto? 🌕 Mito ou verdade",
+   "descricao": "Na Lua, você pularia seis vezes mais alto do que na Terra? Verdade, com o mesmo impulso no pulo! A gravidade na Lua é uns 6 vezes menor: cerca de 1,6 m/s², contra 9,8 m/s² aqui. Com a mesma velocidade de saída, a altura do pulo é inversamente proporcional à gravidade (h = v²/2g). Quem pula 50 cm na Terra pularia uns 3 m na Lua, mas os astronautas pulavam bem menos por causa do traje pesado e duro.\n\n🎯 Desafio: No planeta Júpiter, a gravidade é umas 2,5 vezes maior. Quanto você pularia lá? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo desafio.\n📺 Mito ou verdade? · episódio 7\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #lua #shorts",
+   "tags": [
+    "pular na lua",
+    "gravidade na lua",
+    "na lua você pula 6 vezes mais alto",
+    "gravidade",
+    "gravitação",
+    "aceleração da gravidade",
+    "lançamento vertical",
+    "mito ou verdade",
+    "curiosidades",
+    "curiosidades de física",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem"
+   ],
+   "playlist": "Mito ou verdade?"
+  },
+  "reel-som-espaco": {
+   "title": "Por que não existe som no espaço? 🚀 A física explica",
+   "descricao": "Por que não existe som no espaço? Nos filmes, as explosões fazem um barulhão, mas no espaço de verdade você não ouviria nada. O som é uma onda mecânica: precisa de um meio, como ar, água ou metal, para se propagar, porque viaja como uma sequência de compressões das moléculas. No espaço quase não há moléculas: é praticamente vácuo. Já a luz é onda eletromagnética e atravessa o vácuo, por isso vemos o Sol, mas não ouvimos nada dele.\n\n🎯 Desafio: Dois astronautas encostam os capacetes. Eles conseguem se ouvir? Responda nos comentários!\n\n🔔 Inscreva-se para ver o próximo fenômeno explicado.\n📺 Fenômenos explicados · episódio 12\nFísica e Matemática para o ENEM, vestibulares e olimpíadas. No Instagram: @erisson.alemao.prof\n\n#fisica #curiosidades #enem #espaco #shorts",
+   "tags": [
+    "por que não existe som no espaço",
+    "som no espaço",
+    "som no vácuo",
+    "onda mecânica",
+    "onda eletromagnética",
+    "ondulatória",
+    "velocidade do som",
+    "curiosidades",
+    "curiosidades de física",
+    "curiosidades científicas",
+    "fisica",
+    "física",
+    "ciência",
+    "física para o enem",
+    "enem",
+    "fenômenos explicados"
+   ],
+   "playlist": "Fenômenos explicados"
+  }
+ }
+}
